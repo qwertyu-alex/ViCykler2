@@ -1,4 +1,4 @@
 package client.appcontroller;
 
-public class userController {
+public class UserController {
 }

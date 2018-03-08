@@ -1,0 +1,28 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:c='urn:import:com.google.gwt.user.cellview.client'>
+
+    <ui:style>
+
+        .pager{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+
+    </ui:style>
+
+    <g:HTMLPanel>
+        <g:DockLayoutPanel>
+
+            <g:center>
+                <c:DataGrid visible="true" ui:field="dataGrid"></c:DataGrid>
+            </g:center>
+
+            <g:south size="2">
+                <c:SimplePager location="CENTER" styleName="{style.pager}" ui:field="pager"></c:SimplePager>
+            </g:south>
+
+        </g:DockLayoutPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

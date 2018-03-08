@@ -17,8 +17,6 @@ public class Content extends Composite{
 //        Views:
         guestView = new GuestView();
 
-
-
         mainDeck.add(guestView);
 
         mainDeck.showWidget(0);
@@ -26,4 +24,7 @@ public class Content extends Composite{
         initWidget(mainDeck);
     }
 
+    public GuestView getGuestView() {
+        return guestView;
+    }
 }
