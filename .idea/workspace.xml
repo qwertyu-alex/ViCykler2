@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c4daf6-d9ff-41da-8b5d-41813bffe595" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/GuestController$GuestClickHandlers.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView$loginViewUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$StatistikViewUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView$TilmeldingUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/shared/UserDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitClone.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitPush.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/withoutDB/Data.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/FirmDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/TeamDTO.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView$loginViewUiBinder.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.ui.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.ui.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/shared/UserDTO.java" afterPath="$PROJECT_DIR$/src/shared/ParticipantDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ViCykler.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ViCykler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/adminController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/adminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/guestController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/guestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/userController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/userController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/Content.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/Content.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/ViCykler.gwt.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/ViCykler.gwt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.ui.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.ui.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/public/ViCykler.css" afterPath="$PROJECT_DIR$/out/production/ViCykler2/public/ViCykler.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" afterPath="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/TeamDTO.java" afterPath="$PROJECT_DIR$/src/shared/TeamDTO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,8 +108,8 @@
       <file leaf-file-name="TeamDTO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shared/TeamDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="80">
+              <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -223,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b39be19c-a49d-4e47-b79e-906409a00d95/console.sql" />
         <option value="$PROJECT_DIR$/src/shared/ParticipantDTO.java" />
+        <option value="$PROJECT_DIR$/src/shared/TeamDTO.java" />
       </list>
     </option>
   </component>
@@ -479,18 +446,36 @@
       <workItem from="1520766487616" duration="608000" />
       <workItem from="1520956103694" duration="2427000" />
       <workItem from="1521033146672" duration="2597000" />
-      <workItem from="1521050667202" duration="54000" />
+      <workItem from="1521050667202" duration="774000" />
     </task>
+    <task id="LOCAL-00001" summary="emmes">
+      <created>1521050742264</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521050742264</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28781000" />
+    <option name="totallyTimeSpent" value="29501000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -503,6 +488,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18963616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -516,7 +502,6 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,6 +509,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="emmes" />
+    <option name="LAST_COMMIT_MESSAGE" value="emmes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -929,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/TeamDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="80">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding />
         </state>
       </provider>
