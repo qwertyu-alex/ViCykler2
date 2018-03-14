@@ -1,17 +1,21 @@
 package shared;
 
-public class UserDTO {
-    private String email, username, password, type;
-    private int id;
+public class ParticipantDTO {
+    private String email, firstName, lastName, password, type;
+    private int id, age;
     private char gender;
 
-    public UserDTO(String email, String username, String password, String type, int id, char gender) {
+    public ParticipantDTO(String email, String firstName, String lastName,
+                          String password, String type, int id, int age, char gender) {
         this.email = email;
-        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
         this.type = type;
         this.id = id;
+        this.age = age;
         this.gender = gender;
+
     }
 
     public String getEmail() {
@@ -22,12 +26,20 @@ public class UserDTO {
         this.email = email;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -52,6 +64,14 @@ public class UserDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public char getGender() {

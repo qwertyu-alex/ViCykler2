@@ -7,5 +7,5 @@
     <entry-point class='client.ViCykler'/>
 
     <source path="client"/>
-
+    <source path="shared"/>
 </module>

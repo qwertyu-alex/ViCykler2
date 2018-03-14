@@ -3,13 +3,32 @@
     <g:HTMLPanel>
         <g:DockLayoutPanel unit="EM" width="100%" height="100%">
 
-            <g:north size="10">
-                <g:HTMLPanel ui:field="northPanel" styleName="center">
-                    <g:HorizontalPanel>
-                        <g:Image url="http://i0.kym-cdn.com/photos/images/facebook/001/217/729/f9a.jpg"></g:Image>
-                        <g:Label>Tilmelding</g:Label>
-                        <g:Label>Statistik</g:Label>
-                        <g:Label>Log ind</g:Label>
+            <g:north size="13">
+                <g:HTMLPanel ui:field="northPanel" styleName="center northPanel">
+                    <g:HorizontalPanel styleName="container" width="100%" height="100%">
+
+                        <g:Image url="https://www.vcta.dk/~/media/VCTA18/Web_Baggrund_logo/Logo/Logo_web4-01.ashx" height="10em" ui:field="logoImg"/>
+
+                        <g:HorizontalPanel horizontalAlignment="ALIGN_DEFAULT" verticalAlignment="ALIGN_BOTTOM" height="100%">
+
+
+
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
+                                                horizontalAlignment="ALIGN_CENTER" >
+                                <g:Button ui:field="tilmeldingBtn" >Tilmelding</g:Button>
+                            </g:HorizontalPanel>
+
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
+                                                horizontalAlignment="ALIGN_CENTER" >
+                                <g:Button ui:field="statistiskBtn">Statistik</g:Button>
+                            </g:HorizontalPanel>
+
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
+                                                horizontalAlignment="ALIGN_CENTER" >
+                                <g:Button ui:field="logindBtn">Log ind</g:Button>
+                            </g:HorizontalPanel>
+
+                        </g:HorizontalPanel>
                     </g:HorizontalPanel>
 
                 </g:HTMLPanel>
@@ -18,14 +37,14 @@
 
             <g:center size="20">
 
-                    <g:HTMLPanel ui:field="centerPanel" styleName="center">
-
+                    <g:HTMLPanel ui:field="centerPanel" styleName="center centerPanel" width="100%" height="100%">
+                        <g:DeckLayoutPanel ui:field="centerDeck" width="100%" height="100%"></g:DeckLayoutPanel>
                     </g:HTMLPanel>
 
             </g:center>
 
             <g:south size="5">
-                <g:HTMLPanel ui:field="southPanel" styleName="center">
+                <g:HTMLPanel ui:field="southPanel" styleName="center southPanel" width="100%" height="100%">
                     <g:HTML><a href="https:\\google.com">Google</a></g:HTML>
                 </g:HTMLPanel>
             </g:south>
