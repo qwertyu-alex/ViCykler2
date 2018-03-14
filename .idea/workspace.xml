@@ -2,42 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c4daf6-d9ff-41da-8b5d-41813bffe595" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/GuestController$GuestClickHandlers.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView$loginViewUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$3.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$6.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$StatistikViewUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView$TilmeldingUiBinder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/shared/UserDTO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitClone.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitPush.cmd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/withoutDB/Data.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/FirmDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/shared/TeamDTO.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView$loginViewUiBinder.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.ui.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.ui.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/shared/UserDTO.java" afterPath="$PROJECT_DIR$/src/shared/ParticipantDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ViCykler.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ViCykler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/adminController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/adminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/guestController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/guestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/userController.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/userController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/Content.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/Content.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.class" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/ViCykler2_GWT.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user__2_.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/ViCykler.gwt.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/ViCykler.gwt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.ui.xml" afterPath="$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.ui.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ViCykler2/public/ViCykler.css" afterPath="$PROJECT_DIR$/out/production/ViCykler2/public/ViCykler.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" afterPath="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ViCykler2.iml" afterPath="$PROJECT_DIR$/ViCykler2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/FirmDTO.java" afterPath="$PROJECT_DIR$/src/shared/FirmDTO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,32 +34,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GuestView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/GuestView.java">
+      <file leaf-file-name="GuestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1160">
-              <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="520">
+              <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1854#1855#0" expanded="true" />
-                <element signature="e#1898#1899#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatistikView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="101" column="61" lean-forward="false" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
-              <folding>
-                <element signature="class#1351:1547" expanded="false" />
-                <element signature="class#1606:1801" expanded="false" />
-                <element signature="class#1862:2270" expanded="false" />
-                <element signature="class#2334:2534" expanded="false" />
-                <element signature="class#2597:2796" expanded="false" />
-                <element signature="class#2854:3050" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,18 +49,18 @@
       <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/withoutDB/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="40">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
+      <file leaf-file-name="FirmDTO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/shared/FirmDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -122,24 +72,14 @@
             <state relative-caret-position="400">
               <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
-                <element signature="e#735#736#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirmDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shared/FirmDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamDTO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TeamDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/TeamDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
@@ -149,11 +89,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b39be19c-a49d-4e47-b79e-906409a00d95/console.sql">
+      <file leaf-file-name="StatistikView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+              <folding>
+                <element signature="e#1357#1381#0" expanded="true" />
+                <element signature="e#1612#1636#0" expanded="true" />
+                <element signature="e#1868#1892#0" expanded="true" />
+                <element signature="e#2340#2364#0" expanded="true" />
+                <element signature="e#2603#2627#0" expanded="true" />
+                <element signature="e#2860#2884#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -164,9 +131,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-              <folding>
-                <marker date="1520534373807" expanded="true" signature="221:327" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,6 +188,7 @@
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b39be19c-a49d-4e47-b79e-906409a00d95/console.sql" />
         <option value="$PROJECT_DIR$/src/shared/ParticipantDTO.java" />
+        <option value="$PROJECT_DIR$/src/shared/FirmDTO.java" />
       </list>
     </option>
   </component>
@@ -233,10 +199,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="612" />
-    <option name="y" value="44" />
-    <option name="width" value="1001" />
-    <option name="height" value="999" />
+    <option name="x" value="308" />
+    <option name="y" value="177" />
+    <option name="width" value="1874" />
+    <option name="height" value="814" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -256,7 +222,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -287,45 +254,13 @@
               <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
               <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="guest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="guest" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="sharedWidgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
               <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="withoutDB" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ViCykler" type="b2602c69:ProjectViewProjectNode" />
@@ -337,8 +272,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,7 +280,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../1. semester/#Vi cykler/vicykler" />
+    <property name="last_opened_file_path" value="$USER_HOME$/1. semester/#Vi cykler/vicykler" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -359,6 +293,154 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCykler2\src\client\ui\guest\widgets" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/ViCykler.gwt.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ViCykler.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/adminController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/guestController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/userController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/Content.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/GuestView.ui.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/public/ViCykler.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/dataSources.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/gitClone.cmd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/gitPush.cmd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/appcontroller/GuestController$GuestClickHandlers.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView$loginViewUiBinder.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/LoginView.ui.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$4.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$5.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$6.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView$StatistikViewUiBinder.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/StatistikView.ui.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView$TilmeldingUiBinder.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/widgets/TilmeldingView.ui.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/shared/UserDTO.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/server/withoutDB/Data.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/shared/FirmDTO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/shared/ParticipantDTO.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/shared/TeamDTO.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView$loginViewUiBinder.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ViCykler2/client/ui/guest/LoginView.ui.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/shared/UserDTO.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -484,10 +566,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28781000" />
+    <option name="totallyTimeSpent" value="28919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -501,8 +584,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18963616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25516692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -510,13 +593,33 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18963616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,12 +662,12 @@
         <state relative-caret-position="340">
           <caret line="24" column="54" lean-forward="true" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
           <folding>
-            <element signature="class#1351:1547" expanded="false" />
-            <element signature="class#1606:1801" expanded="false" />
-            <element signature="class#1862:2270" expanded="false" />
-            <element signature="class#2334:2534" expanded="false" />
-            <element signature="class#2597:2796" expanded="false" />
-            <element signature="class#2854:3050" expanded="false" />
+            <element signature="e#1357#1381#0" expanded="true" />
+            <element signature="e#1612#1636#0" expanded="true" />
+            <element signature="e#1868#1892#0" expanded="true" />
+            <element signature="e#2340#2364#0" expanded="true" />
+            <element signature="e#2603#2627#0" expanded="true" />
+            <element signature="e#2860#2884#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -589,6 +692,14 @@
           <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
             <element signature="e#1854#1855#0" expanded="true" />
             <element signature="e#1898#1899#0" expanded="true" />
           </folding>
@@ -621,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,6 +777,14 @@
           <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
             <element signature="e#1854#1855#0" expanded="true" />
             <element signature="e#1898#1899#0" expanded="true" />
           </folding>
@@ -698,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,13 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/sharedWidgets/Header.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -749,17 +859,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../gwt-2.8.2/gwt-user.jar!/com/google/gwt/user/client/ui/Composite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="114" column="19" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../gwt-2.8.2/gwt-user.jar!/com/google/gwt/user/client/ui/Composite.java" />
     <entry file="file://$PROJECT_DIR$/src/client/ui/sharedWidgets/Header.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -812,23 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/DTO/UserDTO.java" />
     <entry file="file://$PROJECT_DIR$/src/ViCykler.gwt.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -844,44 +930,34 @@
           <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
             <element signature="e#1854#1855#0" expanded="true" />
             <element signature="e#1898#1899#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b39be19c-a49d-4e47-b79e-906409a00d95/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b39be19c-a49d-4e47-b79e-906409a00d95/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <marker date="1520534373807" expanded="true" signature="221:327" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/sd.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/withoutDB/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,16 +971,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StatistikView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="101" column="61" lean-forward="false" selection-start-line="101" selection-start-column="61" selection-end-line="101" selection-end-column="61" />
+        <state relative-caret-position="340">
+          <caret line="29" column="54" lean-forward="false" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
           <folding>
-            <element signature="class#1351:1547" expanded="false" />
-            <element signature="class#1606:1801" expanded="false" />
-            <element signature="class#1862:2270" expanded="false" />
-            <element signature="class#2334:2534" expanded="false" />
-            <element signature="class#2597:2796" expanded="false" />
-            <element signature="class#2854:3050" expanded="false" />
+            <element signature="e#1357#1381#0" expanded="true" />
+            <element signature="e#1612#1636#0" expanded="true" />
+            <element signature="e#1868#1892#0" expanded="true" />
+            <element signature="e#2340#2364#0" expanded="true" />
+            <element signature="e#2603#2627#0" expanded="true" />
+            <element signature="e#2860#2884#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/withoutDB/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -913,17 +1015,9 @@
         <state relative-caret-position="400">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/FirmDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -931,6 +1025,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/FirmDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
           <folding />
         </state>
       </provider>
