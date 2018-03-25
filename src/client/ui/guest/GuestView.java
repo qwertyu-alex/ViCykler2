@@ -1,6 +1,7 @@
 package client.ui.guest;
 
 import client.ui.guest.widgets.LoginView;
+import client.ui.guest.widgets.StatistikView;
 import client.ui.guest.widgets.TilmeldingView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -28,6 +29,7 @@ public class GuestView extends Composite {
 
 
     private LoginView loginView;
+    private StatistikView statistikView;
     private TilmeldingView tilmeldingView;
 
 
@@ -36,6 +38,8 @@ public class GuestView extends Composite {
 
         loginView = new LoginView();
         tilmeldingView = new TilmeldingView();
+        statistikView = new StatistikView();
+
 
 //        Add DeckLayoutPanel to centerPanel
         centerPanel.add(centerDeck);
@@ -43,6 +47,7 @@ public class GuestView extends Composite {
 //        Add different views to the DeckLayoutPanel
         centerDeck.add(loginView);
         centerDeck.add(tilmeldingView);
+        centerDeck.add(statistikView);
 
         centerDeck.showWidget(0);
     }
@@ -72,5 +77,17 @@ public class GuestView extends Composite {
 
     public void changeView(int index){
         centerDeck.showWidget(index);
+    }
+
+    public LoginView getLoginView() {
+        return loginView;
+    }
+
+    public TilmeldingView getTilmeldingView() {
+        return tilmeldingView;
+    }
+
+    public StatistikView getStatistikView() {
+        return statistikView;
     }
 }

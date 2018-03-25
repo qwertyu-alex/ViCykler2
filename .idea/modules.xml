@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ViCykler2.iml" filepath="$PROJECT_DIR$/ViCykler2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViCykler.iml" filepath="$PROJECT_DIR$/ViCykler.iml" />
     </modules>
   </component>
 </project>

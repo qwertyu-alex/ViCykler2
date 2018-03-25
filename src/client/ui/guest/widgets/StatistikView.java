@@ -1,5 +1,6 @@
 package client.ui.guest.widgets;
 
+import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
@@ -7,22 +8,26 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.view.client.ListDataProvider;
-import shared.ParticipantDTO;
+import shared.Participant;
+
+import javax.servlet.http.Part;
+import java.util.Comparator;
 
 public class StatistikView extends Composite {
     interface StatistikViewUiBinder extends UiBinder<HTMLPanel, StatistikView> {
     }
 
     private static StatistikViewUiBinder ourUiBinder = GWT.create(StatistikViewUiBinder.class);
+    private ActionCell.Delegate<Participant> actionCell;
 
     @UiField
-    DataGrid<ParticipantDTO> dataGrid;
-
+    DataGrid<Participant> dataGrid;
     @UiField
     SimplePager pager;
 
@@ -33,73 +38,57 @@ public class StatistikView extends Composite {
         pager.setPage(25);
     }
 
-    public void initTable(ListDataProvider<ParticipantDTO> dataProvider){
+    public void initTable(ListDataProvider<Participant> dataProvider){
         dataProvider.addDataDisplay(dataGrid);
-        initColums();
+
+//        Laver et sortevent som sorterer kolonnerne i tabellen.
+        ColumnSortEvent.ListHandler<Participant> sortHandler = new ColumnSortEvent.ListHandler<>(dataProvider.getList());
+        initColums(sortHandler);
+
+        dataGrid.addColumnSortHandler(sortHandler);
     }
 
-    public void initColums(){
-        Column<ParticipantDTO, String> emailColumn = new Column<ParticipantDTO, String>(new TextCell()) {
+    public void initColums(ColumnSortEvent.ListHandler<Participant> sortHandler){
+        Column<Participant, String> emailColumn = new Column<Participant, String>(new TextCell()) {
             @Override
-            public String getValue(ParticipantDTO object) {
+            public String getValue(Participant object) {
                 return object.getEmail();
             }
         };
 
-        Column<ParticipantDTO, String> typeColumn = new Column<ParticipantDTO, String>(new TextCell()) {
+        Column<Participant, String> typeColumn = new Column<Participant, String>(new TextCell()) {
             @Override
-            public String getValue(ParticipantDTO object) {
-                return object.getType();
+            public String getValue(Participant object) {
+                return object.getCyclistType();
             }
         };
 
-        Column<ParticipantDTO, String> genderColumn = new Column<ParticipantDTO, String>(new TextCell()) {
-            @Override
-            public String getValue(ParticipantDTO object) {
-                if (object.getGender() == 'm'){
-                    return "Male";
-                } else if (object.getGender() == 'f'){
-                    return "Female";
-                } else {
-                    return "null";
-                }
 
+        Column<Participant, String> firstNameColumn = new Column<Participant, String>(new TextCell()) {
+            @Override
+            public String getValue(Participant object) {
+                return object.getName();
             }
         };
 
-        Column<ParticipantDTO, String> firstNameColumn = new Column<ParticipantDTO, String>(new TextCell()) {
-            @Override
-            public String getValue(ParticipantDTO object) {
-                return object.getFirstName();
-            }
-        };
-
-        Column<ParticipantDTO, String> lastNameColumn = new Column<ParticipantDTO, String>(new TextCell()) {
-            @Override
-            public String getValue(ParticipantDTO object) {
-                return object.getLastName();
-            }
-        };
-
-        Column<ParticipantDTO, Number> ageColumn = new Column<ParticipantDTO, Number>(new NumberCell()) {
-            @Override
-            public Number getValue(ParticipantDTO object) {
-                return object.getAge();
-            }
-        };
-
-        dataGrid.addColumn(emailColumn);
+        dataGrid.addColumn(emailColumn, "Email");
         dataGrid.setColumnWidth(emailColumn, 7, Style.Unit.PX);
-        dataGrid.addColumn(typeColumn);
+        emailColumn.setSortable(true);
+        sortHandler.setComparator(emailColumn, Comparator.comparing(Participant::getEmail));
+
+        dataGrid.addColumn(typeColumn, "Type");
         dataGrid.setColumnWidth(typeColumn, 7, Style.Unit.PX);
-        dataGrid.addColumn(genderColumn);
-        dataGrid.setColumnWidth(genderColumn, 7, Style.Unit.PX);
-        dataGrid.addColumn(firstNameColumn);
+        typeColumn.setSortable(true);
+        sortHandler.setComparator(typeColumn, Comparator.comparing(Participant::getCyclistType));
+
+        dataGrid.addColumn(firstNameColumn, "Navn");
         dataGrid.setColumnWidth(firstNameColumn, 7, Style.Unit.PX);
-        dataGrid.addColumn(lastNameColumn);
-        dataGrid.setColumnWidth(lastNameColumn, 7, Style.Unit.PX);
-        dataGrid.addColumn(ageColumn);
-        dataGrid.setColumnWidth(ageColumn, 7, Style.Unit.PX);
+        firstNameColumn.setSortable(true);
+        sortHandler.setComparator(firstNameColumn, Comparator.comparing(Participant::getName));
+    }
+
+    public void addClickHandler(ActionCell.Delegate<Participant> button){
+        this.actionCell = button;
     }
 
 
