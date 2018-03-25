@@ -1,4 +1,4 @@
-package shared;//Astrid Christensen
+package shared.DTO;//Astrid Christensen
 
 /**
  * Kilde: Y. Daniel Liang (2015), s. 514

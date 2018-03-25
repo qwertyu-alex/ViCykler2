@@ -1,4 +1,4 @@
-package shared;//Alexander Van Le && Oliver Lange
+package shared.DTO;//Alexander Van Le && Oliver Lange
 
 /**
  * Kilde: Y. Daniel Liang (2015), s. 431

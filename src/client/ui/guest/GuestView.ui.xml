@@ -10,9 +10,6 @@
                         <g:Image url="https://www.vcta.dk/~/media/VCTA18/Web_Baggrund_logo/Logo/Logo_web4-01.ashx" height="10em" ui:field="logoImg"/>
 
                         <g:HorizontalPanel horizontalAlignment="ALIGN_DEFAULT" verticalAlignment="ALIGN_BOTTOM" height="100%">
-
-
-
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
                                 <g:Button ui:field="tilmeldingBtn" >Tilmelding</g:Button>

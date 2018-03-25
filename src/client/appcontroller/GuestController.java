@@ -7,7 +7,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.view.client.ListDataProvider;
 import server.withoutDB.Data;
-import shared.Participant;
+import shared.DTO.Participant;
 
 import java.util.ArrayList;
 
@@ -28,10 +28,10 @@ public class GuestController {
 
 //        Tilføjer clickhandlers til forskellige elementer på siden
         content.getGuestView().addClickHandlers(new GuestClickHandlers());
-        content.getGuestView().getStatistikView().addClickHandler(new ShowInfoHandler());
+        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
 
 //        Opretter tabellen
-        content.getGuestView().getStatistikView().initTable(participantListDataProvider);
+        content.getGuestView().getStatisticView().initTable(participantListDataProvider);
         participantListDataProvider.getList().addAll(data.getParticipants());
 
 //        Window.alert(participantListDataProvider.getList().get(0).getName());
@@ -50,7 +50,7 @@ public class GuestController {
             } else if (event.getSource() == content.getGuestView().getTilmeldingBtn()){
                 content.getGuestView().changeView(1);
             } else if (event.getSource() == content.getGuestView().getLogoImg()){
-                content.getGuestView().changeView(0);
+                content.getGuestView().changeView(content.getGuestView().getStartView());
             } else if (event.getSource() == content.getGuestView().getStatistiskBtn()){
                 content.getGuestView().changeView(2);
 

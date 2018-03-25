@@ -1,7 +1,6 @@
 package client.ui.guest.widgets;
 
 import com.google.gwt.cell.client.ActionCell;
-import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
@@ -14,13 +13,12 @@ import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.view.client.ListDataProvider;
-import shared.Participant;
+import shared.DTO.Participant;
 
-import javax.servlet.http.Part;
 import java.util.Comparator;
 
-public class StatistikView extends Composite {
-    interface StatistikViewUiBinder extends UiBinder<HTMLPanel, StatistikView> {
+public class StatisticView extends Composite {
+    interface StatistikViewUiBinder extends UiBinder<HTMLPanel, StatisticView> {
     }
 
     private static StatistikViewUiBinder ourUiBinder = GWT.create(StatistikViewUiBinder.class);
@@ -31,7 +29,7 @@ public class StatistikView extends Composite {
     @UiField
     SimplePager pager;
 
-    public StatistikView() {
+    public StatisticView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         pager.setDisplay(dataGrid);

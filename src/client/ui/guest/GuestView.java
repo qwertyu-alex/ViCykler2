@@ -1,8 +1,9 @@
 package client.ui.guest;
 
 import client.ui.guest.widgets.LoginView;
-import client.ui.guest.widgets.StatistikView;
-import client.ui.guest.widgets.TilmeldingView;
+import client.ui.guest.widgets.StartView;
+import client.ui.guest.widgets.StatisticView;
+import client.ui.guest.widgets.SignUpView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -29,16 +30,18 @@ public class GuestView extends Composite {
 
 
     private LoginView loginView;
-    private StatistikView statistikView;
-    private TilmeldingView tilmeldingView;
+    private StatisticView statisticView;
+    private SignUpView signUpView;
+    private StartView startView;
 
 
     public GuestView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
         loginView = new LoginView();
-        tilmeldingView = new TilmeldingView();
-        statistikView = new StatistikView();
+        signUpView = new SignUpView();
+        statisticView = new StatisticView();
+        startView = new StartView();
 
 
 //        Add DeckLayoutPanel to centerPanel
@@ -46,10 +49,11 @@ public class GuestView extends Composite {
 
 //        Add different views to the DeckLayoutPanel
         centerDeck.add(loginView);
-        centerDeck.add(tilmeldingView);
-        centerDeck.add(statistikView);
+        centerDeck.add(signUpView);
+        centerDeck.add(statisticView);
+        centerDeck.add(startView);
 
-        centerDeck.showWidget(0);
+        centerDeck.showWidget(startView);
     }
 
     public void addClickHandlers (ClickHandler clickHandler){
@@ -79,15 +83,24 @@ public class GuestView extends Composite {
         centerDeck.showWidget(index);
     }
 
+//    Overload
+    public void changeView(Widget widget){
+        centerDeck.showWidget(widget);
+    }
+
     public LoginView getLoginView() {
         return loginView;
     }
 
-    public TilmeldingView getTilmeldingView() {
-        return tilmeldingView;
+    public SignUpView getSignUpView() {
+        return signUpView;
     }
 
-    public StatistikView getStatistikView() {
-        return statistikView;
+    public StatisticView getStatisticView() {
+        return statisticView;
+    }
+
+    public StartView getStartView() {
+        return startView;
     }
 }

@@ -2,7 +2,7 @@
 
 package server.withoutDB;
 
-import shared.*;
+import shared.DTO.*;
 
 import java.util.ArrayList;
 

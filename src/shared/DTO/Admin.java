@@ -1,6 +1,6 @@
 //Mikkel Storm && Astid Christensen
 
-package shared;
+package shared.DTO;
 
 /**
  * Kilde: Y. Daniel Liang (2015), s. 431

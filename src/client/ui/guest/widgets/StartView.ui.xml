@@ -1,0 +1,6 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <g:Label> Velkommen til Vi Cykler. Herinde kan du tilmelde dig siden, se statistik eller logge ind</g:Label>
+    </g:HTMLPanel>
+</ui:UiBinder>
