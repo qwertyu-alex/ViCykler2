@@ -45,6 +45,8 @@ public class GuestController {
 
         @Override
         public void onClick(ClickEvent event) {
+
+
             if (event.getSource() == content.getGuestView().getLogindBtn()){
                 content.getGuestView().changeView(0);
             } else if (event.getSource() == content.getGuestView().getTilmeldingBtn()){
@@ -53,9 +55,11 @@ public class GuestController {
                 content.getGuestView().changeView(content.getGuestView().getStartView());
             } else if (event.getSource() == content.getGuestView().getStatistiskBtn()){
                 content.getGuestView().changeView(2);
-
 //                Dette kald skal være her for at tabellen viser sine data.
                 participantListDataProvider.refresh();
+                //Skifter til Participant view
+            } else if (event.getSource() == content.getGuestView().getLoginView().getLoginBtn()){
+                content.switchToParticipantView();
             }
         }
     }

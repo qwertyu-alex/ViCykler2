@@ -39,4 +39,36 @@ public class LoginView extends Composite {
 
         HTMLPanel.add(vertPanel);
     }
+
+    public static loginViewUiBinder getOurUiBinder() {
+        return ourUiBinder;
+    }
+
+    public Label getUsername() {
+        return username;
+    }
+
+    public Label getPassword() {
+        return password;
+    }
+
+    public TextBox getUsernameTB() {
+        return usernameTB;
+    }
+
+    public TextBox getPasswordTB() {
+        return passwordTB;
+    }
+
+    public Button getLoginBtn() {
+        return loginBtn;
+    }
+
+    public VerticalPanel getVertPanel() {
+        return vertPanel;
+    }
+
+    public com.google.gwt.user.client.ui.HTMLPanel getHTMLPanel() {
+        return HTMLPanel;
+    }
 }

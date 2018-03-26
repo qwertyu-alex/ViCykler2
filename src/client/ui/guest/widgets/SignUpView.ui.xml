@@ -6,10 +6,18 @@
             <g:TextBox></g:TextBox>
             <g:Label>Name</g:Label>
             <g:TextBox></g:TextBox>
+            <g:Label>Cyklist type</g:Label>
+            <g:ListBox>
+                <g:item value="master">master</g:item>
+                <g:item value="enthusiast">enthusiast</g:item>
+                <g:item value="cruiser">cruiser</g:item>
+                <g:item value="debutant">debutant</g:item>
+            </g:ListBox>
             <g:Label>Password</g:Label>
             <g:PasswordTextBox></g:PasswordTextBox>
             <g:Label>Password again</g:Label>
             <g:PasswordTextBox></g:PasswordTextBox>
+            <g:Button ui:field="signUpBtn">Sign Up</g:Button>
         </g:VerticalPanel>
 
     </g:HTMLPanel>
