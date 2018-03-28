@@ -11,7 +11,8 @@
     <!-- Specify the paths for translatable code                    -->
     <source path='client'/>
     <source path='shared'/>
-    <source path='server'/>
+    <source path='rpc'/>
+    <source path='server/withoutDB'/>
 
     <!-- Specify the app servlets.                   -->
     <servlet path='/ViCyklerService' class='server.ApplicationServiceImpl'/>

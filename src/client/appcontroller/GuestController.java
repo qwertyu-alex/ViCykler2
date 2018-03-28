@@ -5,7 +5,10 @@ import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
+import rpc.ApplicationService;
+import rpc.ApplicationServiceAsync;
 import server.withoutDB.Data;
 import shared.DTO.Participant;
 
@@ -17,13 +20,26 @@ public class GuestController {
     private ListDataProvider<Participant> participantListDataProvider;
     private Data data;
     private ArrayList<Participant> participants;
+    private ApplicationServiceAsync rpcService;
 
 
-    public GuestController(Content content, Data data){
+    public GuestController(Content content, Data data, ApplicationServiceAsync rpcService){
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
         this.data = data;
+        this.rpcService = rpcService;
 
+        rpcService.authorizePerson("Name", "Pass", new AsyncCallback<Boolean>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Err");
+            }
+
+            @Override
+            public void onSuccess(Boolean result) {
+                Window.alert(Boolean.toString(result));
+            }
+        });
 
 
 //        Tilføjer clickhandlers til forskellige elementer på siden

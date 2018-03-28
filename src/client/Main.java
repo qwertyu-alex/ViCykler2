@@ -5,7 +5,10 @@ import client.appcontroller.GuestController;
 import client.appcontroller.ParticipantController;
 import client.ui.Content;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.*;
+import rpc.ApplicationService;
+import rpc.ApplicationServiceAsync;
 import server.withoutDB.Data;
 
 /**
@@ -21,10 +24,16 @@ public class Main implements EntryPoint {
         Content content = new Content();
         Data data = new Data();
 
+        ///--------------///
+        ApplicationServiceAsync rpcService= GWT.create(ApplicationService.class);
 
+//      Laver vores UI:
         RootLayoutPanel.get().add(content);
 
-        new GuestController(content, data);
+
+
+
+        new GuestController(content, data, rpcService);
         new ParticipantController(content, data);
         new AdminController(content, data);
 

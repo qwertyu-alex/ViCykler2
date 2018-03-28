@@ -42,5 +42,6 @@
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="gwt-user (2)" level="project" />
     <orderEntry type="library" name="gwt-user (3)" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.41-bin" level="project" />
   </component>
 </module>
