@@ -1,34 +1,20 @@
 package shared.DTO;//Alexander Van Le && Oliver Lange
 
+import com.google.gwt.user.client.rpc.IsSerializable;
+
+import java.io.Serializable;
+
 /**
  * Kilde: Y. Daniel Liang (2015), s. 431
  */
-public class Participant extends Person {
+public class Participant extends Person implements IsSerializable {
     //Variabler
     private String cyclistType;
-    private Firm firm = null;
-    private Team team = null; // arraylist
 
-
-    //Constructor
-    public Participant(String name, String email, String password, String cyclistType) {
-        super(name, email, password);
-        this.cyclistType = cyclistType;
-
-    }
-
-    //Overloaded contructor
-    public Participant(Participant participant){
-        super(participant.getName(), participant.getEmail(), participant.getPassword());
-        this.cyclistType = participant.getCyclistType();
-        //hvis der er forbundet et hold
-        if (participant.getTeam() != null){
-            this.team = participant.getTeam();
-        }
-        //hvis der er forbundet et firma
-        if (participant.getFirm() != null){
-            this.firm = participant.getFirm();
-        }
+    //Default constructor
+    public Participant(){
+        super("null", "null", "null");
+        cyclistType = "null";
     }
 
     //Getter
@@ -36,35 +22,10 @@ public class Participant extends Person {
         return cyclistType;
     }
 
-    public Team getTeam() {
-        if (team == null){
-            return null;
-        }
-        return team;
-    }
-
-    public Firm getFirm() {
-        if (firm == null){
-            return null;
-        }
-        return firm;
-    }
-
     //Setter
     public void setCyklistType(String cyclistType) {
         this.cyclistType = cyclistType;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
-        if (team != null){
-            team.addParticipant(this);
-            this.firm = team.getFirm();
-        }
 
-    }
-
-    public void setFirm(Firm firm){
-        this.firm = firm;
-    }
 }

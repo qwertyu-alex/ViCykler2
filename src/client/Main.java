@@ -9,7 +9,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.*;
 import rpc.ApplicationService;
 import rpc.ApplicationServiceAsync;
-import server.withoutDB.Data;
+//import server.withoutDB.Data;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>
@@ -22,7 +22,7 @@ public class Main implements EntryPoint {
     public void onModuleLoad() {
         RootPanel.get().clear(true);
         Content content = new Content();
-        Data data = new Data();
+//        Data data = new Data();
 
         ///--------------///
         ApplicationServiceAsync rpcService= GWT.create(ApplicationService.class);
@@ -31,11 +31,9 @@ public class Main implements EntryPoint {
         RootLayoutPanel.get().add(content);
 
 
-
-
-        new GuestController(content, data, rpcService);
-        new ParticipantController(content, data);
-        new AdminController(content, data);
+        new GuestController(content, rpcService);
+        new ParticipantController(content);
+        new AdminController(content);
 
     }
 

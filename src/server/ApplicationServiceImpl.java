@@ -3,6 +3,8 @@ package server;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
 import rpc.ApplicationService;
+import shared.DTO.Participant;
+import shared.DTO.Person;
 
 
 import java.sql.*;
@@ -30,6 +32,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return true;
     }
 
+    /***
+     *
+     * @return The names of every person in the database
+     * @throws Exception
+     */
     @Override
     public String returnPersons() throws Exception {
 
@@ -47,10 +54,45 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return String.join(", ", personNames);
     }
 
+    @Override
+    public ArrayList<Participant> getAllParticipants() throws Exception {
 
-    // Implementation of sample interface method
+        System.out.println("Running: getAllPersons()");
 
-//    static final String DATABASE_URL = "jd";
-//    //Pssword:
-    //Meme_123
+        ArrayList<Participant> participants = new ArrayList<>();
+        int numberOfColums;
+        Participant participant;
+        ResultSet resultSet = null;
+
+        try {
+            PreparedStatement findPersons = connection.prepareStatement("SELECT * FROM persons");
+            resultSet = findPersons.executeQuery();
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            numberOfColums = metaData.getColumnCount();
+
+            System.out.println("Number of colums: " + numberOfColums);
+
+            while(resultSet.next()){
+                if(resultSet.getString("PersonType").equalsIgnoreCase("PARTICIPANT")){
+                    participant = new Participant();
+
+                    participant.setName(resultSet.getString("PersonName"));
+                    participant.setEmail(resultSet.getString("Email"));
+                    participant.setCyklistType(resultSet.getString("CyclistType"));
+
+                    participants.add(participant);
+                }
+            }
+        } catch (SQLException err){
+            err.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+            } catch (Exception err){
+                err.printStackTrace();
+            }
+        }
+        return participants;
+    }
+
 }

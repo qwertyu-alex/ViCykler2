@@ -1,14 +1,20 @@
 package shared.DTO;//Alexander Van Le && Oliver Lange
 
+import com.google.gwt.user.client.rpc.IsSerializable;
+
 import java.util.ArrayList;
 
-public class Firm {
+public class Firm implements IsSerializable{
     private String firmName;
 
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<Team> teamList = new ArrayList<>();
 
-    //Contructor
+    //Default Contructor
+    public Firm(){
+
+    }
+
     public Firm(String firmName) {
 
         //Variable definitioner

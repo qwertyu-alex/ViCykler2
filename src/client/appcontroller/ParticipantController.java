@@ -1,15 +1,15 @@
 package client.appcontroller;
 
 import client.ui.Content;
-import server.withoutDB.Data;
+//import server.withoutDB.Data;
 
 public class ParticipantController {
 
     private Content content;
-    private Data data;
+//    private Data data;
 
-    public ParticipantController(Content content, Data data) {
+    public ParticipantController(Content content) {
         this.content = content;
-        this.data = data;
+//        this.data = data;
     }
 }

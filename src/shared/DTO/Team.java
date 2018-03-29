@@ -1,14 +1,21 @@
 package shared.DTO;//Alexander Van Le && Oliver Lange
 
+import com.google.gwt.user.client.rpc.IsSerializable;
+
 import java.util.ArrayList;
 
-public class Team {
+public class Team implements IsSerializable{
     private String teamName;
     private Firm firm;
-    private TeamCaptain teamCaptain;
 
     private ArrayList <Participant> participants = new ArrayList<>();
 
+
+    //Default constructor
+    public Team(){
+        this.teamName = "null";
+        this.firm = null;
+    }
 
     //Constructor
     public Team(String teamName, Firm firm){
@@ -36,22 +43,9 @@ public class Team {
         return participants;
     }
 
-    public TeamCaptain getTeamCaptain() {
-        return teamCaptain;
-    }
-
     //Setter metoder
     public void setTeamName(String teamName){
         this.teamName = teamName;
-    }
-
-    public void setTeamCaptain(TeamCaptain teamCaptain) {
-        this.teamCaptain = teamCaptain;
-        if (teamCaptain != null){
-            if (teamCaptain.getTeam() != (this)){
-                teamCaptain.setTeam(this);
-            }
-        }
     }
 
     //Remover

@@ -9,7 +9,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
 import rpc.ApplicationService;
 import rpc.ApplicationServiceAsync;
-import server.withoutDB.Data;
+//import server.withoutDB.Data;
 import shared.DTO.Participant;
 
 import java.util.ArrayList;
@@ -18,40 +18,37 @@ public class GuestController {
 
     private Content content;
     private ListDataProvider<Participant> participantListDataProvider;
-    private Data data;
+//    private Data data;
     private ArrayList<Participant> participants;
     private ApplicationServiceAsync rpcService;
 
 
-    public GuestController(Content content, Data data, ApplicationServiceAsync rpcService){
+    public GuestController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
-        this.data = data;
+//        this.data = data;
         this.rpcService = rpcService;
 
-        rpcService.authorizePerson("Name", "Pass", new AsyncCallback<Boolean>() {
+        //Test. Slet inden roll-out
+        rpcService.returnPersons(new AsyncCallback<String>() {
             @Override
             public void onFailure(Throwable caught) {
-                Window.alert("Err");
+                Window.alert(caught.getMessage());
             }
 
             @Override
-            public void onSuccess(Boolean result) {
-                Window.alert(Boolean.toString(result));
+            public void onSuccess(String result) {
+                Window.alert(result);
             }
         });
 
-
 //        Tilføjer clickhandlers til forskellige elementer på siden
-        content.getGuestView().addClickHandlers(new GuestClickHandlers());
-        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
+        addClickHandlers();
+
+
 
 //        Opretter tabellen
-        content.getGuestView().getStatisticView().initTable(participantListDataProvider);
-        participantListDataProvider.getList().addAll(data.getParticipants());
-
-//        Window.alert(participantListDataProvider.getList().get(0).getName());
-
+        createTable();
     }
 
     /**
@@ -81,10 +78,31 @@ public class GuestController {
     }
 
     class ShowInfoHandler implements ActionCell.Delegate<Participant>{
-
         @Override
         public void execute(Participant object) {
             Window.alert("Hello");
         }
+    }
+
+    private void addClickHandlers(){
+        content.getGuestView().addClickHandlers(new GuestClickHandlers());
+        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
+    }
+
+    private void createTable(){
+
+        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert(caught.getMessage());
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Participant> result) {
+                content.getGuestView().getStatisticView().initTable(participantListDataProvider);
+                participantListDataProvider.getList().addAll(result);
+            }
+        });
+
     }
 }
