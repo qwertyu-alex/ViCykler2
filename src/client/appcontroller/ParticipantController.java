@@ -1,15 +1,16 @@
 package client.appcontroller;
 
 import client.ui.Content;
-//import server.withoutDB.Data;
+import shared.DTO.Participant;
 
 public class ParticipantController {
 
     private Content content;
-//    private Data data;
+    private Participant currentParticipant;
 
-    public ParticipantController(Content content) {
+    public ParticipantController(Content content, Participant currentParticipant) {
         this.content = content;
-//        this.data = data;
+        this.currentParticipant = currentParticipant;
+
     }
 }

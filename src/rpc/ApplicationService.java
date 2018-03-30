@@ -9,8 +9,9 @@ import java.util.ArrayList;
 
 @RemoteServiceRelativePath("ViCyklerService")
 public interface ApplicationService extends RemoteService {
-    boolean authorizePerson(String username, String password) throws Exception;
+    Person authorizePerson(String email, String password) throws Exception;
     String returnPersons() throws Exception;
     ArrayList<Participant> getAllParticipants() throws Exception;
+    boolean createParticipant(String email, String name, String cyclistType, String password) throws Exception;
 
 }

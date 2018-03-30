@@ -6,6 +6,7 @@ import client.ui.Content;
 public class AdminController {
 
     private Content content;
+
 //    private Data data;
 
     public AdminController(Content content){

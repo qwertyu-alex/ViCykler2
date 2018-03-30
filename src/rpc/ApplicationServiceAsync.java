@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public interface ApplicationServiceAsync {
 
-    void authorizePerson(String username, String password, AsyncCallback<Boolean> async);
+    void authorizePerson(String email, String password, AsyncCallback<Person> async);
 
     void returnPersons(AsyncCallback<String> async);
 
     void getAllParticipants(AsyncCallback<ArrayList<Participant>> async);
+
+    void createParticipant(String email, String name, String cyclistType, String password, AsyncCallback<Boolean> async);
 }

@@ -1,8 +1,6 @@
 package client;
 
-import client.appcontroller.AdminController;
-import client.appcontroller.GuestController;
-import client.appcontroller.ParticipantController;
+import client.appcontroller.*;
 import client.ui.Content;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -30,10 +28,7 @@ public class Main implements EntryPoint {
 //      Laver vores UI:
         RootLayoutPanel.get().add(content);
 
-
         new GuestController(content, rpcService);
-        new ParticipantController(content);
-        new AdminController(content);
 
     }
 

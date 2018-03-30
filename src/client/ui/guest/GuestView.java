@@ -61,7 +61,6 @@ public class GuestView extends Composite {
         statistiskBtn.addClickHandler(clickHandler);
         logindBtn.addClickHandler(clickHandler);
         logoImg.addClickHandler(clickHandler);
-        loginView.getLoginBtn().addClickHandler(clickHandler);
     }
 
     public Button getTilmeldingBtn() {

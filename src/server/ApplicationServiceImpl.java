@@ -9,6 +9,7 @@ import shared.DTO.Person;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.regex.MatchResult;
 
 public class ApplicationServiceImpl extends RemoteServiceServlet implements ApplicationService {
 
@@ -28,8 +29,41 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public boolean authorizePerson(String username, String password) throws Exception {
-        return true;
+    public Person authorizePerson(String email, String password) throws Exception {
+        Participant foundPerson = null;
+
+        PreparedStatement findMatch = connection.prepareStatement("SELECT * FROM persons WHERE Email LIKE ? AND Password LIKE ?");
+        findMatch.setString(1, email);
+        findMatch.setString(2, password);
+
+        try {
+            ResultSet resultSet = findMatch.executeQuery();
+
+            if (resultSet.next()){
+                if (resultSet.getString("PersonType").equalsIgnoreCase("PARTICIPANT")){
+                    Participant foundParticipant = new Participant();
+                    foundParticipant.setName(resultSet.getString("PersonName"));
+                    foundParticipant.setEmail(resultSet.getString("Email"));
+                    foundParticipant.setCyclistType(resultSet.getString("CyclistType"));
+                    foundParticipant.setTeamID(resultSet.getString("TeamID"));
+                    foundParticipant.setFirmName(resultSet.getString("FirmName"));
+
+                    foundPerson = foundParticipant;
+                }
+            }
+
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+
+
+
+
+
+
+        return foundPerson;
     }
 
     /***
@@ -76,9 +110,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 if(resultSet.getString("PersonType").equalsIgnoreCase("PARTICIPANT")){
                     participant = new Participant();
 
-                    participant.setName(resultSet.getString("PersonName"));
-                    participant.setEmail(resultSet.getString("Email"));
-                    participant.setCyklistType(resultSet.getString("CyclistType"));
+                    participant.setName(resultSet.getString("PersonName").toLowerCase());
+                    participant.setEmail(resultSet.getString("Email").toLowerCase());
+                    participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
 
                     participants.add(participant);
                 }
@@ -93,6 +127,51 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             }
         }
         return participants;
+    }
+
+    @Override
+    public boolean createParticipant(String email, String name, String cyclistType, String password) throws Exception {
+        ArrayList<String> emailList = new ArrayList<>();
+        ResultSet emailsResultSet = null;
+
+        try {
+
+            PreparedStatement emailsPreparedStatement = connection.prepareStatement("SELECT Email FROM persons WHERE Email LIKE ?");
+            emailsPreparedStatement.setString(1, Character.toString(email.charAt(0)) + "%");
+            emailsResultSet = emailsPreparedStatement.executeQuery();
+
+            while(emailsResultSet.next()){
+                emailList.add(emailsResultSet.getString("Email"));
+            }
+
+            for (String emailName: emailList) {
+                if (emailName.equalsIgnoreCase(email)){
+                    return false;
+                }
+            }
+
+            PreparedStatement createParticipant = connection.prepareStatement("INSERT INTO persons(Email, PersonName, CyclistType, Password, PersonType) VALUES (?,?,?,?, 'PARTICIPANT')");
+            createParticipant.setString(1, email);
+            createParticipant.setString(2, name);
+            createParticipant.setString(3, cyclistType);
+            createParticipant.setString(4, password);
+
+            createParticipant.executeUpdate();
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        } finally {
+            try {
+                emailsResultSet.close();
+            } catch (Exception err){
+                err.printStackTrace();
+            }
+        }
+        return true;
+    }
+
+    private Person findPerson() {
+        return null;
     }
 
 }
