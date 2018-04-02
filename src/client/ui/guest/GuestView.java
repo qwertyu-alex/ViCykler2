@@ -2,8 +2,9 @@ package client.ui.guest;
 
 import client.ui.guest.widgets.LoginView;
 import client.ui.guest.widgets.StartView;
-import client.ui.guest.widgets.StatisticView;
+
 import client.ui.guest.widgets.SignUpView;
+import client.ui.sharedWidgets.StatisticView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;

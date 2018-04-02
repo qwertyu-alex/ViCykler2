@@ -220,6 +220,8 @@ public class GuestController {
     }
 
     private void createTable(){
+
+
         rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
             @Override
             public void onFailure(Throwable caught) {
@@ -233,9 +235,4 @@ public class GuestController {
             }
         });
     }
-
-//    private void setParticipantController(ParticipantController participantController){
-//        this.participantController = participantController;
-//    }
-
 }
