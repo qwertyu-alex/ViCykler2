@@ -87,13 +87,15 @@ public class ParticipantController {
             @Override
             public void onSuccess(String result) {
                 if(result != null){
-                    content.getParticipantView().getMyProfileView().getNameLabel().setText(result);
+                    content.getParticipantView().getMyProfileView().getNameLabel().setText(
+                            "Dit navn: " + result);
                 }
             }
         });
 
         //Sætter email
-        content.getParticipantView().getMyProfileView().getEmailLabel().setText(currentParticipant.getEmail());
+        content.getParticipantView().getMyProfileView().getEmailLabel().setText(
+                "Email: " + currentParticipant.getEmail());
 
         rpcService.getParticipantCyclistType(currentParticipant.getEmail(), new AsyncCallback<String>() {
             @Override
@@ -103,7 +105,34 @@ public class ParticipantController {
 
             @Override
             public void onSuccess(String result) {
+                content.getParticipantView().getMyProfileView().getCyclistTypeLabel().setText(
+                        "Din cyclist-type: " + result);
+            }
+        });
 
+        rpcService.getParticipantFirmName(currentParticipant.getEmail(), new AsyncCallback<String>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(String result) {
+                content.getParticipantView().getMyProfileView().getFirmLabel().setText(
+                        "Firma: " + result);
+            }
+        });
+
+        rpcService.getParticipantTeamName(currentParticipant.getEmail(), new AsyncCallback<String>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(String result) {
+                content.getParticipantView().getMyProfileView().getTeamLabel().setText(
+                        "Dit hold " + result);
             }
         });
 

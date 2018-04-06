@@ -204,17 +204,46 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String getParticipantCyclistType(String email) throws Exception {
-        return null;
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT CyclistType FROM persons WHERE Email LIKE ?");
+        preparedStatement.setString(1, email);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+
+        return resultSet.getString("CyclistType");
     }
 
     @Override
     public String getParticipantFirmName(String email) throws Exception {
-        return null;
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT FirmName FROM persons WHERE Email LIKE ?");
+        preparedStatement.setString(1, email);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+
+        return resultSet.getString("FirmName");
     }
 
     @Override
     public String getParticipantTeamName(String email) throws Exception {
-        return null;
+
+        PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM persons WHERE Email = ?");
+        getTeamID.setString(1, email);
+        ResultSet getTeamIDResult = getTeamID.executeQuery();
+        getTeamIDResult.next();
+        int teamID = getTeamIDResult.getInt("TeamID");
+
+
+        PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT teams.TeamName, persons.PersonName FROM teams INNER JOIN persons ON teams.TeamID WHERE teams.TeamID = ? AND persons.Email = ?");
+        preparedStatement.setInt(1, teamID);
+        preparedStatement.setString(2, email);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+
+        System.out.println("TeamID: " + teamID);
+        return resultSet.getString("TeamName");
     }
 
 
