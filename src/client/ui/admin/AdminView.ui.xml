@@ -34,9 +34,9 @@
 
             <g:center size="20">
 
-                    <g:HTMLPanel ui:field="centerPanel" styleName="center centerPanel" width="100%" height="100%">
-                        <g:DeckLayoutPanel ui:field="centerDeck" width="100%" height="100%"></g:DeckLayoutPanel>
-                    </g:HTMLPanel>
+                <g:HTMLPanel ui:field="centerPanel" styleName="center centerPanel" width="100%" height="100%">
+                    <g:DeckLayoutPanel ui:field="centerDeck" width="100%" height="100%"></g:DeckLayoutPanel>
+                </g:HTMLPanel>
 
             </g:center>
 

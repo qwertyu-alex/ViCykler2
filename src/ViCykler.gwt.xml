@@ -1,11 +1,20 @@
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.0//EN"
         "http://gwtproject.org/doctype/2.8.0/gwt-module.dtd">
-<module>
+<module rename-to="ViCykler">
 
+    <!-- Inherit the core Web Toolkit stuff.                  -->
     <inherits name='com.google.gwt.user.User'/>
 
-    <entry-point class='client.ViCykler'/>
+    <!-- Specify the app entry point class.                   -->
+    <entry-point class='client.Main'/>
 
-    <source path="client"/>
-    <source path="shared"/>
+    <!-- Specify the paths for translatable code                    -->
+    <source path='client'/>
+    <source path='shared'/>
+    <source path='rpc'/>
+    <source path='server/withoutDB'/>
+
+    <!-- Specify the app servlets.                   -->
+    <servlet path='/ViCyklerService' class='server.ApplicationServiceImpl'/>
+
 </module>
