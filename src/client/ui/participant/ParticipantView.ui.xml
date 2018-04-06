@@ -15,9 +15,20 @@
                                 <g:Button ui:field="myProfileBtn" >Min profil</g:Button>
                             </g:HorizontalPanel>
 
+
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
                                 <g:Button ui:field="statistiskBtn">Statistik</g:Button>
+                            </g:HorizontalPanel>
+
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox hidden"
+                                                horizontalAlignment="ALIGN_CENTER" ui:field="createTeamBox">
+                                <g:Button ui:field="createTeamBtn" styleName="">Opret Hold</g:Button>
+                            </g:HorizontalPanel>
+
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox hidden"
+                                                horizontalAlignment="ALIGN_CENTER" ui:field="myTeamBox">
+                                <g:Button ui:field="myTeamBtn" styleName="">Mit Hold</g:Button>
                             </g:HorizontalPanel>
 
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"

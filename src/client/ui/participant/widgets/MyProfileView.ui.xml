@@ -1,10 +1,10 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
-        <g:Label>usernameLabel</g:Label>
-        <g:Label>emailLabel</g:Label>
-        <g:Label>cyclistTypeLabel</g:Label>
-        <g:Label>firmLabel</g:Label>
-        <g:Label>teamLabel</g:Label>
+        <g:Label ui:field="nameLabel">nameLabel</g:Label>
+        <g:Label ui:field="emailLabel">emailLabel</g:Label>
+        <g:Label ui:field="cyclistTypeLabel">cyclistTypeLabel</g:Label>
+        <g:Label ui:field="firmLabel">firmLabel</g:Label>
+        <g:Label ui:field="teamLabel">teamLabel</g:Label>
     </g:HTMLPanel>
 </ui:UiBinder>

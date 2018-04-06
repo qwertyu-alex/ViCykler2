@@ -24,9 +24,6 @@ public class GuestController {
 //    private Data data;
     private ArrayList<Participant> participants;
     private ApplicationServiceAsync rpcService;
-    private AdminController adminController;
-    private ParticipantController participantController;
-
 
     public GuestController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
@@ -80,14 +77,12 @@ public class GuestController {
 
                     @Override
                     public void onSuccess(Person result) {
-
-                        Window.alert(Boolean.toString(result instanceof  Participant));
                         if (result == null){
                             content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
                         }
                         if (result instanceof  Participant){
-                            participantController = new ParticipantController(content, (Participant) result);
                             content.switchToParticipantView();
+                            new ParticipantController(content, (Participant) result, rpcService);
                         }
                     }
                 });

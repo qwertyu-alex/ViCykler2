@@ -12,14 +12,13 @@ public class Participant extends Person implements IsSerializable {
     private String cyclistType;
     private String firmName;
     private String teamID;
+    private String personType;
 
 
     //Default constructor
     public Participant(){
         super("null", "null", "null");
-        cyclistType = "null";
-        firmName = "null";
-        teamID = "null";
+        personType = "Participant";
     }
 
     //Getter
@@ -46,5 +45,13 @@ public class Participant extends Person implements IsSerializable {
 
     public String getTeamID() {
         return teamID;
+    }
+
+    public String getPersonType() {
+        return personType;
+    }
+
+    public void setPersonType(String personType) {
+        this.personType = personType;
     }
 }
