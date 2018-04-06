@@ -11,6 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
 import rpc.ApplicationServiceAsync;
 //import server.withoutDB.Data;
+import shared.DTO.Admin;
 import shared.DTO.Participant;
 import shared.DTO.Person;
 
@@ -83,6 +84,11 @@ public class GuestController {
                         if (result instanceof  Participant){
                             content.switchToParticipantView();
                             new ParticipantController(content, (Participant) result, rpcService);
+                        }
+
+                        if (result instanceof Admin){
+                            content.switchToAdminView();
+                            new AdminController(content, rpcService);
                         }
                     }
                 });

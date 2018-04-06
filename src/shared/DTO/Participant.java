@@ -11,8 +11,9 @@ public class Participant extends Person implements IsSerializable {
     //Variabler
     private String cyclistType;
     private String firmName;
-    private String teamID;
+    private int teamID;
     private String personType;
+    private String teamName;
 
 
     //Default constructor
@@ -35,7 +36,7 @@ public class Participant extends Person implements IsSerializable {
         this.firmName = firmName;
     }
 
-    public void setTeamID(String teamID) {
+    public void setTeamID(int teamID) {
         this.teamID = teamID;
     }
 
@@ -43,7 +44,7 @@ public class Participant extends Person implements IsSerializable {
         return firmName;
     }
 
-    public String getTeamID() {
+    public int getTeamID() {
         return teamID;
     }
 
@@ -53,5 +54,13 @@ public class Participant extends Person implements IsSerializable {
 
     public void setPersonType(String personType) {
         this.personType = personType;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

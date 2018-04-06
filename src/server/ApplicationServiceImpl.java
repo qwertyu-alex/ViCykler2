@@ -4,6 +4,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
 import com.sun.org.apache.regexp.internal.REUtil;
 import rpc.ApplicationService;
+import shared.DTO.Admin;
 import shared.DTO.Participant;
 import shared.DTO.Person;
 
@@ -18,8 +19,9 @@ import java.util.regex.MatchResult;
 public class ApplicationServiceImpl extends RemoteServiceServlet implements ApplicationService {
 
     private final String DATABASE_URL = "jdbc:mysql://localhost:3306/vicykler";
-    private final String USERNAME = "test";
-    private final String PASSWORD = "1234";
+    private final String USERNAME = "dummy";
+    private final String PASSWORD = "Meme_1234";
+    //Meme_1234
     private Connection connection;
 
     public ApplicationServiceImpl(){
@@ -35,7 +37,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public Person authorizePerson(String email, String password) throws Exception {
-        Participant foundPerson = null;
+        Person foundPerson = null;
 
         PreparedStatement findMatch = connection.prepareStatement("SELECT * FROM persons WHERE Email LIKE ? AND Password LIKE ?");
         findMatch.setString(1, email);
@@ -50,10 +52,12 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     foundParticipant.setName(resultSet.getString("PersonName"));
                     foundParticipant.setEmail(resultSet.getString("Email"));
                     foundParticipant.setCyclistType(resultSet.getString("CyclistType"));
-                    foundParticipant.setTeamID(resultSet.getString("TeamID"));
+                    foundParticipant.setTeamID(resultSet.getInt("TeamID"));
                     foundParticipant.setFirmName(resultSet.getString("FirmName"));
 
                     foundPerson = foundParticipant;
+                } else if (resultSet.getString("PersonType").equalsIgnoreCase("ADMIN")){
+                    foundPerson = new Admin();
                 }
             }
 
@@ -97,7 +101,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         ResultSet resultSet = null;
 
         try {
-            PreparedStatement findPersons = connection.prepareStatement("SELECT * FROM persons");
+            PreparedStatement findPersons = connection.prepareStatement("SELECT * FROM persons INNER JOIN teams ON persons.TeamID = teams.TeamID");
             resultSet = findPersons.executeQuery();
             ResultSetMetaData metaData = resultSet.getMetaData();
             numberOfColums = metaData.getColumnCount();
@@ -105,12 +109,17 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             System.out.println("Number of colums: " + numberOfColums);
 
             while(resultSet.next()){
-                if(resultSet.getString("PersonType").equalsIgnoreCase("PARTICIPANT")){
+                if(!resultSet.getString("PersonType").equalsIgnoreCase("ADMIN")){
                     participant = new Participant();
 
                     participant.setName(resultSet.getString("PersonName").toLowerCase());
                     participant.setEmail(resultSet.getString("Email").toLowerCase());
                     participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
+                    participant.setPersonType(resultSet.getString("PersonType"));
+                    participant.setFirmName(resultSet.getString("FirmName"));
+                    participant.setTeamID(resultSet.getInt("TeamID"));
+                    participant.setTeamName(resultSet.getString("TeamName"));
+
 
                     participants.add(participant);
                 }
@@ -124,6 +133,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 err.printStackTrace();
             }
         }
+
+        System.out.println(participants.size());
         return participants;
     }
 

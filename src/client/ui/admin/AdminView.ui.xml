@@ -12,17 +12,21 @@
                         <g:HorizontalPanel horizontalAlignment="ALIGN_DEFAULT" verticalAlignment="ALIGN_BOTTOM" height="100%">
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
-                                <g:Button ui:field="tilmeldingBtn" >Tilmelding</g:Button>
+                                <g:Button ui:field="participantsBtn" >Deltagere</g:Button>
                             </g:HorizontalPanel>
 
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
-                                <g:Button ui:field="statistiskBtn">Statistik</g:Button>
+                                <g:Button ui:field="teamsBtn">Hold</g:Button>
                             </g:HorizontalPanel>
 
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
-                                <g:Button ui:field="logindBtn">Log ind</g:Button>
+                                <g:Button ui:field="firmsBtn">Firmaer</g:Button>
+                            </g:HorizontalPanel>
+                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
+                                                horizontalAlignment="ALIGN_CENTER" >
+                                <g:Button ui:field="logoutBtn">Log ud</g:Button>
                             </g:HorizontalPanel>
 
                         </g:HorizontalPanel>

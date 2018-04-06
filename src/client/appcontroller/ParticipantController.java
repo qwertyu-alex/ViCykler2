@@ -34,7 +34,7 @@ public class ParticipantController {
 
     public void checkParticipantTeam(){
 
-        if (currentParticipant.getTeamID() == null)
+        if (currentParticipant.getTeamID() == 0)
             content.getParticipantView().getCreateTeamBox().removeStyleName("hidden");
     }
 

@@ -26,6 +26,8 @@ public class Firm implements IsSerializable{
         teamList.add(team);
     }
 
+
+
     //Setter
     public void setFirmName(String firmName) {
         this.firmName = firmName;
