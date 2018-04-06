@@ -80,8 +80,8 @@
       <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="246" column="47" lean-forward="true" selection-start-line="246" selection-start-column="47" selection-end-line="246" selection-end-column="47" />
+            <state relative-caret-position="516">
+              <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
                 <marker date="1523012295812" expanded="true" signature="1293:1353" ph="SELECT * FRO... persons" />
                 <marker date="1523012295812" expanded="true" signature="2621:2651" ph="SELECT Perso... persons" />
@@ -1103,11 +1103,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523012435338</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Er i gang med at lave &quot;GuestStatisticView&quot;, har blot fået tilføjet den i ApplicationService og ApplicationServiceAsync samt er i gang med at lave metoden til denne i ApplicationServiceImpl.">
+      <created>1523012537450</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1523012537450</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71472000" />
+    <option name="totallyTimeSpent" value="71624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1614,8 +1621,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="246" column="47" lean-forward="true" selection-start-line="246" selection-start-column="47" selection-end-line="246" selection-end-column="47" />
+        <state relative-caret-position="516">
+          <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
           <folding>
             <marker date="1523012295812" expanded="true" signature="1293:1353" ph="SELECT * FRO... persons" />
             <marker date="1523012295812" expanded="true" signature="2621:2651" ph="SELECT Perso... persons" />
