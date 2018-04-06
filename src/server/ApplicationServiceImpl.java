@@ -18,13 +18,14 @@ import java.util.regex.MatchResult;
 public class ApplicationServiceImpl extends RemoteServiceServlet implements ApplicationService {
 
     private final String DATABASE_URL = "jdbc:mysql://localhost:3306/vicykler";
-    private final String USERNAME = "dummy";
-    private final String PASSWORD = "Meme_123";
+    private final String USERNAME = "test";
+    private final String PASSWORD = "1234";
     private Connection connection;
 
     public ApplicationServiceImpl(){
         try {
              connection = (Connection) DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
+            System.out.println("Successful");
         } catch (SQLException err){
             err.printStackTrace();
             //https://stackoverflow.com/questions/2434592/difference-in-system-exit0-system-exit-1-system-exit1-in-java
@@ -244,6 +245,16 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         System.out.println("TeamID: " + teamID);
         return resultSet.getString("TeamName");
+    }
+
+    @Override
+    public String getGuestStatisticView() throws Exception {
+
+        PreparedStatement statisticForGuest = connection.prepareStatement("SELECT persons.PersonName, persons.FirmName, teams.TeamName " +
+                "FROM persons INNER JOIN teams ON teams.TeamID = persons.TeamID");
+
+
+        return null;
     }
 
 

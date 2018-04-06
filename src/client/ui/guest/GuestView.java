@@ -1,5 +1,6 @@
 package client.ui.guest;
 
+import client.ui.guest.widgets.GuestStatisticView;
 import client.ui.guest.widgets.LoginView;
 import client.ui.guest.widgets.StartView;
 
@@ -34,6 +35,7 @@ public class GuestView extends Composite {
     private StatisticView statisticView;
     private SignUpView signUpView;
     private StartView startView;
+    private GuestStatisticView guestStatisticView;
 
 
     public GuestView() {
@@ -43,6 +45,7 @@ public class GuestView extends Composite {
         signUpView = new SignUpView();
         statisticView = new StatisticView();
         startView = new StartView();
+        guestStatisticView = new GuestStatisticView();
 
 
 //        Add DeckLayoutPanel to centerPanel
@@ -53,6 +56,7 @@ public class GuestView extends Composite {
         centerDeck.add(signUpView);
         centerDeck.add(statisticView);
         centerDeck.add(startView);
+        centerDeck.add(guestStatisticView);
 
         centerDeck.showWidget(startView);
     }
@@ -103,5 +107,9 @@ public class GuestView extends Composite {
 
     public StartView getStartView() {
         return startView;
+    }
+
+    public GuestStatisticView getGuestStatisticView() {
+        return guestStatisticView;
     }
 }

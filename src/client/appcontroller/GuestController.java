@@ -54,7 +54,7 @@ public class GuestController {
             } else if (event.getSource() == content.getGuestView().getLogoImg()){
                 content.getGuestView().changeView(content.getGuestView().getStartView());
             } else if (event.getSource() == content.getGuestView().getStatistiskBtn()){
-                content.getGuestView().changeView(2);
+                content.getGuestView().changeView(content.getGuestView().getGuestStatisticView());
 //                Dette kald skal være her for at tabellen viser sine data.
                 participantListDataProvider.refresh();
                 //Skifter til Participant view

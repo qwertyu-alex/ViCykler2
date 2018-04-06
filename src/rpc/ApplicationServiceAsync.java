@@ -25,4 +25,6 @@ public interface ApplicationServiceAsync {
     void getParticipantFirmName(String email, AsyncCallback<String> async);
 
     void getParticipantTeamName(String email, AsyncCallback<String> async);
+
+    void getGuestStatisticView(AsyncCallback<String> async);
 }

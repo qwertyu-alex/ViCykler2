@@ -19,4 +19,6 @@ public interface ApplicationService extends RemoteService {
     String getParticipantCyclistType(String email) throws Exception;
     String getParticipantFirmName(String email) throws Exception;
     String getParticipantTeamName(String email) throws Exception;
+
+    String getGuestStatisticView() throws Exception;
 }
