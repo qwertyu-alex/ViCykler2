@@ -2,6 +2,7 @@ package server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
+import com.sun.org.apache.regexp.internal.REUtil;
 import rpc.ApplicationService;
 import shared.DTO.Participant;
 import shared.DTO.Person;
@@ -11,6 +12,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.regex.MatchResult;
 
+/**
+ * DAO
+ */
 public class ApplicationServiceImpl extends RemoteServiceServlet implements ApplicationService {
 
     private final String DATABASE_URL = "jdbc:mysql://localhost:3306/vicykler";
@@ -56,13 +60,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         } catch (SQLException err){
             err.printStackTrace();
         }
-
-
-
-
-
-
-
         return foundPerson;
     }
 
@@ -170,8 +167,55 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return true;
     }
 
-    private Person findPerson() {
+    @Override
+    public boolean createTeam(String name, Participant teamCaptain) throws Exception {
+
+        try {
+            PreparedStatement createTeam = connection.prepareStatement("INSERT INTO teams(TeamName) VALUES (?)");
+            PreparedStatement findParticipant = connection.prepareStatement("UPDATE persons SET PersonType = 'TEAMCAPTAIN' WHERE Email LIKE ?");
+
+
+            createTeam.setString(1, name);
+            findParticipant.setString(1, teamCaptain.getEmail());
+
+            createTeam.executeUpdate();
+            findParticipant.executeUpdate();
+
+            return true;
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @Override
+    public String getParticipantName(String email) throws Exception {
+
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT PersonName FROM persons WHERE Email LIKE ?");
+        preparedStatement.setString(1, email);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+
+        return resultSet.getString("PersonName");
+    }
+
+    @Override
+    public String getParticipantCyclistType(String email) throws Exception {
         return null;
     }
+
+    @Override
+    public String getParticipantFirmName(String email) throws Exception {
+        return null;
+    }
+
+    @Override
+    public String getParticipantTeamName(String email) throws Exception {
+        return null;
+    }
+
 
 }

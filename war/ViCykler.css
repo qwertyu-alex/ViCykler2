@@ -47,8 +47,8 @@ body {
 }
 
 button{
-    background: none;
     color: inherit;
+    background-color: lightskyblue;
     border: none;
     padding: 0;
     font: inherit;
@@ -70,4 +70,8 @@ button:hover{
 
 button:active{
     border: none;
+}
+
+.hidden {
+    display: none;
 }

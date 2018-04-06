@@ -22,7 +22,8 @@ public class Main implements EntryPoint {
         Content content = new Content();
 //        Data data = new Data();
 
-        ///--------------///
+        ///Proxy klasse, som ligger på serveren andet sted. Denne linje kører koden på serveren og ikke klienten,
+        // men den gør det muligt for klienten at kunne benytte interfacene fra rpc modulet/
         ApplicationServiceAsync rpcService= GWT.create(ApplicationService.class);
 
 //      Laver vores UI:

@@ -29,7 +29,7 @@ public class LoginView extends Composite {
         email = new Label("email");
         password = new Label("Password");
         usernameTB = new TextBox();
-        passwordTB = new TextBox();
+        passwordTB = new PasswordTextBox();
         loginBtn = new Button("Login");
         errMessageLabel = new Label();
 
