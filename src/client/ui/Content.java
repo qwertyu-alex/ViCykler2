@@ -55,4 +55,16 @@ public class Content extends Composite{
     public ParticipantView getParticipantView() {
         return participantView;
     }
+
+    public void setAdminView(AdminView adminView) {
+        this.adminView = adminView;
+    }
+
+    public void setParticipantView(ParticipantView participantView) {
+        this.participantView = participantView;
+    }
+
+    public DeckLayoutPanel getMainDeck() {
+        return mainDeck;
+    }
 }

@@ -27,4 +27,8 @@ public interface ApplicationServiceAsync {
     void getParticipantTeamName(String email, AsyncCallback<String> async);
 
     void getGuestStatisticView(AsyncCallback<String> async);
+
+    void getParticipantPassword(String email, AsyncCallback<String> async);
+
+    void changeParticipantInfo(Participant currentParticipant, AsyncCallback<Boolean> async);
 }

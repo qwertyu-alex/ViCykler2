@@ -1,5 +1,6 @@
 package client.ui.admin;
 
+import client.ui.admin.widgets.ChangeParticipantView;
 import client.ui.admin.widgets.ShowFirmsView;
 import client.ui.admin.widgets.ShowParticipantsView;
 import client.ui.admin.widgets.ShowTeamsView;
@@ -22,6 +23,7 @@ public class AdminView extends Composite {
     ShowParticipantsView showParticipantsView;
     ShowFirmsView showFirmsView;
     ShowTeamsView showTeamsView;
+    ChangeParticipantView changeParticipantView;
 
     private static AdminViewUiBinder ourUiBinder = GWT.create(AdminViewUiBinder.class);
 
@@ -30,10 +32,12 @@ public class AdminView extends Composite {
         showParticipantsView = new ShowParticipantsView();
         showFirmsView = new ShowFirmsView();
         showTeamsView = new ShowTeamsView();
+        changeParticipantView = new ChangeParticipantView();
 
         centerDeck.add(showParticipantsView);
         centerDeck.add(showFirmsView);
         centerDeck.add(showTeamsView);
+        centerDeck.add(changeParticipantView);
     }
 
     public void addClickHandlers(ClickHandler clickHandler){
@@ -77,5 +81,9 @@ public class AdminView extends Composite {
 
     public ShowTeamsView getShowTeamsView() {
         return showTeamsView;
+    }
+
+    public ChangeParticipantView getChangeParticipantView() {
+        return changeParticipantView;
     }
 }

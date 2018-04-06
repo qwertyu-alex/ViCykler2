@@ -259,12 +259,50 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
+    public String getParticipantPassword(String email) throws Exception {
+        PreparedStatement getPassword = connection.prepareStatement("SELECT Password FROM persons WHERE Email = ?");
+        getPassword.setString(1, email);
+        ResultSet resultSet = getPassword.executeQuery();
+        resultSet.next();
+        return resultSet.getString("Password");
+    }
+
+    @Override
+    public boolean changeParticipantInfo(Participant currentParticipant) throws Exception {
+
+        try {
+            PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
+            getTeamID.setString(1, currentParticipant.getTeamName());
+            ResultSet getTeamIDRes = getTeamID.executeQuery();
+            getTeamIDRes.next();
+            int teamID = getTeamIDRes.getInt("TeamID");
+
+
+            PreparedStatement updateParticipant = connection.prepareStatement(
+                    "UPDATE persons SET PersonName = ? AND Email = ? AND  " +
+                            "Password = ? AND PersonType = ? AND CyclistType = ? AND FirmName = ? AND TeamID = ?");
+
+            updateParticipant.setString(1,currentParticipant.getName());
+            updateParticipant.setString(2,currentParticipant.getEmail());
+            updateParticipant.setString(3,currentParticipant.getPassword());
+            updateParticipant.setString(4,currentParticipant.getPersonType());
+            updateParticipant.setString(5,currentParticipant.getCyclistType());
+            updateParticipant.setString(6,currentParticipant.getFirmName());
+            updateParticipant.setInt(7,teamID);
+
+            updateParticipant.executeUpdate();
+            return true;
+        } catch (SQLException err){
+            err.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
     public String getGuestStatisticView() throws Exception {
 
         PreparedStatement statisticForGuest = connection.prepareStatement("SELECT persons.PersonName, persons.FirmName, teams.TeamName " +
                 "FROM persons INNER JOIN teams ON teams.TeamID = persons.TeamID");
-
-
         return null;
     }
 
