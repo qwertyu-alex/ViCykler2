@@ -9,9 +9,9 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
-import rpc.ApplicationService;
 import rpc.ApplicationServiceAsync;
 import shared.DTO.Participant;
+import shared.DTO.Team;
 
 import java.util.ArrayList;
 //import server.withoutDB.Data;
@@ -21,19 +21,14 @@ public class AdminController {
     private Content content;
     private ApplicationServiceAsync rpcService;
     private Participant currentParticipant;
+    private Team currentTeam;
     private AdminView adminView;
 
-//    private Data data;
 
     public AdminController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
         this.rpcService = rpcService;
-//        this.data = data;
-
-
-
         addClickhandlers();
-        createParticipantsTable();
     }
 
     class AdminClickHandler implements ClickHandler{
@@ -41,8 +36,10 @@ public class AdminController {
         public void onClick(ClickEvent event) {
             if (event.getSource() == content.getAdminView().getParticipantsBtn()){
                 content.getAdminView().changeView(content.getAdminView().getShowParticipantsView());
+                createParticipantsTable();
             } else if (event.getSource() == content.getAdminView().getTeamsBtn()){
-
+                content.getAdminView().changeView(content.getAdminView().getShowTeamsView());
+                createTeamsTable();
             } else if (event.getSource() == content.getAdminView().getFirmsBtn()){
 
             } else if (event.getSource() == content.getAdminView().getLogoutBtn()){
@@ -52,21 +49,81 @@ public class AdminController {
         }
     }
 
-    class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
+    class ChangeTeamDelegateHandler implements ActionCell.Delegate<Team>{
+        @Override
+        public void execute(Team object) {
+            currentTeam = object;
+            content.getAdminView().getChangeTeamView().getIdLabel().setText(
+                    "Ændrer nu i hold #" + currentTeam.getTeamID() + " " + currentTeam.getTeamName());
 
+            content.getAdminView().getChangeTeamView().getTeamNameField().setText(
+                    currentTeam.getTeamName()
+            );
+
+            content.getAdminView().changeView(content.getAdminView().getChangeTeamView());
+        }
+    }
+
+    class ChangeTeamClickHandler implements ClickHandler{
+        /**
+         * Called when a native click event is fired.
+         *
+         * @param event the {@link ClickEvent} that was fired
+         */
+        @Override
+        public void onClick(ClickEvent event) {
+            if (event.getSource() == content.getAdminView().getChangeTeamView().getSubmitBtn()){
+
+                //Laver et det ønskede ændringer på et nyt hold som bliver sendt afsted
+                Team changingTeam = new Team();
+                changingTeam.setTeamName(content.getAdminView().getChangeTeamView().getTeamNameField().getText());
+
+                rpcService.changeTeamInfo(currentTeam, changingTeam, new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Serverfejl");
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        Window.alert("Holdet er blevet ændret");
+                    }
+                });
+            } else if (event.getSource() == content.getAdminView().getChangeTeamView().getReturnBtn()){
+                content.getAdminView().changeView(content.getAdminView().getShowTeamsView());
+            } else if (event.getSource() == content.getAdminView().getChangeTeamView().getDeleteBtn()){
+
+            }
+        }
+    }
+
+    class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
         @Override
         public void execute(Participant object) {
             currentParticipant = object;
+            rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    Window.alert("Error med at ændre person");
+                }
 
-            content.getAdminView().getChangeParticipantView().getNameField().setText(currentParticipant.getName());
-            content.getAdminView().getChangeParticipantView().getEmailField().setText(currentParticipant.getEmail());
-            content.getAdminView().getChangeParticipantView().getPersonTypeField().setText(currentParticipant.getPersonType());
-            content.getAdminView().getChangeParticipantView().getCyclistTypeField().setText(currentParticipant.getCyclistType());
-            content.getAdminView().getChangeParticipantView().getPassField().setText(currentParticipant.getPassword());
-            content.getAdminView().getChangeParticipantView().getFirmNameField().setText(currentParticipant.getFirmName());
-            content.getAdminView().getChangeParticipantView().getTeamNameField().setText(currentParticipant.getTeamName());
+                @Override
+                public void onSuccess(String result) {
+                    content.getAdminView().getChangeParticipantView().getIdLabel().setText(
+                            "Du er i gang med at ændre: " + currentParticipant.getEmail()
+                    );
 
-            content.getAdminView().changeView(content.getAdminView().getChangeParticipantView());
+                    content.getAdminView().getChangeParticipantView().getNameField().setText(currentParticipant.getName());
+                    content.getAdminView().getChangeParticipantView().getEmailField().setText(currentParticipant.getEmail());
+                    content.getAdminView().getChangeParticipantView().getPersonTypeField().setText(currentParticipant.getPersonType());
+                    content.getAdminView().getChangeParticipantView().getCyclistTypeField().setText(currentParticipant.getCyclistType());
+                    content.getAdminView().getChangeParticipantView().getPassField().setText(result);
+                    content.getAdminView().getChangeParticipantView().getFirmNameField().setText(currentParticipant.getFirmName());
+                    content.getAdminView().getChangeParticipantView().getTeamNameField().setText(currentParticipant.getTeamName());
+
+                    content.getAdminView().changeView(content.getAdminView().getChangeParticipantView());
+                }
+            });
         }
     }
 
@@ -85,10 +142,19 @@ public class AdminController {
                 changingParticipant.setFirmName(content.getAdminView().getChangeParticipantView().getFirmNameField().getText());
                 changingParticipant.setTeamName(content.getAdminView().getChangeParticipantView().getTeamNameField().getText());
 
-
-
+                rpcService.changeParticipantInfo(currentParticipant, changingParticipant, new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert(caught.getMessage());
+                    }
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        Window.alert("Personen er ændret");
+                        createParticipantsTable();
+                    }
+                });
             } else if (event.getSource() == content.getAdminView().getChangeParticipantView().getReturnBtn()){
-
+                content.getAdminView().changeView(content.getAdminView().getShowParticipantsView());
             }
         }
     }
@@ -97,14 +163,15 @@ public class AdminController {
         content.getAdminView().addClickHandlers(new AdminClickHandler());
         content.getAdminView().getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
         content.getAdminView().getChangeParticipantView().addClickHandlers(new ChangeParticipantClickHandler());
+        content.getAdminView().getShowTeamsView().setDelegate(new ChangeTeamDelegateHandler());
+        content.getAdminView().getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
     }
 
     private void createParticipantsTable(){
-
         rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
             @Override
             public void onFailure(Throwable caught) {
-
+                Window.alert("Error med at lave tabellen");
             }
 
             @Override
@@ -113,15 +180,29 @@ public class AdminController {
 
                 participantListDataProvider.getList().addAll(result);
 
-                for (Participant par :
-                        participantListDataProvider.getList()) {
+                for (Participant par : participantListDataProvider.getList()) {
                     par.setPassword("****");
                 }
 
-
                 content.getAdminView().getShowParticipantsView().initTable(participantListDataProvider);
-
                 tableClickLogic();
+            }
+        });
+    }
+
+    private void createTeamsTable(){
+        rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Error med at lave tabellen");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Team> result) {
+                ListDataProvider<Team> teamListDataProvider = new ListDataProvider<>();
+                teamListDataProvider.getList().addAll(result);
+
+                content.getAdminView().getShowTeamsView().initTable(teamListDataProvider);
             }
         });
     }

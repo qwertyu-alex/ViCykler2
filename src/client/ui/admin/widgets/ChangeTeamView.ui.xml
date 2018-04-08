@@ -1,0 +1,17 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+
+        <g:VerticalPanel styleName="center">
+            <g:Label ui:field="idLabel"></g:Label>
+
+            <g:Label>Ændre holdnavn</g:Label>
+            <g:TextBox ui:field="teamNameField"></g:TextBox>
+
+            <g:Button ui:field="submitBtn">Submit</g:Button>
+            <g:Button ui:field="returnBtn">Gå tilbage</g:Button>
+
+            <g:Button ui:field="deleteBtn" styleName="hidden">(Slet hold)</g:Button>
+        </g:VerticalPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

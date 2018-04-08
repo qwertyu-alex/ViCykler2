@@ -20,6 +20,8 @@ public class ChangeParticipantView extends Composite {
 
     @UiField PasswordTextBox passField;
 
+    @UiField Label idLabel;
+
     public ChangeParticipantView() {
         initWidget(ourUiBinder.createAndBindUi(this));
     }
@@ -63,5 +65,9 @@ public class ChangeParticipantView extends Composite {
 
     public PasswordTextBox getPassField() {
         return passField;
+    }
+
+    public Label getIdLabel() {
+        return idLabel;
     }
 }

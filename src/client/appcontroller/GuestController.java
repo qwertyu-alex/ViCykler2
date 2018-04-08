@@ -121,10 +121,10 @@ public class GuestController {
             this.passwordCheck = content.getGuestView().getSignUpView().getPasswordCheckField().getText();
             this.errMessage = new ArrayList<>();
 
+            //Her benytter jeg kun et enkelt &. Dette heder bitwise operatoren og evaluere begge sider uden at stoppe dens kondition fra at "short circuiting"
             Boolean isCorrectSignUp = validateName() & validateEmail() & validatePassword();
             content.getGuestView().getSignUpView().getErrorMessageLabel().setHTML ( "<p>" + String.join("<br>", errMessage) + "</p>");
 
-            //Her benytter jeg kun et enkelt &. Dette heder bitwise operatoren og evaluere begge sider uden at stoppe dens kondition fra at "short circuiting"
             if (isCorrectSignUp){
                 rpcService.createParticipant(email, name, cyclistType, password, new AsyncCallback<Boolean>() {
                     @Override
@@ -137,7 +137,7 @@ public class GuestController {
                         if (!result){
                             Window.alert("Email already exist");
                         } else {
-                            Window.alert("Successful added participant!");
+                            Window.alert("Successfully added participant!");
                         }
                     }
                 });

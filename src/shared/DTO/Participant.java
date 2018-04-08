@@ -18,7 +18,7 @@ public class Participant extends Person implements IsSerializable {
 
     //Default constructor
     public Participant(){
-        super("null", "null", "null");
+        super();
         personType = "Participant";
     }
 

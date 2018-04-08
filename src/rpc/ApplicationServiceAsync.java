@@ -1,8 +1,10 @@
 package rpc;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Person;
+import shared.DTO.Team;
 
 import java.util.ArrayList;
 
@@ -30,5 +32,15 @@ public interface ApplicationServiceAsync {
 
     void getParticipantPassword(String email, AsyncCallback<String> async);
 
-    void changeParticipantInfo(Participant currentParticipant, AsyncCallback<Boolean> async);
+    void changeParticipantInfo(Participant currentParticipant, Participant changingParticipant, AsyncCallback<Boolean> async);
+
+    void getAllTeams(AsyncCallback<ArrayList<Team>> async);
+
+    void changeTeamInfo(Team currentTeam, Team changingTeam, AsyncCallback<Boolean> async);
+
+    void changeFirmInfo(Firm currentFirm, Firm changingFirm, AsyncCallback<Boolean> async);
+
+    void createFirm(String name, AsyncCallback<Boolean> async);
+
+    void getAllFirms(AsyncCallback<ArrayList<Firm>> async);
 }

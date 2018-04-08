@@ -4,11 +4,10 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
 import com.sun.org.apache.regexp.internal.REUtil;
 import rpc.ApplicationService;
-import shared.DTO.Admin;
-import shared.DTO.Participant;
-import shared.DTO.Person;
+import shared.DTO.*;
 
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.regex.MatchResult;
@@ -268,27 +267,28 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public boolean changeParticipantInfo(Participant currentParticipant) throws Exception {
+    public boolean changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception {
 
         try {
             PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
-            getTeamID.setString(1, currentParticipant.getTeamName());
+            getTeamID.setString(1, changingParticipant.getTeamName());
             ResultSet getTeamIDRes = getTeamID.executeQuery();
             getTeamIDRes.next();
             int teamID = getTeamIDRes.getInt("TeamID");
 
 
             PreparedStatement updateParticipant = connection.prepareStatement(
-                    "UPDATE persons SET PersonName = ? AND Email = ? AND  " +
-                            "Password = ? AND PersonType = ? AND CyclistType = ? AND FirmName = ? AND TeamID = ?");
+                    "UPDATE persons SET PersonName = ?, Email = ?,  " +
+                            "Password = ?, PersonType = ?, CyclistType = ?, FirmName = ?, TeamID = ? WHERE Email = ?");
 
-            updateParticipant.setString(1,currentParticipant.getName());
-            updateParticipant.setString(2,currentParticipant.getEmail());
-            updateParticipant.setString(3,currentParticipant.getPassword());
-            updateParticipant.setString(4,currentParticipant.getPersonType());
-            updateParticipant.setString(5,currentParticipant.getCyclistType());
-            updateParticipant.setString(6,currentParticipant.getFirmName());
+            updateParticipant.setString(1,changingParticipant.getName());
+            updateParticipant.setString(2,changingParticipant.getEmail());
+            updateParticipant.setString(3,changingParticipant.getPassword());
+            updateParticipant.setString(4,changingParticipant.getPersonType());
+            updateParticipant.setString(5,changingParticipant.getCyclistType());
+            updateParticipant.setString(6,changingParticipant.getFirmName());
             updateParticipant.setInt(7,teamID);
+            updateParticipant.setString(8, currentParticipant.getEmail());
 
             updateParticipant.executeUpdate();
             return true;
@@ -306,5 +306,73 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return null;
     }
 
+    @Override
+    public ArrayList<Team> getAllTeams() throws Exception {
+        ArrayList<Team> teams = new ArrayList<>();
 
+
+        try{
+            PreparedStatement getTeams = connection.prepareStatement("SELECT * FROM teams");
+            ResultSet getTeamsRes = getTeams.executeQuery();
+
+            while (getTeamsRes.next()){
+                Team tempTeam = new Team();
+                tempTeam.setTeamID(getTeamsRes.getInt("TeamID"));
+                tempTeam.setTeamName(getTeamsRes.getString("TeamName"));
+                tempTeam.setFirmName(getTeamsRes.getString("FirmName"));
+
+                teams.add(tempTeam);
+            }
+
+            for (Team team: teams) {
+                PreparedStatement getParticipants = connection.prepareStatement("SELECT persons.email FROM persons INNER JOIN teams ON persons.TeamID = teams.TeamID WHERE teams.TeamID = ?");
+                getParticipants.setInt(1, team.getTeamID());
+
+                ResultSet participantsRes = getParticipants.executeQuery();
+
+                while(participantsRes.next()){
+                    team.getParticipants().add(participantsRes.getString("Email"));
+                }
+            }
+
+            return teams;
+        } catch (Exception err){
+            err.printStackTrace();
+        }
+
+
+         return teams;
+    }
+
+    @Override
+    public ArrayList<Firm> getAllFirms() throws Exception {
+        return null;
+    }
+
+    @Override
+    public boolean createFirm(String name) {
+        return false;
+    }
+
+    @Override
+    public boolean changeTeamInfo(Team currentTeam, Team changingTeam) throws Exception {
+        try {
+            PreparedStatement changeTeam = connection.prepareStatement("UPDATE teams SET TeamName = ? WHERE TeamID = ?");
+            changeTeam.setString(1, changingTeam.getTeamName());
+            changeTeam.setInt(2, currentTeam.getTeamID());
+
+            changeTeam.executeUpdate();
+
+            return true;
+
+        } catch (SQLException err){
+            err.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean changeFirmInfo(Firm currentFirm, Firm changingFirm) throws Exception {
+        return false;
+    }
 }

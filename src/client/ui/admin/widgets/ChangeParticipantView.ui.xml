@@ -2,6 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
         <g:VerticalPanel styleName="center">
+            <g:Label ui:field="idLabel"></g:Label>
 
             <g:Label>Navn</g:Label>
             <g:TextBox ui:field="nameField"></g:TextBox>
@@ -15,7 +16,7 @@
             <g:PasswordTextBox ui:field="passField"></g:PasswordTextBox>
             <g:Label>Firma</g:Label>
             <g:TextBox ui:field="firmNameField"></g:TextBox>
-            <g:Label>Hold navn</g:Label>
+            <g:Label>Hold</g:Label>
             <g:TextBox ui:field="teamNameField"></g:TextBox>
             <g:Button ui:field="submitBtn">Submit</g:Button>
             <g:Button ui:field="returnBtn">Gå tilbage</g:Button>

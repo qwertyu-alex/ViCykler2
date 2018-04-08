@@ -6,51 +6,45 @@ import java.util.ArrayList;
 
 public class Team implements IsSerializable{
     private String teamName;
-    private Firm firm;
-
-    private ArrayList <Participant> participants = new ArrayList<>();
-
+    private String firmName;
+    private int teamID;
+    private ArrayList <String> participants = new ArrayList<>();
 
     //Default constructor
     public Team(){
-        this.teamName = "null";
-        this.firm = null;
+        this.teamID = 0;
+
     }
 
-    //Constructor
-    public Team(String teamName, Firm firm){
-        //variabler
-        this.teamName = teamName;
-        this.firm = firm;
-        firm.addTeam(this);
+    public int getTeamID() {
+        return teamID;
     }
 
-    //Adder metoder
-    public void addParticipant(Participant participant){
-        participants.add(participant);
+    public void setTeamID(int teamID) {
+        this.teamID = teamID;
     }
 
-    //Getter metoder
-    public String getTeamName(){
+    public String getTeamName() {
         return teamName;
     }
 
-    public Firm getFirm() {
-        return firm;
-    }
-
-    public ArrayList<Participant> getParticipants() {
-        return participants;
-    }
-
-    //Setter metoder
-    public void setTeamName(String teamName){
+    public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
 
-    //Remover
-    public void removeParticipant(Participant participant){
-        participants.remove(participant);
+    public String getFirmName() {
+        return firmName;
     }
 
+    public void setFirmName(String firmName) {
+        this.firmName = firmName;
+    }
+
+    public ArrayList<String> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(ArrayList<String> participants) {
+        this.participants = participants;
+    }
 }

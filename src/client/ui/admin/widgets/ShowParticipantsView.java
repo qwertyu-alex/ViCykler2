@@ -71,14 +71,6 @@ public class ShowParticipantsView extends Composite {
                 }
             };
 
-//        passCol.setFieldUpdater(new FieldUpdater<Participant, String>() {
-//            @Override
-//            public void update(int index, Participant object, String value) {
-//                Window.alert("lul");
-//            }
-//        });
-
-
             personTypeCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
@@ -130,8 +122,9 @@ public class ShowParticipantsView extends Composite {
             cellTable.addColumn(teamIDCol, "Hold ID");
             cellTable.addColumn(teamNameCol, "Holdnavn");
             cellTable.addColumn(changeParticipant);
+
+            tableIsMade = true;
         }
-        tableIsMade = true;
     }
 
     public ListDataProvider<Participant> getParticipantListDataProvider() {
