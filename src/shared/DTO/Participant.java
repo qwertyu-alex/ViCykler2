@@ -9,11 +9,12 @@ import java.io.Serializable;
  */
 public class Participant extends Person implements IsSerializable {
     //Variabler
-    private String cyclistType;
-    private String firmName;
+    private String cyclistType = "";
+    private String firmName = "";
     private int teamID;
-    private String personType;
-    private String teamName;
+    private String personType = "";
+    private int firmID;
+    private String teamName = "";
 
 
     //Default constructor
@@ -62,5 +63,13 @@ public class Participant extends Person implements IsSerializable {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public int getFirmID() {
+        return firmID;
+    }
+
+    public void setFirmID(int firmID) {
+        this.firmID = firmID;
     }
 }

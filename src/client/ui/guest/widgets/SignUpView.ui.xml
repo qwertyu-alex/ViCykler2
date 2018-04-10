@@ -13,6 +13,9 @@
                 <g:item value="cruiser">cruiser</g:item>
                 <g:item value="debutant">debutant</g:item>
             </g:ListBox>
+            <g:Label>Firma</g:Label>
+            <g:ListBox ui:field="firmList">
+            </g:ListBox>
             <g:Label>Password</g:Label>
             <g:PasswordTextBox ui:field="passwordField"></g:PasswordTextBox>
             <g:Label>Password again</g:Label>

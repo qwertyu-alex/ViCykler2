@@ -16,9 +16,9 @@ public interface ApplicationServiceAsync {
 
     void getAllParticipants(AsyncCallback<ArrayList<Participant>> async);
 
-    void createParticipant(String email, String name, String cyclistType, String password, AsyncCallback<Boolean> async);
+    void createParticipant(Participant newParticipant, AsyncCallback<Boolean> async);
 
-    void createTeam(String name, Participant teamCaptain, AsyncCallback<Boolean> async);
+    void createTeam(Team newTeam, Participant teamCaptain, AsyncCallback<Boolean> async);
 
     void getParticipantCyclistType(String email, AsyncCallback<String> async);
 
@@ -32,15 +32,21 @@ public interface ApplicationServiceAsync {
 
     void getParticipantPassword(String email, AsyncCallback<String> async);
 
-    void changeParticipantInfo(Participant currentParticipant, Participant changingParticipant, AsyncCallback<Boolean> async);
+    void changeParticipantInfo(Participant currentParticipant, Participant changingParticipant, AsyncCallback<Participant> async);
 
     void getAllTeams(AsyncCallback<ArrayList<Team>> async);
 
-    void changeTeamInfo(Team currentTeam, Team changingTeam, AsyncCallback<Boolean> async);
+    void changeTeamInfo(Team currentTeam, Team changingTeam, AsyncCallback<Team> async);
 
-    void changeFirmInfo(Firm currentFirm, Firm changingFirm, AsyncCallback<Boolean> async);
+    void changeFirmInfo(Firm currentFirm, Firm changingFirm, AsyncCallback<Firm> async);
 
     void createFirm(String name, AsyncCallback<Boolean> async);
 
     void getAllFirms(AsyncCallback<ArrayList<Firm>> async);
+
+    void getParticipant(String email, AsyncCallback<Participant> async);
+
+    void removeFromTeam(Participant participant,AsyncCallback<Boolean> async);
+
+    void getTeam(String email, AsyncCallback<Team> async);
 }

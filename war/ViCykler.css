@@ -79,3 +79,7 @@ button:active{
 .hidden {
     display: none;
 }
+
+.blue{
+    background-color:blue;
+}

@@ -36,7 +36,7 @@ public class ShowParticipantsView extends Composite {
     public ShowParticipantsView() {
         initWidget(ourUiBinder.createAndBindUi(this));
         clickableTextCell = new ClickableTextCell();
-        cellTable.setVisibleRange(0,100);
+        cellTable.setVisibleRange(0,1000);
     }
 
     public void initTable(ListDataProvider<Participant> participantListDataProvider){

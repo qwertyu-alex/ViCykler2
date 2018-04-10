@@ -12,6 +12,7 @@ import com.google.gwt.view.client.ListDataProvider;
 import rpc.ApplicationServiceAsync;
 //import server.withoutDB.Data;
 import shared.DTO.Admin;
+import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Person;
 
@@ -37,6 +38,9 @@ public class GuestController {
 
 //        Opretter tabellen
         createTable();
+
+//        Tilføjer alle firmaer til signup viewet
+        createSignUp();
     }
 
     /**
@@ -81,7 +85,7 @@ public class GuestController {
                         if (result == null){
                             content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
                         }
-                        if (result instanceof  Participant){
+                        if (result instanceof Participant){
                             content.switchToParticipantView();
                             new ParticipantController(content, (Participant) result, rpcService);
                         }
@@ -108,25 +112,40 @@ public class GuestController {
         private String name;
         private String email;
         private String cyclistType;
+        private String firmName;
         private String password;
         private String passwordCheck;
         private ArrayList<String> errMessage;
+
 
         @Override
         public void onClick(ClickEvent event) {
             this.email = content.getGuestView().getSignUpView().getEmailField().getText();
             this.name = content.getGuestView().getSignUpView().getNameField().getText();
             this.cyclistType = content.getGuestView().getSignUpView().getCyclistTypeList().getSelectedValue();
+            this.firmName = content.getGuestView().getSignUpView().getFirmList().getSelectedValue();
             this.password = content.getGuestView().getSignUpView().getPasswordField().getText();
             this.passwordCheck = content.getGuestView().getSignUpView().getPasswordCheckField().getText();
             this.errMessage = new ArrayList<>();
 
-            //Her benytter jeg kun et enkelt &. Dette heder bitwise operatoren og evaluere begge sider uden at stoppe dens kondition fra at "short circuiting"
+            /***
+             *  Her benytter jeg kun et enkelt &.
+             *  Dette heder bitwise operatoren og evaluere begge sider uden at stoppe dens kondition fra at "short circuiting"
+             *  Dette betyder at den kører alle metoderne og ikke kun de første
+             */
             Boolean isCorrectSignUp = validateName() & validateEmail() & validatePassword();
             content.getGuestView().getSignUpView().getErrorMessageLabel().setHTML ( "<p>" + String.join("<br>", errMessage) + "</p>");
 
             if (isCorrectSignUp){
-                rpcService.createParticipant(email, name, cyclistType, password, new AsyncCallback<Boolean>() {
+
+                Participant newParticipant = new Participant();
+                newParticipant.setEmail(email);
+                newParticipant.setName(name);
+                newParticipant.setCyclistType(cyclistType);
+                newParticipant.setPassword(password);
+                newParticipant.setFirmName(firmName);
+
+                rpcService.createParticipant(newParticipant, new AsyncCallback<Boolean>() {
                     @Override
                     public void onFailure(Throwable caught) {
                         System.out.println(caught.getMessage());
@@ -212,7 +231,6 @@ public class GuestController {
         }
     }
 
-
     private void addClickHandlers(){
         content.getGuestView().addClickHandlers(new GuestClickHandlers());
         content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
@@ -236,4 +254,21 @@ public class GuestController {
             }
         });
     }
+
+    private void createSignUp(){
+        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Firm> result) {
+                for (Firm firm :result) {
+                    content.getGuestView().getSignUpView().getFirmList().addItem(firm.getFirmName());
+                }
+            }
+        });
+    }
+
 }

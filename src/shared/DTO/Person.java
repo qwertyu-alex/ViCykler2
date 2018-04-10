@@ -7,9 +7,9 @@ import com.google.gwt.user.client.rpc.IsSerializable;
  */
 public abstract class Person implements IsSerializable{
 
-    protected String name;
-    protected String email;
-    protected String password;
+    protected String name = "";
+    protected String email = "";
+    protected String password = "";
 
 
     //Default constructor

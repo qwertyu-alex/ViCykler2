@@ -8,12 +8,12 @@ public class Team implements IsSerializable{
     private String teamName;
     private String firmName;
     private int teamID;
+    private int firmID;
     private ArrayList <String> participants = new ArrayList<>();
 
     //Default constructor
     public Team(){
         this.teamID = 0;
-
     }
 
     public int getTeamID() {
@@ -46,5 +46,13 @@ public class Team implements IsSerializable{
 
     public void setParticipants(ArrayList<String> participants) {
         this.participants = participants;
+    }
+
+    public int getFirmID() {
+        return firmID;
+    }
+
+    public void setFirmID(int firmID) {
+        this.firmID = firmID;
     }
 }

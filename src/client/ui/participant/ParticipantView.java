@@ -1,9 +1,6 @@
 package client.ui.participant;
 
-import client.ui.participant.widgets.CreateTeamView;
-import client.ui.participant.widgets.MyProfileView;
-import client.ui.participant.widgets.MyTeamView;
-import client.ui.participant.widgets.StartView;
+import client.ui.participant.widgets.*;
 import client.ui.sharedWidgets.StatisticView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -22,16 +19,17 @@ public class ParticipantView extends Composite {
     DeckLayoutPanel centerDeck;
 
     @UiField
-    Button myProfileBtn, statistiskBtn, logoutBtn, myTeamBtn, createTeamBtn;
+    Button myProfileBtn, statistiskBtn, logoutBtn, myTeamBtn, createTeamBtn, changeTeamBtn;
 
     @UiField
-    HorizontalPanel myTeamBox, createTeamBox;
+    HorizontalPanel myTeamBox, createTeamBox, changeTeamBox;
 
     StartView startView;
     CreateTeamView createTeamView;
     MyProfileView myProfileView;
     StatisticView statisticView;
     MyTeamView myTeamView;
+    ChangeTeamView changeTeamView;
 
     public ParticipantView() {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -40,11 +38,13 @@ public class ParticipantView extends Composite {
         myProfileView = new MyProfileView();
         createTeamView = new CreateTeamView();
         myTeamView = new MyTeamView();
+        changeTeamView = new ChangeTeamView();
 
         centerDeck.add(startView);
         centerDeck.add(myProfileView);
         centerDeck.add(createTeamView);
         centerDeck.add(myTeamView);
+        centerDeck.add(changeTeamView);
 
         centerDeck.showWidget(startView);
     }
@@ -111,5 +111,17 @@ public class ParticipantView extends Composite {
 
     public MyProfileView getMyProfileView() {
         return myProfileView;
+    }
+
+    public ChangeTeamView getChangeTeamView() {
+        return changeTeamView;
+    }
+
+    public HorizontalPanel getChangeTeamBox() {
+        return changeTeamBox;
+    }
+
+    public Button getChangeTeamBtn() {
+        return changeTeamBtn;
     }
 }

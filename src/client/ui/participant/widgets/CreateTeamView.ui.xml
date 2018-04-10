@@ -3,12 +3,12 @@
     <g:HTMLPanel>
         <g:VerticalPanel styleName="center">
             <g:Label>Holdnavn: </g:Label>
-            <g:TextBox></g:TextBox>
+            <g:TextBox ui:field="teamNameField"></g:TextBox>
 
             <g:Label>Holddeltagere: skriv email sepereret med semikolon (;)</g:Label>
-            <g:TextArea></g:TextArea>
+            <g:TextArea ui:field="teamMembersField"></g:TextArea>
 
-            <g:SubmitButton>Submit</g:SubmitButton>
+            <g:SubmitButton ui:field="submitBtn">Submit</g:SubmitButton>
         </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

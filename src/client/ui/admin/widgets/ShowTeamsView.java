@@ -33,13 +33,12 @@ public class ShowTeamsView extends Composite {
 
     public ShowTeamsView() {
         initWidget(ourUiBinder.createAndBindUi(this));
-        cellTable.setVisibleRange(0, 100);
+        cellTable.setVisibleRange(0, 1000);
 
     }
 
     public void initTable(ListDataProvider<Team> teamListDataProvider){
         this.teamListDataProvider = teamListDataProvider;
-
         this.teamListDataProvider.addDataDisplay(cellTable);
 
         if (!tableIsMade){
@@ -73,7 +72,7 @@ public class ShowTeamsView extends Composite {
                 }
             };
 
-            changeTeam = new Column<Team, Team>(new ActionCell<Team>("Ændre hold", delegate)) {
+            changeTeam = new Column<Team, Team>(new ActionCell<Team>("Rediger", delegate)) {
                 @Override
                 public Team getValue(Team object) {
                     return object;
@@ -84,7 +83,7 @@ public class ShowTeamsView extends Composite {
             cellTable.addColumn(teamName, "Holdnavn");
             cellTable.addColumn(firmName, "Firma");
             cellTable.addColumn(numberOfParticipants, "Antal deltagere");
-            cellTable.addColumn(changeTeam, "Ændre hold");
+            cellTable.addColumn(changeTeam);
 
             tableIsMade = true;
         }

@@ -16,7 +16,7 @@ public class SignUpView extends Composite {
     TextBox emailField, nameField;
 
     @UiField
-    ListBox cyclistTypeList;
+    ListBox cyclistTypeList, firmList;
 
     @UiField PasswordTextBox passwordField, passwordCheckField;
 
@@ -59,5 +59,9 @@ public class SignUpView extends Composite {
 
     public HTML getErrorMessageLabel() {
         return errorMessageLabel;
+    }
+
+    public ListBox getFirmList() {
+        return firmList;
     }
 }
