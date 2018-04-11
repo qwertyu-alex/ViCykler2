@@ -86,6 +86,7 @@ public class GuestController {
                             content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
                         }
                         if (result instanceof Participant){
+                            content.getParticipantView().changeView(content.getParticipantView().getMyProfileView());
                             content.switchToParticipantView();
                             new ParticipantController(content, (Participant) result, rpcService);
                         }

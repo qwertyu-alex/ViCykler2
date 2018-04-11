@@ -101,12 +101,38 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public ArrayList<Participant> getAllParticipants() throws Exception {
-
-        System.out.println("Running: getAllPersons()");
+    public ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID){
 
         ArrayList<Participant> participants = new ArrayList<>();
-        int numberOfColums;
+        Participant participant;
+
+        try {
+            PreparedStatement findPersons = connection.prepareStatement("SELECT * FROM persons WHERE TeamID = ?");
+            findPersons.setInt(1, teamID);
+            ResultSet resultSet = findPersons.executeQuery();
+
+            while(resultSet.next()){
+                participant = new Participant();
+                participant.setName(resultSet.getString("PersonName").toLowerCase());
+                participant.setEmail(resultSet.getString("Email").toLowerCase());
+                participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
+                participant.setPersonType(resultSet.getString("PersonType"));
+                participant.setTeamID(resultSet.getInt("TeamID"));
+                participant.setFirmID(resultSet.getInt("FirmID"));
+                participants.add(participant);
+          }
+        } catch (SQLException err){
+            err.printStackTrace();
+            return null;
+        }
+
+        return participants;
+    }
+
+    @Override
+    public ArrayList<Participant> getAllParticipants() throws Exception {
+
+        ArrayList<Participant> participants = new ArrayList<>();
         Participant participant;
         ResultSet resultSet = null;
 
@@ -114,10 +140,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement findPersons = connection.prepareStatement("" +
                     "SELECT * FROM persons INNER JOIN teams ON persons.TeamID = teams.TeamID INNER JOIN firms ON persons.FirmID = firms.FirmID");
             resultSet = findPersons.executeQuery();
-            ResultSetMetaData metaData = resultSet.getMetaData();
-            numberOfColums = metaData.getColumnCount();
-
-            System.out.println("Number of colums: " + numberOfColums);
 
             while(resultSet.next()){
                 if(!resultSet.getString("PersonType").equalsIgnoreCase("ADMIN")){
@@ -130,7 +152,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     participant.setFirmName(resultSet.getString("FirmName"));
                     participant.setTeamID(resultSet.getInt("TeamID"));
                     participant.setTeamName(resultSet.getString("TeamName"));
-
 
                     participants.add(participant);
                 }
@@ -145,7 +166,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             }
         }
 
-        System.out.println(participants.size());
         return participants;
     }
 
@@ -249,6 +269,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         System.out.println("Kører createTeam");
         try {
+
+            /**
+             * Finder firmID ud fra en participant som senere bliver holdkaptain
+             */
             PreparedStatement getFirmID = connection.prepareStatement("SELECT FirmID FROM persons WHERE EMAIL = ?");
             getFirmID.setString(1, teamCaptain.getEmail());
             ResultSet getFirmIDRes = getFirmID.executeQuery();
@@ -259,47 +283,50 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 throw new Exception();
             }
 
+            /**
+             * Indsætter det nye hold i databasen
+             */
             PreparedStatement createTeam = connection.prepareStatement("INSERT INTO teams(TeamName,FirmID) VALUES (?,?)");
             createTeam.setString(1, newTeam.getTeamName());
             createTeam.setInt(2, firmID);
             createTeam.executeUpdate();
 
+            /**
+             * Sætter en participant til at være holdkaptain
+             */
             PreparedStatement findParticipant = connection.prepareStatement("UPDATE persons SET PersonType = 'TEAMCAPTAIN' WHERE Email LIKE ?");
             findParticipant.setString(1, teamCaptain.getEmail());
             findParticipant.executeUpdate();
 
-            /**
-             * Opdater participants som skal være i holdet, inklusiv teamCaptain,
-             * så deres teamID matcher det nye team.
-             */
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
 
-            System.out.println("Størrelse på alle deltagere " + newTeam.getParticipants().size());
-            if (newTeam.getParticipants().size() > 0){
-                for (String participantEmail : newTeam.getParticipants()) {
+        return true;
+    }
 
-                    /**
-                     * Først skal den finde teamID
-                     */
-                    PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE TeamName = ?");
-                    getTeamID.setString(1, newTeam.getTeamName());
-                    ResultSet getTeamIDRes = getTeamID.executeQuery();
-
+    @Override
+    public boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
+        /**
+         * Opdater participants som skal være i holdet, inklusiv teamCaptain,
+         * så deres teamID matcher det nye team.
+         */
+        try {
+            System.out.println("Størrelse på alle deltagere " + participantEmails.size());
+            if (participantEmails.size() > 0){
+                for (String participantEmail : participantEmails) {
                     /**
                      * Updater alle personer i ArrayListen så de har samme TeamID som holdet
                      */
-                    if (getTeamIDRes.next()){
-                        int teamID = getTeamIDRes.getInt("TeamID");
                         PreparedStatement changeParticipant = connection.prepareStatement("UPDATE persons SET TeamID = ? WHERE Email = ?");
-                        changeParticipant.setInt(1,teamID);
+                        changeParticipant.setInt(1,currentTeam.getTeamID());
                         changeParticipant.setString(2, participantEmail);
                         changeParticipant.executeUpdate();
-                    } else {
-                        System.out.println("ERROR: Forventet: der skal være et hold. Resultat: INTET HOLD?!");
-                    }
                 }
             }
         } catch (SQLException err){
             err.printStackTrace();
+            return false;
         }
 
         return true;
@@ -421,47 +448,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception {
-
-        try {
-            PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
-            PreparedStatement getFirmID = connection.prepareStatement("SELECT FirmID FROM firms WHERE firms.FirmName LIKE ?");
-
-            getTeamID.setString(1, changingParticipant.getTeamName());
-            getFirmID.setString(1, changingParticipant.getFirmName());
-
-            ResultSet getTeamIDRes = getTeamID.executeQuery();
-            ResultSet getFirmIDRes = getFirmID.executeQuery();
-
-            getTeamIDRes.next();
-            getFirmIDRes.next();
-
-            int teamID = getTeamIDRes.getInt("TeamID");
-            int firmID = getFirmIDRes.getInt("FirmID");
-
-
-            PreparedStatement updateParticipant = connection.prepareStatement(
-                    "UPDATE persons SET PersonName = ?, Email = ?,  " +
-                            "Password = ?, PersonType = ?, CyclistType = ?, FirmID = ?, TeamID = ? WHERE Email = ?");
-
-            updateParticipant.setString(1,changingParticipant.getName());
-            updateParticipant.setString(2,changingParticipant.getEmail());
-            updateParticipant.setString(3,changingParticipant.getPassword());
-            updateParticipant.setString(4,changingParticipant.getPersonType());
-            updateParticipant.setString(5,changingParticipant.getCyclistType());
-            updateParticipant.setInt(6,firmID);
-            updateParticipant.setInt(7,teamID);
-            updateParticipant.setString(8, currentParticipant.getEmail());
-
-            updateParticipant.executeUpdate();
-            return changingParticipant;
-        } catch (SQLException err){
-            err.printStackTrace();
-            return changingParticipant;
-        }
-    }
-
-    @Override
     public String getGuestStatisticView() throws Exception {
 
         PreparedStatement statisticForGuest = connection.prepareStatement("SELECT persons.PersonName, persons.FirmName, teams.TeamName " +
@@ -579,8 +565,55 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
+    public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception {
+
+        try {
+            PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
+            PreparedStatement getFirmID = connection.prepareStatement("SELECT FirmID FROM firms WHERE firms.FirmName LIKE ?");
+
+            getTeamID.setString(1, changingParticipant.getTeamName());
+            getFirmID.setString(1, changingParticipant.getFirmName());
+
+            ResultSet getTeamIDRes = getTeamID.executeQuery();
+            ResultSet getFirmIDRes = getFirmID.executeQuery();
+
+            getTeamIDRes.next();
+            getFirmIDRes.next();
+
+            int teamID = getTeamIDRes.getInt("TeamID");
+            int firmID = getFirmIDRes.getInt("FirmID");
+
+
+            PreparedStatement updateParticipant = connection.prepareStatement(
+                    "UPDATE persons SET PersonName = ?, Email = ?,  " +
+                            "Password = ?, PersonType = ?, CyclistType = ?, FirmID = ?, TeamID = ? WHERE Email = ?");
+
+            updateParticipant.setString(1,changingParticipant.getName());
+            updateParticipant.setString(2,changingParticipant.getEmail());
+            updateParticipant.setString(3,changingParticipant.getPassword());
+            updateParticipant.setString(4,changingParticipant.getPersonType());
+            updateParticipant.setString(5,changingParticipant.getCyclistType());
+            updateParticipant.setInt(6,firmID);
+            updateParticipant.setInt(7,teamID);
+            updateParticipant.setString(8, currentParticipant.getEmail());
+
+            updateParticipant.executeUpdate();
+            return changingParticipant;
+        } catch (SQLException err){
+            err.printStackTrace();
+            return changingParticipant;
+        }
+    }
+
+    @Override
     public Team changeTeamInfo(Team currentTeam, Team changingTeam) throws Exception {
         try {
+
+            if (currentTeam.getTeamID() == 0){
+                System.out.println("ERROR: Intet holdID på currentTeam");
+                throw new SQLException();
+            }
+
             PreparedStatement changeTeam = connection.prepareStatement("UPDATE teams SET TeamName = ? WHERE TeamID = ?");
             changeTeam.setString(1, changingTeam.getTeamName());
             changeTeam.setInt(2, currentTeam.getTeamID());
@@ -634,6 +667,30 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
+    public Firm getFirmFromEmail(String email) throws Exception {
+        try{
+            PreparedStatement getFirm = connection.prepareStatement("SELECT * from firms INNER JOIN persons ON firms.FirmID = persons.FirmID WHERE persons.Email = ?");
+            getFirm.setString(1, email);
+            ResultSet getFirmRes = getFirm.executeQuery();
+            if (getFirmRes.next()){
+                Firm firm = new Firm();
+                firm.setID(getFirmRes.getInt("FirmID"));
+                firm.setFirmName(getFirmRes.getString("FirmName"));
+                return firm;
+            } else {
+                System.out.println("Personen har ikke noget firma");
+                throw new SQLException();
+            }
+
+        }catch (SQLException err){
+            err.printStackTrace();
+        }
+
+
+        return null;
+    }
+
+    @Override
     public Team getTeam(String email) throws Exception {
 
         try {
@@ -655,6 +712,17 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         }catch (SQLException err){
             err.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    public Team getTeam(Team team) throws Exception {
+        try {
+            PreparedStatement getTeam = connection.prepareStatement("SELECT TEAM");
+        } catch (SQLException err){
+
         }
 
         return null;

@@ -10,6 +10,6 @@
 
     <servlet-mapping>
         <servlet-name>com.ViCykler.ViCykler ViCyklerService</servlet-name>
-        <url-pattern>/ViCykler/ViCyklerService</url-pattern>
+        <url-pattern>/ViCykler/ViCyklerServicee</url-pattern>
     </servlet-mapping>
 </web-app>

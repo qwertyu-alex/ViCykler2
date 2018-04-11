@@ -83,3 +83,25 @@ button:active{
 .blue{
     background-color:blue;
 }
+
+.fakeBtn{
+    background-color: #fff4eb;
+    border-radius: 10px;
+    padding: 3em 3em 3em 3em;
+    width: 80%;
+    height: 80%;
+}
+
+.fakeBtn:hover{
+    background-color: #ffd6b3;
+    border-radius: 10px;
+}
+
+.margintop{
+    margin-top: 3em;
+}
+
+.bold{
+    font-weight: bold;
+    font-size: larger;
+}

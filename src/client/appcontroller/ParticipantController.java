@@ -6,9 +6,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.ListDataProvider;
 import rpc.ApplicationServiceAsync;
 import server.ApplicationServiceImpl;
+import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Team;
 
@@ -29,10 +33,8 @@ public class ParticipantController {
         this.currentParticipant = currentParticipant;
         this.rpcService = rpcService;
 
-        findCurrentTeam();
         addClickhandlers();
         createParticipantView();
-
     }
 
     public void createParticipantView(){
@@ -56,19 +58,31 @@ public class ParticipantController {
     }
 
     public void checkParticipantTeam(){
+        content.getParticipantView().getMyTeamBox().addStyleName("hidden");
+        content.getParticipantView().getChangeTeamBox().addStyleName("hidden");
+        content.getParticipantView().getMyTeamView().getChangeTeam().addStyleName("hidden");
+        content.getParticipantView().getCreateTeamBox().addStyleName("hidden");
 
-        if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-            content.getParticipantView().getChangeTeamBox().removeStyleName("hidden");
-        }
-
+        /**
+         * Hvis der ikke er et hold forbundet
+         */
         if (currentParticipant.getTeamID() == 0){
             content.getParticipantView().getCreateTeamBox().removeStyleName("hidden");
-            content.getParticipantView().getMyTeamBox().addStyleName("hidden");
         }
 
+        /**
+         * Hvis der er et hold forbundet
+         */
         if (currentParticipant.getTeamID() != 0){
             content.getParticipantView().getMyTeamBox().removeStyleName("hidden");
-            content.getParticipantView().getCreateTeamBox().addStyleName("hidden");
+            createMyTeam();
+
+            if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
+                content.getParticipantView().getChangeTeamBox().removeStyleName("hidden");
+                content.getParticipantView().getMyTeamView().getChangeTeam().removeStyleName("hidden");
+            }
+
+            findCurrentTeam();
         }
     }
 
@@ -76,6 +90,10 @@ public class ParticipantController {
         content.getParticipantView().addClickHandlers(new ParticipantClickHandler());
         content.getParticipantView().getCreateTeamView().addClickHandlers(new CreateTeamClickHandler());
         content.getParticipantView().getMyTeamView().setDelegate(new MyTeamDelegateHandler());
+        if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
+            content.getParticipantView().getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
+        }
+
     }
 
     class ParticipantClickHandler implements ClickHandler{
@@ -89,42 +107,13 @@ public class ParticipantController {
             } else if (event.getSource() == content.getParticipantView().getCreateTeamBtn()){
                 content.getParticipantView().changeView(content.getParticipantView().getCreateTeamView());
             } else if (event.getSource() == content.getParticipantView().getMyTeamBtn()){
-                /**
-                 * Få fat i alle deltagere
-                 */
-                rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(ArrayList<Participant> result) {
-
-                        /**
-                         * Klargør en listdataprovider til tabellen.
-                         * Finder alle participants og evaluerer om deres TeamID er den samme som currentTeams
-                         * Hvis den er det bliver de tilføjet til en arrayliste i dataprovideren
-                         */
-                        ListDataProvider<Participant> participantListDataProvider = new ListDataProvider<>();
-
-                        for (Participant participant: result) {
-                            if (participant.getTeamID() == currentTeam.getTeamID()){
-                                participantListDataProvider.getList().add(participant);
-                            }
-                        }
-
-                        /**
-                         * Lav tabellen og skift view
-                         */
-                        content.getParticipantView().getMyTeamView().initTable(participantListDataProvider);
-                        content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
-                    }
-                });
+                content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
+                createMyTeam();
             } else if (event.getSource() == content.getParticipantView().getChangeTeamBtn()){
                 content.getParticipantView().changeView(content.getParticipantView().getChangeTeamView());
             } else if (event.getSource() == content.getParticipantView().getLogoutBtn()){
                 currentParticipant = null;
+                currentTeam = null;
                 content.switchToGuestView();
             }
         }
@@ -142,24 +131,6 @@ public class ParticipantController {
                 if (content.getParticipantView().getCreateTeamView().getTeamNameField() != null) {
                     Team newTeam = new Team();
                     newTeam.setTeamName(content.getParticipantView().getCreateTeamView().getTeamNameField().getText());
-                    String participantsString = content.getParticipantView()
-                            .getCreateTeamView()
-                            .getTeamMembersField()
-                            .getText();
-
-                    /**
-                     * Fjerner alle whitespace characters.
-                     * Det første \ angiver at det er regex. \s angiver at det er alle whitespace enheder
-                     */
-                    participantsString = participantsString.replaceAll("\\s", "");
-
-                    String[] participantsArray = participantsString.split(";");
-                    List<String> participantsList = Arrays.asList(participantsArray);
-
-                    ArrayList<String> participantsArrayList = new ArrayList<>();
-                    participantsArrayList.addAll(participantsList);
-
-                    newTeam.setParticipants(participantsArrayList);
 
                     /**
                      * Lav holdet som current participant
@@ -180,28 +151,53 @@ public class ParticipantController {
                              */
                             rpcService.getParticipant(currentParticipant.getEmail(), new AsyncCallback<Participant>() {
                                 @Override
-                                public void onFailure(Throwable caught) {
-
-                                }
+                                public void onFailure(Throwable caught) {}
 
                                 @Override
                                 public void onSuccess(Participant result) {
                                     currentParticipant = result;
-                                    createParticipantView();
-                                    content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
 
                                     /**
-                                     * Sæt current team til current participants hold
+                                     * Sæt current team til det hold der lige er blevet lavet
                                      */
                                     rpcService.getTeam(currentParticipant.getEmail(), new AsyncCallback<Team>() {
                                         @Override
-                                        public void onFailure(Throwable caught) {
-
-                                        }
+                                        public void onFailure(Throwable caught) {}
 
                                         @Override
                                         public void onSuccess(Team result) {
                                             currentTeam = result;
+
+                                            String participantsString = content.getParticipantView()
+                                                    .getCreateTeamView()
+                                                    .getTeamMembersField()
+                                                    .getText();
+
+                                            /**
+                                             * Fjerner alle whitespace characters.
+                                             * Det første \ angiver at det er regex. \s angiver at det er alle whitespace enheder
+                                             */
+                                            participantsString = participantsString.replaceAll("\\s", "");
+
+                                            String[] participantsArray = participantsString.split(";");
+                                            List<String> participantsList = Arrays.asList(participantsArray);
+
+                                            ArrayList<String> participantsArrayList = new ArrayList<>();
+                                            participantsArrayList.addAll(participantsList);
+
+
+                                            rpcService.addParticipantsToTeam(currentTeam, participantsArrayList, new AsyncCallback<Boolean>() {
+                                                @Override
+                                                public void onFailure(Throwable caught) {
+
+                                                }
+
+                                                @Override
+                                                public void onSuccess(Boolean result) {
+                                                    createParticipantView();
+                                                    content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
+                                                }
+                                            });
                                         }
                                     });
                                 }
@@ -230,8 +226,67 @@ public class ParticipantController {
                 @Override
                 public void onSuccess(Boolean result) {
                     Window.alert("Personen er fjernet ;)");
+                    participantListDataProvider.getList().remove(object);
+                    participantListDataProvider.refresh();
                 }
+
             });
+        }
+    }
+
+    class MyTeamTeamCaptainClickHandler implements ClickHandler{
+        /**
+         * Called when a native click event is fired.
+         *
+         * @param event the {@link ClickEvent} that was fired
+         */
+        @Override
+        public void onClick(ClickEvent event) {
+            if (event.getSource() == content.getParticipantView().getMyTeamView().getSubmitBtn()){
+                if (content.getParticipantView().getMyTeamView().getChangeTeamNameField().getText()
+                        .replaceAll("\\s", "")
+                        .length() != 0){
+                    Team newTeam = new Team();
+                    newTeam.setTeamName(content.getParticipantView().getMyTeamView().getChangeTeamNameField().getText());
+
+                    rpcService.changeTeamInfo(currentTeam, newTeam, new AsyncCallback<Team>() {
+                        @Override
+                        public void onFailure(Throwable caught) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(Team result) {
+                            content.getParticipantView().getMyTeamView().getChangeTeamNameField().setText("");
+                            createParticipantView();
+                        }
+                    });
+                }
+
+                if (content.getParticipantView().getMyTeamView().getAddParticipantField().getText()
+                        .replaceAll("\\s", "")
+                        .length() != 0){
+
+                    ArrayList<String> participants = new ArrayList<>();
+
+
+                    participants.add(content.getParticipantView().getMyTeamView().getAddParticipantField().getText()
+                            .replaceAll("\\s", ""));
+
+                    rpcService.addParticipantsToTeam(currentTeam, participants, new AsyncCallback<Boolean>() {
+                        @Override
+                        public void onFailure(Throwable caught) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(Boolean result) {
+                            content.getParticipantView().getMyTeamView().getAddParticipantField().setText("");
+                            createParticipantView();
+                        }
+                    });
+                }
+            }
         }
     }
 
@@ -274,9 +329,7 @@ public class ParticipantController {
 
         rpcService.getParticipantCyclistType(currentParticipant.getEmail(), new AsyncCallback<String>() {
             @Override
-            public void onFailure(Throwable caught) {
-
-            }
+            public void onFailure(Throwable caught) {}
 
             @Override
             public void onSuccess(String result) {
@@ -287,9 +340,7 @@ public class ParticipantController {
 
         rpcService.getParticipantFirmName(currentParticipant.getEmail(), new AsyncCallback<String>() {
             @Override
-            public void onFailure(Throwable caught) {
-
-            }
+            public void onFailure(Throwable caught) {}
 
             @Override
             public void onSuccess(String result) {
@@ -300,9 +351,7 @@ public class ParticipantController {
 
         rpcService.getParticipantTeamName(currentParticipant.getEmail(), new AsyncCallback<String>() {
             @Override
-            public void onFailure(Throwable caught) {
-
-            }
+            public void onFailure(Throwable caught) {}
 
             @Override
             public void onSuccess(String result) {
@@ -312,14 +361,66 @@ public class ParticipantController {
                     content.getParticipantView().getMyProfileView().getTeamLabel().setText(
                             "Dit hold: " + result);
                 }
+            }
+        });
+    }
 
+    private void createMyTeam(){
 
+        rpcService.getAllParticipantsInTeamFromTeamID(currentParticipant.getTeamID(), new AsyncCallback<ArrayList<Participant>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Participant> result) {
+                participantListDataProvider = new ListDataProvider<>();
+                participantListDataProvider.getList().addAll(result);
+
+                content.getParticipantView().getMyTeamView().initTable(participantListDataProvider, currentParticipant);
+                content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
             }
         });
 
+        /**
+         * Sætter de forskellige labels af holdet til de rigtige værdier, fx hold id bliver sat til holdets id i databasen
+         */
+        rpcService.getTeam(currentParticipant.getEmail(), new AsyncCallback<Team>() {
+            @Override
+            public void onFailure(Throwable caught) {}
 
+            @Override
+            public void onSuccess(Team result) {
+                content.getParticipantView().getMyTeamView().getTeamIDLabel().setText(result.getTeamID() + "");
+                content.getParticipantView().getMyTeamView().getTeamNameLabel().setText(result.getTeamName());
+                content.getParticipantView().getMyTeamView().getNumberOfParticipantsLabel().setText(result.getParticipants().size()+ "");
+            }
+        });
+
+        rpcService.getAllParticipantsInTeamFromTeamID(currentParticipant.getTeamID(), new AsyncCallback<ArrayList<Participant>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Participant> result) {
+                content.getParticipantView().getMyTeamView().getNumberOfParticipantsLabel().setText(result.size()+ "");
+            }
+        });
+
+        /**
+         * Henter firmaet navn ud fra currentParticipants email og sætter det til en label
+         */
+        rpcService.getFirmFromEmail(currentParticipant.getEmail(), new AsyncCallback<Firm>() {
+            @Override
+            public void onFailure(Throwable caught) {}
+
+            @Override
+            public void onSuccess(Firm firm) {
+                content.getParticipantView().getMyTeamView().getFirmNameLabel().setText(firm.getFirmName());
+            }
+        });
     }
-
-
-
 }
