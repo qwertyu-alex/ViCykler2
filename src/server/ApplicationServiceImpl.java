@@ -150,8 +150,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
                     participant.setPersonType(resultSet.getString("PersonType"));
                     participant.setFirmName(resultSet.getString("FirmName"));
+                    participant.setFirmID(resultSet.getInt("FirmID"));
                     participant.setTeamID(resultSet.getInt("TeamID"));
                     participant.setTeamName(resultSet.getString("TeamName"));
+
+                    System.out.println("Part firm ID: " +  participant.getFirmID());
 
                     participants.add(participant);
                 }
@@ -486,7 +489,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 tempTeam.setTeamID(getTeamsRes.getInt("TeamID"));
                 tempTeam.setTeamName(getTeamsRes.getString("TeamName"));
                 tempTeam.setFirmName(getTeamsRes.getString("FirmName"));
-
+                tempTeam.setFirmID(getTeamsRes.getInt("FirmID"));
+                System.out.println("Team: firmID" + tempTeam.getFirmID());
                 teams.add(tempTeam);
             }
 
@@ -709,7 +713,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public Team getTeam(String email) throws Exception {
+    public Team getTeamFromEmail(String email) throws Exception {
 
         try {
             PreparedStatement getTeam = connection.prepareStatement("SELECT * FROM teams INNER JOIN persons ON teams.TeamID = persons.TeamID WHERE Email = ?");
@@ -717,7 +721,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             ResultSet getTeamRes = getTeam.executeQuery();
             if (getTeamRes.next()){
                 Team foundTeam = new Team();
-
                 foundTeam.setTeamID(getTeamRes.getInt("TeamID"));
                 foundTeam.setTeamName(getTeamRes.getString("TeamName"));
                 foundTeam.setFirmID(getTeamRes.getInt("FirmID"));
@@ -736,9 +739,22 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public Team getTeam(Team team) throws Exception {
+    public Team getTeamFromTeamID(int teamID) throws Exception {
         try {
-            PreparedStatement getTeam = connection.prepareStatement("SELECT TEAM");
+            PreparedStatement getTeam = connection.prepareStatement("SELECT * FROM teams WHERE TeamID = ?");
+            getTeam.setInt(1, teamID);
+            ResultSet getTeamRes = getTeam.executeQuery();
+            if (getTeamRes.next()){
+                Team foundTeam = new Team();
+                foundTeam.setTeamID(getTeamRes.getInt("TeamID"));
+                foundTeam.setFirmID(getTeamRes.getInt("FirmID"));
+                foundTeam.setTeamName(getTeamRes.getString("TeamName"));
+                return foundTeam;
+            } else  {
+                System.out.println("ERR intet hold fra ID");
+                throw new SQLException();
+            }
+
         } catch (SQLException err){
 
         }

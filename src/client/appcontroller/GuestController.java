@@ -4,18 +4,17 @@ import client.ui.Content;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.regexp.shared.MatchResult;
 import com.google.gwt.regexp.shared.RegExp;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.ListDataProvider;
 import rpc.ApplicationServiceAsync;
 //import server.withoutDB.Data;
-import shared.DTO.Admin;
-import shared.DTO.Firm;
-import shared.DTO.Participant;
-import shared.DTO.Person;
-
+import shared.DTO.*;
 import java.util.ArrayList;
 
 
@@ -41,6 +40,8 @@ public class GuestController {
 
 //        Tilføjer alle firmaer til signup viewet
         createSignUp();
+
+        createStatistic();
     }
 
     /**
@@ -268,6 +269,95 @@ public class GuestController {
                 for (Firm firm :result) {
                     content.getGuestView().getSignUpView().getFirmList().addItem(firm.getFirmName());
                 }
+            }
+        });
+    }
+    
+    private void createStatistic(){
+        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Firm> firms) {
+                rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        
+                    }
+
+                    @Override
+                    public void onSuccess(ArrayList<Team> teams) {
+                        Window.alert(teams.get(0).getFirmID() + "ASDASD");
+
+                        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+
+                            }
+
+                            @Override
+                            public void onSuccess(ArrayList<Participant> participants) {
+
+                                content.getGuestView().getGuestStatisticView().getStatisticPanel().add(
+                                        new Label("Der er i alt " + firms.size() + " firmaer tilmeldt.")
+                                );
+
+                                content.getGuestView().getGuestStatisticView().getStatisticPanel().add(
+                                        new Label("Der er i alt " + teams.size() + " hold tilmeldt.")
+                                );
+
+                                content.getGuestView().getGuestStatisticView().getStatisticPanel().add(
+                                        new Label("Der er i alt " + participants.size() + " deltagere tilmeldt.")
+                                );
+
+
+                                for (Firm firm :firms) {
+                                    VerticalPanel tempVerticalPanel = new VerticalPanel();
+                                    tempVerticalPanel.addStyleName("fakefakeBtn margintop marginbot");
+
+                                    content.getGuestView().getGuestStatisticView().getStatisticPanel().add(
+                                            tempVerticalPanel
+                                    );
+
+                                    tempVerticalPanel.add(new Label(firm.getFirmName()));
+
+                                    int numberOfTeamsInFirm = 0;
+                                    for (Team team : teams) {
+                                        if (team.getFirmID() == firm.getID()){
+                                            teams.remove(team);
+                                            numberOfTeamsInFirm++;
+                                        }
+                                    }
+
+                                    int numberOfParticipantsInFirm = 0;
+                                    for (Participant participant: participants){
+                                        if (participant.getFirmID() == firm.getID()){
+                                            participants.remove(participant);
+                                            numberOfParticipantsInFirm++;
+                                        }
+                                    }
+
+                                    double pctOfTeams = (double) numberOfTeamsInFirm / (double) teams.size() * (double) 100;
+                                    double pctOfParticipants = (double) numberOfParticipantsInFirm / (double) participants.size() * (double) 100;
+
+                                    /**
+                                     * Formaterer double så den kun har 2 digits
+                                     */
+                                    String formattedPctOfTeams = NumberFormat.getFormat("00.00").format(pctOfTeams);
+                                    String formattedPctOfParticipants = NumberFormat.getFormat("00.00").format(pctOfParticipants);
+
+                                    tempVerticalPanel.add(new Label("Antal hold i firmaet: " + numberOfTeamsInFirm));
+                                    tempVerticalPanel.add(new Label("Antallet af hold udgør: " + formattedPctOfTeams + "%" ));
+                                    tempVerticalPanel.add(new Label("Antal deltagere i firmaet: " + numberOfParticipantsInFirm));
+                                    tempVerticalPanel.add(new Label("Antallet af deltagere udgør: " + formattedPctOfParticipants + "%"));
+                                }
+                            }
+                        });
+                    }
+                });
             }
         });
     }

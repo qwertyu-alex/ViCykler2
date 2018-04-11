@@ -92,11 +92,24 @@ button:active{
     height: 90%;
 }
 
+
 .fakeBtn:hover{
     background-color: #ffd6b3;
     border-radius: 10px;
 }
 
+.fakefakeBtn{
+    background-color: #eadfd6;
+    border-radius: 10px;
+    padding: 3em 3em 3em 3em;
+    width: 95%;
+    height: 95%;
+}
+
+.fakefakeBtn:hover{
+    background-color: #d4c9c0;
+
+}
 .margintop{
     margin-top: 1em;
 }
@@ -104,4 +117,8 @@ button:active{
 .bold{
     font-weight: bold;
     font-size: larger;
+}
+
+.marginbot{
+    margin-bot: 1em;
 }

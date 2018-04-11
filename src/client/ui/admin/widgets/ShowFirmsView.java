@@ -77,7 +77,7 @@ public class ShowFirmsView extends Composite {
 
             cellTable.addColumn(firmName, "Firmanavn");
             cellTable.addColumn(numberOfParticipants, "Antal deltagere");
-            cellTable.addColumn(numberOfTeams, "Antal deltagere");
+            cellTable.addColumn(numberOfTeams, "Antal hold");
             cellTable.addColumn(changeFirm);
 
             isTableMade = true;

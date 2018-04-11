@@ -17,7 +17,7 @@
 
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
-                                <g:Button ui:field="statistiskBtn">Statistik</g:Button>
+                                <g:Button ui:field="statistiskBtn">Information</g:Button>
                             </g:HorizontalPanel>
 
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"

@@ -44,7 +44,7 @@ public class ParticipantController {
     }
 
     public void findCurrentTeam(){
-        rpcService.getTeam(currentParticipant.getEmail(), new AsyncCallback<Team>() {
+        rpcService.getTeamFromEmail(currentParticipant.getEmail(), new AsyncCallback<Team>() {
             @Override
             public void onFailure(Throwable caught) {
 
@@ -160,7 +160,7 @@ public class ParticipantController {
                                     /**
                                      * Sæt current team til det hold der lige er blevet lavet
                                      */
-                                    rpcService.getTeam(currentParticipant.getEmail(), new AsyncCallback<Team>() {
+                                    rpcService.getTeamFromEmail(currentParticipant.getEmail(), new AsyncCallback<Team>() {
                                         @Override
                                         public void onFailure(Throwable caught) {}
 
@@ -387,7 +387,7 @@ public class ParticipantController {
         /**
          * Sætter de forskellige labels af holdet til de rigtige værdier, fx hold id bliver sat til holdets id i databasen
          */
-        rpcService.getTeam(currentParticipant.getEmail(), new AsyncCallback<Team>() {
+        rpcService.getTeamFromEmail(currentParticipant.getEmail(), new AsyncCallback<Team>() {
             @Override
             public void onFailure(Throwable caught) {}
 

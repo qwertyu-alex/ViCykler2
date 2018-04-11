@@ -22,8 +22,8 @@ public interface ApplicationService extends RemoteService {
     boolean createTeam(Team newTeam, Participant teamCaptain) throws Exception;
     boolean createFirm(String name);
     Participant getParticipant(String email) throws Exception;
-    Team getTeam(String email) throws Exception;
-    Team getTeam(Team team) throws Exception;
+    Team getTeamFromEmail(String email) throws Exception;
+    Team getTeamFromTeamID(int teamID) throws Exception;
     String getParticipantName(String email) throws Exception;
     String getParticipantCyclistType(String email) throws Exception;
     String getParticipantFirmName(String email) throws Exception;

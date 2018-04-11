@@ -48,9 +48,9 @@ public interface ApplicationServiceAsync {
 
     void removeFromTeam(Participant participant,AsyncCallback<Boolean> async);
 
-    void getTeam(String email, AsyncCallback<Team> async);
+    void getTeamFromEmail(String email, AsyncCallback<Team> async);
 
-    void getTeam(Team team, AsyncCallback<Team> async);
+    void getTeamFromTeamID(int teamID, AsyncCallback<Team> async);
 
     void getFirmFromEmail(String email, AsyncCallback<Firm> async);
 
