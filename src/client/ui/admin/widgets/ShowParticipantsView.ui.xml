@@ -2,8 +2,11 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
     <g:HTMLPanel>
-        <c:CellTable ui:field="cellTable" styleName="center">
+        <g:ScrollPanel width="100%" height="100%">
+            <c:CellTable ui:field="cellTable" styleName="center">
 
-        </c:CellTable>
+            </c:CellTable>
+        </g:ScrollPanel>
+
     </g:HTMLPanel>
 </ui:UiBinder>

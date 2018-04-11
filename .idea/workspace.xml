@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="Har lavet mit hold næsten færdigt. Mangler at opdatere tabellen hver gang man trykker fjern fra hold. Mangler også at ændre labels så den viser korrekt data.">
+    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ViCykler.css" afterPath="$PROJECT_DIR$/war/ViCykler.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,16 +80,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationServiceAsync.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="50" column="12" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -156,16 +149,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ApplicationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,7 +174,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="526">
@@ -210,62 +193,9 @@
       <file leaf-file-name="MyTeamView.ui.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-              <folding>
-                <marker date="1523453167737" expanded="true" signature="3432:3437" ph="..." />
-                <marker date="1523453167737" expanded="true" signature="3515:3740" ph="..." />
-                <marker date="1523453167737" expanded="true" signature="3557:3705" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyTeamView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-              <folding>
-                <element signature="e#4567#4568#0" expanded="true" />
-                <element signature="e#4599#4600#0" expanded="true" />
-                <marker date="1523453167737" expanded="true" signature="1640:3245" ph="{...}" />
-                <marker date="1523453167737" expanded="true" signature="2017:2156" ph="(object) → { " />
-                <marker date="1523453167737" expanded="true" signature="2180:2212" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="2262:2401" ph="(object) → { " />
-                <marker date="1523453167737" expanded="false" signature="2426:2458" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="2842:2868" ph="&lt;~&gt;" />
-                <marker date="1523453167737" expanded="true" signature="2916:3096" ph="{...}" />
-                <marker date="1523453167737" expanded="false" signature="3015:3042" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="3316:3326" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="3366:3372" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3407:3418" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3437:3443" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3480:3491" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3512:3518" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3567:3578" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3611:3617" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3667:3678" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3695:3701" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3742:3753" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3772:3778" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3815:3826" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3847:3853" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="3912:3923" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="3939:3945" ph=" }" />
-                <marker date="1523453167737" expanded="false" signature="4017:4028" ph=" { " />
-                <marker date="1523453167737" expanded="false" signature="4053:4059" ph=" }" />
-                <marker date="1523453167737" expanded="true" signature="4101:4112" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="4130:4136" ph=" }" />
-                <marker date="1523453167737" expanded="true" signature="4211:4222" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="4257:4263" ph=" }" />
-                <marker date="1523453167737" expanded="true" signature="4311:4322" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="4348:4354" ph=" }" />
-                <marker date="1523453167737" expanded="true" signature="4399:4410" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="4437:4443" ph=" }" />
-                <marker date="1523453167737" expanded="true" signature="4488:4499" ph=" { " />
-                <marker date="1523453167737" expanded="true" signature="4526:4532" ph=" }" />
-              </folding>
+            <state relative-caret-position="455">
+              <caret line="63" column="80" lean-forward="false" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -273,8 +203,38 @@
       <file leaf-file-name="ViCykler.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/ViCykler.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
+            <state relative-caret-position="1115">
+              <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowTeamsView.ui.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowParticipantsView.ui.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowFirmsView.ui.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -307,7 +267,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>content</find>
       <find>update</find>
       <find>pass</find>
       <find>data</find>
@@ -337,6 +296,7 @@
       <find>createTea</find>
       <find>create</find>
       <find>getTeam(</find>
+      <find>Dele</find>
     </findStrings>
     <replaceStrings>
       <replace>ViCykler</replace>
@@ -369,15 +329,12 @@
         <option value="$PROJECT_DIR$/war/ViCykler.html" />
         <option value="$PROJECT_DIR$/src/client/ui/Content.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/AdminView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.java" />
@@ -398,13 +355,16 @@
         <option value="$PROJECT_DIR$/src/shared/DTO/Participant.java" />
         <option value="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
         <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/war/ViCykler.css" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
-        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" />
         <option value="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" />
         <option value="$PROJECT_DIR$/src/rpc/ApplicationService.java" />
         <option value="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" />
+        <option value="$PROJECT_DIR$/war/ViCykler.css" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml" />
       </list>
     </option>
   </component>
@@ -1218,11 +1178,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523387817118</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixet når man skal lave et hold og tilføje personer">
+      <created>1523454079792</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1523454079792</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176614000" />
+    <option name="totallyTimeSpent" value="176950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1343,7 +1310,8 @@
     <MESSAGE value="Er i gang med at lave update participant inde under admin menuen" />
     <MESSAGE value="Har også lavet liste over firmaer og en menu for at ændre dem under admin login" />
     <MESSAGE value="Har lavet mit hold næsten færdigt. Mangler at opdatere tabellen hver gang man trykker fjern fra hold. Mangler også at ændre labels så den viser korrekt data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Har lavet mit hold næsten færdigt. Mangler at opdatere tabellen hver gang man trykker fjern fra hold. Mangler også at ændre labels så den viser korrekt data." />
+    <MESSAGE value="Fixet når man skal lave et hold og tilføje personer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixet når man skal lave et hold og tilføje personer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1356,14 +1324,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyProfileView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="42" lean-forward="false" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1555,14 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1585,14 +1537,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ChangeTeamView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1649,6 +1593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1656,26 +1601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ViCykler.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-          <folding>
-            <marker date="1523453167737" expanded="true" signature="3432:3437" ph="..." />
-            <marker date="1523453167737" expanded="true" signature="3515:3740" ph="..." />
-            <marker date="1523453167737" expanded="true" signature="3557:3705" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1843,13 +1768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
@@ -1861,6 +1779,53 @@
             <element signature="e#12819#12820#0" expanded="true" />
             <element signature="e#12884#12885#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="63" column="80" lean-forward="false" selection-start-line="63" selection-start-column="80" selection-end-line="63" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/ViCykler.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1115">
+          <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
