@@ -292,10 +292,28 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             createTeam.executeUpdate();
 
             /**
+             * Find holdID
+             */
+
+            PreparedStatement findID = connection.prepareStatement("SELECT TeamID from teams WHERE TeamName = ? AND FirmID = ?");
+            findID.setString(1,newTeam.getTeamName());
+            findID.setInt(2, firmID);
+            ResultSet findIDRes = findID.executeQuery();
+            int teamID = 0;
+            if (findIDRes.next()){
+                teamID = findIDRes.getInt("TeamID");
+            } else {
+                System.out.println("ERROR: Intet teamID");
+                throw new SQLException();
+            }
+
+
+            /**
              * Sætter en participant til at være holdkaptain
              */
-            PreparedStatement findParticipant = connection.prepareStatement("UPDATE persons SET PersonType = 'TEAMCAPTAIN' WHERE Email LIKE ?");
-            findParticipant.setString(1, teamCaptain.getEmail());
+            PreparedStatement findParticipant = connection.prepareStatement("UPDATE persons SET PersonType = 'TEAMCAPTAIN', TeamID = ? WHERE Email LIKE ?");
+            findParticipant.setInt(1, teamID);
+            findParticipant.setString(2, teamCaptain.getEmail());
             findParticipant.executeUpdate();
 
         } catch (SQLException err){

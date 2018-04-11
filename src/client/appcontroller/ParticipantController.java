@@ -228,6 +228,7 @@ public class ParticipantController {
                     Window.alert("Personen er fjernet ;)");
                     participantListDataProvider.getList().remove(object);
                     participantListDataProvider.refresh();
+                    createParticipantView();
                 }
 
             });

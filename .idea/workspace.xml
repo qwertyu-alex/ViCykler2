@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
+    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="Har lavet mit hold næsten færdigt. Mangler at opdatere tabellen hver gang man trykker fjern fra hold. Mangler også at ændre labels så den viser korrekt data.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/ApplicationService.java" afterPath="$PROJECT_DIR$/src/rpc/ApplicationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" afterPath="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/ViCykler.css" afterPath="$PROJECT_DIR$/war/ViCykler.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,65 +90,78 @@
       <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="103" column="75" lean-forward="false" selection-start-line="103" selection-start-column="75" selection-end-line="103" selection-end-column="75" />
+            <state relative-caret-position="135">
+              <caret line="711" column="24" lean-forward="false" selection-start-line="711" selection-start-column="16" selection-end-line="711" selection-end-column="24" />
               <folding>
                 <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#createParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantCyclistType#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantTeamName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantPassword#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getGuestStatisticView#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllTeams#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllFirms#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#changeFirmInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#removeFromTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <marker date="1523449076093" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="3342:3372" ph="SELECT Perso... persons" />
-                <marker date="1523449076093" expanded="true" signature="3999:4037" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="5220:5366" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="5245:5266" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="5245:5316" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="7534:7578" ph="SELECT Email... persons" />
-                <marker date="1523449076093" expanded="true" signature="8401:8444" ph="SELECT FirmI... firms" />
-                <marker date="1523449076093" expanded="true" signature="8937:9051" ph="INSERT INTO persons... " />
-                <marker date="1523449076093" expanded="true" signature="10428:10470" ph="SELECT FirmI... persons" />
-                <marker date="1523449076093" expanded="true" signature="10991:11038" ph="INSERT INTO teams... " />
-                <marker date="1523449076093" expanded="true" signature="11355:11419" ph="UPDATE perso... " />
-                <marker date="1523449076093" expanded="true" signature="12359:12404" ph="UPDATE perso... " />
-                <marker date="1523449076093" expanded="true" signature="13016:13053" ph="SELECT * FRO... persons" />
-                <marker date="1523449076093" expanded="true" signature="14259:14308" ph="SELECT Perso... persons" />
-                <marker date="1523449076093" expanded="true" signature="14674:14724" ph="SELECT Cycli... persons" />
-                <marker date="1523449076093" expanded="true" signature="15128:15230" ph="SELECT FirmN... firms" />
-                <marker date="1523449076093" expanded="true" signature="15798:15840" ph="SELECT TeamI... persons" />
-                <marker date="1523449076093" expanded="true" signature="16184:16316" ph="SELECT teams... teams" />
-                <marker date="1523449076093" expanded="true" signature="16918:16962" ph="SELECT Passw... persons" />
-                <marker date="1523449076093" expanded="true" signature="17297:17440" ph="SELECT perso... persons" />
-                <marker date="1523449076093" expanded="true" signature="17463:17470" ph="{...}" />
-                <marker date="1523449076093" expanded="true" signature="17681:17700" ph="SELECT * FRO... teams" />
-                <marker date="1523449076093" expanded="true" signature="17681:17748" ph="SELECT * FRO... teams" />
-                <marker date="1523449076093" expanded="true" signature="18281:18387" ph="SELECT perso... persons" />
-                <marker date="1523449076093" expanded="true" signature="19037:19056" ph="SELECT * FRO... firms" />
-                <marker date="1523449076093" expanded="true" signature="19671:19774" ph="SELECT teams... teams" />
-                <marker date="1523449076093" expanded="true" signature="20613:20721" ph="SELECT perso... persons" />
-                <marker date="1523449076093" expanded="true" signature="21894:21946" ph="SELECT TeamI... teams" />
-                <marker date="1523449076093" expanded="true" signature="22021:22073" ph="SELECT FirmI... firms" />
-                <marker date="1523449076093" expanded="true" signature="22629:22778" ph="UPDATE perso... " />
-                <marker date="1523449076093" expanded="true" signature="22629:22794" ph="UPDATE perso... " />
-                <marker date="1523449076093" expanded="true" signature="23940:23986" ph="UPDATE teams... " />
-                <marker date="1523449076093" expanded="true" signature="24498:24546" ph="UPDATE firms... " />
-                <marker date="1523449076093" expanded="true" signature="25423:25471" ph="UPDATE perso... " />
-                <marker date="1523449076093" expanded="true" signature="25865:25960" ph="SELECT * fro... firms" />
-                <marker date="1523449076093" expanded="true" signature="26706:26784" ph="SELECT * FRO... teams" />
-                <marker date="1523449076093" expanded="true" signature="26706:26793" ph="SELECT * FRO... teams" />
-                <marker date="1523449076093" expanded="true" signature="26706:26795" ph="SELECT * FRO... teams" />
+                <marker date="1523453782825" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="true" signature="3342:3372" ph="SELECT Perso... persons" />
+                <marker date="1523453782825" expanded="true" signature="3999:4037" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="true" signature="5220:5366" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="true" signature="5245:5266" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="true" signature="5245:5316" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="true" signature="7534:7578" ph="SELECT Email... persons" />
+                <marker date="1523453782825" expanded="true" signature="8401:8444" ph="SELECT FirmI... firms" />
+                <marker date="1523453782825" expanded="true" signature="8937:9051" ph="INSERT INTO persons... " />
+                <marker date="1523453782825" expanded="true" signature="10428:10470" ph="SELECT FirmI... persons" />
+                <marker date="1523453782825" expanded="true" signature="10991:11038" ph="INSERT INTO teams... " />
+                <marker date="1523453782825" expanded="true" signature="11313:11371" ph="SELECT TeamI... teams" />
+                <marker date="1523453782825" expanded="true" signature="11949:12025" ph="UPDATE perso... " />
+                <marker date="1523453782825" expanded="true" signature="13012:13057" ph="UPDATE perso... " />
+                <marker date="1523453782825" expanded="false" signature="13521:14749" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="13669:13706" ph="SELECT * FRO... persons" />
+                <marker date="1523453782825" expanded="false" signature="14834:15159" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="14912:14961" ph="SELECT Perso... persons" />
+                <marker date="1523453782825" expanded="false" signature="15250:15576" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="15327:15377" ph="SELECT Cycli... persons" />
+                <marker date="1523453782825" expanded="false" signature="15664:16276" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="15781:15883" ph="SELECT FirmN... firms" />
+                <marker date="1523453782825" expanded="false" signature="16364:17412" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="16451:16493" ph="SELECT TeamI... persons" />
+                <marker date="1523453782825" expanded="true" signature="16837:16969" ph="SELECT teams... teams" />
+                <marker date="1523453782825" expanded="false" signature="17500:17797" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="17571:17615" ph="SELECT Passw... persons" />
+                <marker date="1523453782825" expanded="false" signature="17872:18123" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="17950:18093" ph="SELECT perso... persons" />
+                <marker date="1523453782825" expanded="true" signature="18116:18123" ph="{...}" />
+                <marker date="1523453782825" expanded="false" signature="18197:19478" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="18334:18353" ph="SELECT * FRO... teams" />
+                <marker date="1523453782825" expanded="true" signature="18334:18401" ph="SELECT * FRO... teams" />
+                <marker date="1523453782825" expanded="true" signature="18934:19040" ph="SELECT perso... persons" />
+                <marker date="1523453782825" expanded="false" signature="19552:22228" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="19690:19709" ph="SELECT * FRO... firms" />
+                <marker date="1523453782825" expanded="true" signature="20324:20427" ph="SELECT teams... teams" />
+                <marker date="1523453782825" expanded="true" signature="21266:21374" ph="SELECT perso... persons" />
+                <marker date="1523453782825" expanded="false" signature="22286:22297" ph=" { " />
+                <marker date="1523453782825" expanded="false" signature="22310:22316" ph=" }" />
+                <marker date="1523453782825" expanded="true" signature="22547:22599" ph="SELECT TeamI... teams" />
+                <marker date="1523453782825" expanded="true" signature="22674:22726" ph="SELECT FirmI... firms" />
+                <marker date="1523453782825" expanded="true" signature="23282:23431" ph="UPDATE perso... " />
+                <marker date="1523453782825" expanded="true" signature="23282:23447" ph="UPDATE perso... " />
+                <marker date="1523453782825" expanded="true" signature="24593:24639" ph="UPDATE teams... " />
+                <marker date="1523453782825" expanded="false" signature="25063:25899" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="25151:25199" ph="UPDATE firms... " />
+                <marker date="1523453782825" expanded="false" signature="25991:26354" ph="{...}" />
+                <marker date="1523453782825" expanded="true" signature="26076:26124" ph="UPDATE perso... " />
+                <marker date="1523453782825" expanded="true" signature="26518:26613" ph="SELECT * fro... firms" />
+                <marker date="1523453782825" expanded="true" signature="27359:27437" ph="SELECT * FRO... teams" />
+                <marker date="1523453782825" expanded="true" signature="27359:27446" ph="SELECT * FRO... teams" />
+                <marker date="1523453782825" expanded="true" signature="27359:27448" ph="SELECT * FRO... teams" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,14 +194,14 @@
       <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="367" column="32" lean-forward="false" selection-start-line="367" selection-start-column="32" selection-end-line="367" selection-end-column="32" />
+            <state relative-caret-position="526">
+              <caret line="230" column="44" lean-forward="true" selection-start-line="230" selection-start-column="44" selection-end-line="230" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="method#onFailure#0;class#5704:9407" expanded="false" />
-                <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="e#1712#1713#0" expanded="true" />
+                <element signature="e#1764#1765#0" expanded="true" />
+                <element signature="e#12819#12820#0" expanded="true" />
+                <element signature="e#12884#12885#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -204,9 +210,13 @@
       <file leaf-file-name="MyTeamView.ui.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="44" column="97" lean-forward="false" selection-start-line="44" selection-start-column="97" selection-end-line="44" selection-end-column="97" />
-              <folding />
+            <state relative-caret-position="315">
+              <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+              <folding>
+                <marker date="1523453167737" expanded="true" signature="3432:3437" ph="..." />
+                <marker date="1523453167737" expanded="true" signature="3515:3740" ph="..." />
+                <marker date="1523453167737" expanded="true" signature="3557:3705" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,26 +224,47 @@
       <file leaf-file-name="MyTeamView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+            <state relative-caret-position="-5">
+              <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2017#2212#0" expanded="true" />
-                <element signature="e#2211#2212#0" expanded="true" />
-                <element signature="e#3316#3317#0" expanded="true" />
-                <element signature="e#3371#3372#0" expanded="true" />
-                <element signature="e#4102#4103#0" expanded="true" />
-                <element signature="e#4135#4136#0" expanded="true" />
-                <element signature="e#4212#4213#0" expanded="true" />
-                <element signature="e#4262#4263#0" expanded="true" />
-                <element signature="e#4312#4313#0" expanded="true" />
-                <element signature="e#4353#4354#0" expanded="true" />
-                <element signature="e#4400#4401#0" expanded="true" />
-                <element signature="e#4442#4443#0" expanded="true" />
-                <element signature="e#4489#4490#0" expanded="true" />
-                <element signature="e#4531#4532#0" expanded="true" />
                 <element signature="e#4567#4568#0" expanded="true" />
                 <element signature="e#4599#4600#0" expanded="true" />
+                <marker date="1523453167737" expanded="true" signature="1640:3245" ph="{...}" />
+                <marker date="1523453167737" expanded="true" signature="2017:2156" ph="(object) → { " />
+                <marker date="1523453167737" expanded="true" signature="2180:2212" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="2262:2401" ph="(object) → { " />
+                <marker date="1523453167737" expanded="false" signature="2426:2458" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="2842:2868" ph="&lt;~&gt;" />
+                <marker date="1523453167737" expanded="true" signature="2916:3096" ph="{...}" />
+                <marker date="1523453167737" expanded="false" signature="3015:3042" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="3316:3326" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="3366:3372" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3407:3418" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3437:3443" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3480:3491" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3512:3518" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3567:3578" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3611:3617" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3667:3678" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3695:3701" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3742:3753" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3772:3778" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3815:3826" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3847:3853" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="3912:3923" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="3939:3945" ph=" }" />
+                <marker date="1523453167737" expanded="false" signature="4017:4028" ph=" { " />
+                <marker date="1523453167737" expanded="false" signature="4053:4059" ph=" }" />
+                <marker date="1523453167737" expanded="true" signature="4101:4112" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="4130:4136" ph=" }" />
+                <marker date="1523453167737" expanded="true" signature="4211:4222" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="4257:4263" ph=" }" />
+                <marker date="1523453167737" expanded="true" signature="4311:4322" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="4348:4354" ph=" }" />
+                <marker date="1523453167737" expanded="true" signature="4399:4410" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="4437:4443" ph=" }" />
+                <marker date="1523453167737" expanded="true" signature="4488:4499" ph=" { " />
+                <marker date="1523453167737" expanded="true" signature="4526:4532" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -244,16 +275,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
               <caret line="105" column="22" lean-forward="false" selection-start-line="105" selection-start-column="22" selection-end-line="105" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViCykler.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/ViCykler.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -300,22 +321,22 @@
       <find>login</find>
       <find>changeFirm</find>
       <find>createT</find>
-      <find>createTeam</find>
-      <find>createTea</find>
       <find>createParticipant</find>
       <find>find</find>
       <find>getPar</find>
       <find>ViCyklerServicee</find>
       <find>changeTea</find>
-      <find>create</find>
       <find>getTeam</find>
       <find>boo</find>
-      <find>getTeam(</find>
       <find>createMyTeam</find>
       <find>get</find>
       <find>getAllParticipants</find>
       <find>numberOF</find>
       <find>auth</find>
+      <find>createTeam</find>
+      <find>createTea</find>
+      <find>create</find>
+      <find>getTeam(</find>
     </findStrings>
     <replaceStrings>
       <replace>ViCykler</replace>
@@ -601,10 +622,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCykler2\lib" />
-      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src\shared" />
-      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src\client" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src" />
     </key>
     <key name="GwtCreateUiBinderDialog.RecentRootElementType">
       <recent name="com.google.gwt.user.client.ui.HTMLPanel" />
@@ -612,8 +631,10 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="server.withoutDB" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCykler2\lib" />
+      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src\shared" />
+      <recent name="C:\Users\alexa\School\Programmering\2. semester\#ViCykler\ViCyklerArch\src\client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1201,7 +1222,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175742000" />
+    <option name="totallyTimeSpent" value="176614000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1237,19 +1258,46 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1736494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11300992" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34791666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1736494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1369,9 +1417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
           <caret line="63" column="34" lean-forward="false" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-          <folding>
-            <element signature="e#1537#1538#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1379,7 +1424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,7 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,7 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1435,7 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1486,9 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="123" column="38" lean-forward="false" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
-          <folding>
-            <element signature="e#3205#3206#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1504,8 +1542,9 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="65" lean-forward="false" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
+        <state relative-caret-position="20">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,7 +1552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-320">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1529,7 +1567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1537,7 +1574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="16" column="31" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1545,11 +1581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="50" column="28" lean-forward="false" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-          <folding>
-            <element signature="e#1133#1134#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1573,12 +1604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
           <caret line="53" column="23" lean-forward="false" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-          <folding>
-            <element signature="e#1816#2001#0" expanded="false" />
-            <element signature="e#2000#2001#0" expanded="false" />
-            <element signature="e#2027#2212#0" expanded="false" />
-            <element signature="e#2211#2212#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1624,7 +1649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1632,7 +1656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,9 +1669,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="44" column="97" lean-forward="false" selection-start-line="44" selection-start-column="97" selection-end-line="44" selection-end-column="97" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+          <folding>
+            <marker date="1523453167737" expanded="true" signature="3432:3437" ph="..." />
+            <marker date="1523453167737" expanded="true" signature="3515:3740" ph="..." />
+            <marker date="1523453167737" expanded="true" signature="3557:3705" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1661,26 +1688,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        <state relative-caret-position="-5">
+          <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2017#2212#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#4102#4103#0" expanded="true" />
-            <element signature="e#4135#4136#0" expanded="true" />
-            <element signature="e#4212#4213#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4312#4313#0" expanded="true" />
-            <element signature="e#4353#4354#0" expanded="true" />
-            <element signature="e#4400#4401#0" expanded="true" />
-            <element signature="e#4442#4443#0" expanded="true" />
-            <element signature="e#4489#4490#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
             <element signature="e#4567#4568#0" expanded="true" />
             <element signature="e#4599#4600#0" expanded="true" />
+            <marker date="1523453167737" expanded="true" signature="1640:3245" ph="{...}" />
+            <marker date="1523453167737" expanded="true" signature="2017:2156" ph="(object) → { " />
+            <marker date="1523453167737" expanded="true" signature="2180:2212" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="2262:2401" ph="(object) → { " />
+            <marker date="1523453167737" expanded="false" signature="2426:2458" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="2842:2868" ph="&lt;~&gt;" />
+            <marker date="1523453167737" expanded="true" signature="2916:3096" ph="{...}" />
+            <marker date="1523453167737" expanded="false" signature="3015:3042" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="3316:3326" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="3366:3372" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3407:3418" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3437:3443" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3480:3491" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3512:3518" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3567:3578" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3611:3617" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3667:3678" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3695:3701" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3742:3753" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3772:3778" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3815:3826" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3847:3853" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="3912:3923" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="3939:3945" ph=" }" />
+            <marker date="1523453167737" expanded="false" signature="4017:4028" ph=" { " />
+            <marker date="1523453167737" expanded="false" signature="4053:4059" ph=" }" />
+            <marker date="1523453167737" expanded="true" signature="4101:4112" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="4130:4136" ph=" }" />
+            <marker date="1523453167737" expanded="true" signature="4211:4222" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="4257:4263" ph=" }" />
+            <marker date="1523453167737" expanded="true" signature="4311:4322" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="4348:4354" ph=" }" />
+            <marker date="1523453167737" expanded="true" signature="4399:4410" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="4437:4443" ph=" }" />
+            <marker date="1523453167737" expanded="true" signature="4488:4499" ph=" { " />
+            <marker date="1523453167737" expanded="true" signature="4526:4532" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1707,70 +1755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="103" column="75" lean-forward="false" selection-start-line="103" selection-start-column="75" selection-end-line="103" selection-end-column="75" />
-          <folding>
-            <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#createParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantCyclistType#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantTeamName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantPassword#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getGuestStatisticView#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllTeams#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllFirms#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#changeFirmInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#removeFromTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <marker date="1523449076093" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="3342:3372" ph="SELECT Perso... persons" />
-            <marker date="1523449076093" expanded="true" signature="3999:4037" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="5220:5366" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="5245:5266" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="5245:5316" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="7534:7578" ph="SELECT Email... persons" />
-            <marker date="1523449076093" expanded="true" signature="8401:8444" ph="SELECT FirmI... firms" />
-            <marker date="1523449076093" expanded="true" signature="8937:9051" ph="INSERT INTO persons... " />
-            <marker date="1523449076093" expanded="true" signature="10428:10470" ph="SELECT FirmI... persons" />
-            <marker date="1523449076093" expanded="true" signature="10991:11038" ph="INSERT INTO teams... " />
-            <marker date="1523449076093" expanded="true" signature="11355:11419" ph="UPDATE perso... " />
-            <marker date="1523449076093" expanded="true" signature="12359:12404" ph="UPDATE perso... " />
-            <marker date="1523449076093" expanded="true" signature="13016:13053" ph="SELECT * FRO... persons" />
-            <marker date="1523449076093" expanded="true" signature="14259:14308" ph="SELECT Perso... persons" />
-            <marker date="1523449076093" expanded="true" signature="14674:14724" ph="SELECT Cycli... persons" />
-            <marker date="1523449076093" expanded="true" signature="15128:15230" ph="SELECT FirmN... firms" />
-            <marker date="1523449076093" expanded="true" signature="15798:15840" ph="SELECT TeamI... persons" />
-            <marker date="1523449076093" expanded="true" signature="16184:16316" ph="SELECT teams... teams" />
-            <marker date="1523449076093" expanded="true" signature="16918:16962" ph="SELECT Passw... persons" />
-            <marker date="1523449076093" expanded="true" signature="17297:17440" ph="SELECT perso... persons" />
-            <marker date="1523449076093" expanded="true" signature="17463:17470" ph="{...}" />
-            <marker date="1523449076093" expanded="true" signature="17681:17700" ph="SELECT * FRO... teams" />
-            <marker date="1523449076093" expanded="true" signature="17681:17748" ph="SELECT * FRO... teams" />
-            <marker date="1523449076093" expanded="true" signature="18281:18387" ph="SELECT perso... persons" />
-            <marker date="1523449076093" expanded="true" signature="19037:19056" ph="SELECT * FRO... firms" />
-            <marker date="1523449076093" expanded="true" signature="19671:19774" ph="SELECT teams... teams" />
-            <marker date="1523449076093" expanded="true" signature="20613:20721" ph="SELECT perso... persons" />
-            <marker date="1523449076093" expanded="true" signature="21894:21946" ph="SELECT TeamI... teams" />
-            <marker date="1523449076093" expanded="true" signature="22021:22073" ph="SELECT FirmI... firms" />
-            <marker date="1523449076093" expanded="true" signature="22629:22778" ph="UPDATE perso... " />
-            <marker date="1523449076093" expanded="true" signature="22629:22794" ph="UPDATE perso... " />
-            <marker date="1523449076093" expanded="true" signature="23940:23986" ph="UPDATE teams... " />
-            <marker date="1523449076093" expanded="true" signature="24498:24546" ph="UPDATE firms... " />
-            <marker date="1523449076093" expanded="true" signature="25423:25471" ph="UPDATE perso... " />
-            <marker date="1523449076093" expanded="true" signature="25865:25960" ph="SELECT * fro... firms" />
-            <marker date="1523449076093" expanded="true" signature="26706:26784" ph="SELECT * FRO... teams" />
-            <marker date="1523449076093" expanded="true" signature="26706:26793" ph="SELECT * FRO... teams" />
-            <marker date="1523449076093" expanded="true" signature="26706:26795" ph="SELECT * FRO... teams" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -1792,6 +1776,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="711" column="24" lean-forward="false" selection-start-line="711" selection-start-column="16" selection-end-line="711" selection-end-column="24" />
+          <folding>
+            <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#createParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <marker date="1523453782825" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="true" signature="3342:3372" ph="SELECT Perso... persons" />
+            <marker date="1523453782825" expanded="true" signature="3999:4037" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="true" signature="5220:5366" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="true" signature="5245:5266" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="true" signature="5245:5316" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="true" signature="7534:7578" ph="SELECT Email... persons" />
+            <marker date="1523453782825" expanded="true" signature="8401:8444" ph="SELECT FirmI... firms" />
+            <marker date="1523453782825" expanded="true" signature="8937:9051" ph="INSERT INTO persons... " />
+            <marker date="1523453782825" expanded="true" signature="10428:10470" ph="SELECT FirmI... persons" />
+            <marker date="1523453782825" expanded="true" signature="10991:11038" ph="INSERT INTO teams... " />
+            <marker date="1523453782825" expanded="true" signature="11313:11371" ph="SELECT TeamI... teams" />
+            <marker date="1523453782825" expanded="true" signature="11949:12025" ph="UPDATE perso... " />
+            <marker date="1523453782825" expanded="true" signature="13012:13057" ph="UPDATE perso... " />
+            <marker date="1523453782825" expanded="false" signature="13521:14749" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="13669:13706" ph="SELECT * FRO... persons" />
+            <marker date="1523453782825" expanded="false" signature="14834:15159" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="14912:14961" ph="SELECT Perso... persons" />
+            <marker date="1523453782825" expanded="false" signature="15250:15576" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="15327:15377" ph="SELECT Cycli... persons" />
+            <marker date="1523453782825" expanded="false" signature="15664:16276" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="15781:15883" ph="SELECT FirmN... firms" />
+            <marker date="1523453782825" expanded="false" signature="16364:17412" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="16451:16493" ph="SELECT TeamI... persons" />
+            <marker date="1523453782825" expanded="true" signature="16837:16969" ph="SELECT teams... teams" />
+            <marker date="1523453782825" expanded="false" signature="17500:17797" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="17571:17615" ph="SELECT Passw... persons" />
+            <marker date="1523453782825" expanded="false" signature="17872:18123" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="17950:18093" ph="SELECT perso... persons" />
+            <marker date="1523453782825" expanded="true" signature="18116:18123" ph="{...}" />
+            <marker date="1523453782825" expanded="false" signature="18197:19478" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="18334:18353" ph="SELECT * FRO... teams" />
+            <marker date="1523453782825" expanded="true" signature="18334:18401" ph="SELECT * FRO... teams" />
+            <marker date="1523453782825" expanded="true" signature="18934:19040" ph="SELECT perso... persons" />
+            <marker date="1523453782825" expanded="false" signature="19552:22228" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="19690:19709" ph="SELECT * FRO... firms" />
+            <marker date="1523453782825" expanded="true" signature="20324:20427" ph="SELECT teams... teams" />
+            <marker date="1523453782825" expanded="true" signature="21266:21374" ph="SELECT perso... persons" />
+            <marker date="1523453782825" expanded="false" signature="22286:22297" ph=" { " />
+            <marker date="1523453782825" expanded="false" signature="22310:22316" ph=" }" />
+            <marker date="1523453782825" expanded="true" signature="22547:22599" ph="SELECT TeamI... teams" />
+            <marker date="1523453782825" expanded="true" signature="22674:22726" ph="SELECT FirmI... firms" />
+            <marker date="1523453782825" expanded="true" signature="23282:23431" ph="UPDATE perso... " />
+            <marker date="1523453782825" expanded="true" signature="23282:23447" ph="UPDATE perso... " />
+            <marker date="1523453782825" expanded="true" signature="24593:24639" ph="UPDATE teams... " />
+            <marker date="1523453782825" expanded="false" signature="25063:25899" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="25151:25199" ph="UPDATE firms... " />
+            <marker date="1523453782825" expanded="false" signature="25991:26354" ph="{...}" />
+            <marker date="1523453782825" expanded="true" signature="26076:26124" ph="UPDATE perso... " />
+            <marker date="1523453782825" expanded="true" signature="26518:26613" ph="SELECT * fro... firms" />
+            <marker date="1523453782825" expanded="true" signature="27359:27437" ph="SELECT * FRO... teams" />
+            <marker date="1523453782825" expanded="true" signature="27359:27446" ph="SELECT * FRO... teams" />
+            <marker date="1523453782825" expanded="true" signature="27359:27448" ph="SELECT * FRO... teams" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1801,14 +1852,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="367" column="32" lean-forward="false" selection-start-line="367" selection-start-column="32" selection-end-line="367" selection-end-column="32" />
+        <state relative-caret-position="526">
+          <caret line="230" column="44" lean-forward="true" selection-start-line="230" selection-start-column="44" selection-end-line="230" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#onFailure#0;class#5704:9407" expanded="false" />
-            <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1764#1765#0" expanded="true" />
+            <element signature="e#12819#12820#0" expanded="true" />
+            <element signature="e#12884#12885#0" expanded="true" />
           </folding>
         </state>
       </provider>
