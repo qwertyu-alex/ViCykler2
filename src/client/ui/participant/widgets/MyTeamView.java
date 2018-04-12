@@ -9,6 +9,7 @@ import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.view.client.ListDataProvider;
 import shared.DTO.Participant;
@@ -18,7 +19,6 @@ public class MyTeamView extends Composite {
     }
 
     ListDataProvider<Participant> participantListDataProvider;
-    Participant currentParticipant;
 
     @UiField
     Label teamIDLabel, teamNameLabel, numberOfParticipantsLabel, firmNameLabel;
@@ -47,14 +47,11 @@ public class MyTeamView extends Composite {
         simplePager.setPageSize(25);
     }
 
-    public void initTable(ListDataProvider<Participant> participantListDataProvider, Participant currentParticipant){
+    public void initTable(ListDataProvider<Participant> participantListDataProvider){
         this.participantListDataProvider = participantListDataProvider;
         participantListDataProvider.addDataDisplay(cellTable);
 
-        if (this.currentParticipant != currentParticipant){
-            for (int i = 0; i<cellTable.getColumnCount(); i++){
-                cellTable.removeColumn(i);
-            }
+
 
             TextColumn<Participant> participantNameCol = new TextColumn<Participant>() {
                 @Override
@@ -73,21 +70,7 @@ public class MyTeamView extends Composite {
             cellTable.addColumn(participantNameCol, "Deltager");
             cellTable.addColumn(emailCol, "Email");
 
-            /**
-             * Lav en ekstra kolonne hvis det er en holdkaptain
-             */
-            if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-                Column<Participant, Participant> removeParticipantCol = new Column<Participant, Participant>(new ActionCell<>("Fjern fra hold", delegate )) {
-                    @Override
-                    public Participant getValue(Participant object) {
-                        return object;
-                    }
-                };
-                cellTable.addColumn(removeParticipantCol);
-            }
 
-            this.currentParticipant = currentParticipant;
-        }
     }
 
     public void addTeamCaptainClickHandler(ClickHandler clickHandler){
@@ -134,10 +117,6 @@ public class MyTeamView extends Composite {
         return participantListDataProvider;
     }
 
-    public Participant getCurrentParticipant() {
-        return currentParticipant;
-    }
-
     public TextBox getAddParticipantField() {
         return addParticipantField;
     }
@@ -148,5 +127,17 @@ public class MyTeamView extends Composite {
 
     public Button getSubmitBtn() {
         return submitBtn;
+    }
+    /**
+     * Lav en ekstra kolonne hvis det er en holdkaptain
+     */
+    public void createTeamCaptainCol(){
+        Column<Participant, Participant> removeParticipantCol = new Column<Participant, Participant>(new ActionCell<>("Fjern fra hold", delegate )) {
+            @Override
+            public Participant getValue(Participant object) {
+                return object;
+            }
+        };
+        cellTable.addColumn(removeParticipantCol);
     }
 }

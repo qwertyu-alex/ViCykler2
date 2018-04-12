@@ -13,7 +13,7 @@ public class ChangeParticipantView extends Composite {
     private static ChangeParticipantViewUiBinder ourUiBinder = GWT.create(ChangeParticipantViewUiBinder.class);
 
     @UiField
-    Button returnBtn, submitBtn;
+    Button returnBtn, submitBtn, deleteBtn;
 
     @UiField
     TextBox nameField, emailField, personTypeField, cyclistTypeField, firmNameField, teamNameField;
@@ -29,6 +29,7 @@ public class ChangeParticipantView extends Composite {
     public void addClickHandlers(ClickHandler clickHandler){
         submitBtn.addClickHandler(clickHandler);
         returnBtn.addClickHandler(clickHandler);
+        deleteBtn.addClickHandler(clickHandler);
     }
 
     public Button getReturnBtn() {
@@ -69,5 +70,9 @@ public class ChangeParticipantView extends Composite {
 
     public Label getIdLabel() {
         return idLabel;
+    }
+
+    public Button getDeleteBtn() {
+        return deleteBtn;
     }
 }

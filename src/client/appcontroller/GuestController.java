@@ -30,18 +30,8 @@ public class GuestController {
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
         this.rpcService = rpcService;
-
-
 //        Tilføjer clickhandlers til forskellige elementer på siden
         addClickHandlers();
-
-//        Opretter tabellen
-        createTable();
-
-//        Tilføjer alle firmaer til signup viewet
-        createSignUp();
-
-        createStatistic();
     }
 
     /**
@@ -51,7 +41,9 @@ public class GuestController {
 
         @Override
         public void onClick(ClickEvent event) {
-
+            createTable();
+            createSignUp();
+            createStatistic();
 
             if (event.getSource() == content.getGuestView().getLogindBtn()){
                 content.getGuestView().changeView(0);
@@ -276,30 +268,27 @@ public class GuestController {
     private void createStatistic(){
         rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
             @Override
-            public void onFailure(Throwable caught) {
-                
-            }
+            public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
             @Override
             public void onSuccess(ArrayList<Firm> firms) {
                 rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
                     @Override
-                    public void onFailure(Throwable caught) {
-                        
-                    }
+                    public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
                     @Override
                     public void onSuccess(ArrayList<Team> teams) {
-                        Window.alert(teams.get(0).getFirmID() + "ASDASD");
-
                         rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
                             @Override
-                            public void onFailure(Throwable caught) {
-
-                            }
+                            public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
                             @Override
                             public void onSuccess(ArrayList<Participant> participants) {
+
+                                /**
+                                 * Denne metode sørger for at alt fra panelet bliver slettet, så den ikke bygger videre på noget der allerede er der
+                                 */
+                                content.getGuestView().getGuestStatisticView().getStatisticPanel().clear();
 
                                 content.getGuestView().getGuestStatisticView().getStatisticPanel().add(
                                         new Label("Der er i alt " + firms.size() + " firmaer tilmeldt.")
@@ -327,7 +316,6 @@ public class GuestController {
                                     int numberOfTeamsInFirm = 0;
                                     for (Team team : teams) {
                                         if (team.getFirmID() == firm.getID()){
-                                            teams.remove(team);
                                             numberOfTeamsInFirm++;
                                         }
                                     }
@@ -335,7 +323,6 @@ public class GuestController {
                                     int numberOfParticipantsInFirm = 0;
                                     for (Participant participant: participants){
                                         if (participant.getFirmID() == firm.getID()){
-                                            participants.remove(participant);
                                             numberOfParticipantsInFirm++;
                                         }
                                     }
@@ -361,5 +348,4 @@ public class GuestController {
             }
         });
     }
-
 }

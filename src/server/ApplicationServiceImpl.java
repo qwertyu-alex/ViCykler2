@@ -153,9 +153,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     participant.setFirmID(resultSet.getInt("FirmID"));
                     participant.setTeamID(resultSet.getInt("TeamID"));
                     participant.setTeamName(resultSet.getString("TeamName"));
-
-                    System.out.println("Part firm ID: " +  participant.getFirmID());
-
                     participants.add(participant);
                 }
             }
@@ -490,7 +487,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 tempTeam.setTeamName(getTeamsRes.getString("TeamName"));
                 tempTeam.setFirmName(getTeamsRes.getString("FirmName"));
                 tempTeam.setFirmID(getTeamsRes.getInt("FirmID"));
-                System.out.println("Team: firmID" + tempTeam.getFirmID());
                 teams.add(tempTeam);
             }
 
@@ -760,5 +756,128 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
 
         return null;
+    }
+
+    @Override
+    public int getFirmIDFromFirmName(String firmName) throws Exception {
+        try {
+            PreparedStatement getID = connection.prepareStatement("SELECT FirmID FROM firms WHERE FirmName = ?");
+            getID.setString(1, firmName);
+            ResultSet getIDRes = getID.executeQuery();
+            if (getIDRes.next()){
+                return getIDRes.getInt("FirmID");
+            } else {
+                System.out.println("ERR: Intet match");
+                throw new SQLException();
+            }
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    @Override
+    public ArrayList<Participant> getAllTeamCaptains() throws Exception {
+
+        ArrayList<Participant> teamCaptains = new ArrayList<>();
+
+        try {
+            PreparedStatement getAll = connection.prepareStatement("SELECT * FROM persons WHERE PersonType = 'TEAMCAPTAIN'");
+            ResultSet getAllRes = getAll.executeQuery();
+            while (getAllRes.next()){
+                Participant tempParticipant = new Participant();
+                tempParticipant.setName(getAllRes.getString("PersonName"));
+                tempParticipant.setEmail(getAllRes.getString("Email"));
+                tempParticipant.setPersonType(getAllRes.getString("PersonType"));
+                tempParticipant.setCyclistType(getAllRes.getString("CyclistType"));
+                tempParticipant.setFirmID(getAllRes.getInt("FirmID"));
+                tempParticipant.setTeamID(getAllRes.getInt("TeamID"));
+
+                teamCaptains.add(tempParticipant);
+            }
+
+            return teamCaptains;
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception {
+        try {
+            PreparedStatement getID = connection.prepareStatement("SELECT TeamID FROM teams WHERE FirmID = ? AND TeamName = ?");
+            getID.setInt(1, firmID);
+            getID.setString(2, teamName);
+
+            ResultSet getIDRes = getID.executeQuery();
+            if (getIDRes.next()){
+                return getIDRes.getInt("TeamID");
+            } else {
+                System.out.println("ERR: intet match");
+                throw new SQLException();
+            }
+
+        }catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    @Override
+    public boolean deleteFirm(int firmID) throws Exception {
+        try {
+
+            PreparedStatement changePart = connection.prepareStatement("DELETE FROM persons WHERE FirmID = ?");
+            changePart.setInt(1, firmID);
+            changePart.executeUpdate();
+
+            PreparedStatement changeTeam = connection.prepareStatement("DELETE FROM teams WHERE FirmID = ?");
+            changeTeam.setInt(1, firmID);
+            changeTeam.executeUpdate();
+
+            PreparedStatement delete = connection.prepareStatement("DELETE FROM firms WHERE FirmID = ?");
+            delete.setInt(1, firmID);
+            delete.executeUpdate();
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean deleteTeam(int teamID) throws Exception {
+
+        try {
+            PreparedStatement changePart = connection.prepareStatement("UPDATE persons SET TeamID = NULL WHERE TeamID = ?");
+            changePart.setInt(1, teamID);
+            changePart.executeUpdate();
+
+            PreparedStatement delete = connection.prepareStatement("DELETE FROM teams WHERE TeamID = ?");
+            delete.setInt(1, teamID);
+            delete.executeUpdate();
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean deleteParticipant(String email) throws Exception {
+        try {
+            PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
+            delete.setString(1, email);
+            delete.executeUpdate();
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+        return false;
     }
 }

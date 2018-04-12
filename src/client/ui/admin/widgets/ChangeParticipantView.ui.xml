@@ -20,6 +20,7 @@
             <g:TextBox ui:field="teamNameField"></g:TextBox>
             <g:Button ui:field="submitBtn">Submit</g:Button>
             <g:Button ui:field="returnBtn">Gå tilbage</g:Button>
+            <g:Button ui:field="deleteBtn">Slet deltager</g:Button>
         </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

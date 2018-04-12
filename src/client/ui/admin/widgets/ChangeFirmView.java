@@ -17,7 +17,7 @@ public class ChangeFirmView extends Composite {
     @UiField
     TextBox firmNameField;
     @UiField
-    Button submitBtn, returnBtn;
+    Button submitBtn, returnBtn, deleteBtn;
 
     public ChangeFirmView() {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -26,6 +26,7 @@ public class ChangeFirmView extends Composite {
     public void addClickHandlers(ClickHandler clickHandler){
         submitBtn.addClickHandler(clickHandler);
         returnBtn.addClickHandler(clickHandler);
+        deleteBtn.addClickHandler(clickHandler);
     }
 
     public Label getFirmIDLabel() {
@@ -42,5 +43,9 @@ public class ChangeFirmView extends Composite {
 
     public Button getReturnBtn() {
         return returnBtn;
+    }
+
+    public Button getDeleteBtn() {
+        return deleteBtn;
     }
 }

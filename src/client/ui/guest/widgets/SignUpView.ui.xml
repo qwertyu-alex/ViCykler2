@@ -1,7 +1,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
-        <g:VerticalPanel styleName="center">
+        <g:VerticalPanel styleName="center margintop fakefakefakeBtn">
             <g:Label>Email</g:Label>
             <g:TextBox ui:field="emailField"></g:TextBox>
             <g:Label>Name</g:Label>

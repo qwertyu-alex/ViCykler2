@@ -97,7 +97,18 @@ public class AdminController {
             } else if (event.getSource() == content.getAdminView().getChangeTeamView().getReturnBtn()){
                 content.getAdminView().changeView(content.getAdminView().getShowTeamsView());
             } else if (event.getSource() == content.getAdminView().getChangeTeamView().getDeleteBtn()){
+                rpcService.deleteTeam(currentTeam.getTeamID(), new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
 
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        createTeamsTable();
+                        content.getAdminView().changeView(content.getAdminView().getShowTeamsView());
+                    }
+                });
             }
         }
     }
@@ -161,6 +172,19 @@ public class AdminController {
                 });
             } else if (event.getSource() == content.getAdminView().getChangeParticipantView().getReturnBtn()){
                 content.getAdminView().changeView(content.getAdminView().getShowParticipantsView());
+            } else if (event.getSource() == content.getAdminView().getChangeParticipantView().getDeleteBtn()) {
+                rpcService.deleteParticipant(currentParticipant.getEmail(), new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        createParticipantsTable();
+                        content.getAdminView().changeView(content.getAdminView().getShowParticipantsView());
+                    }
+                });
             }
         }
     }
@@ -180,7 +204,7 @@ public class AdminController {
         }
     }
 
-    class ChangeFirmClickHandker implements ClickHandler{
+    class ChangeFirmClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
          *
@@ -212,6 +236,19 @@ public class AdminController {
                 });
             } else if (event.getSource() == content.getAdminView().getChangeFirmView().getReturnBtn()){
                 content.getAdminView().changeView(content.getAdminView().getShowFirmsView());
+            } else if (event.getSource() == content.getAdminView().getChangeFirmView().getDeleteBtn()){
+                rpcService.deleteFirm(currentFirm.getID(), new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        createFirmsTable();
+                        content.getAdminView().changeView(content.getAdminView().getShowFirmsView());
+                    }
+                });
             }
         }
     }
@@ -223,7 +260,7 @@ public class AdminController {
         content.getAdminView().getShowTeamsView().setDelegate(new ChangeTeamDelegateHandler());
         content.getAdminView().getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
         content.getAdminView().getShowFirmsView().setDelegate(new ChangeFirmDelegateHandler());
-        content.getAdminView().getChangeFirmView().addClickHandlers(new ChangeFirmClickHandker());
+        content.getAdminView().getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
     }
 
     private void createParticipantsTable(){

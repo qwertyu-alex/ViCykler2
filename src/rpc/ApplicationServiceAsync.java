@@ -57,4 +57,16 @@ public interface ApplicationServiceAsync {
     void addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails, AsyncCallback<Boolean> async);
 
     void getAllParticipantsInTeamFromTeamID(int teamID, AsyncCallback<ArrayList<Participant>> async);
+
+    void getFirmIDFromFirmName(String firmName, AsyncCallback<Integer> async);
+
+    void getAllTeamCaptains(AsyncCallback<ArrayList<Participant>> async);
+
+    void getTeamIDFromTeamNameAndFirmID(String teamName, int firmID, AsyncCallback<Integer> async);
+
+    void deleteTeam(int teamID, AsyncCallback<Boolean> async);
+
+    void deleteFirm(int firmID, AsyncCallback<Boolean> async);
+
+    void deleteParticipant(String email, AsyncCallback<Boolean> async);
 }

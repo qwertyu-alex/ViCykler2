@@ -1,0 +1,65 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <g:ScrollPanel width="100%" height="100%" alwaysShowScrollBars="false">
+            <g:DockLayoutPanel unit="PCT" width="100%" height="100%">
+                <g:west size="50">
+                    <g:ScrollPanel width="100%" height="100%" styleName="dit">
+                        <g:VerticalPanel styleName="center fakeBtn margintop" ui:field="statisticPanel">
+                        </g:VerticalPanel>
+                    </g:ScrollPanel>
+
+                </g:west>
+
+
+                <g:east size="50">
+                    <g:DockLayoutPanel unit="PCT">
+                        <g:north size="100">
+                            <g:ScrollPanel width="100%" height="100%">
+                                <g:VerticalPanel width="100%" ui:field="participantPanel">
+                                    <g:DeckPanel ui:field="firmSearchDeck">
+                                        <g:VerticalPanel ui:field="searchFirmPanel" styleName="fakeBtn margintop marginbot">
+                                            <g:Label>Søg efter et firma</g:Label>
+                                            <g:ListBox ui:field="firmsList1">
+                                            </g:ListBox>
+                                            <g:Button ui:field="submitFirmBtn">Søg</g:Button>
+                                        </g:VerticalPanel>
+                                        <g:VerticalPanel ui:field="resFirmPanel" styleName="fakeBtn margintop marginbot">
+                                            <g:Label></g:Label>
+                                        </g:VerticalPanel>
+                                    </g:DeckPanel>
+
+
+                                    <g:DeckPanel ui:field="teamSearchDeck">
+                                        <g:VerticalPanel ui:field="searchTeamPanel" styleName="fakeBtn margintop marginbot">
+                                            <g:Label>Søg efter et hold</g:Label>
+                                            <g:ListBox ui:field="firmsList2"></g:ListBox>
+                                            <g:ListBox ui:field="teamList"></g:ListBox>
+                                            <g:Button ui:field="submitTeamBtn">Søg</g:Button>
+                                        </g:VerticalPanel>
+                                        <g:VerticalPanel ui:field="resTeamPanel" styleName="fakeBtn margintop marginbot">
+                                        </g:VerticalPanel>
+                                    </g:DeckPanel>
+
+                                    <g:DeckPanel ui:field="participantSearchDeck">
+                                        <g:VerticalPanel ui:field="searchParticipantPanel" styleName="fakeBtn margintop marginbot">
+                                            <g:Label>Søg efter deltager ved brug af email</g:Label>
+                                            <g:TextBox ui:field="participantEmailField"></g:TextBox>
+                                            <g:Label ui:field="searchParticipantPanelErrLabel"></g:Label>
+                                            <g:Button ui:field="submitParticipantBtn">Søg</g:Button>
+                                        </g:VerticalPanel>
+                                            <g:VerticalPanel ui:field="resParticipantPanel" styleName="fakeBtn margintop marginbot">
+                                        </g:VerticalPanel>
+                                    </g:DeckPanel>
+
+                                </g:VerticalPanel>
+                            </g:ScrollPanel>
+                        </g:north>
+                    </g:DockLayoutPanel>
+                </g:east>
+            </g:DockLayoutPanel>
+
+        </g:ScrollPanel>
+
+    </g:HTMLPanel>
+</ui:UiBinder>

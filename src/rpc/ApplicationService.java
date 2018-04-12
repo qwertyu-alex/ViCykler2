@@ -34,7 +34,13 @@ public interface ApplicationService extends RemoteService {
     Firm changeFirmInfo(Firm currentFirm, Firm changingFirm) throws Exception;
     String getGuestStatisticView() throws Exception;
     boolean removeFromTeam(Participant participant) throws Exception;
+    boolean deleteTeam(int teamID) throws Exception;
+    boolean deleteFirm(int firmID) throws Exception;
+    boolean deleteParticipant(String email) throws Exception;
     Firm getFirmFromEmail (String email) throws Exception;
     boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails) throws Exception;
     ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID) throws Exception;
+    int getFirmIDFromFirmName(String firmName) throws Exception;
+    ArrayList<Participant> getAllTeamCaptains() throws Exception;
+    int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception;
 }

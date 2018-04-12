@@ -41,7 +41,7 @@ public class LoginView extends Composite {
 
         errPanel.add(errMessageLabel);
 
-        vertPanel.addStyleName("center");
+        vertPanel.addStyleName("center fakefakefakeBtn margintop");
         errPanel.addStyleName("center");
 
         HTMLPanel.add(vertPanel);

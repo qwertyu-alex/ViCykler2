@@ -10,8 +10,7 @@
 
             <g:Button ui:field="submitBtn">Submit</g:Button>
             <g:Button ui:field="returnBtn">Gå tilbage</g:Button>
-
-            <g:Button ui:field="deleteBtn" styleName="hidden">(Slet hold)</g:Button>
+            <g:Button ui:field="deleteBtn">Slet hold</g:Button>
         </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

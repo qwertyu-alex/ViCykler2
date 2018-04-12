@@ -53,14 +53,14 @@ public class ShowParticipantsView extends Composite {
             nameCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
-                    return object.getName();
+                    return object.getName() != null ? object.getName() : "*missing*";
                 }
             };
 
             emailCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
-                    return object.getEmail();
+                    return object.getEmail() != null ? object.getEmail() : "*missing*";
                 }
             };
 
@@ -74,28 +74,28 @@ public class ShowParticipantsView extends Composite {
             personTypeCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
-                    return object.getPersonType();
+                    return object.getPersonType() != null ? object.getPersonType() : "*missing*";
                 }
             };
 
             cyclistTypeCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
-                    return object.getCyclistType();
+                    return object.getCyclistType() != null ? object.getCyclistType() : "*missing*";
                 }
             };
 
             firmNameCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
-                    return object.getFirmName();
+                    return object.getFirmName() != null ? object.getFirmName() : "*missing*";
                 }
             };
 
             teamIDCol = new Column<Participant, Number>(new NumberCell()) {
                 @Override
                 public Integer getValue(Participant object) {
-                    return object.getTeamID();
+                    return object.getTeamID() != 0 ? object.getTeamID() : 0;
                 }
             };
 

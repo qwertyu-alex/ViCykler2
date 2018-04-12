@@ -108,7 +108,17 @@ button:active{
 
 .fakefakeBtn:hover{
     background-color: #d4c9c0;
+}
 
+.fakefakefakeBtn{
+    background-color: #fff4eb;
+    border-radius: 10px;
+    padding: 3em 3em 3em 3em;
+    width: 60%;
+}
+
+.fakefakefakeBtn:hover{
+    background-color: #ffd6b3;
 }
 .margintop{
     margin-top: 1em;
@@ -121,4 +131,8 @@ button:active{
 
 .marginbot{
     margin-bot: 1em;
+}
+
+.dit {
+    direction: rtl;
 }

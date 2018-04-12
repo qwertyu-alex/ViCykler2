@@ -27,7 +27,7 @@ public class ParticipantView extends Composite {
     StartView startView;
     CreateTeamView createTeamView;
     MyProfileView myProfileView;
-    StatisticView statisticView;
+    ParticipantStatisticView participantStatisticView;
     MyTeamView myTeamView;
     ChangeTeamView changeTeamView;
 
@@ -39,12 +39,14 @@ public class ParticipantView extends Composite {
         createTeamView = new CreateTeamView();
         myTeamView = new MyTeamView();
         changeTeamView = new ChangeTeamView();
+        participantStatisticView = new ParticipantStatisticView();
 
         centerDeck.add(startView);
         centerDeck.add(myProfileView);
         centerDeck.add(createTeamView);
         centerDeck.add(myTeamView);
         centerDeck.add(changeTeamView);
+        centerDeck.add(participantStatisticView);
 
         centerDeck.showWidget(startView);
     }
@@ -101,10 +103,6 @@ public class ParticipantView extends Composite {
         return createTeamView;
     }
 
-    public StatisticView getStatisticView() {
-        return statisticView;
-    }
-
     public MyTeamView getMyTeamView() {
         return myTeamView;
     }
@@ -123,5 +121,9 @@ public class ParticipantView extends Composite {
 
     public Button getChangeTeamBtn() {
         return changeTeamBtn;
+    }
+
+    public ParticipantStatisticView getParticipantStatisticView() {
+        return participantStatisticView;
     }
 }
