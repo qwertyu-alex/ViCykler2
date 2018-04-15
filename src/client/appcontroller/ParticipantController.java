@@ -60,7 +60,6 @@ public class ParticipantController {
 
     public void checkParticipantTeam(){
         content.getParticipantView().getMyTeamBox().addStyleName("hidden");
-        content.getParticipantView().getChangeTeamBox().addStyleName("hidden");
         content.getParticipantView().getMyTeamView().getChangeTeam().addStyleName("hidden");
         content.getParticipantView().getCreateTeamBox().addStyleName("hidden");
 
@@ -79,7 +78,6 @@ public class ParticipantController {
             createMyTeam();
 
             if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-                content.getParticipantView().getChangeTeamBox().removeStyleName("hidden");
                 content.getParticipantView().getMyTeamView().getChangeTeam().removeStyleName("hidden");
             }
 
@@ -91,9 +89,7 @@ public class ParticipantController {
         content.getParticipantView().addClickHandlers(new ParticipantClickHandler());
         content.getParticipantView().getCreateTeamView().addClickHandlers(new CreateTeamClickHandler());
         content.getParticipantView().getMyTeamView().setDelegate(new MyTeamDelegateHandler());
-        if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-            content.getParticipantView().getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
-        }
+        content.getParticipantView().getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
         content.getParticipantView().getParticipantStatisticView().addClickHandlers(new ParticipantStatisticClickHandler());
 
         //Denne tilføjer ikke en clickhandler men en changehandler dvs en en handler der lytter efter ændringer.
@@ -114,8 +110,6 @@ public class ParticipantController {
             } else if (event.getSource() == content.getParticipantView().getMyTeamBtn()){
                 content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
                 createMyTeam();
-            } else if (event.getSource() == content.getParticipantView().getChangeTeamBtn()){
-                content.getParticipantView().changeView(content.getParticipantView().getChangeTeamView());
             } else if (event.getSource() == content.getParticipantView().getLogoutBtn()){
                 currentParticipant = null;
                 currentTeam = null;
@@ -289,6 +283,48 @@ public class ParticipantController {
                         public void onSuccess(Boolean result) {
                             content.getParticipantView().getMyTeamView().getAddParticipantField().setText("");
                             createParticipantView();
+                        }
+                    });
+                }
+            } if (event.getSource() == content.getParticipantView().getMyTeamView().getDeleteTeamBtn()){
+
+                content.getParticipantView().changeView(content.getParticipantView().getMyProfileView());
+
+                if (Window.confirm("Er du sikker på at du vil slette holdet?")){
+                    rpcService.deleteTeam(currentParticipant.getTeamID(), new AsyncCallback<Boolean>() {
+                        @Override
+                        public void onFailure(Throwable caught) {}
+
+                        @Override
+                        public void onSuccess(Boolean result) {
+                            content.getParticipantView().changeView(content.getParticipantView().getMyProfileView());
+
+                            rpcService.changePersonType(currentParticipant.getEmail(), "PARTICIPANT", new AsyncCallback<Boolean>() {
+                                @Override
+                                public void onFailure(Throwable caught) {
+
+                                }
+
+                                @Override
+                                public void onSuccess(Boolean result) {
+                                    if (result){
+                                        currentTeam = null;
+                                        rpcService.getParticipant(currentParticipant.getEmail(), new AsyncCallback<Participant>() {
+                                            @Override
+                                            public void onFailure(Throwable caught) {
+
+                                            }
+
+                                            @Override
+                                            public void onSuccess(Participant result) {
+                                                currentParticipant.setTeamID(0);
+                                                currentParticipant.setTeamName(null);
+                                                checkParticipantTeam();
+                                            }
+                                        });
+                                    }
+                                }
+                            });
                         }
                     });
                 }
@@ -634,20 +670,7 @@ public class ParticipantController {
             content.getParticipantView().getParticipantStatisticView().getParticipantSearchDeck().showWidget(0);
         }
     }
-//    private void createTable(){
-//        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
-//            @Override
-//            public void onFailure(Throwable caught) {
-//                Window.alert(caught.getMessage());
-//            }
-//
-//            @Override
-//            public void onSuccess(ArrayList<Participant> result) {
-//                content.getParticipantView().getStatisticView().initTable(participantListDataProvider);
-//                participantListDataProvider.getList().addAll(result);
-//            }
-//        });
-//    }
+
     private void createMyProfile(){
 
         //Sætter name
@@ -736,8 +759,6 @@ public class ParticipantController {
                 if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
                     content.getParticipantView().getMyTeamView().createTeamCaptainCol();
                 }
-
-                content.getParticipantView().changeView(content.getParticipantView().getMyTeamView());
             }
         });
 

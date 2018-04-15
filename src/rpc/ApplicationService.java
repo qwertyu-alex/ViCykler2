@@ -2,6 +2,7 @@ package rpc;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
+import jdk.nashorn.internal.runtime.ECMAException;
 import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Person;
@@ -43,4 +44,5 @@ public interface ApplicationService extends RemoteService {
     int getFirmIDFromFirmName(String firmName) throws Exception;
     ArrayList<Participant> getAllTeamCaptains() throws Exception;
     int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception;
+    boolean changePersonType(String email, String personType) throws Exception;
 }

@@ -44,6 +44,7 @@
                                             <g:Label>Tilføj person til hold via mail-addresse</g:Label>
                                             <g:TextBox ui:field="addParticipantField" width="100%"></g:TextBox>
                                             <g:Button ui:field="submitBtn">Submit</g:Button>
+                                            <g:Button ui:field="deleteTeamBtn">Slet hold</g:Button>
                                         </g:VerticalPanel>
                                 </g:cell>
                             </g:VerticalPanel>
@@ -69,9 +70,9 @@
 
                         </g:north>
                         <g:south size="7">
-                            <g:HTMLPanel>
+                            <g:VerticalPanel styleName="center">
                                 <c:SimplePager location="CENTER" ui:field="simplePager"></c:SimplePager>
-                            </g:HTMLPanel>
+                            </g:VerticalPanel>
                         </g:south>
                     </g:DockLayoutPanel>
             </g:east>

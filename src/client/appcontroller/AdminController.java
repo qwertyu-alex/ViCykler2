@@ -2,6 +2,7 @@ package client.appcontroller;
 
 import client.ui.Content;
 import client.ui.admin.AdminView;
+import client.ui.admin.widgets.ShowFirmsView;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -253,6 +254,35 @@ public class AdminController {
         }
     }
 
+    class ShowFirmsViewClickHandler implements ClickHandler{
+        /**
+         * Called when a native click event is fired.
+         *
+         * @param event the {@link ClickEvent} that was fired
+         */
+        @Override
+        public void onClick(ClickEvent event) {
+
+            if (content.getAdminView().getShowFirmsView().getFirmNameField().getText().replaceAll("\\s", "").length() > 0){
+                rpcService.createFirm(content.getAdminView().getShowFirmsView().getFirmNameField().getText(), new AsyncCallback<Boolean>() {
+                    @Override
+                    public void onFailure(Throwable caught) {}
+
+                    @Override
+                    public void onSuccess(Boolean result) {
+                        if (result){
+                            content.getAdminView().getShowFirmsView().getFirmNameField().setText("");
+                            content.getAdminView().getShowFirmsView().getErrField().setText("");
+                            createFirmsTable();
+                        } else {
+                            content.getAdminView().getShowFirmsView().getErrField().setText("Error");
+                        }
+                    }
+                });
+            }
+        }
+    }
+
     private void addClickhandlers(){
         content.getAdminView().addClickHandlers(new AdminClickHandler());
         content.getAdminView().getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
@@ -261,6 +291,7 @@ public class AdminController {
         content.getAdminView().getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
         content.getAdminView().getShowFirmsView().setDelegate(new ChangeFirmDelegateHandler());
         content.getAdminView().getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
+        content.getAdminView().getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
     }
 
     private void createParticipantsTable(){

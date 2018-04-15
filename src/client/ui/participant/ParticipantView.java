@@ -19,18 +19,16 @@ public class ParticipantView extends Composite {
     DeckLayoutPanel centerDeck;
 
     @UiField
-    Button myProfileBtn, statistiskBtn, logoutBtn, myTeamBtn, createTeamBtn, changeTeamBtn;
+    Button myProfileBtn, statistiskBtn, logoutBtn, myTeamBtn, createTeamBtn;
 
     @UiField
-    HorizontalPanel myTeamBox, createTeamBox, changeTeamBox;
+    HorizontalPanel myTeamBox, createTeamBox;
 
     StartView startView;
     CreateTeamView createTeamView;
     MyProfileView myProfileView;
     ParticipantStatisticView participantStatisticView;
     MyTeamView myTeamView;
-    ChangeTeamView changeTeamView;
-
     public ParticipantView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
@@ -38,14 +36,12 @@ public class ParticipantView extends Composite {
         myProfileView = new MyProfileView();
         createTeamView = new CreateTeamView();
         myTeamView = new MyTeamView();
-        changeTeamView = new ChangeTeamView();
         participantStatisticView = new ParticipantStatisticView();
 
         centerDeck.add(startView);
         centerDeck.add(myProfileView);
         centerDeck.add(createTeamView);
         centerDeck.add(myTeamView);
-        centerDeck.add(changeTeamView);
         centerDeck.add(participantStatisticView);
 
         centerDeck.showWidget(startView);
@@ -109,18 +105,6 @@ public class ParticipantView extends Composite {
 
     public MyProfileView getMyProfileView() {
         return myProfileView;
-    }
-
-    public ChangeTeamView getChangeTeamView() {
-        return changeTeamView;
-    }
-
-    public HorizontalPanel getChangeTeamBox() {
-        return changeTeamBox;
-    }
-
-    public Button getChangeTeamBtn() {
-        return changeTeamBtn;
     }
 
     public ParticipantStatisticView getParticipantStatisticView() {

@@ -34,7 +34,7 @@ public class MyTeamView extends Composite {
 
     @UiField TextBox addParticipantField, changeTeamNameField;
 
-    @UiField Button submitBtn;
+    @UiField Button submitBtn, deleteTeamBtn;
 
     private ActionCell.Delegate<Participant> delegate;
 
@@ -75,6 +75,7 @@ public class MyTeamView extends Composite {
 
     public void addTeamCaptainClickHandler(ClickHandler clickHandler){
         submitBtn.addClickHandler(clickHandler);
+        deleteTeamBtn.addClickHandler(clickHandler);
     }
 
     public Label getTeamIDLabel() {
@@ -139,5 +140,9 @@ public class MyTeamView extends Composite {
             }
         };
         cellTable.addColumn(removeParticipantCol);
+    }
+
+    public Button getDeleteTeamBtn() {
+        return deleteTeamBtn;
     }
 }

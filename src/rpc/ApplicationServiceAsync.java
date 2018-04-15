@@ -69,4 +69,6 @@ public interface ApplicationServiceAsync {
     void deleteFirm(int firmID, AsyncCallback<Boolean> async);
 
     void deleteParticipant(String email, AsyncCallback<Boolean> async);
+
+    void changePersonType(String email, String personType, AsyncCallback<Boolean> async);
 }

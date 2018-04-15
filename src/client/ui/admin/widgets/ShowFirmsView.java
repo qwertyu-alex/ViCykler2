@@ -3,14 +3,14 @@ package client.ui.admin.widgets;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.*;
 import com.google.gwt.view.client.ListDataProvider;
 import shared.DTO.Firm;
 
@@ -21,6 +21,15 @@ public class ShowFirmsView extends Composite {
     private static ShowFirmsViewUiBinder ourUiBinder = GWT.create(ShowFirmsViewUiBinder.class);
     @UiField
     CellTable<Firm> cellTable;
+
+    @UiField
+    Button createFirmBtn;
+
+    @UiField
+    TextBox firmNameField;
+
+    @UiField
+    Label errField;
 
     ListDataProvider<Firm> firmListDataProvider;
 
@@ -37,6 +46,10 @@ public class ShowFirmsView extends Composite {
     public ShowFirmsView() {
         initWidget(ourUiBinder.createAndBindUi(this));
         cellTable.setVisibleRange(0, 1000);
+    }
+
+    public void addClickHandler(ClickHandler clickHandler){
+        createFirmBtn.addClickHandler(clickHandler);
     }
 
     public void initTable(ListDataProvider<Firm> firmListDataProvider) throws Exception{
@@ -106,5 +119,13 @@ public class ShowFirmsView extends Composite {
 
     public Column<Firm, Firm> getChangeFirm() {
         return changeFirm;
+    }
+
+    public TextBox getFirmNameField() {
+        return firmNameField;
+    }
+
+    public Label getErrField() {
+        return errField;
     }
 }

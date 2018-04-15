@@ -3,7 +3,31 @@
              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
     <g:HTMLPanel>
         <g:ScrollPanel width="100%" height="100%">
-            <c:CellTable ui:field="cellTable" styleName="center"></c:CellTable>
+
+                <g:DockLayoutPanel unit="PCT" width="100%" height="100%">
+
+                    <g:west size="45">
+                        <g:VerticalPanel styleName="center">
+                            <c:CellTable ui:field="cellTable" styleName="center"></c:CellTable>
+                        </g:VerticalPanel>
+
+                    </g:west>
+
+                    <g:east size="45">
+                        <g:VerticalPanel styleName="center fakefakefakeBtn margintop">
+                            <g:Label>Navn på nyt firma:</g:Label>
+                            <g:TextBox ui:field="firmNameField"></g:TextBox>
+                            <g:Label ui:field="errField"></g:Label>
+                            <g:Button ui:field="createFirmBtn">Opret nyt firma</g:Button>
+                        </g:VerticalPanel>
+                    </g:east>
+
+
+
+                </g:DockLayoutPanel>
+
+
+
         </g:ScrollPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

@@ -324,6 +324,21 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
+    public boolean createFirm(String name) {
+
+        try {
+            PreparedStatement create = connection.prepareStatement("INSERT INTO firms(FirmName) VALUES (?)");
+            create.setString(1, name);
+            create.executeUpdate();
+            return true;
+
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+
+        return false;
+    }
+    @Override
     public boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
         /**
          * Opdater participants som skal være i holdet, inklusiv teamCaptain,
@@ -575,11 +590,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             err.printStackTrace();
             return null;
         }
-    }
-
-    @Override
-    public boolean createFirm(String name) {
-        return false;
     }
 
     @Override
@@ -862,6 +872,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement delete = connection.prepareStatement("DELETE FROM teams WHERE TeamID = ?");
             delete.setInt(1, teamID);
             delete.executeUpdate();
+            return true;
         } catch (SQLException err){
             err.printStackTrace();
         }
@@ -875,6 +886,20 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
             delete.setString(1, email);
             delete.executeUpdate();
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean changePersonType(String email, String personType) throws Exception {
+        try {
+            PreparedStatement change = connection.prepareStatement("UPDATE persons SET PersonType = ? WHERE Email = ?");
+            change.setString(1, personType);
+            change.setString(2, email);
+            change.executeUpdate();
+            return  true;
         } catch (SQLException err){
             err.printStackTrace();
         }

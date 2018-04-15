@@ -31,11 +31,6 @@
                                 <g:Button ui:field="myTeamBtn" styleName="">Mit Hold</g:Button>
                             </g:HorizontalPanel>
 
-                            <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox hidden"
-                                                horizontalAlignment="ALIGN_CENTER" ui:field="changeTeamBox">
-                                <g:Button ui:field="changeTeamBtn" styleName="">Rediger dit hold</g:Button>
-                            </g:HorizontalPanel>
-
                             <g:HorizontalPanel  verticalAlignment="ALIGN_MIDDLE" styleName="menuBox"
                                                 horizontalAlignment="ALIGN_CENTER" >
                                 <g:Button ui:field="logoutBtn">Log ud</g:Button>
