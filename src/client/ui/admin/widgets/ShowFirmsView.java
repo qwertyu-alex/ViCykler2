@@ -52,50 +52,6 @@ public class ShowFirmsView extends Composite {
         createFirmBtn.addClickHandler(clickHandler);
     }
 
-    public void initTable(ListDataProvider<Firm> firmListDataProvider) throws Exception{
-        this.firmListDataProvider = firmListDataProvider;
-        firmListDataProvider.addDataDisplay(cellTable);
-
-//        Window.alert("Navn " + firmListDataProvider.getList().get(0).getParticipants().get(0));
-//        Window.alert(Integer.toString((int)firmListDataProvider.getList().get(0).getParticipants().size()));
-
-        if (!isTableMade){
-            firmName = new TextColumn<Firm>() {
-                @Override
-                public String getValue(Firm object) {
-                    return object.getFirmName();
-                }
-            };
-
-            numberOfParticipants = new Column<Firm, Number>(new NumberCell()) {
-                @Override
-                public Integer getValue(Firm object) {
-                    return object.getParticipants().size();
-                }
-            };
-
-            numberOfTeams = new Column<Firm, Number>(new NumberCell()) {
-                @Override
-                public Number getValue(Firm object) {
-                    return object.getTeams().size();
-                }
-            };
-
-            changeFirm = new Column<Firm, Firm>(new ActionCell<Firm>("Rediger", delegate)) {
-                @Override
-                public Firm getValue(Firm object) {
-                    return object;
-                }
-            };
-
-            cellTable.addColumn(firmName, "Firmanavn");
-            cellTable.addColumn(numberOfParticipants, "Antal deltagere");
-            cellTable.addColumn(numberOfTeams, "Antal hold");
-            cellTable.addColumn(changeFirm);
-
-            isTableMade = true;
-        }
-    }
 
     public void setDelegate(ActionCell.Delegate<Firm> delegate) {
         this.delegate = delegate;
@@ -127,5 +83,9 @@ public class ShowFirmsView extends Composite {
 
     public Label getErrField() {
         return errField;
+    }
+
+    public ActionCell.Delegate<Firm> getDelegate() {
+        return delegate;
     }
 }

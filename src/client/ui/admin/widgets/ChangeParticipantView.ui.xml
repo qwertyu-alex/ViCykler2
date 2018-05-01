@@ -9,9 +9,20 @@
             <g:Label >Email</g:Label>
             <g:TextBox ui:field="emailField"></g:TextBox>
             <g:Label >Person-type</g:Label>
-            <g:TextBox ui:field="personTypeField"></g:TextBox>
+            <g:ListBox ui:field="personTypeList">
+                <g:item value="TEAMCAPTAIN">TEAMCAPTAIN</g:item>
+                <g:item value="PARTICIPANT">PARTICIPANT</g:item>
+                <g:item value="ADMIN">ADMIN</g:item>
+                <g:item value=""></g:item>
+            </g:ListBox>
             <g:Label >Cyclist-type</g:Label>
-            <g:TextBox ui:field="cyclistTypeField"></g:TextBox>
+            <g:ListBox ui:field="cyclistTypeList">
+                <g:item value="master">master</g:item>
+                <g:item value="enthusiast">enthusiast</g:item>
+                <g:item value="cruiser">cruiser</g:item>
+                <g:item value="debutant">debutant</g:item>
+                <g:item value=""></g:item>
+            </g:ListBox>
             <g:Label >Password</g:Label>
             <g:PasswordTextBox ui:field="passField"></g:PasswordTextBox>
             <g:Label>Firma</g:Label>

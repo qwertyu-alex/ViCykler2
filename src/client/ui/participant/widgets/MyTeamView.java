@@ -51,8 +51,6 @@ public class MyTeamView extends Composite {
         this.participantListDataProvider = participantListDataProvider;
         participantListDataProvider.addDataDisplay(cellTable);
 
-
-
             TextColumn<Participant> participantNameCol = new TextColumn<Participant>() {
                 @Override
                 public String getValue(Participant object) {
@@ -69,8 +67,6 @@ public class MyTeamView extends Composite {
 
             cellTable.addColumn(participantNameCol, "Deltager");
             cellTable.addColumn(emailCol, "Email");
-
-
     }
 
     public void addTeamCaptainClickHandler(ClickHandler clickHandler){

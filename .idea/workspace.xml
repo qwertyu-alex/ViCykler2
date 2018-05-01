@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="Er i gang med at flytte tabellerne over til controllerklasserne">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/withoutDB/Data.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/shared/DTO/TeamCaptain.java" afterPath="" />
+    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/Content.java" afterPath="$PROJECT_DIR$/src/client/ui/Content.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.ui.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.ui.xml" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.ui.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/ApplicationService.java" afterPath="$PROJECT_DIR$/src/rpc/ApplicationService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" afterPath="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Admin.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Admin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Participant.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Participant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/war/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/war/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,100 +71,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+            <state relative-caret-position="-2178">
+              <caret line="196" column="8" lean-forward="false" selection-start-line="196" selection-start-column="8" selection-end-line="196" selection-end-column="8" />
               <folding>
-                <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getAllParticipantsInTeamFromTeamID#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllParticipantsAndTeamNameAndFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#createParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#createTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#createFirm#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#addParticipantsToTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getParticipantName#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getParticipantCyclistType#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getParticipantFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getParticipantTeamName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getParticipantPassword#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getGuestStatisticView#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllTeams#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllFirms#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#changeParticipantInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#changeTeamInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#changeFirmInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#removeFromTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getFirmFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
                 <element signature="method#getTeamFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getTeamFromTeamID#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getFirmIDFromFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getAllTeamCaptains#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#getTeamIDFromTeamNameAndFirmID#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#deleteFirm#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#deleteTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#deleteParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <element signature="method#changePersonType#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <marker date="1524869714065" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="3367:3397" ph="SELECT Perso... persons" />
-                <marker date="1524869714065" expanded="true" signature="3953:3991" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="5196:5342" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="5221:5242" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="5221:5292" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="7580:7624" ph="SELECT Email... persons" />
-                <marker date="1524869714065" expanded="true" signature="8447:8490" ph="SELECT FirmI... firms" />
-                <marker date="1524869714065" expanded="true" signature="8983:9097" ph="INSERT INTO persons... " />
-                <marker date="1524869714065" expanded="true" signature="10474:10516" ph="SELECT FirmI... persons" />
-                <marker date="1524869714065" expanded="true" signature="11037:11084" ph="INSERT INTO teams... " />
-                <marker date="1524869714065" expanded="true" signature="11359:11417" ph="SELECT TeamI... teams" />
-                <marker date="1524869714065" expanded="true" signature="11995:12071" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="12486:12519" ph="INSERT INTO firms... " />
-                <marker date="1524869714065" expanded="true" signature="12486:12524" ph="INSERT INTO firms... " />
-                <marker date="1524869714065" expanded="true" signature="13453:13498" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="14110:14147" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="15353:15402" ph="SELECT Perso... persons" />
-                <marker date="1524869714065" expanded="true" signature="15768:15818" ph="SELECT Cycli... persons" />
-                <marker date="1524869714065" expanded="true" signature="16222:16324" ph="SELECT FirmN... firms" />
-                <marker date="1524869714065" expanded="true" signature="16892:16934" ph="SELECT TeamI... persons" />
-                <marker date="1524869714065" expanded="true" signature="17278:17410" ph="SELECT teams... teams" />
-                <marker date="1524869714065" expanded="true" signature="18012:18056" ph="SELECT Passw... persons" />
-                <marker date="1524869714065" expanded="true" signature="18391:18534" ph="SELECT perso... persons" />
-                <marker date="1524869714065" expanded="true" signature="18557:18564" ph="{...}" />
-                <marker date="1524869714065" expanded="true" signature="18775:18794" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="18775:18842" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="19440:19546" ph="SELECT perso... persons" />
-                <marker date="1524869714065" expanded="true" signature="20196:20215" ph="SELECT * FRO... firms" />
-                <marker date="1524869714065" expanded="true" signature="20830:20933" ph="SELECT teams... teams" />
-                <marker date="1524869714065" expanded="true" signature="21772:21880" ph="SELECT perso... persons" />
-                <marker date="1524869714065" expanded="true" signature="22965:23017" ph="SELECT TeamI... teams" />
-                <marker date="1524869714065" expanded="true" signature="23092:23144" ph="SELECT FirmI... firms" />
-                <marker date="1524869714065" expanded="true" signature="23700:23849" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="23700:23865" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="25011:25057" ph="UPDATE teams... " />
-                <marker date="1524869714065" expanded="true" signature="25569:25617" ph="UPDATE firms... " />
-                <marker date="1524869714065" expanded="true" signature="26494:26542" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="26936:27031" ph="SELECT * fro... firms" />
-                <marker date="1524869714065" expanded="true" signature="27786:27864" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="27786:27873" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="27786:27875" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="28728:28764" ph="SELECT * FRO... teams" />
-                <marker date="1524869714065" expanded="true" signature="29570:29613" ph="SELECT FirmI... firms" />
-                <marker date="1524869714065" expanded="true" signature="30276:30330" ph="SELECT * FRO... persons" />
-                <marker date="1524869714065" expanded="true" signature="31349:31407" ph="SELECT TeamI... teams" />
-                <marker date="1524869714065" expanded="true" signature="32032:32068" ph="DELETE FROM " />
-                <marker date="1524869714065" expanded="true" signature="32227:32261" ph="DELETE FROM " />
-                <marker date="1524869714065" expanded="true" signature="32244:32261" ph="UPDATE teams... " />
-                <marker date="1524869714065" expanded="true" signature="32416:32450" ph="DELETE FROM " />
-                <marker date="1524869714065" expanded="true" signature="32802:32851" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="32808:32851" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="33006:33040" ph="UPDATE teams... " />
-                <marker date="1524869714065" expanded="true" signature="33420:33455" ph="UPDATE perso... " />
-                <marker date="1524869714065" expanded="true" signature="33829:33878" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="3367:3397" ph="SELECT Perso... persons" />
+                <marker date="1525211739472" expanded="true" signature="3953:3991" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="5195:5238" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="5217:5238" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="6047:6090" ph="SELECT FirmN... firms" />
+                <marker date="1525211739472" expanded="true" signature="6603:6646" ph="SELECT TeamN... teams" />
+                <marker date="1525211739472" expanded="true" signature="8133:8177" ph="SELECT Email... persons" />
+                <marker date="1525211739472" expanded="true" signature="9020:9063" ph="SELECT FirmI... firms" />
+                <marker date="1525211739472" expanded="true" signature="9556:9670" ph="INSERT INTO persons... " />
+                <marker date="1525211739472" expanded="true" signature="11083:11125" ph="SELECT FirmI... persons" />
+                <marker date="1525211739472" expanded="true" signature="11646:11693" ph="INSERT INTO teams... " />
+                <marker date="1525211739472" expanded="true" signature="11968:12026" ph="SELECT TeamI... teams" />
+                <marker date="1525211739472" expanded="true" signature="12604:12680" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="13164:13197" ph="INSERT INTO firms... " />
+                <marker date="1525211739472" expanded="true" signature="13164:13202" ph="INSERT INTO firms... " />
+                <marker date="1525211739472" expanded="true" signature="14150:14192" ph="SELECT FirmI... persons" />
+                <marker date="1525211739472" expanded="true" signature="14799:14841" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="14799:14870" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="15807:15844" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="17050:17099" ph="SELECT Perso... persons" />
+                <marker date="1525211739472" expanded="true" signature="17465:17515" ph="SELECT Cycli... persons" />
+                <marker date="1525211739472" expanded="true" signature="17919:18021" ph="SELECT FirmN... firms" />
+                <marker date="1525211739472" expanded="true" signature="18589:18631" ph="SELECT TeamI... persons" />
+                <marker date="1525211739472" expanded="true" signature="18975:19107" ph="SELECT teams... teams" />
+                <marker date="1525211739472" expanded="true" signature="19709:19753" ph="SELECT Passw... persons" />
+                <marker date="1525211739472" expanded="true" signature="20088:20231" ph="SELECT perso... persons" />
+                <marker date="1525211739472" expanded="true" signature="20254:20261" ph="{...}" />
+                <marker date="1525211739472" expanded="true" signature="20472:20491" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="20472:20539" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="21137:21243" ph="SELECT perso... persons" />
+                <marker date="1525211739472" expanded="true" signature="21893:21912" ph="SELECT * FRO... firms" />
+                <marker date="1525211739472" expanded="true" signature="22527:22630" ph="SELECT teams... teams" />
+                <marker date="1525211739472" expanded="true" signature="23469:23577" ph="SELECT perso... persons" />
+                <marker date="1525211739472" expanded="true" signature="24803:24855" ph="SELECT TeamI... teams" />
+                <marker date="1525211739472" expanded="true" signature="25247:25292" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="25809:25861" ph="SELECT FirmI... firms" />
+                <marker date="1525211739472" expanded="true" signature="26191:26329" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="26191:26344" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="27442:27488" ph="UPDATE teams... " />
+                <marker date="1525211739472" expanded="true" signature="28000:28048" ph="UPDATE firms... " />
+                <marker date="1525211739472" expanded="true" signature="28924:28972" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="29431:29526" ph="SELECT * fro... firms" />
+                <marker date="1525211739472" expanded="true" signature="30281:30359" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="30281:30368" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="30281:30370" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="31223:31259" ph="SELECT * FRO... teams" />
+                <marker date="1525211739472" expanded="true" signature="32065:32108" ph="SELECT FirmI... firms" />
+                <marker date="1525211739472" expanded="true" signature="32771:32825" ph="SELECT * FRO... persons" />
+                <marker date="1525211739472" expanded="true" signature="33844:33902" ph="SELECT TeamI... teams" />
+                <marker date="1525211739472" expanded="true" signature="34526:34562" ph="DELETE FROM " />
+                <marker date="1525211739472" expanded="true" signature="34721:34755" ph="DELETE FROM " />
+                <marker date="1525211739472" expanded="true" signature="34738:34755" ph="UPDATE teams... " />
+                <marker date="1525211739472" expanded="true" signature="34910:34944" ph="DELETE FROM " />
+                <marker date="1525211739472" expanded="true" signature="35369:35418" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="35375:35418" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="35573:35607" ph="UPDATE teams... " />
+                <marker date="1525211739472" expanded="true" signature="36034:36069" ph="UPDATE perso... " />
+                <marker date="1525211739472" expanded="true" signature="36515:36564" ph="UPDATE perso... " />
               </folding>
             </state>
           </provider>
@@ -166,32 +155,11 @@
       <file leaf-file-name="GuestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="237" column="59" lean-forward="false" selection-start-line="237" selection-start-column="59" selection-end-line="237" selection-end-column="59" />
+            <state relative-caret-position="296">
+              <caret line="151" column="43" lean-forward="false" selection-start-line="151" selection-start-column="43" selection-end-line="151" selection-end-column="43" />
               <folding>
-                <element signature="class#CreateParticipantClickHandler#0;class#GuestController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6040">
-              <caret line="821" column="75" lean-forward="false" selection-start-line="821" selection-start-column="75" selection-end-line="821" selection-end-column="75" />
-              <folding>
-                <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="docComment;class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#22456:27448" expanded="false" />
-                <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#43885:44997" expanded="false" />
+                <element signature="e#6258#6259#0" expanded="true" />
+                <element signature="e#6326#6327#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,9 +168,54 @@
       <file leaf-file-name="Participant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/DTO/Participant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+            <state relative-caret-position="360">
+              <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="323" column="0" lean-forward="false" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
+              <folding>
+                <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
+                <element signature="method#createMyTeam#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#35296:36939" expanded="false" />
+                <element signature="method#createStatistic#0;class#ParticipantController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangeParticipantView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding>
+                <element signature="e#1789#1790#0" expanded="true" />
+                <element signature="e#1827#1828#0" expanded="true" />
+                <element signature="e#1869#1870#0" expanded="true" />
+                <element signature="e#1906#1907#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,9 +223,18 @@
       <file leaf-file-name="ApplicationServiceAsync.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+            <state relative-caret-position="500">
+              <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persons" pinned="false" current-in-tab="false">
+        <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -220,8 +242,8 @@
       <file leaf-file-name="ApplicationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+            <state relative-caret-position="428">
+              <caret line="36" column="68" lean-forward="false" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -230,47 +252,10 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="259">
+              <caret line="291" column="58" lean-forward="false" selection-start-line="291" selection-start-column="58" selection-end-line="291" selection-end-column="58" />
               <folding>
-                <element signature="class#ChangeParticipantClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeFirmDelegateHandler#0;class#AdminController#0" expanded="false" />
-                <element signature="class#ChangeFirmClickHandler#0;class#AdminController#0" expanded="false" />
-                <element signature="class#ShowFirmsViewClickHandler#0;class#AdminController#0" expanded="false" />
-                <element signature="method#createFirmsTable#0;class#AdminController#0" expanded="false" />
-                <element signature="e#21131#21141#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowParticipantsView.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowFirmsView.ui.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="84" lean-forward="false" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowFirmsView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="848">
-              <caret line="127" column="32" lean-forward="false" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
-              <folding>
-                <element signature="e#3961#3962#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -287,21 +272,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>numberOF</find>
-      <find>auth</find>
-      <find>createTeam</find>
-      <find>createTea</find>
-      <find>create</find>
-      <find>Dele</find>
-      <find>rpcService.getTeam</find>
-      <find>getTeam(</find>
-      <find>participants</find>
-      <find>getAllPar</find>
-      <find>getTeams</find>
-      <find>getGuestView().getGuestStatisticView()</find>
-      <find>getAllTeams</find>
-      <find>der er i</find>
-      <find>initTable</find>
       <find>submitFirm</find>
       <find>.addClick</find>
       <find>submit</find>
@@ -317,12 +287,28 @@
       <find>getAllP</find>
       <find>getAllPart</find>
       <find>getAllParticipants(</find>
+      <find>getTeamFromEmail</find>
+      <find>findCurrentTeam</find>
+      <find>checkParticipantTeam</find>
+      <find>CreateTeamClickHandler</find>
+      <find>addClickhandlers</find>
+      <find>content.getParticipantView()</find>
+      <find>Window.alert</find>
+      <find>createTeam</find>
+      <find>changeTeam</find>
+      <find>addPartici</find>
+      <find>content.getAdminView()</find>
+      <find>PersonTypeField</find>
+      <find>getAllPartici</find>
+      <find>currentTeam</find>
+      <find>getPersonTypeList</find>
     </findStrings>
     <replaceStrings>
       <replace>ViCykler</replace>
-      <replace>adminView</replace>
       <replace>getParticipantStatisticView()</replace>
       <replace>getParticipantView().getParticipantStatisticView()</replace>
+      <replace>participantView</replace>
+      <replace>adminView</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -336,23 +322,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/StatisticView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/sharedWidgets/StatisticView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/sharedWidgets/StatisticView.java" />
         <option value="$PROJECT_DIR$/src/client/Main.java" />
         <option value="$PROJECT_DIR$/war/ViCykler.html" />
-        <option value="$PROJECT_DIR$/src/client/ui/Content.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/AdminView.java" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java" />
         <option value="$PROJECT_DIR$/src/shared/DTO/Firm.java" />
-        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/AdminView.ui.xml" />
         <option value="$PROJECT_DIR$/src/shared/DTO/Team.java" />
         <option value="$PROJECT_DIR$/src/shared/DTO/Person.java" />
-        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/GuestView.ui.xml" />
@@ -360,33 +341,38 @@
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/GuestStatisticView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyProfileView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/GuestView.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/StartView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.ui.xml" />
         <option value="$PROJECT_DIR$/war/ViCykler.css" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/ParticipantStatisticView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/ParticipantStatisticView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/ParticipantView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/ParticipantView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
         <option value="$PROJECT_DIR$/src/shared/DTO/Admin.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/Content.java" />
+        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.ui.xml" />
+        <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.ui.xml" />
+        <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml" />
-        <option value="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" />
-        <option value="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
-        <option value="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
-        <option value="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql" />
+        <option value="$PROJECT_DIR$/war/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/shared/DTO/Participant.java" />
         <option value="$PROJECT_DIR$/src/rpc/ApplicationService.java" />
+        <option value="$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java" />
+        <option value="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
+        <option value="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
+        <option value="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1112,7 +1098,7 @@
       <workItem from="1524852954937" duration="969000" />
       <workItem from="1524863994105" duration="5612000" />
       <workItem from="1524997978478" duration="775000" />
-      <workItem from="1525202269689" duration="193000" />
+      <workItem from="1525202269689" duration="9459000" />
     </task>
     <task id="LOCAL-00001" summary="Re-strukturering">
       <created>1521978979026</created>
@@ -1240,11 +1226,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523794353291</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Er i gang med at flytte tabellerne over til controllerklasserne">
+      <created>1525202491105</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1525202491105</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235466000" />
+    <option name="totallyTimeSpent" value="244732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1257,6 +1250,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -1265,20 +1259,21 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10915105" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10915105" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34791666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25416666" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25416666" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20341787" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1290,7 +1285,6 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1383,7 +1377,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1392,77 +1386,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/GuestStatisticView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="47" selection-end-line="0" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/ViCykler.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="120" column="29" lean-forward="false" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ParticipantStatisticView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ParticipantStatisticView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="101" column="54" lean-forward="false" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="64" lean-forward="false" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ChangeTeamView.java" />
     <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ChangeTeamView.ui.xml" />
     <entry file="file://$PROJECT_DIR$/src/client/ui/participant/ParticipantView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1500,13 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/ViCykler.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1514,31 +1430,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.firms">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.teams">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/GuestStatisticView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -1553,34 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.ui.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1622,24 +1489,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyProfileView.ui.xml">
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+        <state relative-caret-position="320">
+          <caret line="16" column="84" lean-forward="false" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeTeamView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#2257#2258#0" expanded="true" />
+            <element signature="e#2288#2289#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2373#2374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/GuestStatisticView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/GuestStatisticView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="e#800#801#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/ParticipantStatisticView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="101" column="54" lean-forward="false" selection-start-line="101" selection-start-column="54" selection-end-line="101" selection-end-column="54" />
+          <folding>
+            <element signature="e#2671#2672#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="75" column="34" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1647,17 +1582,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyProfileView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        <state relative-caret-position="120">
+          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="108" column="38" lean-forward="false" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="38" />
+          <folding>
+            <element signature="e#1824#2019#0" expanded="true" />
+            <element signature="e#2018#2019#0" expanded="true" />
+            <element signature="e#2069#2265#0" expanded="true" />
+            <element signature="e#2264#2265#0" expanded="true" />
+            <element signature="e#3300#3301#0" expanded="true" />
+            <element signature="e#3333#3334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.firms">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.41-bin.jar!/com/mysql/jdbc/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="336" column="0" lean-forward="false" selection-start-line="336" selection-start-column="0" selection-end-line="336" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../gwt-2.8.2/gwt-user.jar!/com/google/gwt/event/dom/client/ClickHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/StartView.ui.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/participant/widgets/CreateTeamView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
@@ -1667,201 +1692,195 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        <state relative-caret-position="460">
+          <caret line="23" column="42" lean-forward="false" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6040">
-          <caret line="821" column="75" lean-forward="false" selection-start-line="821" selection-start-column="75" selection-end-line="821" selection-end-column="75" />
+        <state relative-caret-position="520">
+          <caret line="45" column="7" lean-forward="false" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/a3142033/d319fc19-91ca-409f-a9a8-dabb030caff5/vicykler.persons">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="docComment;class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#22456:27448" expanded="false" />
-            <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#43885:44997" expanded="false" />
+            <element signature="e#1789#1790#0" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1906#1907#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d319fc19-91ca-409f-a9a8-dabb030caff5/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="121" lean-forward="false" selection-start-line="0" selection-start-column="121" selection-end-line="0" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Participant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        <state relative-caret-position="360">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="18" column="64" lean-forward="false" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+        <state relative-caret-position="428">
+          <caret line="36" column="68" lean-forward="false" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rpc/ApplicationServiceAsync.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
+        <state relative-caret-position="500">
+          <caret line="48" column="77" lean-forward="false" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+        <state relative-caret-position="296">
+          <caret line="151" column="43" lean-forward="false" selection-start-line="151" selection-start-column="43" selection-end-line="151" selection-end-column="43" />
           <folding>
-            <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllParticipantsInTeamFromTeamID#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllParticipantsAndTeamNameAndFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#createParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#createTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#createFirm#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#addParticipantsToTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantCyclistType#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantTeamName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getParticipantPassword#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getGuestStatisticView#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllTeams#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllFirms#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#changeParticipantInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#changeTeamInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#changeFirmInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#removeFromTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getFirmFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getTeamFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getTeamFromTeamID#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getFirmIDFromFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getAllTeamCaptains#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#getTeamIDFromTeamNameAndFirmID#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#deleteFirm#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#deleteTeam#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#deleteParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <element signature="method#changePersonType#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <marker date="1524869714065" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="3367:3397" ph="SELECT Perso... persons" />
-            <marker date="1524869714065" expanded="true" signature="3953:3991" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="5196:5342" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="5221:5242" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="5221:5292" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="7580:7624" ph="SELECT Email... persons" />
-            <marker date="1524869714065" expanded="true" signature="8447:8490" ph="SELECT FirmI... firms" />
-            <marker date="1524869714065" expanded="true" signature="8983:9097" ph="INSERT INTO persons... " />
-            <marker date="1524869714065" expanded="true" signature="10474:10516" ph="SELECT FirmI... persons" />
-            <marker date="1524869714065" expanded="true" signature="11037:11084" ph="INSERT INTO teams... " />
-            <marker date="1524869714065" expanded="true" signature="11359:11417" ph="SELECT TeamI... teams" />
-            <marker date="1524869714065" expanded="true" signature="11995:12071" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="12486:12519" ph="INSERT INTO firms... " />
-            <marker date="1524869714065" expanded="true" signature="12486:12524" ph="INSERT INTO firms... " />
-            <marker date="1524869714065" expanded="true" signature="13453:13498" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="14110:14147" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="15353:15402" ph="SELECT Perso... persons" />
-            <marker date="1524869714065" expanded="true" signature="15768:15818" ph="SELECT Cycli... persons" />
-            <marker date="1524869714065" expanded="true" signature="16222:16324" ph="SELECT FirmN... firms" />
-            <marker date="1524869714065" expanded="true" signature="16892:16934" ph="SELECT TeamI... persons" />
-            <marker date="1524869714065" expanded="true" signature="17278:17410" ph="SELECT teams... teams" />
-            <marker date="1524869714065" expanded="true" signature="18012:18056" ph="SELECT Passw... persons" />
-            <marker date="1524869714065" expanded="true" signature="18391:18534" ph="SELECT perso... persons" />
-            <marker date="1524869714065" expanded="true" signature="18557:18564" ph="{...}" />
-            <marker date="1524869714065" expanded="true" signature="18775:18794" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="18775:18842" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="19440:19546" ph="SELECT perso... persons" />
-            <marker date="1524869714065" expanded="true" signature="20196:20215" ph="SELECT * FRO... firms" />
-            <marker date="1524869714065" expanded="true" signature="20830:20933" ph="SELECT teams... teams" />
-            <marker date="1524869714065" expanded="true" signature="21772:21880" ph="SELECT perso... persons" />
-            <marker date="1524869714065" expanded="true" signature="22965:23017" ph="SELECT TeamI... teams" />
-            <marker date="1524869714065" expanded="true" signature="23092:23144" ph="SELECT FirmI... firms" />
-            <marker date="1524869714065" expanded="true" signature="23700:23849" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="23700:23865" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="25011:25057" ph="UPDATE teams... " />
-            <marker date="1524869714065" expanded="true" signature="25569:25617" ph="UPDATE firms... " />
-            <marker date="1524869714065" expanded="true" signature="26494:26542" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="26936:27031" ph="SELECT * fro... firms" />
-            <marker date="1524869714065" expanded="true" signature="27786:27864" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="27786:27873" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="27786:27875" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="28728:28764" ph="SELECT * FRO... teams" />
-            <marker date="1524869714065" expanded="true" signature="29570:29613" ph="SELECT FirmI... firms" />
-            <marker date="1524869714065" expanded="true" signature="30276:30330" ph="SELECT * FRO... persons" />
-            <marker date="1524869714065" expanded="true" signature="31349:31407" ph="SELECT TeamI... teams" />
-            <marker date="1524869714065" expanded="true" signature="32032:32068" ph="DELETE FROM " />
-            <marker date="1524869714065" expanded="true" signature="32227:32261" ph="DELETE FROM " />
-            <marker date="1524869714065" expanded="true" signature="32244:32261" ph="UPDATE teams... " />
-            <marker date="1524869714065" expanded="true" signature="32416:32450" ph="DELETE FROM " />
-            <marker date="1524869714065" expanded="true" signature="32802:32851" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="32808:32851" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="33006:33040" ph="UPDATE teams... " />
-            <marker date="1524869714065" expanded="true" signature="33420:33455" ph="UPDATE perso... " />
-            <marker date="1524869714065" expanded="true" signature="33829:33878" ph="UPDATE perso... " />
+            <element signature="e#6258#6259#0" expanded="true" />
+            <element signature="e#6326#6327#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="259">
+          <caret line="291" column="58" lean-forward="false" selection-start-line="291" selection-start-column="58" selection-end-line="291" selection-end-column="58" />
           <folding>
-            <element signature="class#ChangeParticipantClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeFirmDelegateHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="class#ChangeFirmClickHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="class#ShowFirmsViewClickHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="method#createFirmsTable#0;class#AdminController#0" expanded="false" />
-            <element signature="e#21131#21141#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="237" column="59" lean-forward="false" selection-start-line="237" selection-start-column="59" selection-end-line="237" selection-end-column="59" />
+        <state relative-caret-position="512">
+          <caret line="323" column="0" lean-forward="false" selection-start-line="323" selection-start-column="0" selection-end-line="323" selection-end-column="0" />
           <folding>
-            <element signature="class#CreateParticipantClickHandler#0;class#GuestController#0" expanded="false" />
+            <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
+            <element signature="method#createMyTeam#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#35296:36939" expanded="false" />
+            <element signature="method#createStatistic#0;class#ParticipantController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.ui.xml">
+    <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="84" lean-forward="false" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="127" column="32" lean-forward="false" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+        <state relative-caret-position="-2178">
+          <caret line="196" column="8" lean-forward="false" selection-start-line="196" selection-start-column="8" selection-end-line="196" selection-end-column="8" />
           <folding>
-            <element signature="e#3961#3962#0" expanded="true" />
+            <element signature="method#authorizePerson#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="docComment;method#returnPersons#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getAllParticipantsInTeamFromTeamID#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getParticipant#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getParticipantName#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getParticipantCyclistType#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getParticipantFirmName#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getParticipantTeamName#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#changeFirmInfo#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getFirmFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <element signature="method#getTeamFromEmail#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <marker date="1525211739472" expanded="true" signature="1341:1401" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="3367:3397" ph="SELECT Perso... persons" />
+            <marker date="1525211739472" expanded="true" signature="3953:3991" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="5195:5238" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="5217:5238" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="6047:6090" ph="SELECT FirmN... firms" />
+            <marker date="1525211739472" expanded="true" signature="6603:6646" ph="SELECT TeamN... teams" />
+            <marker date="1525211739472" expanded="true" signature="8133:8177" ph="SELECT Email... persons" />
+            <marker date="1525211739472" expanded="true" signature="9020:9063" ph="SELECT FirmI... firms" />
+            <marker date="1525211739472" expanded="true" signature="9556:9670" ph="INSERT INTO persons... " />
+            <marker date="1525211739472" expanded="true" signature="11083:11125" ph="SELECT FirmI... persons" />
+            <marker date="1525211739472" expanded="true" signature="11646:11693" ph="INSERT INTO teams... " />
+            <marker date="1525211739472" expanded="true" signature="11968:12026" ph="SELECT TeamI... teams" />
+            <marker date="1525211739472" expanded="true" signature="12604:12680" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="13164:13197" ph="INSERT INTO firms... " />
+            <marker date="1525211739472" expanded="true" signature="13164:13202" ph="INSERT INTO firms... " />
+            <marker date="1525211739472" expanded="true" signature="14150:14192" ph="SELECT FirmI... persons" />
+            <marker date="1525211739472" expanded="true" signature="14799:14841" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="14799:14870" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="15807:15844" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="17050:17099" ph="SELECT Perso... persons" />
+            <marker date="1525211739472" expanded="true" signature="17465:17515" ph="SELECT Cycli... persons" />
+            <marker date="1525211739472" expanded="true" signature="17919:18021" ph="SELECT FirmN... firms" />
+            <marker date="1525211739472" expanded="true" signature="18589:18631" ph="SELECT TeamI... persons" />
+            <marker date="1525211739472" expanded="true" signature="18975:19107" ph="SELECT teams... teams" />
+            <marker date="1525211739472" expanded="true" signature="19709:19753" ph="SELECT Passw... persons" />
+            <marker date="1525211739472" expanded="true" signature="20088:20231" ph="SELECT perso... persons" />
+            <marker date="1525211739472" expanded="true" signature="20254:20261" ph="{...}" />
+            <marker date="1525211739472" expanded="true" signature="20472:20491" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="20472:20539" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="21137:21243" ph="SELECT perso... persons" />
+            <marker date="1525211739472" expanded="true" signature="21893:21912" ph="SELECT * FRO... firms" />
+            <marker date="1525211739472" expanded="true" signature="22527:22630" ph="SELECT teams... teams" />
+            <marker date="1525211739472" expanded="true" signature="23469:23577" ph="SELECT perso... persons" />
+            <marker date="1525211739472" expanded="true" signature="24803:24855" ph="SELECT TeamI... teams" />
+            <marker date="1525211739472" expanded="true" signature="25247:25292" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="25809:25861" ph="SELECT FirmI... firms" />
+            <marker date="1525211739472" expanded="true" signature="26191:26329" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="26191:26344" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="27442:27488" ph="UPDATE teams... " />
+            <marker date="1525211739472" expanded="true" signature="28000:28048" ph="UPDATE firms... " />
+            <marker date="1525211739472" expanded="true" signature="28924:28972" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="29431:29526" ph="SELECT * fro... firms" />
+            <marker date="1525211739472" expanded="true" signature="30281:30359" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="30281:30368" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="30281:30370" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="31223:31259" ph="SELECT * FRO... teams" />
+            <marker date="1525211739472" expanded="true" signature="32065:32108" ph="SELECT FirmI... firms" />
+            <marker date="1525211739472" expanded="true" signature="32771:32825" ph="SELECT * FRO... persons" />
+            <marker date="1525211739472" expanded="true" signature="33844:33902" ph="SELECT TeamI... teams" />
+            <marker date="1525211739472" expanded="true" signature="34526:34562" ph="DELETE FROM " />
+            <marker date="1525211739472" expanded="true" signature="34721:34755" ph="DELETE FROM " />
+            <marker date="1525211739472" expanded="true" signature="34738:34755" ph="UPDATE teams... " />
+            <marker date="1525211739472" expanded="true" signature="34910:34944" ph="DELETE FROM " />
+            <marker date="1525211739472" expanded="true" signature="35369:35418" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="35375:35418" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="35573:35607" ph="UPDATE teams... " />
+            <marker date="1525211739472" expanded="true" signature="36034:36069" ph="UPDATE perso... " />
+            <marker date="1525211739472" expanded="true" signature="36515:36564" ph="UPDATE perso... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowParticipantsView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>

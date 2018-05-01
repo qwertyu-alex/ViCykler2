@@ -1,7 +1,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
-        <g:VerticalPanel styleName="center">
+        <g:VerticalPanel styleName="center fakefakefakeBtn margintop">
             <g:Label>Holdnavn: </g:Label>
             <g:TextBox ui:field="teamNameField"></g:TextBox>
 

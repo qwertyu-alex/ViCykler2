@@ -37,57 +37,6 @@ public class ShowTeamsView extends Composite {
 
     }
 
-    public void initTable(ListDataProvider<Team> teamListDataProvider){
-        this.teamListDataProvider = teamListDataProvider;
-        this.teamListDataProvider.addDataDisplay(cellTable);
-
-        if (!tableIsMade){
-
-            teamID = new Column<Team, Number>(new NumberCell()) {
-                @Override
-                public Integer getValue(Team object) {
-                    return  object.getTeamID();
-                }
-            };
-
-
-            teamName = new TextColumn<Team>() {
-                @Override
-                public String getValue(Team object) {
-                    return object.getTeamName();
-                }
-            };
-
-            firmName = new TextColumn<Team>() {
-                @Override
-                public String getValue(Team object) {
-                    return object.getFirmName();
-                }
-            };
-//
-            numberOfParticipants = new Column<Team, Number>(new NumberCell()) {
-                @Override
-                public Number getValue(Team object) {
-                    return object.getParticipants().size();
-                }
-            };
-
-            changeTeam = new Column<Team, Team>(new ActionCell<Team>("Rediger", delegate)) {
-                @Override
-                public Team getValue(Team object) {
-                    return object;
-                }
-            };
-
-            cellTable.addColumn(teamID, "Hold ID");
-            cellTable.addColumn(teamName, "Holdnavn");
-            cellTable.addColumn(firmName, "Firma");
-            cellTable.addColumn(numberOfParticipants, "Antal deltagere");
-            cellTable.addColumn(changeTeam);
-
-            tableIsMade = true;
-        }
-    }
 
     public ListDataProvider<Team> getTeamListDataProvider() {
         return teamListDataProvider;
@@ -128,4 +77,6 @@ public class ShowTeamsView extends Composite {
     public void setDelegate(ActionCell.Delegate<Team> delegate) {
         this.delegate = delegate;
     }
+
+
 }

@@ -19,9 +19,9 @@ public interface ApplicationService extends RemoteService {
     ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception;
     ArrayList<Team> getAllTeams() throws Exception;
     ArrayList<Firm> getAllFirms() throws Exception;
-    boolean createParticipant(Participant newParticipant) throws Exception;
-    boolean createTeam(Team newTeam, Participant teamCaptain) throws Exception;
-    boolean createFirm(String name);
+    String createParticipant(Participant newParticipant) throws Exception;
+    String createTeam(Team newTeam, Participant teamCaptain) throws Exception;
+    String createFirm(String name);
     Participant getParticipant(String email) throws Exception;
     Team getTeamFromEmail(String email) throws Exception;
     Team getTeamFromTeamID(int teamID) throws Exception;
@@ -34,15 +34,15 @@ public interface ApplicationService extends RemoteService {
     Team changeTeamInfo(Team currentTeam, Team changingTeam) throws Exception;
     Firm changeFirmInfo(Firm currentFirm, Firm changingFirm) throws Exception;
     String getGuestStatisticView() throws Exception;
-    boolean removeFromTeam(Participant participant) throws Exception;
-    boolean deleteTeam(int teamID) throws Exception;
-    boolean deleteFirm(int firmID) throws Exception;
-    boolean deleteParticipant(String email) throws Exception;
+    String removeFromTeam(Participant participant) throws Exception;
+    String deleteTeam(int teamID) throws Exception;
+    String deleteFirm(int firmID) throws Exception;
+    String deleteParticipant(String email) throws Exception;
     Firm getFirmFromEmail (String email) throws Exception;
-    boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails) throws Exception;
+    String addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails) throws Exception;
     ArrayList<Participant> getAllTeamCaptains() throws Exception;
     ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID) throws Exception;
     int getFirmIDFromFirmName(String firmName) throws Exception;
     int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception;
-    boolean changePersonType(String email, String personType) throws Exception;
+    String changePersonType(String email, String personType) throws Exception;
 }

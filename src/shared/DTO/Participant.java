@@ -15,9 +15,9 @@ public class Participant extends Person implements IsSerializable {
 
     private String cyclistType = "";
     private String firmName = "";
-    private int teamID;
+    private int teamID = 0;
     private String personType = "";
-    private int firmID;
+    private int firmID = 0;
     private String teamName = "";
 
 

@@ -25,13 +25,18 @@ public class GuestController {
 //    private Data data;
     private ArrayList<Participant> participants;
     private ApplicationServiceAsync rpcService;
+    private boolean clickHandlerAdded = false;
 
     public GuestController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
         this.rpcService = rpcService;
 //        Tilføjer clickhandlers til forskellige elementer på siden
-        addClickHandlers();
+
+        if (!clickHandlerAdded){
+            addClickHandlers();
+            clickHandlerAdded = true;
+        }
     }
 
     /**
@@ -79,13 +84,10 @@ public class GuestController {
                             content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
                         }
                         if (result instanceof Participant){
-                            content.getParticipantView().changeView(content.getParticipantView().getMyProfileView());
-                            content.switchToParticipantView();
                             new ParticipantController(content, (Participant) result, rpcService);
                         }
 
                         if (result instanceof Admin){
-                            content.switchToAdminView();
                             new AdminController(content, rpcService);
                         }
                     }
@@ -139,19 +141,15 @@ public class GuestController {
                 newParticipant.setPassword(password);
                 newParticipant.setFirmName(firmName);
 
-                rpcService.createParticipant(newParticipant, new AsyncCallback<Boolean>() {
+                rpcService.createParticipant(newParticipant, new AsyncCallback<String>() {
                     @Override
                     public void onFailure(Throwable caught) {
                         System.out.println(caught.getMessage());
                     }
 
                     @Override
-                    public void onSuccess(Boolean result) {
-                        if (!result){
-                            Window.alert("Email already exist");
-                        } else {
-                            Window.alert("Successfully added participant!");
-                        }
+                    public void onSuccess(String result) {
+                        Window.alert(result);
                     }
                 });
             }

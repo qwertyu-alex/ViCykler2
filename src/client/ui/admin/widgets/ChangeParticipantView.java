@@ -16,7 +16,9 @@ public class ChangeParticipantView extends Composite {
     Button returnBtn, submitBtn, deleteBtn;
 
     @UiField
-    TextBox nameField, emailField, personTypeField, cyclistTypeField, firmNameField, teamNameField;
+    TextBox nameField, emailField, firmNameField, teamNameField;
+
+    @UiField ListBox cyclistTypeList, personTypeList;
 
     @UiField PasswordTextBox passField;
 
@@ -48,13 +50,6 @@ public class ChangeParticipantView extends Composite {
         return emailField;
     }
 
-    public TextBox getPersonTypeField() {
-        return personTypeField;
-    }
-
-    public TextBox getCyclistTypeField() {
-        return cyclistTypeField;
-    }
 
     public TextBox getFirmNameField() {
         return firmNameField;
@@ -74,5 +69,13 @@ public class ChangeParticipantView extends Composite {
 
     public Button getDeleteBtn() {
         return deleteBtn;
+    }
+
+    public ListBox getCyclistTypeList() {
+        return cyclistTypeList;
+    }
+
+    public ListBox getPersonTypeList() {
+        return personTypeList;
     }
 }

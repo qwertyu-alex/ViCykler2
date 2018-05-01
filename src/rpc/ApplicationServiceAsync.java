@@ -16,9 +16,9 @@ public interface ApplicationServiceAsync {
 
     void getAllParticipantsAndTeamNameAndFirmName(AsyncCallback<ArrayList<Participant>> async);
 
-    void createParticipant(Participant newParticipant, AsyncCallback<Boolean> async);
+    void createParticipant(Participant newParticipant, AsyncCallback<String> async);
 
-    void createTeam(Team newTeam, Participant teamCaptain, AsyncCallback<Boolean> async);
+    void createTeam(Team newTeam, Participant teamCaptain, AsyncCallback<String> async);
 
     void getParticipantCyclistType(String email, AsyncCallback<String> async);
 
@@ -40,13 +40,13 @@ public interface ApplicationServiceAsync {
 
     void changeFirmInfo(Firm currentFirm, Firm changingFirm, AsyncCallback<Firm> async);
 
-    void createFirm(String name, AsyncCallback<Boolean> async);
+    void createFirm(String name, AsyncCallback<String> async);
 
     void getAllFirms(AsyncCallback<ArrayList<Firm>> async);
 
     void getParticipant(String email, AsyncCallback<Participant> async);
 
-    void removeFromTeam(Participant participant,AsyncCallback<Boolean> async);
+    void removeFromTeam(Participant participant,AsyncCallback<String> async);
 
     void getTeamFromEmail(String email, AsyncCallback<Team> async);
 
@@ -54,7 +54,7 @@ public interface ApplicationServiceAsync {
 
     void getFirmFromEmail(String email, AsyncCallback<Firm> async);
 
-    void addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails, AsyncCallback<Boolean> async);
+    void addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails, AsyncCallback<String> async);
 
     void getAllParticipantsInTeamFromTeamID(int teamID, AsyncCallback<ArrayList<Participant>> async);
 
@@ -64,11 +64,11 @@ public interface ApplicationServiceAsync {
 
     void getTeamIDFromTeamNameAndFirmID(String teamName, int firmID, AsyncCallback<Integer> async);
 
-    void deleteTeam(int teamID, AsyncCallback<Boolean> async);
+    void deleteTeam(int teamID, AsyncCallback<String> async);
 
-    void deleteFirm(int firmID, AsyncCallback<Boolean> async);
+    void deleteFirm(int firmID, AsyncCallback<String> async);
 
-    void deleteParticipant(String email, AsyncCallback<Boolean> async);
+    void deleteParticipant(String email, AsyncCallback<String> async);
 
-    void changePersonType(String email, String personType, AsyncCallback<Boolean> async);
+    void changePersonType(String email, String personType, AsyncCallback<String> async);
 }

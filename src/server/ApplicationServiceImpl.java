@@ -137,8 +137,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         ResultSet resultSet = null;
 
         try {
-            PreparedStatement findPersons = connection.prepareStatement("" +
-                    "SELECT * FROM persons INNER JOIN teams ON persons.TeamID = teams.TeamID INNER JOIN firms ON persons.FirmID = firms.FirmID");
+            PreparedStatement findPersons = connection.prepareStatement(
+                    "SELECT * FROM persons");
             resultSet = findPersons.executeQuery();
 
             while(resultSet.next()){
@@ -149,28 +149,43 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     participant.setEmail(resultSet.getString("Email").toLowerCase());
                     participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
                     participant.setPersonType(resultSet.getString("PersonType"));
-                    participant.setFirmName(resultSet.getString("FirmName"));
+
                     participant.setFirmID(resultSet.getInt("FirmID"));
                     participant.setTeamID(resultSet.getInt("TeamID"));
-                    participant.setTeamName(resultSet.getString("TeamName"));
+
+
+                    PreparedStatement firmName = connection.prepareStatement("SELECT FirmName from firms WHERE FirmID = ?");
+                    firmName.setInt(1, resultSet.getInt("FirmID"));
+                    ResultSet firmNameRes = firmName.executeQuery();
+                    if (firmNameRes.next()){
+                        participant.setFirmName(firmNameRes.getString("FirmName"));
+                    } else {
+                        throw new SQLException();
+                    }
+
+
+                    if (resultSet.getInt("TeamID") != 0){
+                        PreparedStatement teamName = connection.prepareStatement("SELECT TeamName from teams WHERE TeamID = ?");
+                        teamName.setInt(1, resultSet.getInt("TeamID"));
+                        ResultSet teamNameRes = teamName.executeQuery();
+                        if (teamNameRes.next()){
+                            participant.setTeamName(teamNameRes.getString("TeamName"));
+                        }
+                    }
+
                     participants.add(participant);
+
+
                 }
             }
         } catch (SQLException err){
             err.printStackTrace();
-        } finally {
-            try {
-                resultSet.close();
-            } catch (Exception err){
-                err.printStackTrace();
-            }
         }
-
         return participants;
     }
 
     @Override
-    public boolean createParticipant(Participant newParticipant) throws Exception {
+    public String createParticipant(Participant newParticipant) throws Exception {
         String email = newParticipant.getEmail();
         String name = newParticipant.getName();
         String cyclistType = newParticipant.getCyclistType();
@@ -192,7 +207,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         try {
 
             /***
-             * Først skal der tjekkes om emailen allerede eksisterer. Hvis den gør returnerer metoden false.
+             * Først skal der tjekkes om emailen allerede eksisterer.
              */
             PreparedStatement emailsPreparedStatement = connection.prepareStatement("SELECT Email FROM persons WHERE Email LIKE ?");
             emailsPreparedStatement.setString(1, Character.toString(email.charAt(0)) + "%");
@@ -204,7 +219,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
             for (String emailName: emailList) {
                 if (emailName.equalsIgnoreCase(email)){
-                    return false;
+                    return "Emailen eksisterer ikke";
                 }
             }
 
@@ -259,11 +274,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 err.printStackTrace();
             }
         }
-        return true;
+        return "Personen er blevet oprettet med success";
     }
 
     @Override
-    public boolean createTeam(Team newTeam, Participant teamCaptain) throws Exception {
+    public String createTeam(Team newTeam, Participant teamCaptain) throws Exception {
         int firmID;
         newTeam.getParticipants().add(teamCaptain.getEmail());
 
@@ -318,28 +333,28 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         } catch (SQLException err){
             err.printStackTrace();
+            return "Fejl med at oprette hold";
         }
 
-        return true;
+        return "Holdet er blevet oprettet";
     }
 
     @Override
-    public boolean createFirm(String name) {
+    public String createFirm(String name) {
 
         try {
             PreparedStatement create = connection.prepareStatement("INSERT INTO firms(FirmName) VALUES (?)");
             create.setString(1, name);
             create.executeUpdate();
-            return true;
+            return "Firmaet er blevet oprettet";
 
         } catch (SQLException err){
             err.printStackTrace();
+            return "Fejl med at oprette firma";
         }
-
-        return false;
     }
     @Override
-    public boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
+    public String addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
         /**
          * Opdater participants som skal være i holdet, inklusiv teamCaptain,
          * så deres teamID matcher det nye team.
@@ -349,20 +364,34 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             if (participantEmails.size() > 0){
                 for (String participantEmail : participantEmails) {
                     /**
-                     * Updater alle personer i ArrayListen så de har samme TeamID som holdet
+                     * Skal først tjekke om de har samme FirmID som holdet
                      */
-                        PreparedStatement changeParticipant = connection.prepareStatement("UPDATE persons SET TeamID = ? WHERE Email = ?");
-                        changeParticipant.setInt(1,currentTeam.getTeamID());
-                        changeParticipant.setString(2, participantEmail);
-                        changeParticipant.executeUpdate();
+                        PreparedStatement firmID = connection.prepareStatement("SELECT FirmID FROM persons WHERE Email = ?");
+                        firmID.setString(1, participantEmail);
+                        ResultSet firmIDRes = firmID.executeQuery();
+                        if (firmIDRes.next()){
+                            if (currentTeam.getFirmID() == firmIDRes.getInt("FirmID")){
+                                System.out.println("True");
+                                /**
+                                 * Updater alle personer i ArrayListen så de har samme TeamID som holdet
+                                 */
+                                PreparedStatement changeParticipant = connection.prepareStatement("UPDATE persons SET TeamID = ?, PersonType='PARTICIPANT' WHERE Email = ?");
+                                changeParticipant.setInt(1,currentTeam.getTeamID());
+                                changeParticipant.setString(2, participantEmail);
+                                changeParticipant.executeUpdate();
+                            }
+                        } else {
+                            System.out.println("ERR Personen har intet firmaID");
+                            throw new SQLException();
+                        }
                 }
             }
         } catch (SQLException err){
             err.printStackTrace();
-            return false;
+            return "Personerne kunne ikke tilføjes til holdet";
         }
 
-        return true;
+        return "Personerne er blevet tilføjet til holdet";
     }
 
     @Override
@@ -596,25 +625,39 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception {
 
         try {
-            PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
+            if (changingParticipant.getTeamName() != null && changingParticipant.getTeamName().length() <= 0){
+                try {
+                    PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM teams WHERE teams.TeamName LIKE ?");
+                    getTeamID.setString(1, changingParticipant.getTeamName());
+                    ResultSet getTeamIDRes = getTeamID.executeQuery();
+                    if (getTeamIDRes.next()){
+                        int teamID = getTeamIDRes.getInt("TeamID");
+                        PreparedStatement updateParticipant = connection.prepareStatement(
+                                "UPDATE persons SET TeamID = ? WHERE Email = ?");
+                        updateParticipant.setInt(1,teamID);
+                        updateParticipant.setString(2,currentParticipant.getEmail());
+
+                        updateParticipant.executeQuery();
+                    } else {
+                        System.out.println("Intet hold fundet");
+                    }
+
+                } catch (SQLException err){
+                    err.printStackTrace();
+                }
+            }
+
             PreparedStatement getFirmID = connection.prepareStatement("SELECT FirmID FROM firms WHERE firms.FirmName LIKE ?");
-
-            getTeamID.setString(1, changingParticipant.getTeamName());
             getFirmID.setString(1, changingParticipant.getFirmName());
-
-            ResultSet getTeamIDRes = getTeamID.executeQuery();
             ResultSet getFirmIDRes = getFirmID.executeQuery();
-
-            getTeamIDRes.next();
             getFirmIDRes.next();
 
-            int teamID = getTeamIDRes.getInt("TeamID");
             int firmID = getFirmIDRes.getInt("FirmID");
 
 
             PreparedStatement updateParticipant = connection.prepareStatement(
                     "UPDATE persons SET PersonName = ?, Email = ?,  " +
-                            "Password = ?, PersonType = ?, CyclistType = ?, FirmID = ?, TeamID = ? WHERE Email = ?");
+                            "Password = ?, PersonType = ?, CyclistType = ?, FirmID = ? WHERE Email = ?");
 
             updateParticipant.setString(1,changingParticipant.getName());
             updateParticipant.setString(2,changingParticipant.getEmail());
@@ -622,8 +665,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             updateParticipant.setString(4,changingParticipant.getPersonType());
             updateParticipant.setString(5,changingParticipant.getCyclistType());
             updateParticipant.setInt(6,firmID);
-            updateParticipant.setInt(7,teamID);
-            updateParticipant.setString(8, currentParticipant.getEmail());
+            updateParticipant.setString(7, currentParticipant.getEmail());
 
             updateParticipant.executeUpdate();
             return changingParticipant;
@@ -680,7 +722,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public boolean removeFromTeam(Participant participant) throws Exception {
+    public String removeFromTeam(Participant participant) throws Exception {
 
         try {
             PreparedStatement remove = connection.prepareStatement("UPDATE persons SET teamID = null WHERE Email = ?");
@@ -688,10 +730,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             remove.executeUpdate();
         }catch (SQLException err){
             err.printStackTrace();
-            return false;
+            return "Kunne ikke fjerne person fra hold";
         }
 
-        return true;
+        return "Personen er blevet fjernet fra holdet";
     }
 
     @Override
@@ -839,7 +881,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public boolean deleteFirm(int firmID) throws Exception {
+    public String deleteFirm(int firmID) throws Exception {
         try {
 
             PreparedStatement changePart = connection.prepareStatement("DELETE FROM persons WHERE FirmID = ?");
@@ -854,15 +896,16 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             delete.setInt(1, firmID);
             delete.executeUpdate();
 
+            return "Firmaet er blevet slettet";
         } catch (SQLException err){
             err.printStackTrace();
+            return "Kunne ikke slette firmaet";
         }
 
-        return false;
     }
 
     @Override
-    public boolean deleteTeam(int teamID) throws Exception {
+    public String deleteTeam(int teamID) throws Exception {
 
         try {
             PreparedStatement changePart = connection.prepareStatement("UPDATE persons SET TeamID = NULL WHERE TeamID = ?");
@@ -872,37 +915,38 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement delete = connection.prepareStatement("DELETE FROM teams WHERE TeamID = ?");
             delete.setInt(1, teamID);
             delete.executeUpdate();
-            return true;
+            return "Holdet er blevet slettet";
         } catch (SQLException err){
             err.printStackTrace();
+            return "Holdet kunne ikke slettes";
         }
 
-        return false;
     }
 
     @Override
-    public boolean deleteParticipant(String email) throws Exception {
+    public String deleteParticipant(String email) throws Exception {
         try {
             PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
             delete.setString(1, email);
             delete.executeUpdate();
         } catch (SQLException err){
             err.printStackTrace();
+            return "Personen kunne ikke slettes";
         }
-        return false;
+        return "Personen er blevet slettet";
     }
 
     @Override
-    public boolean changePersonType(String email, String personType) throws Exception {
+    public String changePersonType(String email, String personType) throws Exception {
         try {
             PreparedStatement change = connection.prepareStatement("UPDATE persons SET PersonType = ? WHERE Email = ?");
             change.setString(1, personType);
             change.setString(2, email);
             change.executeUpdate();
-            return  true;
+            return "Personen er ændret";
         } catch (SQLException err){
             err.printStackTrace();
+            return "Personen kunne ikke ændres";
         }
-        return false;
     }
 }
