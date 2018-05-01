@@ -22,21 +22,14 @@ public class GuestController {
 
     private Content content;
     private ListDataProvider<Participant> participantListDataProvider;
-//    private Data data;
-    private ArrayList<Participant> participants;
     private ApplicationServiceAsync rpcService;
-    private boolean clickHandlerAdded = false;
 
     public GuestController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
         this.rpcService = rpcService;
 //        Tilføjer clickhandlers til forskellige elementer på siden
-
-        if (!clickHandlerAdded){
-            addClickHandlers();
-            clickHandlerAdded = true;
-        }
+        addClickHandlers();
     }
 
     /**
@@ -60,7 +53,6 @@ public class GuestController {
                 content.getGuestView().changeView(content.getGuestView().getGuestStatisticView());
 //                Dette kald skal være her for at tabellen viser sine data.
                 participantListDataProvider.refresh();
-                //Skifter til Participant view
             }
         }
     }
@@ -73,36 +65,34 @@ public class GuestController {
             String password = content.getGuestView().getLoginView().getPasswordTB().getText();
 
             rpcService.authorizePerson(username, password, new AsyncCallback<Person>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-                        Window.alert("Server fejl");
+                @Override
+                public void onFailure(Throwable caught) {
+                    Window.alert("Server fejl");
+                }
+
+                @Override
+                public void onSuccess(Person result) {
+                    if (result == null){
+                        content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
+                    }
+                    if (result instanceof Participant){
+                        new ParticipantController(content, (Participant) result, rpcService);
                     }
 
-                    @Override
-                    public void onSuccess(Person result) {
-                        if (result == null){
-                            content.getGuestView().getLoginView().getErrMessageLabel().setText("Email og password matcher ikke");
-                        }
-                        if (result instanceof Participant){
-                            new ParticipantController(content, (Participant) result, rpcService);
-                        }
-
-                        if (result instanceof Admin){
-                            new AdminController(content, rpcService);
-                        }
+                    if (result instanceof Admin){
+                        new AdminController(content, rpcService);
                     }
-                });
-
-
+                }
+            });
         }
     }
 
-    class ShowInfoHandler implements ActionCell.Delegate<Participant>{
-        @Override
-        public void execute(Participant object) {
-            Window.alert("Hello");
-        }
-    }
+//    class ShowInfoHandler implements ActionCell.Delegate<Participant>{
+//        @Override
+//        public void execute(Participant object) {
+//            Window.alert("Hello");
+//        }
+//    }
 
     class CreateParticipantClickHandler implements ClickHandler{
         private String name;
@@ -112,7 +102,6 @@ public class GuestController {
         private String password;
         private String passwordCheck;
         private ArrayList<String> errMessage;
-
 
         @Override
         public void onClick(ClickEvent event) {
@@ -153,7 +142,6 @@ public class GuestController {
                     }
                 });
             }
-
         }
 
         private boolean validateEmail(){
@@ -168,7 +156,6 @@ public class GuestController {
                     dotPosition < (email.length()-2) &&
                     email.lastIndexOf("@") == email.indexOf("@") &&
                     !email.contains(" ")) {
-
                 return true;
             }
             errMessage.add("Din Email er ikke valid. Tjek for eventuelle tastefejl ;)");
@@ -225,14 +212,12 @@ public class GuestController {
 
     private void addClickHandlers(){
         content.getGuestView().addClickHandlers(new GuestClickHandlers());
-        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
+//        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
         content.getGuestView().getSignUpView().addClickHandlers(new CreateParticipantClickHandler());
         content.getGuestView().getLoginView().addClickHandler(new LoginClickHandler());
     }
 
     private void createTable(){
-
-
         rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
             @Override
             public void onFailure(Throwable caught) {

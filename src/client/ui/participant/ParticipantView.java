@@ -1,7 +1,6 @@
 package client.ui.participant;
 
 import client.ui.participant.widgets.*;
-import client.ui.sharedWidgets.StatisticView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -24,11 +23,11 @@ public class ParticipantView extends Composite {
     @UiField
     HorizontalPanel myTeamBox, createTeamBox;
 
-    StartView startView;
-    CreateTeamView createTeamView;
-    MyProfileView myProfileView;
-    ParticipantStatisticView participantStatisticView;
-    MyTeamView myTeamView;
+    private StartView startView;
+    private CreateTeamView createTeamView;
+    private MyProfileView myProfileView;
+    private ParticipantStatisticView participantStatisticView;
+    private MyTeamView myTeamView;
     public ParticipantView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 

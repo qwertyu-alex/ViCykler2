@@ -18,8 +18,6 @@ public class MyTeamView extends Composite {
     interface MyTeamViewUiBinder extends UiBinder<HTMLPanel, MyTeamView> {
     }
 
-    ListDataProvider<Participant> participantListDataProvider;
-
     @UiField
     Label teamIDLabel, teamNameLabel, numberOfParticipantsLabel, firmNameLabel;
 
@@ -47,28 +45,6 @@ public class MyTeamView extends Composite {
         simplePager.setPageSize(25);
     }
 
-    public void initTable(ListDataProvider<Participant> participantListDataProvider){
-        this.participantListDataProvider = participantListDataProvider;
-        participantListDataProvider.addDataDisplay(cellTable);
-
-            TextColumn<Participant> participantNameCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getName();
-                }
-            };
-
-            TextColumn<Participant> emailCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getEmail();
-                }
-            };
-
-            cellTable.addColumn(participantNameCol, "Deltager");
-            cellTable.addColumn(emailCol, "Email");
-    }
-
     public void addTeamCaptainClickHandler(ClickHandler clickHandler){
         submitBtn.addClickHandler(clickHandler);
         deleteTeamBtn.addClickHandler(clickHandler);
@@ -90,10 +66,6 @@ public class MyTeamView extends Composite {
         return cellTable;
     }
 
-    public SimplePager getSimplePager() {
-        return simplePager;
-    }
-
     public Label getFirmNameLabel() {
         return firmNameLabel;
     }
@@ -110,10 +82,6 @@ public class MyTeamView extends Composite {
         return changeTeam;
     }
 
-    public ListDataProvider<Participant> getParticipantListDataProvider() {
-        return participantListDataProvider;
-    }
-
     public TextBox getAddParticipantField() {
         return addParticipantField;
     }
@@ -128,15 +96,6 @@ public class MyTeamView extends Composite {
     /**
      * Lav en ekstra kolonne hvis det er en holdkaptain
      */
-    public void createTeamCaptainCol(){
-        Column<Participant, Participant> removeParticipantCol = new Column<Participant, Participant>(new ActionCell<>("Fjern fra hold", delegate )) {
-            @Override
-            public Participant getValue(Participant object) {
-                return object;
-            }
-        };
-        cellTable.addColumn(removeParticipantCol);
-    }
 
     public Button getDeleteTeamBtn() {
         return deleteTeamBtn;

@@ -11,8 +11,6 @@ public class MyProfileView extends Composite {
 
     private static MyProfileViewUiBinder ourUiBinder = GWT.create(MyProfileViewUiBinder.class);
 
-    private VerticalPanel verticalPanel;
-    private HorizontalPanel horizontalPanel;
     @UiField Label nameLabel, emailLabel, cyclistTypeLabel, firmLabel, teamLabel;
 
     public MyProfileView() {

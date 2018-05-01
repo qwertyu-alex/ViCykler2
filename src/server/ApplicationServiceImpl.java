@@ -2,16 +2,11 @@ package server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.SQLError;
-import com.sun.org.apache.regexp.internal.REUtil;
 import rpc.ApplicationService;
 import shared.DTO.*;
 
-
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.regex.MatchResult;
 
 /**
  * DAO

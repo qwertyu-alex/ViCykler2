@@ -1,11 +1,8 @@
 package client.ui;
 
-import client.ui.admin.AdminView;
 import client.ui.guest.GuestView;
-import client.ui.participant.ParticipantView;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.DeckLayoutPanel;
-import com.google.gwt.user.client.ui.HTML;
 
 public class Content extends Composite{
     private DeckLayoutPanel mainDeck;

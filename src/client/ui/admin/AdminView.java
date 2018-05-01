@@ -17,12 +17,12 @@ public class AdminView extends Composite {
     @UiField
     Button participantsBtn, teamsBtn, firmsBtn, logoutBtn;
 
-    ShowParticipantsView showParticipantsView;
-    ShowFirmsView showFirmsView;
-    ShowTeamsView showTeamsView;
-    ChangeParticipantView changeParticipantView;
-    ChangeTeamView changeTeamView;
-    ChangeFirmView changeFirmView;
+    private ShowParticipantsView showParticipantsView;
+    private ShowFirmsView showFirmsView;
+    private ShowTeamsView showTeamsView;
+    private ChangeParticipantView changeParticipantView;
+    private ChangeTeamView changeTeamView;
+    private ChangeFirmView changeFirmView;
 
     private static AdminViewUiBinder ourUiBinder = GWT.create(AdminViewUiBinder.class);
 
@@ -53,10 +53,6 @@ public class AdminView extends Composite {
 
     public void changeView(Widget widget){
         centerDeck.showWidget(widget);
-    }
-
-    public DeckLayoutPanel getCenterDeck() {
-        return centerDeck;
     }
 
     public Button getParticipantsBtn() {

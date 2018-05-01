@@ -38,11 +38,4 @@ public class Firm implements IsSerializable{
         this.firmName = firmName;
     }
 
-    public void setParticipants(ArrayList<String> participants) {
-        this.participants = participants;
-    }
-
-    public void setTeams(ArrayList<Integer> teams) {
-        this.teams = teams;
-    }
 }

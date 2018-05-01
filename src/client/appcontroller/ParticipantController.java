@@ -9,6 +9,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.cellview.client.CellTable;
+import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -111,7 +112,6 @@ public class ParticipantController {
         participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
         participantView.getParticipantStatisticView().addClickHandlers(new ParticipantStatisticClickHandler());
 
-
         //Kun hvis det er en holdkaptain skal han have rettigheder til at gøre det som en holdkaptain kan
         if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
             participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
@@ -145,8 +145,7 @@ public class ParticipantController {
 
     class CreateTeamClickHandler implements ClickHandler{
         /**
-         * Called when a native click event is fired.
-         *
+         * Called when a native click event is fired
          * @param event the {@link ClickEvent} that was fired
          */
         @Override
@@ -243,21 +242,27 @@ public class ParticipantController {
          */
         @Override
         public void execute(Participant object) {
-            rpcService.removeFromTeam(object, new AsyncCallback<String>() {
-                @Override
-                public void onFailure(Throwable caught) {
 
-                }
 
-                @Override
-                public void onSuccess(String result) {
-                    Window.alert("Personen er fjernet ;)");
-                    participantListDataProvider.getList().remove(object);
-                    participantListDataProvider.refresh();
-                    createParticipantView();
-                }
+            if (object.getEmail() != currentParticipant.getEmail()){
+                rpcService.removeFromTeam(object, new AsyncCallback<String>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
 
-            });
+                    }
+
+                    @Override
+                    public void onSuccess(String result) {
+                        Window.alert("Personen er fjernet ;)");
+                        participantListDataProvider.getList().remove(object);
+                        participantListDataProvider.refresh();
+                        createParticipantView();
+                    }
+
+                });
+            } else {
+                Window.alert("Du kan ikke slette dig selv");
+            }
         }
     }
 
@@ -296,7 +301,6 @@ public class ParticipantController {
 
                     ArrayList<String> participants = new ArrayList<>();
 
-
                     participants.add(participantView.getMyTeamView().getAddParticipantField().getText()
                             .replaceAll("\\s", ""));
 
@@ -313,7 +317,9 @@ public class ParticipantController {
                         }
                     });
                 }
-            } if (event.getSource() == participantView.getMyTeamView().getDeleteTeamBtn()){
+            }
+
+            if (event.getSource() == participantView.getMyTeamView().getDeleteTeamBtn()){
 
                 participantView.changeView(participantView.getMyProfileView());
 
@@ -334,24 +340,22 @@ public class ParticipantController {
 
                                 @Override
                                 public void onSuccess(String result) {
+                                    currentTeam = null;
+                                    rpcService.getParticipant(currentParticipant.getEmail(), new AsyncCallback<Participant>() {
+                                        @Override
+                                        public void onFailure(Throwable caught) {
 
-                                        currentTeam = null;
-                                        rpcService.getParticipant(currentParticipant.getEmail(), new AsyncCallback<Participant>() {
-                                            @Override
-                                            public void onFailure(Throwable caught) {
+                                        }
 
-                                            }
-
-                                            @Override
-                                            public void onSuccess(Participant result) {
-                                                currentParticipant.setTeamID(0);
-                                                currentParticipant.setTeamName(null);
-                                                currentTeam = null;
-                                                checkParticipantTeam();
-                                                createParticipantView();
-                                            }
-                                        });
-
+                                        @Override
+                                        public void onSuccess(Participant result) {
+                                            currentParticipant.setTeamID(0);
+                                            currentParticipant.setTeamName(null);
+                                            currentTeam = null;
+                                            checkParticipantTeam();
+                                            createParticipantView();
+                                        }
+                                    });
                                 }
                             });
                         }
@@ -804,7 +808,13 @@ public class ParticipantController {
 
 
                 if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-                    participantView.getMyTeamView().createTeamCaptainCol();
+                    Column<Participant, Participant> removeParticipantCol = new Column<Participant, Participant>(new ActionCell<>("Fjern fra hold", participantView.getMyTeamView().getDelegate())) {
+                        @Override
+                        public Participant getValue(Participant object) {
+                            return object;
+                        }
+                    };
+                    cellTable.addColumn(removeParticipantCol);
                 }
             }
         });
