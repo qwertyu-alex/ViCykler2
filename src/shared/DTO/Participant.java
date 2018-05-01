@@ -7,8 +7,12 @@ import java.io.Serializable;
 /**
  * Kilde: Y. Daniel Liang (2015), s. 431
  */
+
+/**
+ * Der
+ */
 public class Participant extends Person implements IsSerializable {
-    //Variabler
+
     private String cyclistType = "";
     private String firmName = "";
     private int teamID;

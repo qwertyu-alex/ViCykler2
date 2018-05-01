@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public interface ApplicationService extends RemoteService {
     Person authorizePerson(String email, String password) throws Exception;
     String returnPersons() throws Exception;
-    ArrayList<Participant> getAllParticipants() throws Exception;
+    ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception;
     ArrayList<Team> getAllTeams() throws Exception;
     ArrayList<Firm> getAllFirms() throws Exception;
     boolean createParticipant(Participant newParticipant) throws Exception;
@@ -40,9 +40,9 @@ public interface ApplicationService extends RemoteService {
     boolean deleteParticipant(String email) throws Exception;
     Firm getFirmFromEmail (String email) throws Exception;
     boolean addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails) throws Exception;
+    ArrayList<Participant> getAllTeamCaptains() throws Exception;
     ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID) throws Exception;
     int getFirmIDFromFirmName(String firmName) throws Exception;
-    ArrayList<Participant> getAllTeamCaptains() throws Exception;
     int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception;
     boolean changePersonType(String email, String personType) throws Exception;
 }

@@ -235,7 +235,7 @@ public class GuestController {
     private void createTable(){
 
 
-        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
+        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert(caught.getMessage());
@@ -278,7 +278,7 @@ public class GuestController {
 
                     @Override
                     public void onSuccess(ArrayList<Team> teams) {
-                        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
+                        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
                             @Override
                             public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 

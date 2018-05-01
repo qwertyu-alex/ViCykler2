@@ -22,11 +22,11 @@ public class ShowParticipantsView extends Composite {
     private ListDataProvider<Participant> participantListDataProvider;
 
     private ClickableTextCell clickableTextCell;
-    private TextColumn<Participant> nameCol, emailCol, personTypeCol, cyclistTypeCol, firmNameCol, teamNameCol;
-    private Column<Participant, Participant> changeParticipant;
-    private Column<Participant, String> passCol;
-    private Column<Participant, Number> teamIDCol;
-    private boolean tableIsMade;
+//    private TextColumn<Participant> nameCol, emailCol, personTypeCol, cyclistTypeCol, firmNameCol, teamNameCol;
+//    private Column<Participant, Participant> changeParticipant;
+//    private Column<Participant, String> passCol;
+//    private Column<Participant, Number> teamIDCol;
+//    private boolean tableIsMade;
 
     private ActionCell.Delegate<Participant> delegate;
 
@@ -39,93 +39,99 @@ public class ShowParticipantsView extends Composite {
         cellTable.setVisibleRange(0,1000);
     }
 
-    public void initTable(ListDataProvider<Participant> participantListDataProvider){
-        this.participantListDataProvider = participantListDataProvider;
-        participantListDataProvider.addDataDisplay(cellTable);
-        //http://www.gwtproject.org/doc/latest/DevGuideUiCellWidgets.html
 
-
-        /***
-         * Koden forneden skal kun køre hvis tabellen ikke allerede er lavet.
-         * Dette er for at forhindre, at den tilføjer nye kolonner hver gang admin logger ind
-         */
-        if (!tableIsMade) {
-            nameCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getName() != null ? object.getName() : "*missing*";
-                }
-            };
-
-            emailCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getEmail() != null ? object.getEmail() : "*missing*";
-                }
-            };
-
-            passCol = new Column<Participant, String>(clickableTextCell) {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getPassword();
-                }
-            };
-
-            personTypeCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getPersonType() != null ? object.getPersonType() : "*missing*";
-                }
-            };
-
-            cyclistTypeCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getCyclistType() != null ? object.getCyclistType() : "*missing*";
-                }
-            };
-
-            firmNameCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getFirmName() != null ? object.getFirmName() : "*missing*";
-                }
-            };
-
-            teamIDCol = new Column<Participant, Number>(new NumberCell()) {
-                @Override
-                public Integer getValue(Participant object) {
-                    return object.getTeamID() != 0 ? object.getTeamID() : 0;
-                }
-            };
-
-            teamNameCol = new TextColumn<Participant>() {
-                @Override
-                public String getValue(Participant object) {
-                    return object.getTeamName();
-                }
-            };
-
-            changeParticipant = new Column<Participant, Participant>(new ActionCell<>("Rediger", delegate)) {
-                @Override
-                public Participant getValue(Participant object) {
-                    return object;
-                }
-            };
-
-            cellTable.addColumn(nameCol, "Navn");
-            cellTable.addColumn(emailCol, "Email");
-            cellTable.addColumn(personTypeCol, "Person-type");
-            cellTable.addColumn(cyclistTypeCol, "Cyclist-type");
-            cellTable.addColumn(passCol, "Password");
-            cellTable.addColumn(firmNameCol, "Firma");
-            cellTable.addColumn(teamIDCol, "Hold ID");
-            cellTable.addColumn(teamNameCol, "Holdnavn");
-            cellTable.addColumn(changeParticipant);
-
-            tableIsMade = true;
-        }
-    }
+    /**
+     * Jeg har valgt at flytte denne metode til AdminController klassen da der er for meget logik til at det giver mening at have den her i dette view.
+     * Det er bedre at samle al logikken i controllerne.
+     */
+//    public void initTable(ListDataProvider<Participant> participantListDataProvider){
+//        this.participantListDataProvider = participantListDataProvider;
+//        participantListDataProvider.addDataDisplay(cellTable);
+//        //http://www.gwtproject.org/doc/latest/DevGuideUiCellWidgets.html
+//
+//
+//        /***
+//         * Koden forneden skal kun køre hvis tabellen ikke allerede er lavet.
+//         * Dette er for at forhindre, at den tilføjer nye kolonner hver gang admin logger ind
+//         */
+//        if (!tableIsMade) {
+//            nameCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getName() != null ? object.getName() : "*missing*";
+//                }
+//            };
+//
+//            emailCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getEmail() != null ? object.getEmail() : "*missing*";
+//                }
+//            };
+//
+//            passCol = new Column<Participant, String>(clickableTextCell) {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getPassword();
+//                }
+//            };
+//
+//            personTypeCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getPersonType() != null ? object.getPersonType() : "*missing*";
+//                }
+//            };
+//
+//            cyclistTypeCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getCyclistType() != null ? object.getCyclistType() : "*missing*";
+//                }
+//            };
+//
+//            firmNameCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//
+//                    return object.getFirmName() != null ? object.getFirmName() : "*missing*";
+//                }
+//            };
+//
+//            teamIDCol = new Column<Participant, Number>(new NumberCell()) {
+//                @Override
+//                public Integer getValue(Participant object) {
+//                    return object.getTeamID();
+//                }
+//            };
+//
+//            teamNameCol = new TextColumn<Participant>() {
+//                @Override
+//                public String getValue(Participant object) {
+//                    return object.getTeamName();
+//                }
+//            };
+//
+//            changeParticipant = new Column<Participant, Participant>(new ActionCell<>("Rediger", delegate)) {
+//                @Override
+//                public Participant getValue(Participant object) {
+//                    return object;
+//                }
+//            };
+//
+//            cellTable.addColumn(nameCol, "Navn");
+//            cellTable.addColumn(emailCol, "Email");
+//            cellTable.addColumn(personTypeCol, "Person-type");
+//            cellTable.addColumn(cyclistTypeCol, "Cyclist-type");
+//            cellTable.addColumn(passCol, "Password");
+//            cellTable.addColumn(firmNameCol, "Firma");
+//            cellTable.addColumn(teamIDCol, "Hold ID");
+//            cellTable.addColumn(teamNameCol, "Holdnavn");
+//            cellTable.addColumn(changeParticipant);
+//
+//            tableIsMade = true;
+//        }
+//    }
 
     public ListDataProvider<Participant> getParticipantListDataProvider() {
         return participantListDataProvider;
@@ -135,37 +141,37 @@ public class ShowParticipantsView extends Composite {
         return clickableTextCell;
     }
 
-    public TextColumn<Participant> getNameCol() {
-        return nameCol;
-    }
-
-    public TextColumn<Participant> getEmailCol() {
-        return emailCol;
-    }
-
-    public TextColumn<Participant> getPersonTypeCol() {
-        return personTypeCol;
-    }
-
-    public TextColumn<Participant> getCyclistTypeCol() {
-        return cyclistTypeCol;
-    }
-
-    public TextColumn<Participant> getFirmNameCol() {
-        return firmNameCol;
-    }
-
-    public TextColumn<Participant> getTeamNameCol() {
-        return teamNameCol;
-    }
-
-    public Column<Participant, String> getPassCol() {
-        return passCol;
-    }
-
-    public Column<Participant, Number> getTeamIDCol() {
-        return teamIDCol;
-    }
+//    public TextColumn<Participant> getNameCol() {
+//        return nameCol;
+//    }
+//
+//    public TextColumn<Participant> getEmailCol() {
+//        return emailCol;
+//    }
+//
+//    public TextColumn<Participant> getPersonTypeCol() {
+//        return personTypeCol;
+//    }
+//
+//    public TextColumn<Participant> getCyclistTypeCol() {
+//        return cyclistTypeCol;
+//    }
+//
+//    public TextColumn<Participant> getFirmNameCol() {
+//        return firmNameCol;
+//    }
+//
+//    public TextColumn<Participant> getTeamNameCol() {
+//        return teamNameCol;
+//    }
+//
+//    public Column<Participant, String> getPassCol() {
+//        return passCol;
+//    }
+//
+//    public Column<Participant, Number> getTeamIDCol() {
+//        return teamIDCol;
+//    }
 
     public CellTable<Participant> getCellTable() {
         return cellTable;
@@ -173,5 +179,9 @@ public class ShowParticipantsView extends Composite {
 
     public void setDelegate(ActionCell.Delegate<Participant> delegate) {
         this.delegate = delegate;
+    }
+
+    public ActionCell.Delegate<Participant> getDelegate() {
+        return delegate;
     }
 }

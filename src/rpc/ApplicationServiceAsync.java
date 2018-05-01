@@ -14,7 +14,7 @@ public interface ApplicationServiceAsync {
 
     void returnPersons(AsyncCallback<String> async);
 
-    void getAllParticipants(AsyncCallback<ArrayList<Participant>> async);
+    void getAllParticipantsAndTeamNameAndFirmName(AsyncCallback<ArrayList<Participant>> async);
 
     void createParticipant(Participant newParticipant, AsyncCallback<Boolean> async);
 

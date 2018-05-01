@@ -5,8 +5,12 @@ import client.ui.admin.AdminView;
 import client.ui.admin.widgets.ShowFirmsView;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.FieldUpdater;
+import com.google.gwt.cell.client.NumberCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.cellview.client.CellTable;
+import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
@@ -16,6 +20,7 @@ import shared.DTO.Participant;
 import shared.DTO.Team;
 
 import java.util.ArrayList;
+import java.util.List;
 //import server.withoutDB.Data;
 
 public class AdminController {
@@ -295,7 +300,7 @@ public class AdminController {
     }
 
     private void createParticipantsTable(){
-        rpcService.getAllParticipants(new AsyncCallback<ArrayList<Participant>>() {
+        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Error med at lave tabellen");
@@ -311,10 +316,134 @@ public class AdminController {
                     par.setPassword("****");
                 }
 
-                content.getAdminView().getShowParticipantsView().initTable(participantListDataProvider);
-                tableClickLogic();
+//                content.getAdminView().getShowParticipantsView().initTable(participantListDataProvider);
+                initParticipantsTable(participantListDataProvider);
             }
         });
+    }
+
+    /**
+     * Opretter tabellen
+     * @param participantListDataProvider dette er en liste over alle deltagerne der skal med i tabel
+     */
+    private void initParticipantsTable(ListDataProvider<Participant> participantListDataProvider){
+        CellTable<Participant> cellTable = content.getAdminView().getShowParticipantsView().getCellTable();
+
+        participantListDataProvider.addDataDisplay(cellTable);
+        //http://www.gwtproject.org/doc/latest/DevGuideUiCellWidgets.html
+
+        /**
+         * Fjerner alle kolonner så den laver dem alle igen
+         */
+        for (int i = 0; i < cellTable.getColumnCount();){
+            cellTable.removeColumn(0);
+        }
+
+
+        /***
+         * Koden forneden skal kun køre hvis tabellen ikke allerede er lavet.
+         * Dette er for at forhindre, at den tilføjer nye kolonner hver gang admin logger ind
+         */
+        Column nameCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+                return object.getName() != null ? object.getName() : "*missing*";
+            }
+        };
+
+        Column emailCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+                return object.getEmail() != null ? object.getEmail() : "*missing*";
+            }
+        };
+
+        Column passCol = new Column<Participant, String>(content.getAdminView().getShowParticipantsView().getClickableTextCell()) {
+            @Override
+            public String getValue(Participant object) {
+                return object.getPassword();
+            }
+        };
+
+        Column personTypeCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+                return object.getPersonType() != null ? object.getPersonType() : "*missing*";
+            }
+        };
+
+        Column cyclistTypeCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+                return object.getCyclistType() != null ? object.getCyclistType() : "*missing*";
+            }
+        };
+
+        Column firmNameCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+
+                return object.getFirmName() != null ? object.getFirmName() : "*missing*";
+            }
+        };
+
+        Column teamIDCol = new Column<Participant, Number>(new NumberCell()) {
+            @Override
+            public Integer getValue(Participant object) {
+                return object.getTeamID();
+            }
+        };
+
+        Column teamNameCol = new TextColumn<Participant>() {
+            @Override
+            public String getValue(Participant object) {
+                return object.getTeamName();
+            }
+        };
+
+        Column changeParticipant = new Column<Participant, Participant>(new ActionCell<>("Rediger", content.getAdminView().getShowParticipantsView().getDelegate())) {
+            @Override
+            public Participant getValue(Participant object) {
+                return object;
+            }
+        };
+
+        cellTable.addColumn(nameCol, "Navn");
+        cellTable.addColumn(emailCol, "Email");
+        cellTable.addColumn(personTypeCol, "Person-type");
+        cellTable.addColumn(cyclistTypeCol, "Cyclist-type");
+        cellTable.addColumn(passCol, "Password");
+        cellTable.addColumn(firmNameCol, "Firma");
+        cellTable.addColumn(teamIDCol, "Hold ID");
+        cellTable.addColumn(teamNameCol, "Holdnavn");
+        cellTable.addColumn(changeParticipant);
+
+
+        /***
+         * Denne metode sørger for at fjerne "****" fra password under ShowParticipantsView og sætter de rigtige passwords ind.
+         * aka ClickableTextCellHandler
+         */
+        passCol.setFieldUpdater(new FieldUpdater<Participant, String>() {
+            @Override
+            public void update(int index, Participant object, String value) {
+
+                rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String result) {
+                        object.setPassword(result);
+                        participantListDataProvider.getList().set(index, object);
+                        participantListDataProvider.refresh();
+
+                    }
+                });
+            }
+        });
+
     }
 
     private void createTeamsTable(){
@@ -347,8 +476,6 @@ public class AdminController {
                 ListDataProvider<Firm> firmListDataProvider = new ListDataProvider<>();
                 firmListDataProvider.getList().addAll(result);
 
-//                Window.alert("AdminController part name " + result.get(1).getParticipants().get(0));
-
                 try{
                     content.getAdminView().getShowFirmsView().initTable(firmListDataProvider);
                 } catch (Exception err){
@@ -358,30 +485,35 @@ public class AdminController {
         });
     }
 
-    /***
-     * Denne metode sørger for at fjerne "****" fra password under ShowParticipantsView og sætter de rigtige passwords ind.
-     */
-    private void tableClickLogic(){
-        content.getAdminView().getShowParticipantsView().getPassCol().setFieldUpdater(new FieldUpdater<Participant, String>() {
-            @Override
-            public void update(int index, Participant object, String value) {
-                rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(String result) {
-                        object.setPassword(result);
-                        content.getAdminView().getShowParticipantsView().getParticipantListDataProvider().getList().set(index, object);
-                        content.getAdminView().getShowParticipantsView().getParticipantListDataProvider().refresh();
-//                        content.getAdminView().getShowParticipantsView().getCellTable().redraw();
-
-                    }
-                });
-            }
-        });
-    }
+//    /***
+//     * Denne metode sørger for at fjerne "****" fra password under ShowParticipantsView og sætter de rigtige passwords ind.
+//     * aka ClickableTextCellHandler
+//     */
+//    private void tableClickLogic(){
+//        content.getAdminView().getShowParticipantsView().getPassCol().setFieldUpdater(new FieldUpdater<Participant, String>() {
+//
+//            @Override
+//            public void update(int index, Participant object, String value) {
+//
+//                Window.alert("Lul");
+//
+//                rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
+//                    @Override
+//                    public void onFailure(Throwable caught) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(String result) {
+//                        object.setPassword(result);
+//                        content.getAdminView().getShowParticipantsView().getParticipantListDataProvider().getList().set(index, object);
+//                        content.getAdminView().getShowParticipantsView().getParticipantListDataProvider().refresh();
+////                        content.getAdminView().getShowParticipantsView().getCellTable().redraw();
+//
+//                    }
+//                });
+//            }
+//        });
+//    }
 
 }

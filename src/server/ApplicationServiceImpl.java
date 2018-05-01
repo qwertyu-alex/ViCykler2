@@ -75,6 +75,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         } catch (SQLException err){
             err.printStackTrace();
+            return null;
         }
         return foundPerson;
     }
@@ -90,7 +91,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         PreparedStatement findPerson = connection.prepareStatement("SELECT PersonName FROM persons");
         ResultSet resultSet = findPerson.executeQuery();
-        ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
 
         while(resultSet.next()){
             personNames.add(resultSet.getString(1));
@@ -130,7 +130,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public ArrayList<Participant> getAllParticipants() throws Exception {
+    public ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception {
 
         ArrayList<Participant> participants = new ArrayList<>();
         Participant participant;
