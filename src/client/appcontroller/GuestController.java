@@ -30,6 +30,9 @@ public class GuestController {
         this.rpcService = rpcService;
 //        Tilføjer clickhandlers til forskellige elementer på siden
         addClickHandlers();
+//        createTable();
+        createSignUp();
+        createStatistic();
     }
 
     /**
@@ -39,10 +42,6 @@ public class GuestController {
 
         @Override
         public void onClick(ClickEvent event) {
-            createTable();
-            createSignUp();
-            createStatistic();
-
             if (event.getSource() == content.getGuestView().getLogindBtn()){
                 content.getGuestView().changeView(0);
             } else if (event.getSource() == content.getGuestView().getTilmeldingBtn()){
@@ -86,13 +85,6 @@ public class GuestController {
             });
         }
     }
-
-//    class ShowInfoHandler implements ActionCell.Delegate<Participant>{
-//        @Override
-//        public void execute(Participant object) {
-//            Window.alert("Hello");
-//        }
-//    }
 
     class CreateParticipantClickHandler implements ClickHandler{
         private String name;
@@ -217,20 +209,20 @@ public class GuestController {
         content.getGuestView().getLoginView().addClickHandler(new LoginClickHandler());
     }
 
-    private void createTable(){
-        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
-            @Override
-            public void onFailure(Throwable caught) {
-                Window.alert(caught.getMessage());
-            }
-
-            @Override
-            public void onSuccess(ArrayList<Participant> result) {
-                content.getGuestView().getStatisticView().initTable(participantListDataProvider);
-                participantListDataProvider.getList().addAll(result);
-            }
-        });
-    }
+//    private void createTable(){
+//        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
+//            @Override
+//            public void onFailure(Throwable caught) {
+//                Window.alert(caught.getMessage());
+//            }
+//
+//            @Override
+//            public void onSuccess(ArrayList<Participant> result) {
+//                content.getGuestView().getStatisticView().initTable(participantListDataProvider);
+//                participantListDataProvider.getList().addAll(result);
+//            }
+//        });
+//    }
 
     private void createSignUp(){
         rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {

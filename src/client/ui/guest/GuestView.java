@@ -32,7 +32,7 @@ public class GuestView extends Composite {
 
 
     private LoginView loginView;
-    private StatisticView statisticView;
+//    private StatisticView statisticView;
     private SignUpView signUpView;
     private StartView startView;
     private GuestStatisticView guestStatisticView;
@@ -43,7 +43,7 @@ public class GuestView extends Composite {
 
         loginView = new LoginView();
         signUpView = new SignUpView();
-        statisticView = new StatisticView();
+//        statisticView = new StatisticView();
         startView = new StartView();
         guestStatisticView = new GuestStatisticView();
 
@@ -54,7 +54,7 @@ public class GuestView extends Composite {
 //        Add different views to the DeckLayoutPanel
         centerDeck.add(loginView);
         centerDeck.add(signUpView);
-        centerDeck.add(statisticView);
+//        centerDeck.add(statisticView);
         centerDeck.add(startView);
         centerDeck.add(guestStatisticView);
 
@@ -101,9 +101,9 @@ public class GuestView extends Composite {
         return signUpView;
     }
 
-    public StatisticView getStatisticView() {
-        return statisticView;
-    }
+//    public StatisticView getStatisticView() {
+//        return statisticView;
+//    }
 
     public StartView getStartView() {
         return startView;

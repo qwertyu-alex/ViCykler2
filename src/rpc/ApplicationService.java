@@ -2,7 +2,6 @@ package rpc;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import jdk.nashorn.internal.runtime.ECMAException;
 import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Person;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 
 //Reference til web-inf
 //<url-pattern>/ViCykler/ViCyklerServicee</url-pattern>
-@RemoteServiceRelativePath("ViCyklerServicee")
+@RemoteServiceRelativePath("ViCyklerService")
 public interface ApplicationService extends RemoteService {
     Person authorizePerson(String email, String password) throws Exception;
     String returnPersons() throws Exception;

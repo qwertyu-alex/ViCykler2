@@ -11,6 +11,8 @@ public class Team implements IsSerializable{
     private int firmID;
     private ArrayList <String> participants = new ArrayList<>();
 
+
+
     //Default constructor
     public Team(){
         this.teamID = 0;
@@ -42,10 +44,6 @@ public class Team implements IsSerializable{
 
     public ArrayList<String> getParticipants() {
         return participants;
-    }
-
-    public void setParticipants(ArrayList<String> participants) {
-        this.participants = participants;
     }
 
     public int getFirmID() {

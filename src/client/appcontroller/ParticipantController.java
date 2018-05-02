@@ -109,13 +109,14 @@ public class ParticipantController {
 
         participantView.addClickHandlers(new ParticipantClickHandler());
         participantView.getCreateTeamView().addClickHandlers(new CreateTeamClickHandler());
-        participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
         participantView.getParticipantStatisticView().addClickHandlers(new ParticipantStatisticClickHandler());
 
         //Kun hvis det er en holdkaptain skal han have rettigheder til at gøre det som en holdkaptain kan
         if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
             participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
+            participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
         }
+
         //Denne tilføjer ikke en clickhandler men en changehandler dvs en en handler der lytter efter ændringer.
         participantView.getParticipantStatisticView().getFirmsList2().addChangeHandler(new SearchTeamChangeHandler());
 
@@ -234,6 +235,10 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * En delegate der sørger for at fjerne den person som der bliver klikket ved fra holdet
+     * Denne delegate kan kun bruges af holdkaptainen
+     */
     class MyTeamDelegateHandler implements ActionCell.Delegate<Participant>{
         /**
          * Perform the desired action on the given object.
@@ -253,10 +258,28 @@ public class ParticipantController {
 
                     @Override
                     public void onSuccess(String result) {
-                        Window.alert("Personen er fjernet ;)");
-                        participantListDataProvider.getList().remove(object);
-                        participantListDataProvider.refresh();
-                        createParticipantView();
+                        Window.alert(result);
+
+                        /**
+                         * Refresh listDataProvider
+                         */
+                        rpcService.getAllParticipantsInTeamFromTeamID(currentTeam.getTeamID(), new AsyncCallback<ArrayList<Participant>>() {
+                            @Override
+                            public void onFailure(Throwable caught) {
+
+                            }
+
+                            @Override
+                            public void onSuccess(ArrayList<Participant> result) {
+
+                                participantListDataProvider = new ListDataProvider<>();
+                                participantListDataProvider.getList().addAll(result);
+                                participantListDataProvider.refresh();
+                                createParticipantView();
+                            }
+                        });
+
+
                     }
 
                 });
@@ -266,6 +289,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * En klickhandler for den ekstra menu der kommer op når man er logget ind som holdkaptain
+     */
     class MyTeamTeamCaptainClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -367,6 +393,7 @@ public class ParticipantController {
 
     /**
      * Denne changehandler sørger for at skrifte holdlisten hver gang den opfatter at firmaet er skiftet.
+     * Denne klasse bliver brugt under statistik når man skal søge efter et hold.
      */
     class SearchTeamChangeHandler implements ChangeHandler{
         /**

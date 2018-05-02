@@ -1,4 +1,4 @@
-package shared.DTO;//Alexander Van Le && Oliver Lange
+package shared.DTO;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
