@@ -123,7 +123,6 @@ public class ParticipantController {
 
         //Denne tilføjer ikke en clickhandler men en changehandler dvs en en handler der lytter efter ændringer.
         participantView.getParticipantStatisticView().getFirmsList2().addChangeHandler(new SearchTeamChangeHandler());
-
     }
 
     class ParticipantClickHandler implements ClickHandler{
@@ -158,13 +157,11 @@ public class ParticipantController {
 
             if (event.getSource() == participantView.getCreateTeamView().getSubmitBtn()) {
                 if (participantView.getCreateTeamView().getTeamNameField() != null) {
-                    Team newTeam = new Team();
-                    newTeam.setTeamName(participantView.getCreateTeamView().getTeamNameField().getText());
 
                     /**
                      * Lav holdet som current participant
                      */
-                    rpcService.createTeam(newTeam, currentParticipant, new AsyncCallback<String>() {
+                    rpcService.createTeam(participantView.getCreateTeamView().getTeamNameField().getText(), currentParticipant.getEmail(), new AsyncCallback<String>() {
                         @Override
                         public void onFailure(Throwable caught) {
                             Window.alert(caught.getMessage());
@@ -214,20 +211,25 @@ public class ParticipantController {
                                             ArrayList<String> participantsArrayList = new ArrayList<>();
                                             participantsArrayList.addAll(participantsList);
 
+                                            if (participantsArrayList.size() <= 0){
+                                                rpcService.addParticipantsToTeam(currentTeam, participantsArrayList, new AsyncCallback<String>() {
+                                                    @Override
+                                                    public void onFailure(Throwable caught) {
 
-                                            rpcService.addParticipantsToTeam(currentTeam, participantsArrayList, new AsyncCallback<String>() {
-                                                @Override
-                                                public void onFailure(Throwable caught) {
+                                                    }
 
-                                                }
-
-                                                @Override
-                                                public void onSuccess(String result) {
-                                                    createParticipantView();
-                                                    addTeamCaptainClickHandlers();
-                                                    participantView.changeView(participantView.getMyTeamView());
-                                                }
-                                            });
+                                                    @Override
+                                                    public void onSuccess(String result) {
+                                                        createParticipantView();
+                                                        addTeamCaptainClickHandlers();
+                                                        participantView.changeView(participantView.getMyTeamView());
+                                                    }
+                                                });
+                                            } else {
+                                                createParticipantView();
+                                                addTeamCaptainClickHandlers();
+                                                participantView.changeView(participantView.getMyTeamView());
+                                            }
                                         }
                                     });
                                 }

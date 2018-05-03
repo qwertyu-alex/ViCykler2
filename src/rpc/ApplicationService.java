@@ -16,10 +16,11 @@ public interface ApplicationService extends RemoteService {
     Person authorizePerson(String email, String password) throws Exception;
     String returnPersons() throws Exception;
     ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception;
+
     ArrayList<Team> getAllTeams() throws Exception;
     ArrayList<Firm> getAllFirms() throws Exception;
     String createParticipant(Participant newParticipant) throws Exception;
-    String createTeam(Team newTeam, Participant teamCaptain) throws Exception;
+    String createTeam(String teamName, String teamCaptainEmail) throws Exception;
     String createFirm(String name);
     Participant getParticipant(String email) throws Exception;
     Team getTeamFromEmail(String email) throws Exception;
@@ -41,6 +42,7 @@ public interface ApplicationService extends RemoteService {
     String addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails) throws Exception;
     ArrayList<Participant> getAllTeamCaptains() throws Exception;
     ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID) throws Exception;
+    ArrayList<Participant> getAllParticipantsInFirmFromFirmID(int firmID) throws Exception;
     int getFirmIDFromFirmName(String firmName) throws Exception;
     int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception;
     String changePersonType(String email, String personType) throws Exception;

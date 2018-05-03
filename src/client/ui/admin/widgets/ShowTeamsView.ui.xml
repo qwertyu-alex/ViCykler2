@@ -2,10 +2,35 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'
              xmlns:c="urn:import:com.google.gwt.user.cellview.client">
     <g:HTMLPanel>
-        <g:ScrollPanel width="100%" height="100%">
-            <c:CellTable ui:field="cellTable" styleName="center">
 
-            </c:CellTable>
-        </g:ScrollPanel>
+        <g:DockLayoutPanel unit="PCT" width="100%" height="100%">
+            <g:west size="65">
+                <g:ScrollPanel width="100%" height="100%">
+                    <c:CellTable ui:field="cellTable" styleName="center">
+
+                    </c:CellTable>
+                </g:ScrollPanel>
+            </g:west>
+
+            <g:east size="35">
+                <g:VerticalPanel styleName="fakefakefakeBtn2 margintop" >
+
+                    <g:Label styleName="bold">Opret et nyt hold</g:Label>
+                    <g:Label>Firma hvori holdet skal oprettet</g:Label>
+                    <g:ListBox ui:field="firmListBox">
+
+                    </g:ListBox>
+
+                    <g:Label>Vælg holdkaptain ud fra disse som ikke allerede er holdkaptain</g:Label>
+                    <g:ListBox ui:field="participantListBox">
+
+                    </g:ListBox>
+
+                    <g:TextBox ui:field="teamNameField"/>
+
+                    <g:Button ui:field="createTeamBtn">Tilføj hold</g:Button>
+                </g:VerticalPanel>
+            </g:east>
+        </g:DockLayoutPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

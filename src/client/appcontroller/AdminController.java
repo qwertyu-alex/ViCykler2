@@ -6,10 +6,13 @@ import client.ui.admin.widgets.ShowFirmsView;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.NumberCell;
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -20,6 +23,7 @@ import shared.DTO.Participant;
 import shared.DTO.Team;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 //import server.withoutDB.Data;
 
@@ -46,8 +50,25 @@ public class AdminController {
         content.getMainDeck().add(adminView);
         content.getMainDeck().showWidget(adminView);
 
-        addClickhandlers();
+        addClickHandlers();
     }
+
+    private void addClickHandlers(){
+        adminView.addClickHandlers(new AdminClickHandler());
+        adminView.getChangeParticipantView().addClickHandlers(new ChangeParticipantClickHandler());
+        adminView.getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
+        adminView.getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
+        adminView.getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
+        adminView.getShowTeamsView().setDelegate(new ChangeTeamDelegateHandler());
+        adminView.getShowFirmsView().setDelegate(new ChangeFirmDelegateHandler());
+        adminView.getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
+        adminView.getShowTeamsView().getCreateTeamBtn().addClickHandler(new CreateTeamClickHandler());
+
+        // Tilføjer ChangeHandler
+        adminView.getShowTeamsView().getFirmListBox().addChangeHandler(new SearchParticipantsChangeHandler());
+    }
+
+    /******************************************************/
 
     class AdminClickHandler implements ClickHandler{
         @Override
@@ -66,102 +87,7 @@ public class AdminController {
 
             }
         }
-    }
 
-    class ChangeTeamDelegateHandler implements ActionCell.Delegate<Team>{
-        @Override
-        public void execute(Team object) {
-            currentTeam = object;
-            adminView.getChangeTeamView().getIdLabel().setText(
-                    "Ændrer nu i hold #" + currentTeam.getTeamID() + " " + currentTeam.getTeamName());
-
-            adminView.getChangeTeamView().getTeamNameField().setText(
-                    currentTeam.getTeamName()
-            );
-
-            adminView.changeView(adminView.getChangeTeamView());
-        }
-    }
-
-    class ChangeTeamClickHandler implements ClickHandler{
-        /**
-         * Called when a native click event is fired.
-         *
-         * @param event the {@link ClickEvent} that was fired
-         */
-        @Override
-        public void onClick(ClickEvent event) {
-            if (event.getSource() == adminView.getChangeTeamView().getSubmitBtn()){
-
-                //Laver et det ønskede ændringer på et nyt hold som bliver sendt afsted
-                Team changingTeam = new Team();
-                changingTeam.setTeamName(adminView.getChangeTeamView().getTeamNameField().getText());
-                changingTeam.setTeamID(currentTeam.getTeamID());
-
-                rpcService.changeTeamInfo(currentTeam, changingTeam, new AsyncCallback<Team>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-                        Window.alert("Serverfejl");
-                    }
-
-                    @Override
-                    public void onSuccess(Team result) {
-                        Window.alert("Holdet er blevet ændret");
-                        createTeamsTable();
-                        currentTeam = result;
-                    }
-                });
-            } else if (event.getSource() == adminView.getChangeTeamView().getReturnBtn()){
-                adminView.changeView(adminView.getShowTeamsView());
-            } else if (event.getSource() == adminView.getChangeTeamView().getDeleteBtn()){
-                rpcService.deleteTeam(currentTeam.getTeamID(), new AsyncCallback<String>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-
-                    }
-
-                    @Override
-                    public void onSuccess(String result) {
-                        createTeamsTable();
-                        adminView.changeView(adminView.getShowTeamsView());
-                    }
-                });
-            }
-        }
-    }
-
-    class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
-        @Override
-        public void execute(Participant object) {
-            currentParticipant = object;
-            rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
-                @Override
-                public void onFailure(Throwable caught) {
-                    Window.alert("Error med at ændre person");
-                }
-
-                @Override
-                public void onSuccess(String result) {
-                    adminView.getChangeParticipantView().getIdLabel().setText(
-                            "Du er i gang med at ændre: " + currentParticipant.getEmail()
-                    );
-
-                    adminView.getChangeParticipantView().getNameField().setText(currentParticipant.getName());
-                    adminView.getChangeParticipantView().getEmailField().setText(currentParticipant.getEmail());
-                    adminView.getChangeParticipantView().getPersonTypeList().setValue(3, currentParticipant.getPersonType());
-                    adminView.getChangeParticipantView().getPersonTypeList().setItemText(3, currentParticipant.getPersonType());
-                    adminView.getChangeParticipantView().getPersonTypeList().setSelectedIndex(3);
-                    adminView.getChangeParticipantView().getCyclistTypeList().setValue(4,currentParticipant.getCyclistType());
-                    adminView.getChangeParticipantView().getCyclistTypeList().setItemText(4,currentParticipant.getCyclistType());
-                    adminView.getChangeParticipantView().getCyclistTypeList().setSelectedIndex(4);
-                    adminView.getChangeParticipantView().getPassField().setText(result);
-                    adminView.getChangeParticipantView().getFirmNameField().setText(currentParticipant.getFirmName());
-                    adminView.getChangeParticipantView().getTeamNameField().setText(currentParticipant.getTeamName());
-
-                    adminView.changeView(adminView.getChangeParticipantView());
-                }
-            });
-        }
     }
 
     class ChangeParticipantClickHandler implements ClickHandler{
@@ -208,21 +134,55 @@ public class AdminController {
                 });
             }
         }
+
     }
 
-    class ChangeFirmDelegateHandler implements ActionCell.Delegate<Firm>{
+    class ChangeTeamClickHandler implements ClickHandler{
         /**
-         * Perform the desired action on the given object.
+         * Called when a native click event is fired.
          *
-         * @param object the object to be acted upon
+         * @param event the {@link ClickEvent} that was fired
          */
         @Override
-        public void execute(Firm object) {
-            currentFirm = object;
-            adminView.getChangeFirmView().getFirmIDLabel().setText("Du er i gang med at ændre: " + currentFirm.getFirmName());
-            adminView.getChangeFirmView().getFirmNameField().setText(currentFirm.getFirmName());
-            adminView.changeView(adminView.getChangeFirmView());
+        public void onClick(ClickEvent event) {
+            if (event.getSource() == adminView.getChangeTeamView().getSubmitBtn()){
+
+                //Laver de ønskede ændringer på et nyt hold som bliver sendt afsted til rpc kaldet
+                Team changingTeam = new Team();
+                changingTeam.setTeamName(adminView.getChangeTeamView().getTeamNameField().getText());
+                changingTeam.setTeamID(currentTeam.getTeamID());
+
+                rpcService.changeTeamInfo(currentTeam, changingTeam, new AsyncCallback<Team>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Serverfejl");
+                    }
+
+                    @Override
+                    public void onSuccess(Team result) {
+                        Window.alert("Holdet er blevet ændret");
+                        createTeamsTable();
+                        currentTeam = result;
+                    }
+                });
+            } else if (event.getSource() == adminView.getChangeTeamView().getReturnBtn()){
+                adminView.changeView(adminView.getShowTeamsView());
+            } else if (event.getSource() == adminView.getChangeTeamView().getDeleteBtn()){
+                rpcService.deleteTeam(currentTeam.getTeamID(), new AsyncCallback<String>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String result) {
+                        createTeamsTable();
+                        adminView.changeView(adminView.getShowTeamsView());
+                    }
+                });
+            }
         }
+
     }
 
     class ChangeFirmClickHandler implements ClickHandler{
@@ -272,6 +232,7 @@ public class AdminController {
                 });
             }
         }
+
     }
 
     class ShowFirmsViewClickHandler implements ClickHandler{
@@ -298,18 +259,121 @@ public class AdminController {
                 });
             }
         }
+
     }
 
-    private void addClickhandlers(){
-        adminView.addClickHandlers(new AdminClickHandler());
-        adminView.getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
-        adminView.getChangeParticipantView().addClickHandlers(new ChangeParticipantClickHandler());
-        adminView.getShowTeamsView().setDelegate(new ChangeTeamDelegateHandler());
-        adminView.getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
-        adminView.getShowFirmsView().setDelegate(new ChangeFirmDelegateHandler());
-        adminView.getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
-        adminView.getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
+    class CreateTeamClickHandler implements ClickHandler{
+        /**
+         * Called when a native click event is fired.
+         *
+         * @param event the {@link ClickEvent} that was fired
+         */
+        @Override
+        public void onClick(ClickEvent event) {
+
+            if (adminView.getShowTeamsView().getTeamNameField().getText().length() > 0
+                    && adminView.getShowTeamsView().getParticipantListBox().getItemCount() >= 1){
+                rpcService.createTeam(
+                        adminView.getShowTeamsView().getTeamNameField().getText(),
+                        adminView.getShowTeamsView().getParticipantListBox().getSelectedValue(), new AsyncCallback<String>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String result) {
+                        Window.alert(result);
+                        createTeamsTable();
+                    }
+                });
+            }
+        }
     }
+
+    /********************************************************/
+
+    class ChangeFirmDelegateHandler implements ActionCell.Delegate<Firm>{
+        /**
+         * Perform the desired action on the given object.
+         *
+         * @param object the object to be acted upon
+         */
+        @Override
+        public void execute(Firm object) {
+            currentFirm = object;
+            adminView.getChangeFirmView().getFirmIDLabel().setText("Du er i gang med at ændre: " + currentFirm.getFirmName());
+            adminView.getChangeFirmView().getFirmNameField().setText(currentFirm.getFirmName());
+            adminView.changeView(adminView.getChangeFirmView());
+        }
+
+    }
+
+    class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
+        @Override
+        public void execute(Participant object) {
+            currentParticipant = object;
+            rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    Window.alert("Error med at ændre person");
+                }
+
+                @Override
+                public void onSuccess(String result) {
+                    adminView.getChangeParticipantView().getIdLabel().setText(
+                            "Du er i gang med at ændre: " + currentParticipant.getEmail()
+                    );
+
+                    adminView.getChangeParticipantView().getNameField().setText(currentParticipant.getName());
+                    adminView.getChangeParticipantView().getEmailField().setText(currentParticipant.getEmail());
+                    adminView.getChangeParticipantView().getPersonTypeList().setValue(3, currentParticipant.getPersonType());
+                    adminView.getChangeParticipantView().getPersonTypeList().setItemText(3, currentParticipant.getPersonType());
+                    adminView.getChangeParticipantView().getPersonTypeList().setSelectedIndex(3);
+                    adminView.getChangeParticipantView().getCyclistTypeList().setValue(4,currentParticipant.getCyclistType());
+                    adminView.getChangeParticipantView().getCyclistTypeList().setItemText(4,currentParticipant.getCyclistType());
+                    adminView.getChangeParticipantView().getCyclistTypeList().setSelectedIndex(4);
+                    adminView.getChangeParticipantView().getPassField().setText(result);
+                    adminView.getChangeParticipantView().getFirmNameField().setText(currentParticipant.getFirmName());
+                    adminView.getChangeParticipantView().getTeamNameField().setText(currentParticipant.getTeamName());
+
+                    adminView.changeView(adminView.getChangeParticipantView());
+                }
+            });
+        }
+
+    }
+
+    class ChangeTeamDelegateHandler implements ActionCell.Delegate<Team>{
+        @Override
+        public void execute(Team object) {
+            currentTeam = object;
+            adminView.getChangeTeamView().getIdLabel().setText(
+                    "Ændrer nu i hold #" + currentTeam.getTeamID() + " " + currentTeam.getTeamName());
+
+            adminView.getChangeTeamView().getTeamNameField().setText(
+                    currentTeam.getTeamName()
+            );
+
+            adminView.changeView(adminView.getChangeTeamView());
+        }
+
+    }
+
+    /*********************************************************/
+
+    class SearchParticipantsChangeHandler implements ChangeHandler{
+        /**
+         * Called when a change event is fired.
+         *
+         * @param event the {@link ChangeEvent} that was fired
+         */
+        @Override
+        public void onChange(ChangeEvent event) {
+            addParticipantsToListBox();
+        }
+    }
+
 
 
     /**
@@ -334,6 +398,71 @@ public class AdminController {
 
 //                adminView.getShowParticipantsView().initTable(participantListDataProvider);
                 initParticipantsTable(participantListDataProvider);
+            }
+        });
+    }
+
+    /**
+     * Denne metode opretter det view der er når man klikker på hold-menuen
+     */
+    private void createTeamsTable(){
+        rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Error med at lave tabellen");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Team> result) {
+                ListDataProvider<Team> teamListDataProvider = new ListDataProvider<>();
+                teamListDataProvider.getList().addAll(result);
+
+                initTeamsTable(teamListDataProvider);
+            }
+        });
+
+        /**
+         * Denne kodeblok gør det muligt at tilføje hold.
+         * Dette gør den ved at lave listboxes med firms og deres participants
+         */
+        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Firm> result) {
+
+                adminView.getShowTeamsView().getFirmListBox().clear();
+
+
+                for (Firm firm : result) {
+                    adminView.getShowTeamsView().getFirmListBox().addItem(firm.getFirmName(), Integer.toString(firm.getID()));
+                }
+
+                addParticipantsToListBox();
+
+            }
+        });
+
+    }
+
+    private void createFirmsTable(){
+        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("CreateFirmsTable() err " + caught.getMessage());
+                caught.printStackTrace();
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Firm> result) {
+                ListDataProvider<Firm> firmListDataProvider = new ListDataProvider<>();
+                firmListDataProvider.getList().addAll(result);
+
+                initFirmsTable(firmListDataProvider);
+
             }
         });
     }
@@ -462,23 +591,6 @@ public class AdminController {
 
     }
 
-    private void createTeamsTable(){
-        rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
-            @Override
-            public void onFailure(Throwable caught) {
-                Window.alert("Error med at lave tabellen");
-            }
-
-            @Override
-            public void onSuccess(ArrayList<Team> result) {
-                ListDataProvider<Team> teamListDataProvider = new ListDataProvider<>();
-                teamListDataProvider.getList().addAll(result);
-
-                initTeamsTable(teamListDataProvider);
-            }
-        });
-    }
-
     private void initTeamsTable(ListDataProvider<Team> teamListDataProvider){
         CellTable<Team> cellTable = adminView.getShowTeamsView().getCellTable();
         teamListDataProvider.addDataDisplay(cellTable);
@@ -523,30 +635,53 @@ public class AdminController {
             }
         };
 
+
+
+
         cellTable.addColumn(teamID, "Hold ID");
         cellTable.addColumn(teamName, "Holdnavn");
         cellTable.addColumn(firmName, "Firma");
         cellTable.addColumn(numberOfParticipants, "Antal deltagere");
         cellTable.addColumn(changeTeam);
-    }
 
-    private void createFirmsTable(){
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        teamID.setSortable(true);
+        teamName.setSortable(true);
+        firmName.setSortable(true);
+        numberOfParticipants.setSortable(true);
+        changeTeam.setSortable(true);
+
+        ColumnSortEvent.ListHandler<Team> sortHandler = new ColumnSortEvent.ListHandler<Team>(teamListDataProvider.getList());
+
+        sortHandler.setComparator(teamID, new Comparator<Team>() {
             @Override
-            public void onFailure(Throwable caught) {
-                Window.alert("CreateFirmsTable() err " + caught.getMessage());
-                caught.printStackTrace();
-            }
-
-            @Override
-            public void onSuccess(ArrayList<Firm> result) {
-                ListDataProvider<Firm> firmListDataProvider = new ListDataProvider<>();
-                firmListDataProvider.getList().addAll(result);
-
-                initFirmsTable(firmListDataProvider);
-
+            public int compare(Team o1, Team o2) {
+                return Integer.compare(o1.getTeamID(), o2.getTeamID());
             }
         });
+
+        sortHandler.setComparator(teamName, new Comparator<Team>() {
+            @Override
+            public int compare(Team o1, Team o2) {
+                return o1.getTeamName().compareTo(o2.getTeamName());
+            }
+        });
+
+        sortHandler.setComparator(firmName, new Comparator<Team>() {
+            @Override
+            public int compare(Team o1, Team o2) {
+                return o1.getFirmName().compareTo(o2.getFirmName());
+            }
+        });
+
+        sortHandler.setComparator(numberOfParticipants, new Comparator<Team>() {
+            @Override
+            public int compare(Team o1, Team o2) {
+                return Integer.compare(o1.getParticipants().size(), o2.getParticipants().size());
+            }
+        });
+
+        cellTable.addColumnSortHandler(sortHandler);
+
     }
 
     /**
@@ -566,6 +701,12 @@ public class AdminController {
             cellTable.removeColumn(0);
         }
 
+        Column firmID = new Column<Firm, Number>(new NumberCell()) {
+            @Override
+            public Integer getValue(Firm object) {
+                return object.getID();
+            }
+        };
 
         Column firmName = new TextColumn<Firm>() {
             @Override
@@ -595,11 +736,40 @@ public class AdminController {
             }
         };
 
+
+        cellTable.addColumn(firmID, "Firma ID");
         cellTable.addColumn(firmName, "Firmanavn");
         cellTable.addColumn(numberOfParticipants, "Antal deltagere");
         cellTable.addColumn(numberOfTeams, "Antal hold");
         cellTable.addColumn(changeFirm);
     }
+
+    private void addParticipantsToListBox(){
+
+        adminView.getShowTeamsView().getParticipantListBox().clear();
+
+        rpcService.getAllParticipantsInFirmFromFirmID(Integer.parseInt(adminView.getShowTeamsView().getFirmListBox().getSelectedValue()), new AsyncCallback<ArrayList<Participant>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Participant> result) {
+                for (Participant participant : result) {
+                    if (participant.getPersonType().equalsIgnoreCase("PARTICIPANT")){
+                        adminView.getShowTeamsView().getParticipantListBox().addItem(participant.getEmail());
+                    }
+                }
+            }
+        });
+    }
+
+
+
+
+
+
 
 
 }

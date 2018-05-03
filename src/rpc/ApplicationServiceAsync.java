@@ -18,7 +18,7 @@ public interface ApplicationServiceAsync {
 
     void createParticipant(Participant newParticipant, AsyncCallback<String> async);
 
-    void createTeam(Team newTeam, Participant teamCaptain, AsyncCallback<String> async);
+    void createTeam(String teamName, String teamCaptainEmail, AsyncCallback<String> async);
 
     void getParticipantCyclistType(String email, AsyncCallback<String> async);
 
@@ -71,4 +71,6 @@ public interface ApplicationServiceAsync {
     void deleteParticipant(String email, AsyncCallback<String> async);
 
     void changePersonType(String email, String personType, AsyncCallback<String> async);
+
+    void getAllParticipantsInFirmFromFirmID(int firmID, AsyncCallback<ArrayList<Participant>> async);
 }

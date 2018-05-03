@@ -60,13 +60,16 @@
 
             <g:east size="50">
                     <g:DockLayoutPanel visible="true" unit="PCT" width="100%" height="100%">
-                        <g:north size="90">
+                        <g:north size="93">
 
-                            <g:VerticalPanel styleName="margintop center fakeBtn">
-                                <g:ScrollPanel width="100%" height="100%">
-                                    <c:CellTable ui:field="cellTable"></c:CellTable>
-                                </g:ScrollPanel>
-                            </g:VerticalPanel>
+
+                                <g:ScrollPanel width="100%" height="100%" >
+                                    <g:VerticalPanel styleName="center margintop">
+                                        <c:CellTable ui:field="cellTable" pageSize="25" ></c:CellTable>
+                                    </g:VerticalPanel>
+
+                        </g:ScrollPanel>
+
 
                         </g:north>
                         <g:south size="7">
