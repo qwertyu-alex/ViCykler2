@@ -18,10 +18,11 @@
 
                     <g:east size="45">
                         <g:VerticalPanel styleName="center fakefakefakeBtn margintop">
+                            <g:Label styleName="bold">Opret nyt firma</g:Label>
                             <g:Label>Navn på nyt firma:</g:Label>
                             <g:TextBox ui:field="firmNameField"></g:TextBox>
                             <g:Label ui:field="errField"></g:Label>
-                            <g:Button ui:field="createFirmBtn">Opret nyt firma</g:Button>
+                            <g:Button ui:field="createFirmBtn">Tilføj firma</g:Button>
                         </g:VerticalPanel>
                     </g:east>
 

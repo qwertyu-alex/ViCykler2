@@ -954,9 +954,44 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     @Override
     public String deleteParticipant(String email) throws Exception {
         try {
-            PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
-            delete.setString(1, email);
-            delete.executeUpdate();
+            /**
+             * Inden vi begynder at slette denne participant, skal vi tjekke om han er en teamcaptain.
+             * Hvis personen er en TeamCaptain skal en ny blive teamcaptain.
+             * Hvis der er ikke er andre personer i holdet, bliver holdet slettet.
+             */
+            PreparedStatement find = connection.prepareStatement("SELECT PersonType, TeamID FROM persons WHERE Email = ?");
+            find.setString(1, email);
+            ResultSet findRes = find.executeQuery();
+            if (findRes.next()){
+                if (findRes.getString("PersonType").equalsIgnoreCase("TEAMCAPTAIN")){
+                    PreparedStatement find2 = connection.prepareStatement("SELECT Email FROM persons WHERE TeamID = ? AND Email <> ?");
+                    find2.setInt(1, findRes.getInt("TeamID"));
+                    find2.setString(2, email);
+                    ResultSet find2Res = find2.executeQuery();
+                    System.out.println("Tester find2res");
+
+                    // Sletter personen
+                    PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
+                    delete.setString(1, email);
+                    delete.executeUpdate();
+                    if (find2Res.next()){
+                        System.out.println("Fandt find2res");
+                        PreparedStatement newTeamCaptain = connection.prepareStatement("UPDATE persons SET PersonType = 'TEAMCAPTAIN' WHERE Email = ?");
+                        newTeamCaptain.setString(1, find2Res.getString("Email"));
+                        newTeamCaptain.executeUpdate();
+                    } else {
+                        PreparedStatement deleteTeam = connection.prepareStatement("DELETE FROM teams WHERE TeamID = ?");
+                        deleteTeam.setInt(1, findRes.getInt("TeamID"));
+                        deleteTeam.executeUpdate();
+                        System.out.println("Sletter hold");
+                    }
+                }
+            } else {
+                System.out.println("ERR Person har ingen persontype");
+                throw new SQLException();
+            }
+
+
         } catch (SQLException err){
             err.printStackTrace();
             return "Personen kunne ikke slettes";
