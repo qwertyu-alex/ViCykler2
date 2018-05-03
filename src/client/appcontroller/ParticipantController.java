@@ -105,6 +105,11 @@ public class ParticipantController {
         }
     }
 
+    private void addTeamCaptainClickHandlers(){
+        participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
+        participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
+    }
+
     private void addClickhandlers(){
 
         participantView.addClickHandlers(new ParticipantClickHandler());
@@ -113,8 +118,7 @@ public class ParticipantController {
 
         //Kun hvis det er en holdkaptain skal han have rettigheder til at gøre det som en holdkaptain kan
         if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
-            participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
-            participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
+            addTeamCaptainClickHandlers();
         }
 
         //Denne tilføjer ikke en clickhandler men en changehandler dvs en en handler der lytter efter ændringer.
@@ -220,7 +224,7 @@ public class ParticipantController {
                                                 @Override
                                                 public void onSuccess(String result) {
                                                     createParticipantView();
-                                                    participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
+                                                    addTeamCaptainClickHandlers();
                                                     participantView.changeView(participantView.getMyTeamView());
                                                 }
                                             });

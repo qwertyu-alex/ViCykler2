@@ -9,7 +9,7 @@ public class Firm implements IsSerializable{
     private int ID;
     private ArrayList<String> participants = new ArrayList<>();
     private ArrayList<Integer> teams = new ArrayList<>();
-    private ArrayList<Team> teamss = new ArrayList<>();
+
     //Default Contructor
     public Firm(){
     }

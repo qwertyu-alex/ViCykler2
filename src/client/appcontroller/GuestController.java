@@ -130,6 +130,7 @@ public class GuestController {
 
                     @Override
                     public void onSuccess(String result) {
+
                         Window.alert(result);
                     }
                 });
