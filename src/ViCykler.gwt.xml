@@ -12,7 +12,7 @@
     <source path='client'/>
     <source path='shared'/>
     <source path='shared/DTO'/>
-    <source path='rpc'/>
+    <source path='client.rpc'/>
     <source path='server/withoutDB'/>
 
     <!-- Specify the app servlets.                   -->

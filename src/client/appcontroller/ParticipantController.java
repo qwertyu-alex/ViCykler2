@@ -15,7 +15,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.view.client.ListDataProvider;
-import rpc.ApplicationServiceAsync;
+import client.rpc.ApplicationServiceAsync;
 import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Team;

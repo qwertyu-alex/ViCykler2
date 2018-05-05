@@ -2,7 +2,6 @@ package client.appcontroller;
 
 import client.ui.Content;
 import client.ui.admin.AdminView;
-import client.ui.admin.widgets.ShowFirmsView;
 import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.NumberCell;
@@ -17,14 +16,13 @@ import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.view.client.ListDataProvider;
-import rpc.ApplicationServiceAsync;
+import client.rpc.ApplicationServiceAsync;
 import shared.DTO.Firm;
 import shared.DTO.Participant;
 import shared.DTO.Team;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 //import server.withoutDB.Data;
 
 public class AdminController {
@@ -147,7 +145,7 @@ public class AdminController {
         public void onClick(ClickEvent event) {
             if (event.getSource() == adminView.getChangeTeamView().getSubmitBtn()){
 
-                //Laver de ønskede ændringer på et nyt hold som bliver sendt afsted til rpc kaldet
+                //Laver de ønskede ændringer på et nyt hold som bliver sendt afsted til client.rpc kaldet
                 Team changingTeam = new Team();
                 changingTeam.setTeamName(adminView.getChangeTeamView().getTeamNameField().getText());
                 changingTeam.setTeamID(currentTeam.getTeamID());

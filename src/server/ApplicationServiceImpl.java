@@ -2,7 +2,7 @@ package server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mysql.jdbc.Connection;
-import rpc.ApplicationService;
+import client.rpc.ApplicationService;
 import shared.DTO.*;
 
 import java.sql.*;

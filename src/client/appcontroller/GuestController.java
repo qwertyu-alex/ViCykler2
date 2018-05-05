@@ -1,7 +1,6 @@
 package client.appcontroller;
 
 import client.ui.Content;
-import com.google.gwt.cell.client.ActionCell;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.NumberFormat;
@@ -12,7 +11,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.ListDataProvider;
-import rpc.ApplicationServiceAsync;
+import client.rpc.ApplicationServiceAsync;
 //import server.withoutDB.Data;
 import shared.DTO.*;
 import java.util.ArrayList;

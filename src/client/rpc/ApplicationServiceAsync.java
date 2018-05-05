@@ -1,4 +1,4 @@
-package rpc;
+package client.rpc;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import shared.DTO.Firm;
