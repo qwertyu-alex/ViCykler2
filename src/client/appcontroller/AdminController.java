@@ -34,8 +34,6 @@ public class AdminController {
     private Firm currentFirm;
     private AdminView adminView;
 
-
-
     public AdminController(Content content, ApplicationServiceAsync rpcService){
         this.content = content;
         this.rpcService = rpcService;
@@ -87,10 +85,8 @@ public class AdminController {
                 createFirmsTable();
             } else if (event.getSource() == adminView.getLogoutBtn()){
                 content.switchToGuestView();
-
             }
         }
-
     }
 
     class ChangeParticipantClickHandler implements ClickHandler{
@@ -140,7 +136,6 @@ public class AdminController {
                 });
             }
         }
-
     }
 
     class ChangeTeamClickHandler implements ClickHandler{
@@ -182,13 +177,13 @@ public class AdminController {
 
                     @Override
                     public void onSuccess(String result) {
+                        Window.alert(result);
                         createTeamsTable();
                         adminView.changeView(adminView.getShowTeamsView());
                     }
                 });
             }
         }
-
     }
 
     class ChangeFirmClickHandler implements ClickHandler{
@@ -218,7 +213,6 @@ public class AdminController {
                             currentFirm = result;
                             createFirmsTable();
                         }
-
                     }
                 });
             } else if (event.getSource() == adminView.getChangeFirmView().getReturnBtn()){
@@ -232,13 +226,13 @@ public class AdminController {
 
                     @Override
                     public void onSuccess(String result) {
+                        Window.alert(result);
                         createFirmsTable();
                         adminView.changeView(adminView.getShowFirmsView());
                     }
                 });
             }
         }
-
     }
 
     class ShowFirmsViewClickHandler implements ClickHandler{
@@ -265,7 +259,6 @@ public class AdminController {
                 });
             }
         }
-
     }
 
     class CreateTeamClickHandler implements ClickHandler{
@@ -312,7 +305,6 @@ public class AdminController {
             adminView.getChangeFirmView().getFirmNameField().setText(currentFirm.getFirmName());
             adminView.changeView(adminView.getChangeFirmView());
         }
-
     }
 
     class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
@@ -368,12 +360,10 @@ public class AdminController {
                             refreshTeamsWhenCreatingParticipant();
                         }
                     });
-
                     adminView.changeView(adminView.getChangeParticipantView());
                 }
             });
         }
-
     }
 
     class ChangeTeamDelegateHandler implements ActionCell.Delegate<Team>{
@@ -389,7 +379,6 @@ public class AdminController {
 
             adminView.changeView(adminView.getChangeTeamView());
         }
-
     }
 
     /*********************************************************/
@@ -417,7 +406,6 @@ public class AdminController {
             refreshTeamsWhenCreatingParticipant();
         }
     }
-
 
     private void refreshTeamsWhenCreatingParticipant(){
         rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
@@ -467,7 +455,6 @@ public class AdminController {
                     par.setPassword("****");
                 }
 
-//                adminView.getShowParticipantsView().initTable(participantListDataProvider);
                 initParticipantsTable(participantListDataProvider);
             }
         });
@@ -533,7 +520,6 @@ public class AdminController {
                 firmListDataProvider.getList().addAll(result);
 
                 initFirmsTable(firmListDataProvider);
-
             }
         });
     }
@@ -554,7 +540,6 @@ public class AdminController {
         for (int i = 0; i < cellTable.getColumnCount();){
             cellTable.removeColumn(0);
         }
-
 
         /***
          * Koden forneden skal kun køre hvis tabellen ikke allerede er lavet.
@@ -712,7 +697,6 @@ public class AdminController {
                 });
             }
         });
-
     }
 
     private void initTeamsTable(ListDataProvider<Team> teamListDataProvider){
@@ -801,7 +785,6 @@ public class AdminController {
         });
 
         cellTable.addColumnSortHandler(sortHandler);
-
     }
 
     /**
@@ -890,7 +873,6 @@ public class AdminController {
                 return Integer.compare(o1.getTeams().size(), o2.getTeams().size());
             }
         });
-
 
         cellTable.addColumnSortHandler(sortHandler);
     }
