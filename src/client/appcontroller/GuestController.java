@@ -12,7 +12,6 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.view.client.ListDataProvider;
 import client.rpc.ApplicationServiceAsync;
-//import server.withoutDB.Data;
 import shared.DTO.*;
 import java.util.ArrayList;
 
@@ -204,28 +203,12 @@ public class GuestController {
 
     private void addClickHandlers(){
         content.getGuestView().addClickHandlers(new GuestClickHandlers());
-//        content.getGuestView().getStatisticView().addClickHandler(new ShowInfoHandler());
         content.getGuestView().getSignUpView().addClickHandlers(new CreateParticipantClickHandler());
         content.getGuestView().getLoginView().addClickHandler(new LoginClickHandler());
     }
 
-//    private void createTable(){
-//        rpcService.getAllParticipantsAndTeamNameAndFirmName(new AsyncCallback<ArrayList<Participant>>() {
-//            @Override
-//            public void onFailure(Throwable caught) {
-//                Window.alert(caught.getMessage());
-//            }
-//
-//            @Override
-//            public void onSuccess(ArrayList<Participant> result) {
-//                content.getGuestView().getStatisticView().initTable(participantListDataProvider);
-//                participantListDataProvider.getList().addAll(result);
-//            }
-//        });
-//    }
-
     private void createSignUp(){
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {
 
@@ -241,13 +224,13 @@ public class GuestController {
     }
     
     private void createStatistic(){
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
             @Override
             public void onSuccess(ArrayList<Firm> firms) {
-                rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+                rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
                     @Override
                     public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 

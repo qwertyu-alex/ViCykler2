@@ -21,7 +21,6 @@
             <g:Label>Password again</g:Label>
             <g:PasswordTextBox ui:field="passwordCheckField"></g:PasswordTextBox>
             <g:Button ui:field="signUpBtn">Sign Up</g:Button>
-
         </g:VerticalPanel>
 
         <g:VerticalPanel styleName="center">

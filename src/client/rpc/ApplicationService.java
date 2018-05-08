@@ -10,15 +10,12 @@ import shared.DTO.Team;
 import java.util.ArrayList;
 
 //Reference til web-inf
-//<url-pattern>/ViCykler/ViCyklerServicee</url-pattern>
 @RemoteServiceRelativePath("ViCyklerService")
 public interface ApplicationService extends RemoteService {
     Person authorizePerson(String email, String password) throws Exception;
-    String returnPersons() throws Exception;
     ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception;
-
-    ArrayList<Team> getAllTeams() throws Exception;
-    ArrayList<Firm> getAllFirms() throws Exception;
+    ArrayList<Team> getAllTeamsAndTeamNameAndParticipants() throws Exception;
+    ArrayList<Firm> getAllFirmsAndTeamsAndParticipants() throws Exception;
     String createParticipant(Participant newParticipant) throws Exception;
     String createTeam(String teamName, String teamCaptainEmail) throws Exception;
     String createFirm(String name);
@@ -33,7 +30,6 @@ public interface ApplicationService extends RemoteService {
     Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception;
     Team changeTeamInfo(Team currentTeam, Team changingTeam) throws Exception;
     Firm changeFirmInfo(Firm currentFirm, Firm changingFirm) throws Exception;
-    String getGuestStatisticView() throws Exception;
     String removeFromTeam(Participant participant) throws Exception;
     String deleteTeam(int teamID) throws Exception;
     String deleteFirm(int firmID) throws Exception;

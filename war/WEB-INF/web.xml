@@ -8,7 +8,6 @@
         <servlet-class>server.ApplicationServiceImpl</servlet-class>
     </servlet>
 
-
     <servlet-mapping>
         <servlet-name>com.ViCykler.ViCykler ViCyklerService</servlet-name>
         <url-pattern>/ViCykler/ViCyklerService</url-pattern>

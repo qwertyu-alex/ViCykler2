@@ -42,7 +42,7 @@ public class AdminController {
 
         /**
          * Der bliver valgt at lave admin vievet i constructoren i det at vi gerne vil have at den laver et nyt view hver gang,
-         * så cli
+         * så clickHandlers ikke bliver tilføjet flere gang hver gang med logger ind
          */
         this.adminView = new AdminView();
         content.getMainDeck().add(adminView);
@@ -404,7 +404,7 @@ public class AdminController {
      * Denne metode opretter det view der er når man klikker på hold-menuen
      */
     private void createTeamsTable(){
-        rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+        rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Error med at lave tabellen");
@@ -423,7 +423,7 @@ public class AdminController {
          * Denne kodeblok gør det muligt at tilføje hold.
          * Dette gør den ved at lave listboxes med firms og deres participants
          */
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {
 
@@ -447,7 +447,7 @@ public class AdminController {
     }
 
     private void createFirmsTable(){
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("CreateFirmsTable() err " + caught.getMessage());
@@ -604,7 +604,6 @@ public class AdminController {
             }
         };
 
-
         Column teamName = new TextColumn<Team>() {
             @Override
             public String getValue(Team object) {
@@ -632,9 +631,6 @@ public class AdminController {
                 return object;
             }
         };
-
-
-
 
         cellTable.addColumn(teamID, "Hold ID");
         cellTable.addColumn(teamName, "Holdnavn");

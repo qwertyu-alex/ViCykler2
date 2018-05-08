@@ -31,25 +31,22 @@ public class ParticipantController {
     private Team currentTeam;
     private ApplicationServiceAsync rpcService;
     private ListDataProvider<Participant> participantListDataProvider;
-    private boolean clickHandlerAdded = false;
     ParticipantView participantView; 
     
 
-    public ParticipantController(Content content, Participant currentParticipant, ApplicationServiceAsync rpcService) {
+    public ParticipantController(Content content, Participant currentParticipant,
+                                 ApplicationServiceAsync rpcService) {
         this.content = content;
         this.currentParticipant = currentParticipant;
         this.rpcService = rpcService;
-
+        //Opret et participantView
         this.participantView = new ParticipantView();
+        //Tilføj participantView til DeckLayoutPanel i Content
         content.getMainDeck().add(participantView);
         content.getMainDeck().showWidget(participantView);
-        
-        if (!this.clickHandlerAdded){
-            addClickhandlers();
-            this.clickHandlerAdded = true;
-        }
-
+        //Udfyld de manglende elementer i participantView med data fra databasen
         createParticipantView();
+        addClickhandlers();
     }
 
     /**
@@ -120,7 +117,6 @@ public class ParticipantController {
         if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
             addTeamCaptainClickHandlers();
         }
-
         //Denne tilføjer ikke en clickhandler men en changehandler dvs en en handler der lytter efter ændringer.
         participantView.getParticipantStatisticView().getFirmsList2().addChangeHandler(new SearchTeamChangeHandler());
     }
@@ -166,7 +162,6 @@ public class ParticipantController {
                         public void onFailure(Throwable caught) {
                             Window.alert(caught.getMessage());
                             Window.alert("Kan ikke lave holdet");
-
                         }
 
                         @Override
@@ -284,10 +279,7 @@ public class ParticipantController {
                                 createParticipantView();
                             }
                         });
-
-
                     }
-
                 });
             } else {
                 Window.alert("Du kan ikke slette dig selv");
@@ -412,7 +404,7 @@ public class ParticipantController {
 
             participantView.getParticipantStatisticView().getTeamList().clear();
 
-            rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+            rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
                 @Override
                 public void onFailure(Throwable caught) {
 
@@ -897,13 +889,13 @@ public class ParticipantController {
         /**
          * Laver en liste over de forskellige firmaer og deres stats
          */
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
             @Override
             public void onSuccess(ArrayList<Firm> firms) {
-                rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+                rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
                     @Override
                     public void onFailure(Throwable caught) {Window.alert(caught.getMessage());}
 
@@ -983,7 +975,7 @@ public class ParticipantController {
         /**
          * Laver firma søgningen. Indsætter de forskellige firmanavne i listen.
          */
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {
 
@@ -1002,7 +994,7 @@ public class ParticipantController {
         /**
          * Laver holdsøgningen ved at indsætte de forskellige firma og holdnavne i listerne
          */
-        rpcService.getAllFirms(new AsyncCallback<ArrayList<Firm>>() {
+        rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
             public void onFailure(Throwable caught) {
 
@@ -1017,7 +1009,7 @@ public class ParticipantController {
                     );
                 }
 
-                rpcService.getAllTeams(new AsyncCallback<ArrayList<Team>>() {
+                rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
                     @Override
                     public void onFailure(Throwable caught) {
 

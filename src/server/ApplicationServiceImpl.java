@@ -20,12 +20,17 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     private Connection connection;
 
     public ApplicationServiceImpl(){
+        System.out.println("Running");
+
+
+
         try {
              connection = (Connection) DriverManager.getConnection(DATABASE_URL, USERNAME, PASSWORD);
             System.out.println("Successful");
         } catch (SQLException err){
             err.printStackTrace();
             //https://stackoverflow.com/questions/2434592/difference-in-system-exit0-system-exit-1-system-exit1-in-java
+
             System.exit(1);
         }
     }
@@ -37,10 +42,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         PreparedStatement findMatch = connection.prepareStatement("SELECT * FROM persons WHERE Email LIKE ? AND Password LIKE ?");
         findMatch.setString(1, email);
         findMatch.setString(2, password);
-
         try {
             ResultSet resultSet = findMatch.executeQuery();
-
             /**
              * Tjekke om man er en participant, teamcaptain eller admin
              */
@@ -54,45 +57,18 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     foundParticipant.setCyclistType(resultSet.getString("CyclistType"));
                     foundParticipant.setTeamID(resultSet.getInt("TeamID"));
                     foundParticipant.setFirmID(resultSet.getInt("FirmID"));
-
-                    if (resultSet.getString("PersonType").equalsIgnoreCase("PARTICIPANT")){
-                        foundParticipant.setPersonType("PARTICIPANT");
-                    } else if (resultSet.getString("PersonType").equalsIgnoreCase("TEAMCAPTAIN")){
-                        foundParticipant.setPersonType("TEAMCAPTAIN");
-                    }
+                    foundParticipant.setPersonType(resultSet.getString("PersonType"));
 
                     foundPerson = foundParticipant;
                 } else if (resultSet.getString("PersonType").equalsIgnoreCase("ADMIN")){
                     foundPerson = new Admin();
                 }
             }
-
-
         } catch (SQLException err){
             err.printStackTrace();
             return null;
         }
         return foundPerson;
-    }
-
-    /***
-     * @return The names of every person in the database
-     * @throws Exception
-     */
-    @Override
-    public String returnPersons() throws Exception {
-
-        ArrayList<String> personNames = new ArrayList<>();
-
-        PreparedStatement findPerson = connection.prepareStatement("SELECT PersonName FROM persons");
-        ResultSet resultSet = findPerson.executeQuery();
-
-        while(resultSet.next()){
-            personNames.add(resultSet.getString(1));
-        }
-
-        System.out.println(String.join(", ", personNames));
-        return String.join(", ", personNames);
     }
 
     @Override
@@ -381,6 +357,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             return "Fejl med at oprette firma";
         }
     }
+
     @Override
     public String addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
         /**
@@ -538,15 +515,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public String getGuestStatisticView() throws Exception {
-
-        PreparedStatement statisticForGuest = connection.prepareStatement("SELECT persons.PersonName, persons.FirmName, teams.TeamName " +
-                "FROM persons INNER JOIN teams ON teams.TeamID = persons.TeamID");
-        return null;
-    }
-
-    @Override
-    public ArrayList<Team> getAllTeams() throws Exception {
+    public ArrayList<Team> getAllTeamsAndTeamNameAndParticipants() throws Exception {
         ArrayList<Team> teams = new ArrayList<>();
 
         try{
@@ -580,7 +549,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public ArrayList<Firm> getAllFirms() throws Exception {
+    public ArrayList<Firm> getAllFirmsAndTeamsAndParticipants() throws Exception {
 
         ArrayList<Firm> firms = new ArrayList<>();
 
@@ -588,8 +557,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement getFirms = connection.prepareStatement("SELECT * FROM firms");
             ResultSet getFirmsRes = getFirms.executeQuery();
 
-
-//            System.out.println("Kører Firmanavn");
             while (getFirmsRes.next()){
                 Firm tempFirm = new Firm();
                 tempFirm.setFirmName(getFirmsRes.getString("FirmName"));
@@ -599,48 +566,33 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
             getFirms.close();
             getFirmsRes.close();
-
-//            System.out.println("Kører hold");
+            // henter alle hold i firmaet
             for (Firm firm : firms) {
                 PreparedStatement getTeams = connection.prepareStatement("SELECT teams.TeamID FROM teams INNER JOIN firms ON firms.FirmID = teams.FirmID WHERE firms.FirmName = ?");
                 getTeams.setString(1, firm.getFirmName());
                 ResultSet getTeamsRes = getTeams.executeQuery();
 
-//                System.out.println("Kører while i hold");
-
                 while (getTeamsRes.next()){
-//                    System.out.println(getTeamsRes.getInt("TeamID"));
-//                    System.out.println("Tilføjer holdet til firm");
                     firm.getTeams().add((Integer)getTeamsRes.getInt("TeamID"));
                     firm.getTeams().get(0);
                 }
 
-//                System.out.println("Lukker lortet i hold");
-
                 getTeams.close();
                 getTeamsRes.close();
             }
-
-//            System.out.println("Kører deltagere");
+            // henter alle deltagere i firmaet
             for (Firm firm : firms){
                 PreparedStatement getParticipants = connection.prepareStatement("SELECT persons.Email FROM persons INNER JOIN firms ON persons.FirmID = firms.FirmID WHERE firms.FirmName = ?");
                 getParticipants.setString(1, firm.getFirmName());
                 ResultSet getParticipantsRes = getParticipants.executeQuery();
 
-                int i = 0;
-
-//                System.out.println("Kører while i deltageere");
                 while (getParticipantsRes.next()){
                     firm.getParticipants().add(getParticipantsRes.getString("Email"));
-                    i++;
-//                    System.out.println("Personer: " + i);
-//                    System.out.println(getParticipantsRes.getFetchSize());
                 }
                 getParticipants.close();
                 getParticipantsRes.close();
             }
 
-//            System.out.println("Returnere lortet");
             return firms;
 
         } catch (SQLException err){

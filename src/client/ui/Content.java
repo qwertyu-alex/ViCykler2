@@ -11,10 +11,8 @@ public class Content extends Composite{
     public Content(){
 //        DeckLayoutPanel:
         mainDeck = new DeckLayoutPanel();
-
 //        Views:
         guestView = new GuestView();
-
 //        Tilføjer alle mine views til decket:
         mainDeck.add(guestView);
 

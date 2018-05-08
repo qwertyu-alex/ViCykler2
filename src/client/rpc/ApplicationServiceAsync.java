@@ -12,8 +12,6 @@ public interface ApplicationServiceAsync {
 
     void authorizePerson(String email, String password, AsyncCallback<Person> async);
 
-    void returnPersons(AsyncCallback<String> async);
-
     void getAllParticipantsAndTeamNameAndFirmName(AsyncCallback<ArrayList<Participant>> async);
 
     void createParticipant(Participant newParticipant, AsyncCallback<String> async);
@@ -28,13 +26,11 @@ public interface ApplicationServiceAsync {
 
     void getParticipantTeamName(String email, AsyncCallback<String> async);
 
-    void getGuestStatisticView(AsyncCallback<String> async);
-
     void getParticipantPassword(String email, AsyncCallback<String> async);
 
     void changeParticipantInfo(Participant currentParticipant, Participant changingParticipant, AsyncCallback<Participant> async);
 
-    void getAllTeams(AsyncCallback<ArrayList<Team>> async);
+    void getAllTeamsAndTeamNameAndParticipants(AsyncCallback<ArrayList<Team>> async);
 
     void changeTeamInfo(Team currentTeam, Team changingTeam, AsyncCallback<Team> async);
 
@@ -42,7 +38,7 @@ public interface ApplicationServiceAsync {
 
     void createFirm(String name, AsyncCallback<String> async);
 
-    void getAllFirms(AsyncCallback<ArrayList<Firm>> async);
+    void getAllFirmsAndTeamsAndParticipants(AsyncCallback<ArrayList<Firm>> async);
 
     void getParticipant(String email, AsyncCallback<Participant> async);
 

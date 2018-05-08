@@ -5,7 +5,6 @@ import client.ui.guest.widgets.LoginView;
 import client.ui.guest.widgets.StartView;
 
 import client.ui.guest.widgets.SignUpView;
-import client.ui.sharedWidgets.StatisticView;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -30,9 +29,7 @@ public class GuestView extends Composite {
     @UiField
     Image logoImg;
 
-
     private LoginView loginView;
-//    private StatisticView statisticView;
     private SignUpView signUpView;
     private StartView startView;
     private GuestStatisticView guestStatisticView;
@@ -41,20 +38,16 @@ public class GuestView extends Composite {
     public GuestView() {
         initWidget(ourUiBinder.createAndBindUi(this));
 
+        // Opretter de små views/widgets
         loginView = new LoginView();
         signUpView = new SignUpView();
-//        statisticView = new StatisticView();
         startView = new StartView();
         guestStatisticView = new GuestStatisticView();
-
-
 //        Add DeckLayoutPanel to centerPanel
         centerPanel.add(centerDeck);
-
 //        Add different views to the DeckLayoutPanel
         centerDeck.add(loginView);
         centerDeck.add(signUpView);
-//        centerDeck.add(statisticView);
         centerDeck.add(startView);
         centerDeck.add(guestStatisticView);
 
@@ -88,7 +81,6 @@ public class GuestView extends Composite {
         centerDeck.showWidget(index);
     }
 
-//    Overload
     public void changeView(Widget widget){
         centerDeck.showWidget(widget);
     }
@@ -100,10 +92,6 @@ public class GuestView extends Composite {
     public SignUpView getSignUpView() {
         return signUpView;
     }
-
-//    public StatisticView getStatisticView() {
-//        return statisticView;
-//    }
 
     public StartView getStartView() {
         return startView;
