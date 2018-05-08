@@ -10,6 +10,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
+import com.google.gwt.user.cellview.client.ColumnSortEvent;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -22,6 +23,7 @@ import shared.DTO.Team;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class ParticipantController {
@@ -831,7 +833,6 @@ public class ParticipantController {
                 cellTable.addColumn(participantNameCol, "Deltager");
                 cellTable.addColumn(emailCol, "Email");
 
-
                 if (currentParticipant.getPersonType().equalsIgnoreCase("TEAMCAPTAIN")){
                     Column<Participant, Participant> removeParticipantCol = new Column<Participant, Participant>(new ActionCell<>("Fjern fra hold", participantView.getMyTeamView().getDelegate())) {
                         @Override
@@ -841,6 +842,27 @@ public class ParticipantController {
                     };
                     cellTable.addColumn(removeParticipantCol);
                 }
+
+                participantNameCol.setSortable(true);
+                emailCol.setSortable(true);
+
+                ColumnSortEvent.ListHandler<Participant> sortHandler = new ColumnSortEvent.ListHandler<>(participantListDataProvider.getList());
+
+                sortHandler.setComparator(participantNameCol, new Comparator<Participant>() {
+                    @Override
+                    public int compare(Participant o1, Participant o2) {
+                        return o1.getName().compareTo(o2.getName());
+                    }
+                });
+                sortHandler.setComparator(emailCol, new Comparator<Participant>() {
+                    @Override
+                    public int compare(Participant o1, Participant o2) {
+                        return o1.getEmail().compareTo(o2.getEmail());
+                    }
+                });
+
+                cellTable.addColumnSortHandler(sortHandler);
+
             }
         });
 

@@ -26,9 +26,9 @@
             <g:Label >Password</g:Label>
             <g:PasswordTextBox ui:field="passField"></g:PasswordTextBox>
             <g:Label>Firma</g:Label>
-            <g:TextBox ui:field="firmNameField"></g:TextBox>
+            <g:ListBox ui:field="firmNameList"></g:ListBox>
             <g:Label>Hold</g:Label>
-            <g:TextBox ui:field="teamNameField"></g:TextBox>
+            <g:ListBox ui:field="teamNameList"></g:ListBox>
             <g:Button ui:field="submitBtn">Submit</g:Button>
             <g:Button ui:field="returnBtn">Gå tilbage</g:Button>
             <g:Button ui:field="deleteBtn">Slet deltager</g:Button>

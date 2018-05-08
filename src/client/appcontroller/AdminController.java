@@ -53,17 +53,22 @@ public class AdminController {
 
     private void addClickHandlers(){
         adminView.addClickHandlers(new AdminClickHandler());
+        
         adminView.getChangeParticipantView().addClickHandlers(new ChangeParticipantClickHandler());
         adminView.getChangeTeamView().addClickhandlers(new ChangeTeamClickHandler());
         adminView.getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
+
+        adminView.getShowTeamsView().getCreateTeamBtn().addClickHandler(new CreateTeamClickHandler());
+        adminView.getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
+
+        // Delegate
         adminView.getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
         adminView.getShowTeamsView().setDelegate(new ChangeTeamDelegateHandler());
         adminView.getShowFirmsView().setDelegate(new ChangeFirmDelegateHandler());
-        adminView.getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
-        adminView.getShowTeamsView().getCreateTeamBtn().addClickHandler(new CreateTeamClickHandler());
-
+        
         // Tilføjer ChangeHandler
         adminView.getShowTeamsView().getFirmListBox().addChangeHandler(new SearchParticipantsChangeHandler());
+        adminView.getChangeParticipantView().getFirmNameList().addChangeHandler(new CreateParticipantsChangeHandler());
     }
 
     /******************************************************/
@@ -100,8 +105,8 @@ public class AdminController {
                 changingParticipant.setPersonType(adminView.getChangeParticipantView().getPersonTypeList().getSelectedValue());
                 changingParticipant.setCyclistType(adminView.getChangeParticipantView().getCyclistTypeList().getSelectedValue());
                 changingParticipant.setPassword(adminView.getChangeParticipantView().getPassField().getText());
-                changingParticipant.setFirmName(adminView.getChangeParticipantView().getFirmNameField().getText());
-                changingParticipant.setTeamName(adminView.getChangeParticipantView().getTeamNameField().getText());
+                changingParticipant.setFirmID(Integer.parseInt(adminView.getChangeParticipantView().getFirmNameList().getSelectedValue()));
+                changingParticipant.setTeamID(Integer.parseInt(adminView.getChangeParticipantView().getTeamNameList().getSelectedValue()));
 
                 rpcService.changeParticipantInfo(currentParticipant, changingParticipant, new AsyncCallback<Participant>() {
                     @Override
@@ -110,7 +115,9 @@ public class AdminController {
                     }
                     @Override
                     public void onSuccess(Participant result) {
-                        Window.alert("Personen er ændret");
+
+                        Window.alert(result != null ? "Personen er ændret" : "Error");
+
                         createParticipantsTable();
                         currentParticipant = result;
                     }
@@ -311,6 +318,7 @@ public class AdminController {
     class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
         @Override
         public void execute(Participant object) {
+
             currentParticipant = object;
             rpcService.getParticipantPassword(object.getEmail(), new AsyncCallback<String>() {
                 @Override
@@ -333,8 +341,33 @@ public class AdminController {
                     adminView.getChangeParticipantView().getCyclistTypeList().setItemText(4,currentParticipant.getCyclistType());
                     adminView.getChangeParticipantView().getCyclistTypeList().setSelectedIndex(4);
                     adminView.getChangeParticipantView().getPassField().setText(result);
-                    adminView.getChangeParticipantView().getFirmNameField().setText(currentParticipant.getFirmName());
-                    adminView.getChangeParticipantView().getTeamNameField().setText(currentParticipant.getTeamName());
+                    
+                    rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
+                        @Override
+                        public void onFailure(Throwable caught) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(ArrayList<Firm> result) {
+
+                            adminView.getChangeParticipantView().getFirmNameList().clear();
+
+                            for (Firm firm : result){
+                                adminView.getChangeParticipantView().getFirmNameList().addItem(firm.getFirmName(), Integer.toString(firm.getID()));
+                            }
+
+
+                            for (int i = 0; i < adminView.getChangeParticipantView().getFirmNameList().getItemCount(); i++){
+                                if (adminView.getChangeParticipantView().getFirmNameList().getValue(i)
+                                        .equalsIgnoreCase(Integer.toString(currentParticipant.getFirmID()))){
+                                    adminView.getChangeParticipantView().getFirmNameList().setSelectedIndex(i);
+                                    break;
+                                }
+                            }
+                            refreshTeamsWhenCreatingParticipant();
+                        }
+                    });
 
                     adminView.changeView(adminView.getChangeParticipantView());
                 }
@@ -373,7 +406,46 @@ public class AdminController {
         }
     }
 
+    class CreateParticipantsChangeHandler implements ChangeHandler{
+        /**
+         * Called when a change event is fired.
+         *
+         * @param event the {@link ChangeEvent} that was fired
+         */
+        @Override
+        public void onChange(ChangeEvent event) {
+            refreshTeamsWhenCreatingParticipant();
+        }
+    }
 
+
+    private void refreshTeamsWhenCreatingParticipant(){
+        rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+
+            }
+
+            @Override
+            public void onSuccess(ArrayList<Team> result) {
+
+                adminView.getChangeParticipantView().getTeamNameList().clear();
+
+                for (Team team : result) {
+                    if (team.getFirmID() == Integer.parseInt(adminView.getChangeParticipantView().getFirmNameList().getSelectedValue()))
+                        adminView.getChangeParticipantView().getTeamNameList().addItem(team.getTeamName(), Integer.toString(team.getTeamID()));
+                }
+
+                for (int i = 0; i < adminView.getChangeParticipantView().getTeamNameList().getItemCount(); i++) {
+                    if (adminView.getChangeParticipantView().getTeamNameList().getValue(i)
+                            .equalsIgnoreCase(Integer.toString(currentParticipant.getTeamID()))){
+                        adminView.getChangeParticipantView().getTeamNameList().setSelectedIndex(i);
+                        break;
+                    }
+                }
+            }
+        });
+    }
 
     /**
      * Opretter listDataProvidereren og laver derefter tabellen
@@ -562,6 +634,60 @@ public class AdminController {
         cellTable.addColumn(teamNameCol, "Holdnavn");
         cellTable.addColumn(changeParticipant);
 
+        nameCol.setSortable(true);
+        emailCol.setSortable(true);
+        personTypeCol.setSortable(true);
+        cyclistTypeCol.setSortable(true);
+        firmNameCol.setSortable(true);
+        teamIDCol.setSortable(true);
+        teamNameCol.setSortable(true);
+
+        ColumnSortEvent.ListHandler<Participant> sortHandler = new ColumnSortEvent.ListHandler<Participant>(participantListDataProvider.getList());
+
+        sortHandler.setComparator(nameCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
+        sortHandler.setComparator(emailCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getEmail().compareTo(o2.getEmail());
+            }
+        });
+        sortHandler.setComparator(personTypeCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getPersonType().compareTo(o2.getPersonType());
+            }
+        });
+        sortHandler.setComparator(cyclistTypeCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getCyclistType().compareTo(o2.getCyclistType());
+            }
+        });
+        sortHandler.setComparator(firmNameCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getFirmName().compareTo(o2.getFirmName());
+            }
+        });
+        sortHandler.setComparator(teamIDCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return Integer.compare(o1.getTeamID(), o2.getTeamID());
+            }
+        });
+        sortHandler.setComparator(teamNameCol, new Comparator<Participant>() {
+            @Override
+            public int compare(Participant o1, Participant o2) {
+                return o1.getTeamName().compareTo(o2.getTeamName());
+            }
+        });
+
+        cellTable.addColumnSortHandler(sortHandler);
 
         /***
          * Denne metode sørger for at fjerne "****" fra password under ShowParticipantsView og sætter de rigtige passwords ind.
@@ -582,7 +708,6 @@ public class AdminController {
                         object.setPassword(result);
                         participantListDataProvider.getList().set(index, object);
                         participantListDataProvider.refresh();
-
                     }
                 });
             }
@@ -689,9 +814,6 @@ public class AdminController {
 
         firmListDataProvider.addDataDisplay(cellTable);
 
-//        Window.alert("Navn " + firmListDataProvider.getList().get(0).getParticipants().get(0));
-//        Window.alert(Integer.toString((int)firmListDataProvider.getList().get(0).getParticipants().size()));
-
         for (int i = 0; i < cellTable.getColumnCount();){
             cellTable.removeColumn(0);
         }
@@ -731,12 +853,46 @@ public class AdminController {
             }
         };
 
-
         cellTable.addColumn(firmID, "Firma ID");
         cellTable.addColumn(firmName, "Firmanavn");
         cellTable.addColumn(numberOfParticipants, "Antal deltagere");
         cellTable.addColumn(numberOfTeams, "Antal hold");
         cellTable.addColumn(changeFirm);
+
+        firmID.setSortable(true);
+        firmName.setSortable(true);
+        numberOfParticipants.setSortable(true);
+        numberOfTeams.setSortable(true);
+
+        ColumnSortEvent.ListHandler<Firm> sortHandler = new ColumnSortEvent.ListHandler<>(firmListDataProvider.getList());
+
+        sortHandler.setComparator(firmID, new Comparator<Firm>() {
+            @Override
+            public int compare(Firm o1, Firm o2) {
+                return Integer.compare(o1.getID(), o2.getID());
+            }
+        });
+        sortHandler.setComparator(firmName, new Comparator<Firm>() {
+            @Override
+            public int compare(Firm o1, Firm o2) {
+                return o1.getFirmName().compareTo(o2.getFirmName());
+            }
+        });
+        sortHandler.setComparator(numberOfParticipants, new Comparator<Firm>() {
+            @Override
+            public int compare(Firm o1, Firm o2) {
+                return Integer.compare(o1.getParticipants().size(), o2.getParticipants().size());
+            }
+        });
+        sortHandler.setComparator(numberOfTeams, new Comparator<Firm>() {
+            @Override
+            public int compare(Firm o1, Firm o2) {
+                return Integer.compare(o1.getTeams().size(), o2.getTeams().size());
+            }
+        });
+
+
+        cellTable.addColumnSortHandler(sortHandler);
     }
 
     private void addParticipantsToListBox(){
