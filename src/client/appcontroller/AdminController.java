@@ -126,6 +126,7 @@ public class AdminController {
 
                     @Override
                     public void onSuccess(String result) {
+                        Window.alert(result);
                         createParticipantsTable();
                         adminView.changeView(adminView.getShowParticipantsView());
                     }

@@ -905,6 +905,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String deleteParticipant(String email) throws Exception {
+
+        System.out.println(email);
+
         try {
             /**
              * Inden vi begynder at slette denne participant, skal vi tjekke om han er en teamcaptain.
@@ -937,6 +940,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                         deleteTeam.executeUpdate();
                         System.out.println("Sletter hold");
                     }
+                } else  {
+                    // Sletter personen
+                    PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
+                    delete.setString(1, email);
+                    delete.executeUpdate();
                 }
             } else {
                 System.out.println("ERR Person har ingen persontype");
