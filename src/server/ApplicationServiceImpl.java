@@ -345,7 +345,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String createFirm(String name) {
-
         try {
             PreparedStatement create = connection.prepareStatement("INSERT INTO firms(FirmName) VALUES (?)");
             create.setString(1, name);
@@ -391,12 +390,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                         }
                 }
             }
+            return "Personerne er blevet tilføjet til holdet";
         } catch (SQLException err){
             err.printStackTrace();
             return "Personerne kunne ikke tilføjes til holdet";
         }
-
-        return "Personerne er blevet tilføjet til holdet";
     }
 
     @Override
@@ -426,29 +424,34 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             err.printStackTrace();
             return null;
         }
-    };
+    }
 
     @Override
     public String getParticipantName(String email) throws Exception {
-
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT PersonName FROM persons WHERE Email LIKE ?");
-        preparedStatement.setString(1, email);
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        resultSet.next();
-
-        return resultSet.getString("PersonName");
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT PersonName FROM persons WHERE Email LIKE ?");
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return resultSet.getString("PersonName");
+        } catch (SQLException err){
+            err.printStackTrace();
+            return "**ERROR Serverfejl**";
+        }
     }
 
     @Override
     public String getParticipantCyclistType(String email) throws Exception {
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT CyclistType FROM persons WHERE Email LIKE ?");
-        preparedStatement.setString(1, email);
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        resultSet.next();
-
-        return resultSet.getString("CyclistType");
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT CyclistType FROM persons WHERE Email LIKE ?");
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return resultSet.getString("CyclistType");
+        } catch (SQLException err){
+            err.printStackTrace();
+            return "**ERROR Serverfejl**";
+        }
     }
 
     @Override
@@ -464,8 +467,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             } else {
                 return null;
             }
-
-
         } catch (SQLException err){
             err.printStackTrace();
             return null;
@@ -474,7 +475,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String getParticipantTeamName(String email) throws Exception {
-
         try{
             PreparedStatement getTeamID = connection.prepareStatement("SELECT TeamID FROM persons WHERE Email = ?");
             getTeamID.setString(1, email);
@@ -483,7 +483,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             int teamID = getTeamIDResult.getInt("TeamID");
 
             //Hvis der er et hold
-
             PreparedStatement preparedStatement = connection.prepareStatement(
                     "SELECT teams.TeamName, persons.PersonName FROM teams INNER JOIN persons ON teams.TeamID WHERE teams.TeamID = ? AND persons.Email = ?");
             preparedStatement.setInt(1, teamID);
@@ -495,10 +494,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             } else {
                 return null;
             }
-
-
-
-
         } catch (SQLException err){
             err.printStackTrace();
             return null;
@@ -507,11 +502,17 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String getParticipantPassword(String email) throws Exception {
-        PreparedStatement getPassword = connection.prepareStatement("SELECT Password FROM persons WHERE Email = ?");
-        getPassword.setString(1, email);
-        ResultSet resultSet = getPassword.executeQuery();
-        resultSet.next();
-        return resultSet.getString("Password");
+
+        try {
+            PreparedStatement getPassword = connection.prepareStatement("SELECT Password FROM persons WHERE Email = ?");
+            getPassword.setString(1, email);
+            ResultSet resultSet = getPassword.executeQuery();
+            resultSet.next();
+            return resultSet.getString("Password");
+        } catch (SQLException err){
+            err.printStackTrace();
+            return "**ERROR Serverfejl**";
+        }
     }
 
     @Override
@@ -544,8 +545,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             return teams;
         } catch (Exception err){
             err.printStackTrace();
+            return null;
         }
-         return teams;
     }
 
     @Override
@@ -602,11 +603,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
     @Override
-    public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception {
-
+    public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception  {
         try {
 
-            checkIfParticipantIsTeamCaptainBeforeChangingParticipant(currentParticipant.getEmail());
+            setAnotherTeamCaptainIfTeamCaptain(currentParticipant.getEmail());
 
             PreparedStatement updateParticipant = connection.prepareStatement(
                     "UPDATE persons SET PersonName = ?, Email = ?,  " +
@@ -677,17 +677,15 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     @Override
     public String removeFromTeam(Participant participant) throws Exception {
-
         try {
             PreparedStatement remove = connection.prepareStatement("UPDATE persons SET teamID = null WHERE Email = ?");
             remove.setString(1, participant.getEmail());
             remove.executeUpdate();
+            return "Personen er blevet fjernet fra holdet";
         }catch (SQLException err){
             err.printStackTrace();
             return "Kunne ikke fjerne person fra hold";
         }
-
-        return "Personen er blevet fjernet fra holdet";
     }
 
     @Override
@@ -706,17 +704,14 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 throw new SQLException();
             }
 
-        }catch (SQLException err){
+        } catch (SQLException err){
             err.printStackTrace();
+            return null;
         }
-
-
-        return null;
     }
 
     @Override
     public Team getTeamFromEmail(String email) throws Exception {
-
         try {
             PreparedStatement getTeam = connection.prepareStatement("SELECT * FROM teams INNER JOIN persons ON teams.TeamID = persons.TeamID WHERE Email = ?");
             getTeam.setString(1, email);
@@ -732,12 +727,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 System.out.println("PERSONEN ER IKKE FORBUNDET TIL NOGET HOLD");
                 throw new SQLException();
             }
-
-        }catch (SQLException err){
+        } catch (SQLException err){
             err.printStackTrace();
+            return null;
         }
-
-        return null;
     }
 
     @Override
@@ -756,12 +749,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 System.out.println("ERR intet hold fra ID");
                 throw new SQLException();
             }
-
         } catch (SQLException err){
-
+            return null;
         }
-
-        return null;
     }
 
     @Override
@@ -779,9 +769,8 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
         } catch (SQLException err){
             err.printStackTrace();
+            return 0;
         }
-
-        return 0;
     }
 
     @Override
@@ -803,13 +792,12 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
                 teamCaptains.add(tempParticipant);
             }
-
             return teamCaptains;
 
         } catch (SQLException err){
             err.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     @Override
@@ -826,18 +814,15 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 System.out.println("ERR: intet match");
                 throw new SQLException();
             }
-
-        }catch (SQLException err){
+        } catch (SQLException err){
             err.printStackTrace();
+            return 0;
         }
-
-        return 0;
     }
 
     @Override
     public String deleteFirm(int firmID) throws Exception {
         try {
-
             PreparedStatement changePart = connection.prepareStatement("DELETE FROM persons WHERE FirmID = ?");
             changePart.setInt(1, firmID);
             changePart.executeUpdate();
@@ -855,12 +840,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             err.printStackTrace();
             return "Kunne ikke slette firmaet";
         }
-
     }
 
     @Override
     public String deleteTeam(int teamID) throws Exception {
-
         try {
             PreparedStatement changePart = connection.prepareStatement("UPDATE persons SET TeamID = NULL WHERE TeamID = ?");
             changePart.setInt(1, teamID);
@@ -874,14 +857,13 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             err.printStackTrace();
             return "Holdet kunne ikke slettes";
         }
-
     }
 
     @Override
     public String deleteParticipant(String email) throws Exception {
         try {
 
-            checkIfParticipantIsTeamCaptainBeforeChangingParticipant(email);
+            setAnotherTeamCaptainIfTeamCaptain(email);
             // Sletter personen
             PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
             delete.setString(1, email);
@@ -896,7 +878,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
 
-    private void checkIfParticipantIsTeamCaptainBeforeChangingParticipant(String email) throws SQLException{
+    private void setAnotherTeamCaptainIfTeamCaptain(String email) throws SQLException{
         /**
          * Inden vi begynder at slette denne participant, skal vi tjekke om han er en teamcaptain.
          * Hvis personen er en TeamCaptain skal en ny blive teamcaptain.
