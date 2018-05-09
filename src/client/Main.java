@@ -24,7 +24,7 @@ public class Main implements EntryPoint {
          // men den gør det muligt for klienten at kunne benytte interfacene fra client.rpc modulet/
          // AKA the magic call*/
         ApplicationServiceAsync rpcService = GWT.create(ApplicationService.class);
-//        ApplicationServiceAsync rpcService2 = GWT.create(ApplicationService.class);
+
 //      Laver vores UI:
         RootLayoutPanel.get().add(content);
 

@@ -28,7 +28,6 @@ public class GuestController {
         this.rpcService = rpcService;
 //        Tilføjer clickhandlers til forskellige elementer på siden
         addClickHandlers();
-//        createTable();
         createSignUp();
         createStatistic();
     }
