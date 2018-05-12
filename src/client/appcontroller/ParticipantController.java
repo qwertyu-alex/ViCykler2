@@ -961,7 +961,6 @@ public class ParticipantController {
                                     int numberOfTeamsInFirm = 0;
                                     for (Team team : teams) {
                                         if (team.getFirmID() == firm.getID()){
-                                            teams.remove(team);
                                             numberOfTeamsInFirm++;
                                         }
                                     }
@@ -969,7 +968,6 @@ public class ParticipantController {
                                     int numberOfParticipantsInFirm = 0;
                                     for (Participant participant: participants){
                                         if (participant.getFirmID() == firm.getID()){
-                                            participants.remove(participant);
                                             numberOfParticipantsInFirm++;
                                         }
                                     }

@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Main.java" afterPath="$PROJECT_DIR$/src/client/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/GuestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" afterPath="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" afterPath="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5460">
-              <caret line="320" column="27" lean-forward="true" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
+              <caret line="320" column="27" lean-forward="false" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
@@ -132,13 +128,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
+      <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="20">
+              <caret line="959" column="0" lean-forward="false" selection-start-line="959" selection-start-column="0" selection-end-line="959" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+                <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -147,7 +151,7 @@
       <file leaf-file-name="SignUpView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="80">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -160,7 +164,7 @@
         <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StartView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,8 +175,8 @@
       <file leaf-file-name="GuestView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/ui/guest/GuestView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-838">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="40">
+              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -334,7 +338,6 @@
         <option value="$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/rpc/ApplicationService.java" />
         <option value="$PROJECT_DIR$/src/client/rpc/ApplicationServiceAsync.java" />
-        <option value="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.ui.xml" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeParticipantView.java" />
         <option value="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
@@ -343,6 +346,7 @@
         <option value="$PROJECT_DIR$/src/client/ui/participant/widgets/MyTeamView.java" />
         <option value="$PROJECT_DIR$/src/client/Main.java" />
         <option value="$PROJECT_DIR$/src/client/ui/admin/widgets/ShowFirmsView.java" />
+        <option value="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
       </list>
     </option>
   </component>
@@ -353,10 +357,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="54" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -407,6 +411,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -547,8 +553,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1090,7 +1094,9 @@
       <workItem from="1525690391385" duration="3019000" />
       <workItem from="1525719628080" duration="3631000" />
       <workItem from="1525798181825" duration="9241000" />
-      <workItem from="1525852697193" duration="3900000" />
+      <workItem from="1525852697193" duration="5793000" />
+      <workItem from="1526124741707" duration="836000" />
+      <workItem from="1526126505438" duration="182000" />
     </task>
     <task id="LOCAL-00001" summary="Re-strukturering">
       <created>1521978979026</created>
@@ -1309,11 +1315,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525870963334</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Små fixes">
+      <created>1525875273556</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1525875273556</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302170000" />
+    <option name="totallyTimeSpent" value="305081000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1325,7 +1338,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1337,21 +1350,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28645834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28645834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14978679" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15325248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09808102" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09757442" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1397,7 +1410,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Er begyndt på at lave participant siden" />
     <MESSAGE value="Er begyndt på at lave database connection. Det virker so far." />
     <MESSAGE value="Har koblet databasen sammen med tabellen under statistik.&#10;Det virker" />
     <MESSAGE value="Er i gang med at lave &quot;GuestStatisticView&quot;, har blot fået tilføjet den i ApplicationService og ApplicationServiceAsync samt er i gang med at lave metoden til denne i ApplicationServiceImpl." />
@@ -1420,9 +1432,10 @@
     <MESSAGE value="Fixes nogle bugs" />
     <MESSAGE value="Man kan nu slette en person igen" />
     <MESSAGE value="Har sat listbox ind i stedet for labels" />
-    <MESSAGE value="Små fixes" />
     <MESSAGE value="Små fixes i AppServiceImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Små fixes i AppServiceImpl" />
+    <MESSAGE value="Små fixes" />
+    <MESSAGE value="Fixet statistic under participantcontroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixet statistic under participantcontroller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1535,10 +1548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="1232" column="22" lean-forward="false" selection-start-line="1232" selection-start-column="22" selection-end-line="1232" selection-end-column="22" />
-          <folding>
-            <element signature="e#47036#47037#0" expanded="false" />
-            <element signature="e#47092#47093#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1575,7 +1584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4700">
           <caret line="281" column="16" lean-forward="false" selection-start-line="281" selection-start-column="16" selection-end-line="281" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1587,25 +1595,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#GuestClickHandlers#0;class#GuestController#0" expanded="false" />
             <element signature="class#LoginClickHandler#0;class#GuestController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2900">
-          <caret line="147" column="56" lean-forward="true" selection-start-line="147" selection-start-column="56" selection-end-line="147" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#createStatistic#0;class#ParticipantController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1677,7 +1666,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1707,7 +1696,7 @@
         <state relative-caret-position="520">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1758,9 +1747,9 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1497#1498#0" expanded="true" />
-            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1497#1498#0" expanded="false" />
+            <element signature="e#1532#1533#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1826,7 +1815,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/LoginView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1835,7 +1824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="80">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1846,7 +1835,7 @@
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/StartView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1855,8 +1844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/guest/GuestView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-838">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="40">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1906,7 +1895,7 @@
     <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5460">
-          <caret line="320" column="27" lean-forward="true" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
+          <caret line="320" column="27" lean-forward="false" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
@@ -1971,6 +1960,24 @@
             <marker date="1525870939495" expanded="true" signature="36604:36665" ph="UPDATE perso... " />
             <marker date="1525870939495" expanded="true" signature="36904:36938" ph="DELETE FROM " />
             <marker date="1525870939495" expanded="true" signature="37469:37518" ph="UPDATE perso... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="959" column="0" lean-forward="false" selection-start-line="959" selection-start-column="0" selection-end-line="959" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ParticipantStatisticClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
+            <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
           </folding>
         </state>
       </provider>
