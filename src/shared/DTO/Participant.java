@@ -4,13 +4,6 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 
 import java.io.Serializable;
 
-/**
- * Kilde: Y. Daniel Liang (2015), s. 431
- */
-
-/**
- * Der
- */
 public class Participant extends Person implements IsSerializable {
 
     private String cyclistType = "";
@@ -27,12 +20,11 @@ public class Participant extends Person implements IsSerializable {
         personType = "Participant";
     }
 
-    //Getter
+
     public String getCyclistType() {
         return cyclistType;
     }
 
-    //Setter
     public void setCyclistType(String cyclistType) {
         this.cyclistType = cyclistType;
     }

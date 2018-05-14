@@ -1,22 +1,17 @@
-package shared.DTO;//Astrid Christensen
+package shared.DTO;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-/**
- * Kilde: Y. Daniel Liang (2015), s. 514
- */
 public abstract class Person implements IsSerializable{
 
     protected String name = "";
     protected String email = "";
     protected String password = "";
 
-
     //Default constructor
     public Person(){
 
     }
-
 
     //Getter-metoder
     public String getName() {

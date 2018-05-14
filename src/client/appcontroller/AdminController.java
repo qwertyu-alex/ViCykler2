@@ -48,6 +48,10 @@ public class AdminController {
         addClickHandlers();
     }
 
+    /**
+     * Her bliver der tilføjet clickHandlers til adminControlleren, som forbinder knapperne i adminView
+     * med clickHandler metoderne i adminControlleren.
+     */
     private void addClickHandlers(){
         adminView.addClickHandlers(new AdminClickHandler());
         
@@ -69,7 +73,11 @@ public class AdminController {
     }
 
     /******************************************************/
-
+    /**
+     *Menu Box (north) clickHandler
+     * ClickHandler metoden her gør at det er muligt at skifte centerWidgets ud med de forskellige widgets
+     * Deltager view - Hold view - Firma view - Logud
+     */
     class AdminClickHandler implements ClickHandler{
         @Override
         public void onClick(ClickEvent event) {
@@ -88,6 +96,11 @@ public class AdminController {
         }
     }
 
+    /**
+     * DeltagerView REDIGER ClickHandler
+     * Denne ClickHandler metode søger for at når man klikker på at redigere en deltagere i celltabel,
+     * så kommer alle hans oplysninger frem i næste view om den bestemte deltager. (changeParticipantView)
+     */
     class ChangeParticipantClickHandler implements ClickHandler{
         @Override
         public void onClick(ClickEvent event) {

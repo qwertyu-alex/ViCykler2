@@ -5,7 +5,7 @@
       <configuration>
         <setting name="compilerMaxHeapSize" value="1024" />
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
-        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../gwt-2.8.2" />
+        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../GWT/gwt-2.8.2" />
         <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
@@ -42,7 +42,8 @@
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="gwt-user (2)" level="project" />
     <orderEntry type="library" name="gwt-user (3)" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.41-bin" level="project" />
     <orderEntry type="library" name="gwt-user (4)" level="project" />
+    <orderEntry type="library" name="gwt-user (5)" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:5.1.41" level="project" />
   </component>
 </module>

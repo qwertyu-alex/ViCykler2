@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class ApplicationServiceImpl extends RemoteServiceServlet implements ApplicationService {
 
     private final String DATABASE_URL = "jdbc:mysql://localhost:3306/vicykler";
-    private final String USERNAME = "dummy";
-    private final String PASSWORD = "Meme_1234";
+    private final String USERNAME = "root";
+    private final String PASSWORD = "qwerty123";
     //Meme_1234
     private Connection connection;
 
