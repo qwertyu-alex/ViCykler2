@@ -947,7 +947,9 @@ public class ParticipantController {
     }
 
     /**
-     *
+     * Denne metode styre hele ParticipantStaticView, hvor der oprettes et vertikalt panel med
+     * statistikker over samtlige hold og deres statistikker
+     * 3 metoder der gør det muligt at søge efter firma, søge efter hold og søge efter deltager
      */
     private void createStatistic(){
         /**
@@ -990,6 +992,9 @@ public class ParticipantController {
                                 );
 
 
+                                /**
+                                 * Enhanced for loop der opretter midlertidelige paneler med alle hold oplysninger
+                                 */
                                 for (Firm firm :firms) {
                                     VerticalPanel tempVerticalPanel = new VerticalPanel();
                                     tempVerticalPanel.addStyleName("fakefakeBtn margintop marginbot");

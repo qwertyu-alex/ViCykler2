@@ -35,6 +35,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     *AuthorizePerson metoden, tager 2 parameter fra login som parameter og derefter tjekker om de matcher en
+     * en person i databasen. Hvis både email og password matcher en person, vil personen blive retuneret efter
+     * hvilken brugertype personen er
+     */
     @Override
     public Person authorizePerson(String email, String password) throws Exception {
         Person foundPerson = null;
@@ -71,6 +76,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return foundPerson;
     }
 
+    /**
+     *Metode der gemmer alle deltager fra et bestemt team i en arrayliste
+     */
     @Override
     public ArrayList<Participant> getAllParticipantsInTeamFromTeamID(int teamID){
 
@@ -100,6 +108,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return participants;
     }
 
+    /**
+     *Gemmer en personens navn, email, cyklisttype, brugertype, firma nummer og navn, hold nummer og navn
+     */
     @Override
     public ArrayList<Participant> getAllParticipantsAndTeamNameAndFirmName() throws Exception {
 
@@ -113,9 +124,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             resultSet = findPersons.executeQuery();
 
             while(resultSet.next()){
+                //If statement fjerner admin fra arrayliste
                 if(!resultSet.getString("PersonType").equalsIgnoreCase("ADMIN")){
                     participant = new Participant();
 
+                    //Person informationer
                     participant.setName(resultSet.getString("PersonName").toLowerCase());
                     participant.setEmail(resultSet.getString("Email").toLowerCase());
                     participant.setCyclistType(resultSet.getString("CyclistType").toLowerCase());
@@ -124,7 +137,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                     participant.setFirmID(resultSet.getInt("FirmID"));
                     participant.setTeamID(resultSet.getInt("TeamID"));
 
-
+                    //Finder firmanavn ud fra ID
                     PreparedStatement firmName = connection.prepareStatement("SELECT FirmName from firms WHERE FirmID = ?");
                     firmName.setInt(1, resultSet.getInt("FirmID"));
                     ResultSet firmNameRes = firmName.executeQuery();
@@ -134,7 +147,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                         throw new SQLException();
                     }
 
-
+                    //Finder holdnavn ud fra ID
                     if (resultSet.getInt("TeamID") != 0){
                         PreparedStatement teamName = connection.prepareStatement("SELECT TeamName from teams WHERE TeamID = ?");
                         teamName.setInt(1, resultSet.getInt("TeamID"));
@@ -146,7 +159,6 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
                     participants.add(participant);
 
-
                 }
             }
         } catch (SQLException err){
@@ -155,6 +167,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return participants;
     }
 
+    /**
+     * Gemmer alle personer fra et valgt firma i en arrayliste
+     */
     @Override
     public ArrayList<Participant> getAllParticipantsInFirmFromFirmID(int firmID) throws Exception {
         ArrayList<Participant> participantsList = new ArrayList<>();
@@ -165,6 +180,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             ResultSet participantsRes = participants.executeQuery();
             ResultSetMetaData meta = participantsRes.getMetaData();
 
+            //while loop der gemmer alle personer i arrayliste
             if (meta.getColumnCount() > 0){
                 while (participantsRes.next()){
                     Participant participant = new Participant();
@@ -191,6 +207,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der insætter ny bruger i databasen
+     */
     @Override
     public String createParticipant(Participant newParticipant) throws Exception {
         String email = newParticipant.getEmail();
@@ -284,6 +303,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return "Personen er blevet oprettet med success";
     }
 
+    /**
+     * Metode der indsætter nyt hold i database
+     */
     @Override
     public String createTeam(String teamName, String teamCaptainEmail) throws Exception {
         int firmID;
@@ -343,6 +365,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         return "Holdet er blevet oprettet";
     }
 
+    /**
+     * Metode der indsætter et nyt oprettet hold i databasen
+     */
     @Override
     public String createFirm(String name) {
         try {
@@ -357,6 +382,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der tilføjer en deltager til et team ved enten at flytte deltager fra et hold eller også
+     * er deltageren ikke på et hold
+     */
     @Override
     public String addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails){
         /**
@@ -397,6 +426,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metoder der finder en specifik deltager ud fra hans email og derefter retunere alle hans oplysninger
+     */
     @Override
     public Participant getParticipant(String email) throws Exception{
 
@@ -426,6 +458,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der retunere en deltagers navn udfra en søgt email
+     */
     @Override
     public String getParticipantName(String email) throws Exception {
         try {
@@ -440,6 +475,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der retunere en persons cyklisttype udfra en specifik email
+     */
     @Override
     public String getParticipantCyclistType(String email) throws Exception {
         try {
@@ -454,6 +492,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der returnere et firma udfra en persons firma id ved at indtaste personens email
+     */
     @Override
     public String getParticipantFirmName(String email) throws Exception {
         try {
@@ -473,6 +514,11 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der henter en persons holdnavn udfra hans email
+     * hold navnet bliver fundet ved at finde et team med den søgte email og tilsvarende hold ID
+     * Hvis ikke personen er på et hold, bliver der retuneret en error
+     */
     @Override
     public String getParticipantTeamName(String email) throws Exception {
         try{
@@ -500,6 +546,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der retunere en deltageres password udfra en søgt email
+     */
     @Override
     public String getParticipantPassword(String email) throws Exception {
 
@@ -515,6 +564,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der retunere alle teams navne og deres deltagere
+     */
     @Override
     public ArrayList<Team> getAllTeamsAndTeamNameAndParticipants() throws Exception {
         ArrayList<Team> teams = new ArrayList<>();
@@ -523,6 +575,7 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
             PreparedStatement getTeams = connection.prepareStatement("SELECT * FROM teams INNER JOIN firms ON firms.FirmID = teams.FirmID");
             ResultSet getTeamsRes = getTeams.executeQuery();
 
+            //Gemmer alle teams i en arrayliste med teamID, TeamName, FirmID & FirmName
             while (getTeamsRes.next()){
                 Team tempTeam = new Team();
                 tempTeam.setTeamID(getTeamsRes.getInt("TeamID"));
@@ -532,12 +585,14 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
                 teams.add(tempTeam);
             }
 
+            //Finder alle participant i disse teams
             for (Team team: teams) {
                 PreparedStatement getParticipants = connection.prepareStatement("SELECT persons.email FROM persons INNER JOIN teams ON persons.TeamID = teams.TeamID WHERE teams.TeamID = ?");
                 getParticipants.setInt(1, team.getTeamID());
 
                 ResultSet participantsRes = getParticipants.executeQuery();
 
+                //Gemmer alle deltagers Email i arrraylisten
                 while(participantsRes.next()){
                     team.getParticipants().add(participantsRes.getString("Email"));
                 }
@@ -549,6 +604,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * En metode der henter alle firmer, deres hold og deres deltagere
+     */
     @Override
     public ArrayList<Firm> getAllFirmsAndTeamsAndParticipants() throws Exception {
 
@@ -602,6 +660,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * En metode der opdatere oplysninger om en deltager
+     */
     @Override
     public Participant changeParticipantInfo(Participant currentParticipant, Participant changingParticipant) throws Exception  {
         try {
@@ -629,6 +690,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der opdatere et teams hold navn
+     */
     @Override
     public Team changeTeamInfo(Team currentTeam, Team changingTeam) throws Exception {
         try {
@@ -652,6 +716,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der opdatere firma navn og hvis det eksisterer vil der blive retuneret null
+     */
     @Override
     public Firm changeFirmInfo(Firm currentFirm, Firm changingFirm) throws Exception {
         try {
@@ -675,6 +742,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der fjerne deltager fra hold
+     */
     @Override
     public String removeFromTeam(Participant participant) throws Exception {
         try {
@@ -688,6 +758,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der hente en personens FirmID og matcher dette med en firmName udfra personens Email.
+     * Hvis personen ikke har noget firma, vil der blive returneret at personen ikke har noget Firma
+     */
     @Override
     public Firm getFirmFromEmail(String email) throws Exception {
         try{
@@ -710,6 +784,10 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der hente en personens TeamID og matcher dette med en TeamName udfra personens Email.
+     * Hvis personen ikke har noget team, vil der blive returneret at personen ikke har noget Team
+     */
     @Override
     public Team getTeamFromEmail(String email) throws Exception {
         try {
@@ -733,27 +811,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
-    @Override
-    public Team getTeamFromTeamID(int teamID) throws Exception {
-        try {
-            PreparedStatement getTeam = connection.prepareStatement("SELECT * FROM teams WHERE TeamID = ?");
-            getTeam.setInt(1, teamID);
-            ResultSet getTeamRes = getTeam.executeQuery();
-            if (getTeamRes.next()){
-                Team foundTeam = new Team();
-                foundTeam.setTeamID(getTeamRes.getInt("TeamID"));
-                foundTeam.setFirmID(getTeamRes.getInt("FirmID"));
-                foundTeam.setTeamName(getTeamRes.getString("TeamName"));
-                return foundTeam;
-            } else  {
-                System.out.println("ERR intet hold fra ID");
-                throw new SQLException();
-            }
-        } catch (SQLException err){
-            return null;
-        }
-    }
-
+    /**
+     * Metode der henter FirmaID udfra et givet firma navn
+     */
     @Override
     public int getFirmIDFromFirmName(String firmName) throws Exception {
         try {
@@ -773,6 +833,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der gemmer alle TeamCaptajner i en arrayliste ved at hente alle personer som er kaptajn
+     */
     @Override
     public ArrayList<Participant> getAllTeamCaptains() throws Exception {
 
@@ -800,6 +863,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Returnere et teams ID ved at finde en team der matcher i teamnavn og firma ID
+     */
     @Override
     public int getTeamIDFromTeamNameAndFirmID(String teamName, int firmID) throws Exception {
         try {
@@ -820,17 +886,24 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der sletter et firma fra databasen
+     * Når firmaet bliver slettet, bliver alle deltagere og teams også slettet
+     */
     @Override
     public String deleteFirm(int firmID) throws Exception {
         try {
+            //Sletter personer
             PreparedStatement changePart = connection.prepareStatement("DELETE FROM persons WHERE FirmID = ?");
             changePart.setInt(1, firmID);
             changePart.executeUpdate();
 
+            //Sletter Teams
             PreparedStatement changeTeam = connection.prepareStatement("DELETE FROM teams WHERE FirmID = ?");
             changeTeam.setInt(1, firmID);
             changeTeam.executeUpdate();
 
+            //Sletter firmaer
             PreparedStatement delete = connection.prepareStatement("DELETE FROM firms WHERE FirmID = ?");
             delete.setInt(1, firmID);
             delete.executeUpdate();
@@ -842,13 +915,19 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der sletter teams udfra et givet teamID
+     * Når et team bliver slettet, bliver alle deltager på teamet fjernet, altså deres TeamID = NULL
+     */
     @Override
     public String deleteTeam(int teamID) throws Exception {
         try {
+            //Fjerner deltagere
             PreparedStatement changePart = connection.prepareStatement("UPDATE persons SET TeamID = NULL WHERE TeamID = ?");
             changePart.setInt(1, teamID);
             changePart.executeUpdate();
 
+            //Sletter Team
             PreparedStatement delete = connection.prepareStatement("DELETE FROM teams WHERE TeamID = ?");
             delete.setInt(1, teamID);
             delete.executeUpdate();
@@ -859,10 +938,14 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
         }
     }
 
+    /**
+     * Metode der sletter en deltager udfra hans email
+     */
     @Override
     public String deleteParticipant(String email) throws Exception {
         try {
 
+            //tjekker om han er team kaptajn
             setAnotherTeamCaptainIfTeamCaptain(email);
             // Sletter personen
             PreparedStatement delete = connection.prepareStatement("DELETE FROM persons WHERE Email = ?");
@@ -878,12 +961,13 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
     }
 
 
-    private void setAnotherTeamCaptainIfTeamCaptain(String email) throws SQLException{
+
         /**
          * Inden vi begynder at slette denne participant, skal vi tjekke om han er en teamcaptain.
          * Hvis personen er en TeamCaptain skal en ny blive teamcaptain.
          * Hvis der er ikke er andre personer i holdet, bliver holdet slettet.
-         */
+         **/
+    private void setAnotherTeamCaptainIfTeamCaptain(String email) throws SQLException{
         PreparedStatement find = connection.prepareStatement("SELECT PersonType, TeamID FROM persons WHERE Email = ?");
         find.setString(1, email);
         ResultSet findRes = find.executeQuery();
@@ -916,6 +1000,9 @@ public class ApplicationServiceImpl extends RemoteServiceServlet implements Appl
 
     }
 
+    /**
+     * Metode hvor en deltagers cyklisttype bliver opdateret
+     */
     @Override
     public String changePersonType(String email, String personType) throws Exception {
         try {

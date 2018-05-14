@@ -46,8 +46,6 @@ public interface ApplicationServiceAsync {
 
     void getTeamFromEmail(String email, AsyncCallback<Team> async);
 
-    void getTeamFromTeamID(int teamID, AsyncCallback<Team> async);
-
     void getFirmFromEmail(String email, AsyncCallback<Firm> async);
 
     void addParticipantsToTeam(Team currentTeam, ArrayList<String> participantEmails, AsyncCallback<String> async);

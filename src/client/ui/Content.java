@@ -9,11 +9,11 @@ public class Content extends Composite{
     private GuestView guestView;
 
     public Content(){
-//        DeckLayoutPanel:
+        //DeckLayoutPanel:
         mainDeck = new DeckLayoutPanel();
-//        Views:
+        //Views:
         guestView = new GuestView();
-//        Tilføjer alle mine views til decket:
+        //Tilføjer alle mine views til decket:
         mainDeck.add(guestView);
 
         mainDeck.showWidget(guestView);

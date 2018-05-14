@@ -25,11 +25,10 @@ public class Main implements EntryPoint {
          // AKA the magic call*/
         ApplicationServiceAsync rpcService = GWT.create(ApplicationService.class);
 
-//      Laver vores UI:
+        //Laver vores UI:
         RootLayoutPanel.get().add(content);
 
         new GuestController(content, rpcService);
-
 
     }
 
