@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,25 +46,28 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="129" column="52" lean-forward="true" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
+            <state relative-caret-position="302">
+              <caret line="854" column="31" lean-forward="true" selection-start-line="854" selection-start-column="31" selection-end-line="854" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
+                <element signature="method#onClick#0;class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
+                <element signature="class#ChangeParticipantClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeTeamClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="docComment;method#onClick#0;class#ChangeTeamClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeFirmClickHandler#0;class#AdminController#0" expanded="false" />
-                <element signature="class#ShowFirmsViewClickHandler#0;class#AdminController#0" expanded="false" />
+                <element signature="class#CreateFirmClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#CreateTeamClickHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeFirmDelegateHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeParticipantDelegateHandler#0;class#AdminController#0" expanded="false" />
                 <element signature="class#ChangeTeamDelegateHandler#0;class#AdminController#0" expanded="false" />
-                <element signature="class#SearchParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
+                <element signature="e#19871#19872#0" expanded="true" />
+                <element signature="e#19921#19922#0" expanded="true" />
                 <element signature="class#CreateParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
+                <element signature="e#20329#20330#0" expanded="true" />
+                <element signature="e#20390#20391#0" expanded="true" />
                 <element signature="method#refreshTeamsWhenCreatingParticipant#0;class#AdminController#0" expanded="false" />
-                <element signature="docComment;method#createParticipantsTable#0;class#AdminController#0" expanded="false" />
                 <element signature="method#createParticipantsTable#0;class#AdminController#0" expanded="false" />
-                <element signature="method#createTeamsTable#0;class#AdminController#0" expanded="false" />
                 <element signature="method#createFirmsTable#0;class#AdminController#0" expanded="false" />
                 <element signature="method#initParticipantsTable#0;class#AdminController#0" expanded="false" />
                 <element signature="method#initTeamsTable#0;class#AdminController#0" expanded="false" />
@@ -1350,11 +1354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526290649032</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="kommentare">
+      <created>1526290865131</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1526290865131</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308200000" />
+    <option name="totallyTimeSpent" value="313197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1490,7 +1501,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java</url>
+          <line>341</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1572,7 +1591,7 @@
         <state relative-caret-position="200">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1582,7 +1601,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1624,7 +1643,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1644,7 +1663,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1654,7 +1673,7 @@
         <state relative-caret-position="340">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1702,7 +1721,7 @@
         <state relative-caret-position="-98">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1733,7 +1752,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1899,25 +1918,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="129" column="52" lean-forward="true" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
+        <state relative-caret-position="302">
+          <caret line="854" column="31" lean-forward="true" selection-start-line="854" selection-start-column="31" selection-end-line="854" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
+            <element signature="method#onClick#0;class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
+            <element signature="class#ChangeParticipantClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeTeamClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="docComment;method#onClick#0;class#ChangeTeamClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeFirmClickHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="class#ShowFirmsViewClickHandler#0;class#AdminController#0" expanded="false" />
+            <element signature="class#CreateFirmClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#CreateTeamClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeFirmDelegateHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeParticipantDelegateHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeTeamDelegateHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="class#SearchParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
+            <element signature="e#19871#19872#0" expanded="true" />
+            <element signature="e#19921#19922#0" expanded="true" />
             <element signature="class#CreateParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
+            <element signature="e#20329#20330#0" expanded="true" />
+            <element signature="e#20390#20391#0" expanded="true" />
             <element signature="method#refreshTeamsWhenCreatingParticipant#0;class#AdminController#0" expanded="false" />
-            <element signature="docComment;method#createParticipantsTable#0;class#AdminController#0" expanded="false" />
             <element signature="method#createParticipantsTable#0;class#AdminController#0" expanded="false" />
-            <element signature="method#createTeamsTable#0;class#AdminController#0" expanded="false" />
             <element signature="method#createFirmsTable#0;class#AdminController#0" expanded="false" />
             <element signature="method#initParticipantsTable#0;class#AdminController#0" expanded="false" />
             <element signature="method#initTeamsTable#0;class#AdminController#0" expanded="false" />

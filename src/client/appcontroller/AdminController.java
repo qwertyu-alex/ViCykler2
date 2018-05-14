@@ -60,7 +60,7 @@ public class AdminController {
         adminView.getChangeFirmView().addClickHandlers(new ChangeFirmClickHandler());
 
         adminView.getShowTeamsView().getCreateTeamBtn().addClickHandler(new CreateTeamClickHandler());
-        adminView.getShowFirmsView().addClickHandler(new ShowFirmsViewClickHandler());
+        adminView.getShowFirmsView().addClickHandler(new CreateFirmClickHandler());
 
         // Delegate
         adminView.getShowParticipantsView().setDelegate(new ChangeParticipantDelegateHandler());
@@ -97,9 +97,10 @@ public class AdminController {
     }
 
     /**
-     * DeltagerView REDIGER ClickHandler
-     * Denne ClickHandler metode søger for at når man klikker på at redigere en deltagere i celltabel,
-     * så kommer alle hans oplysninger frem i næste view om den bestemte deltager. (changeParticipantView)
+     * Knapper under delegate knappen i celltabel under participantView.
+     * Den første knap er Submit knap, som opdatere en deltagers oplysninger, hvis de er blevet ændret
+     * Den næste knap er Gå tilbage, som bringer centerView tilbage til celltabel over deltagere
+     * Den sidste knap er Slet deltager, som sletter deltagere fra databasen
      */
     class ChangeParticipantClickHandler implements ClickHandler{
         @Override
@@ -150,6 +151,12 @@ public class AdminController {
         }
     }
 
+    /**
+     *Knapper under delegate knappen i TeamView celltabel
+     * Første knap er submit, som sætter holdets navn lig det der står i textfeltet
+     * Anden knap er Gå tilbage knap, som skifter centerWidget tilbage til oversigten over hold
+     * Sidste knap er Slet hold, som sletter holdet fra listen over hold
+     */
     class ChangeTeamClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -198,6 +205,12 @@ public class AdminController {
         }
     }
 
+    /**
+     *Knapper under delegate knappen i FirmView celltabel
+     * Første knap er submit, som sætter firmaets navn lig det der står i textfeltet
+     * Anden knap er Gå tilbage knap, som skifter centerWidget tilbage til oversigten over firmaer
+     * Sidste knap er Slet firma, som sletter firmaet fra listen over firmaer
+     */
     class ChangeFirmClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -247,7 +260,12 @@ public class AdminController {
         }
     }
 
-    class ShowFirmsViewClickHandler implements ClickHandler{
+
+    /**
+     * Opret firma ClickHandler
+     * For at oprette firma, skal navnet ikke være taget eller bestå af rent white-spacing (mellumrum)
+     */
+    class CreateFirmClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
          *
@@ -273,6 +291,10 @@ public class AdminController {
         }
     }
 
+    /**
+     * Opret team ClickHandler
+     * For at oprette et hold skal man vælge firma i listbox, derefter holdkaptajn og tilsidst sætte navn
+     */
     class CreateTeamClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -303,7 +325,12 @@ public class AdminController {
     }
 
     /********************************************************/
+    //DelegateHandlers
 
+    /**
+     * Rediger firma delegateHandler (specifik firma - objekt)
+     * Når knappen trykkes, kommer man frem til et nyt view med clickhandler ChangeFirm
+     */
     class ChangeFirmDelegateHandler implements ActionCell.Delegate<Firm>{
         /**
          * Perform the desired action on the given object.
@@ -319,6 +346,10 @@ public class AdminController {
         }
     }
 
+    /**
+     * Rediger Deltager delegateHandler (specifik deltager - objekt)
+     * Ved denne knap bliver view skiftet til ChangeParticipantView og dens clickhandlere
+     */
     class ChangeParticipantDelegateHandler implements ActionCell.Delegate<Participant>{
         @Override
         public void execute(Participant object) {
@@ -378,6 +409,10 @@ public class AdminController {
         }
     }
 
+    /**
+     * Rediger Team delegateHandler (specifik hold - objekt)
+     * Denne knap gør at man kan ændre i en valgt holds oplysninger i et celltabel
+     */
     class ChangeTeamDelegateHandler implements ActionCell.Delegate<Team>{
         @Override
         public void execute(Team object) {
@@ -395,6 +430,10 @@ public class AdminController {
 
     /*********************************************************/
 
+    /**
+     *Denne metode ændre en listbox (ChangeHandler), som gør at når en admin opretter hold, så når han vælger firma
+     * vil listboxen over mulige holdkaptajne blive sat efter pågældende valgte firma
+     */
     class SearchParticipantsChangeHandler implements ChangeHandler{
         /**
          * Called when a change event is fired.
@@ -407,6 +446,9 @@ public class AdminController {
         }
     }
 
+    /**
+     *ChangeHandler for at opdatere hold i forhold til firma, når man ændre i en deltagers oplysninger
+     */
     class CreateParticipantsChangeHandler implements ChangeHandler{
         /**
          * Called when a change event is fired.
@@ -419,6 +461,10 @@ public class AdminController {
         }
     }
 
+    /**
+     * Metode der opdatere listbox efter hvilket firma der er valgt i ovenstående listbox
+     * Bliver brugt i 2 changeHandlers og derfor en metode for sig selv
+     */
     private void refreshTeamsWhenCreatingParticipant(){
         rpcService.getAllTeamsAndTeamNameAndParticipants(new AsyncCallback<ArrayList<Team>>() {
             @Override
@@ -518,6 +564,9 @@ public class AdminController {
 
     }
 
+    /**
+     * Denne metode opretter det view der er når man klikker på team-menuen
+     */
     private void createFirmsTable(){
         rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
@@ -711,6 +760,9 @@ public class AdminController {
         });
     }
 
+    /**
+     * @param teamListDataProvider dette er listen over alle hold der skal være i hold-menuens tabel
+     */
     private void initTeamsTable(ListDataProvider<Team> teamListDataProvider){
         CellTable<Team> cellTable = adminView.getShowTeamsView().getCellTable();
         teamListDataProvider.addDataDisplay(cellTable);
@@ -800,7 +852,7 @@ public class AdminController {
     }
 
     /**
-     * Opretter tabllen
+     * Opretter tabllen med firmaer
      * @param firmListDataProvider
      */
     private void initFirmsTable(ListDataProvider<Firm> firmListDataProvider){
@@ -889,6 +941,9 @@ public class AdminController {
         cellTable.addColumnSortHandler(sortHandler);
     }
 
+    /**
+     *Denne metode bliver brugt af andre metoder, for at vise hvilke deltager der PARTICIPANTS
+     */
     private void addParticipantsToListBox(){
 
         adminView.getShowTeamsView().getParticipantListBox().clear();
@@ -909,11 +964,6 @@ public class AdminController {
             }
         });
     }
-
-
-
-
-
 
 
 
