@@ -36,6 +36,7 @@ public class ParticipantController {
     ParticipantView participantView; 
     
 
+    //default konstruktør
     public ParticipantController(Content content, Participant currentParticipant,
                                  ApplicationServiceAsync rpcService) {
         this.content = content;
@@ -77,6 +78,10 @@ public class ParticipantController {
         });
     }
 
+    /**
+     * Metode der tjekker om deltager er på et hold eller ikke.
+     * Hvis deltager er på et hold, vises knappen "Mit hold" i north view og ellers vises knappen "opret hold"
+     */
     public void checkParticipantTeam(){
         participantView.getMyTeamBox().addStyleName("hidden");
         participantView.getMyTeamView().getChangeTeam().addStyleName("hidden");
@@ -104,13 +109,18 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * ClickHandlers for Team kaptajnen, bliver tilføjet til deltager, hvis han er brugertypen team kaptajn
+     */
     private void addTeamCaptainClickHandlers(){
         participantView.getMyTeamView().addTeamCaptainClickHandler(new MyTeamTeamCaptainClickHandler());
         participantView.getMyTeamView().setDelegate(new MyTeamDelegateHandler());
     }
 
+    /**
+     * Metode der tilføjer ClickHandlers til metoder og forbinder dem med GuestView
+     */
     private void addClickhandlers(){
-
         participantView.addClickHandlers(new ParticipantClickHandler());
         participantView.getCreateTeamView().addClickHandlers(new CreateTeamClickHandler());
         participantView.getParticipantStatisticView().addClickHandlers(new ParticipantStatisticClickHandler());
@@ -123,6 +133,9 @@ public class ParticipantController {
         participantView.getParticipantStatisticView().getFirmsList2().addChangeHandler(new SearchTeamChangeHandler());
     }
 
+    /**
+     * ClickHandler metode til knapperne oppe i north view og som skifter centerView.
+     */
     class ParticipantClickHandler implements ClickHandler{
         @Override
         public void onClick(ClickEvent event) {
@@ -145,6 +158,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * Metoder der opretter et hold på click, hvis holdnavn er godkendt
+     */
     class CreateTeamClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired
@@ -208,7 +224,7 @@ public class ParticipantController {
                                             ArrayList<String> participantsArrayList = new ArrayList<>();
                                             participantsArrayList.addAll(participantsList);
 
-                                            if (participantsArrayList.size() <= 0){
+                                            if (participantsArrayList.size() > 0){
                                                 rpcService.addParticipantsToTeam(currentTeam, participantsArrayList, new AsyncCallback<String>() {
                                                     @Override
                                                     public void onFailure(Throwable caught) {
@@ -436,6 +452,10 @@ public class ParticipantController {
         }
     }
 
+    /**
+     *Metode der indlæser statistikker over hold og firmaer og indeholder clickhandlers metoder
+     * Det er muligt i denne metode at søge efter firma, søge efter hold og søge efter deltager
+     */
     class ParticipantStatisticClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -695,6 +715,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * ClickHandler der skifter DeckPanel tilbage til søge funktionen efter firma
+     */
     class ReturnToFirmSearchClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -707,6 +730,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * ClickHandler der skifter DeckPanel tilbage til søge funktion efter hold
+     */
     class ReturnToTeamSearchClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -719,6 +745,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * ClickHandler der skifter DeckPanel tilbage til søge funktion efter deltager
+     */
     class ReturnToParticipantSearchClickHandler implements ClickHandler{
         /**
          * Called when a native click event is fired.
@@ -731,6 +760,9 @@ public class ParticipantController {
         }
     }
 
+    /**
+     * Metode der sætter centerView MyProfileView til at være lig deltager attributter
+     */
     private void createMyProfile(){
 
         //Sætter name
@@ -791,6 +823,13 @@ public class ParticipantController {
         });
     }
 
+    /**
+     *Metode der styre hele MyTeamView knapper og funktioner
+     * Her er det muligt at se informationer om ens pågældende hold
+     * Se deltager og emails på ens hold
+     *
+     * Hvis man er Team Kaptajn er det muligt at fjerne og tilføje folk, samt ændre holdnavn
+     */
     private void createMyTeam(){
 
         /**
@@ -907,6 +946,9 @@ public class ParticipantController {
         });
     }
 
+    /**
+     *
+     */
     private void createStatistic(){
         /**
          * Laver en liste over de forskellige firmaer og deres stats

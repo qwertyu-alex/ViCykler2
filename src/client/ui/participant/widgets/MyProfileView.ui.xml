@@ -2,7 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
         <g:VerticalPanel styleName="center fakeBtn margintop">
-            <g:VerticalPanel styleName="center">
+            <g:VerticalPanel styleName="center fakefakeBtn" height="100px">
                 <g:Label ui:field="nameLabel">Navn: *mangler*</g:Label>
                 <g:Label ui:field="emailLabel">Email: *mangler*</g:Label>
                 <g:Label ui:field="cyclistTypeLabel">Cyclist type: *mangler*</g:Label>

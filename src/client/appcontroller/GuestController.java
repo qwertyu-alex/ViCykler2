@@ -15,7 +15,7 @@ import client.rpc.ApplicationServiceAsync;
 import shared.DTO.*;
 import java.util.ArrayList;
 
-
+//Defualt konstruktør
 public class GuestController {
 
     private Content content;
@@ -26,10 +26,20 @@ public class GuestController {
         this.content = content;
         this.participantListDataProvider = new ListDataProvider<>();
         this.rpcService = rpcService;
-//        Tilføjer clickhandlers til forskellige elementer på siden
+        //Tilføjer clickhandlers til forskellige elementer på siden
         addClickHandlers();
         createSignUp();
         createStatistic();
+    }
+
+    /**
+     * Her bliver der tilføjet clickHandlers til GuestControlleren, som forbinder knapperne i GuestView
+     * med clickHandler metoderne i GuestControlleren.
+     */
+    private void addClickHandlers(){
+        content.getGuestView().addClickHandlers(new GuestClickHandlers());
+        content.getGuestView().getSignUpView().addClickHandlers(new CreateParticipantClickHandler());
+        content.getGuestView().getLoginView().addClickHandler(new LoginClickHandler());
     }
 
     /**
@@ -47,12 +57,15 @@ public class GuestController {
                 content.getGuestView().changeView(content.getGuestView().getStartView());
             } else if (event.getSource() == content.getGuestView().getStatistiskBtn()){
                 content.getGuestView().changeView(content.getGuestView().getGuestStatisticView());
-//                Dette kald skal være her for at tabellen viser sine data.
+                //Dette kald skal være her for at tabellen viser sine data.
                 participantListDataProvider.refresh();
             }
         }
     }
 
+    /**
+     * Login ClickHandler, som når den bliver klikket tjekker om bruger og kode stemmer over ens
+     */
     class LoginClickHandler implements ClickHandler{
 
         @Override
@@ -83,6 +96,11 @@ public class GuestController {
         }
     }
 
+    /**
+     * ClickHandler for at oprette en bruger
+     * Tjekke om alle kriterier for at oprette en bruger er godkendt hvor den så enten opretter bruger
+     * eller udmelder hvad der skal gøres om
+     */
     class CreateParticipantClickHandler implements ClickHandler{
         private String name;
         private String email;
@@ -200,11 +218,9 @@ public class GuestController {
         }
     }
 
-    private void addClickHandlers(){
-        content.getGuestView().addClickHandlers(new GuestClickHandlers());
-        content.getGuestView().getSignUpView().addClickHandlers(new CreateParticipantClickHandler());
-        content.getGuestView().getLoginView().addClickHandler(new LoginClickHandler());
-    }
+    /**
+     * Metode der hente oprettede firmaer, som en ny bruger kan vælge at tilslutte sig
+     */
 
     private void createSignUp(){
         rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
@@ -221,7 +237,12 @@ public class GuestController {
             }
         });
     }
-    
+
+    /**
+     * Metode der indlæser statistikker over firmaer og hold, som en gæst kan se, når der bliver
+     * klikket på knappen Information
+     */
+
     private void createStatistic(){
         rpcService.getAllFirmsAndTeamsAndParticipants(new AsyncCallback<ArrayList<Firm>>() {
             @Override
