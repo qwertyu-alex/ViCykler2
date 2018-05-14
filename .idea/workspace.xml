@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gwt_user__5_.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_41.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_41_bin.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ViCykler.iml" afterPath="$PROJECT_DIR$/ViCykler.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Admin.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Firm.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Firm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Participant.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Participant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Person.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shared/DTO/Team.java" afterPath="$PROJECT_DIR$/src/shared/DTO/Team.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +45,8 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="102" column="7" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+            <state relative-caret-position="492">
+              <caret line="129" column="52" lean-forward="true" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
@@ -1354,11 +1343,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525875273556</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="kommentare">
+      <created>1526290649032</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1526290649032</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307964000" />
+    <option name="totallyTimeSpent" value="308200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1465,7 +1461,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Er begyndt på at lave database connection. Det virker so far." />
     <MESSAGE value="Har koblet databasen sammen med tabellen under statistik.&#10;Det virker" />
     <MESSAGE value="Er i gang med at lave &quot;GuestStatisticView&quot;, har blot fået tilføjet den i ApplicationService og ApplicationServiceAsync samt er i gang med at lave metoden til denne i ApplicationServiceImpl." />
     <MESSAGE value="Har lavet adminview samt en tabel inde i adminview som viser alle personer og deres informationer.&#10;Passworded mangler at lave logic til display" />
@@ -1490,7 +1485,8 @@
     <MESSAGE value="Små fixes i AppServiceImpl" />
     <MESSAGE value="Små fixes" />
     <MESSAGE value="Fixet statistic under participantcontroller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixet statistic under participantcontroller" />
+    <MESSAGE value="kommentare" />
+    <option name="LAST_COMMIT_MESSAGE" value="kommentare" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1566,6 +1562,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="45" lean-forward="false" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1902,8 +1899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="102" column="7" lean-forward="true" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
+        <state relative-caret-position="492">
+          <caret line="129" column="52" lean-forward="true" selection-start-line="129" selection-start-column="52" selection-end-line="129" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
