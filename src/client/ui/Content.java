@@ -15,9 +15,7 @@ public class Content extends Composite{
         guestView = new GuestView();
         //Tilføjer alle mine views til decket:
         mainDeck.add(guestView);
-
         mainDeck.showWidget(guestView);
-
         initWidget(mainDeck);
     }
 

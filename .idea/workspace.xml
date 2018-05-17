@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="">
+    <list default="true" id="7c10314d-4ca1-4c09-bd80-e64c24d1489a" name="Default" comment="kommentare">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/Main.java" afterPath="$PROJECT_DIR$/src/client/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" afterPath="$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/rpc/ApplicationService.java" afterPath="$PROJECT_DIR$/src/client/rpc/ApplicationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/rpc/ApplicationServiceAsync.java" afterPath="$PROJECT_DIR$/src/client/rpc/ApplicationServiceAsync.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ViCykler.iml" afterPath="$PROJECT_DIR$/ViCykler.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/ui/Content.java" afterPath="$PROJECT_DIR$/src/client/ui/Content.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" afterPath="$PROJECT_DIR$/src/server/ApplicationServiceImpl.java" />
     </list>
@@ -31,27 +29,91 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="vicykler@localhost" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="vicykler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="vicykler" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="vicykler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="vicykler" type="e3449647:DbNodeDescriptor" />
+        <item name="firms" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="vicykler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="vicykler" type="e3449647:DbNodeDescriptor" />
+        <item name="persons" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="vicykler@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="vicykler" type="e3449647:DbNodeDescriptor" />
+        <item name="teams" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GuestController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/appcontroller/GuestController.java">
+      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="245" column="34" lean-forward="false" selection-start-line="245" selection-start-column="34" selection-end-line="245" selection-end-column="34" />
+            <state relative-caret-position="500">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <element signature="class#GuestClickHandlers#0;class#GuestController#0" expanded="false" />
-                <element signature="class#LoginClickHandler#0;class#GuestController#0" expanded="false" />
-                <element signature="e#3289#3290#0" expanded="true" />
-                <element signature="e#3356#3357#0" expanded="true" />
-                <element signature="class#CreateParticipantClickHandler#0;class#GuestController#0" expanded="false" />
-                <element signature="e#6285#6286#0" expanded="true" />
-                <element signature="e#6372#6373#0" expanded="true" />
-                <element signature="method#createSignUp#0;class#GuestController#0" expanded="false" />
-                <element signature="method#createStatistic#0;class#GuestController#0" expanded="false" />
-                <marker date="1526297861819" expanded="true" signature="10485:14485" ph="{...}" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#changePersonType#0;class#ApplicationServiceImpl#0" expanded="false" />
+                <marker date="1526549400451" expanded="true" signature="1513:1573" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="3344:3382" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="4730:4751" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="5711:5754" ph="SELECT FirmN... firms" />
+                <marker date="1526549400451" expanded="true" signature="6314:6357" ph="SELECT TeamN... teams" />
+                <marker date="1526549400451" expanded="true" signature="7244:7282" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="9638:9682" ph="SELECT Email... persons" />
+                <marker date="1526549400451" expanded="true" signature="10525:10568" ph="SELECT FirmI... firms" />
+                <marker date="1526549400451" expanded="true" signature="11061:11175" ph="INSERT INTO persons... " />
+                <marker date="1526549400451" expanded="true" signature="12591:12633" ph="SELECT FirmI... persons" />
+                <marker date="1526549400451" expanded="true" signature="13184:13231" ph="INSERT INTO teams... " />
+                <marker date="1526549400451" expanded="true" signature="13492:13550" ph="SELECT TeamI... teams" />
+                <marker date="1526549400451" expanded="true" signature="14115:14191" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="14745:14783" ph="INSERT INTO firms... " />
+                <marker date="1526549400451" expanded="true" signature="15888:15930" ph="SELECT FirmI... persons" />
+                <marker date="1526549400451" expanded="true" signature="16537:16608" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="17672:17709" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="19012:19061" ph="SELECT Perso... persons" />
+                <marker date="1526549400451" expanded="true" signature="19673:19723" ph="SELECT Cycli... persons" />
+                <marker date="1526549400451" expanded="true" signature="20376:20478" ph="SELECT FirmN... firms" />
+                <marker date="1526549400451" expanded="true" signature="21289:21331" ph="SELECT TeamI... persons" />
+                <marker date="1526549400451" expanded="true" signature="21674:21806" ph="SELECT teams... teams" />
+                <marker date="1526549400451" expanded="true" signature="22509:22553" ph="SELECT Passw... persons" />
+                <marker date="1526549400451" expanded="true" signature="23191:23258" ph="SELECT * FRO... teams" />
+                <marker date="1526549400451" expanded="true" signature="23996:24102" ph="SELECT perso... persons" />
+                <marker date="1526549400451" expanded="true" signature="24925:24944" ph="SELECT * FRO... firms" />
+                <marker date="1526549400451" expanded="true" signature="25498:25601" ph="SELECT teams... teams" />
+                <marker date="1526549400451" expanded="true" signature="26167:26275" ph="SELECT perso... persons" />
+                <marker date="1526549400451" expanded="true" signature="27233:27398" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="28656:28702" ph="UPDATE teams... " />
+                <marker date="1526549400451" expanded="true" signature="29320:29368" ph="UPDATE firms... " />
+                <marker date="1526549400451" expanded="true" signature="30302:30350" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="31029:31124" ph="SELECT * fro... firms" />
+                <marker date="1526549400451" expanded="true" signature="32096:32183" ph="SELECT * FRO... teams" />
+                <marker date="1526549400451" expanded="true" signature="33122:33165" ph="SELECT FirmI... firms" />
+                <marker date="1526549400451" expanded="true" signature="33949:34003" ph="SELECT * FRO... persons" />
+                <marker date="1526549400451" expanded="true" signature="35126:35184" ph="SELECT TeamI... teams" />
+                <marker date="1526549400451" expanded="true" signature="35985:36021" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="36208:36242" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="36427:36461" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="37087:37136" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="37318:37352" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="37982:38017" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="38709:38763" ph="SELECT Perso... persons" />
+                <marker date="1526549400451" expanded="true" signature="39032:39089" ph="SELECT Email... persons" />
+                <marker date="1526549400451" expanded="true" signature="39410:39458" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="39668:39729" ph="UPDATE perso... " />
+                <marker date="1526549400451" expanded="true" signature="39968:40002" ph="DELETE FROM " />
+                <marker date="1526549400451" expanded="true" signature="40610:40659" ph="UPDATE perso... " />
               </folding>
             </state>
           </provider>
@@ -60,50 +122,27 @@
       <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="1083" column="0" lean-forward="true" selection-start-line="1083" selection-start-column="0" selection-end-line="1083" selection-end-column="0" />
+            <state relative-caret-position="8460">
+              <caret line="1006" column="0" lean-forward="false" selection-start-line="1006" selection-start-column="0" selection-end-line="1006" selection-end-column="0" />
               <folding>
-                <element signature="method#findCurrentTeam#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ParticipantClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-                <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
-                <element signature="method#createMyTeam#0;class#ParticipantController#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <marker date="1526548938994" expanded="true" signature="45927:48486" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:48512" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:48536" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:48554" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:48570" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:48580" ph="{...}" />
+                <marker date="1526548938994" expanded="true" signature="45927:50494" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/rpc/ApplicationService.java">
+      <file leaf-file-name="ChangeFirmView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationServiceAsync.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/rpc/ApplicationServiceAsync.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="46" column="67" lean-forward="false" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowTeamsView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ShowTeamsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-140">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="440">
+              <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,22 +150,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Content.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
+      <file leaf-file-name="SignUpView.ui.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/guest/widgets/SignUpView.ui.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="600">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Main.java">
+      <file leaf-file-name="Content.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/DTO/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <folding>
+                <marker date="1526548939046" expanded="false" signature="338:349" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="361:367" ph=" }" />
+                <marker date="1526548939046" expanded="false" signature="397:408" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="421:427" ph=" }" />
+                <marker date="1526548939046" expanded="false" signature="460:471" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="487:493" ph=" }" />
+                <marker date="1526548939046" expanded="false" signature="552:563" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="580:586" ph=" }" />
+                <marker date="1526548939046" expanded="false" signature="626:637" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="656:662" ph=" }" />
+                <marker date="1526548939046" expanded="false" signature="708:719" ph=" { " />
+                <marker date="1526548939046" expanded="false" signature="744:750" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Participant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/DTO/Participant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <marker date="1526548939043" expanded="false" signature="609:620" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="651:657" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="703:714" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="739:745" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="784:795" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="816:822" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="855:866" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="882:888" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="916:927" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="941:947" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="982:993" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1011:1017" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="1067:1078" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1107:1113" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="1146:1157" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1173:1179" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="1225:1236" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1261:1267" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="1295:1306" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1320:1326" ph=" }" />
+                <marker date="1526548939043" expanded="false" signature="1365:1376" ph=" { " />
+                <marker date="1526548939043" expanded="false" signature="1397:1403" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,9 +231,12 @@
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/DTO/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="100">
               <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1526548939035" expanded="false" signature="175:185" ph=" { " />
+                <marker date="1526548939035" expanded="false" signature="193:199" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,70 +244,21 @@
       <file leaf-file-name="Firm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shared/DTO/Firm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="1000" column="5" lean-forward="true" selection-start-line="1000" selection-start-column="5" selection-end-line="1000" selection-end-column="5" />
+            <state relative-caret-position="120">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
-                <marker date="1526312594727" expanded="true" signature="1512:1572" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="3343:3381" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="4729:4750" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="5710:5753" ph="SELECT FirmN... firms" />
-                <marker date="1526312594727" expanded="true" signature="6313:6356" ph="SELECT TeamN... teams" />
-                <marker date="1526312594727" expanded="true" signature="7243:7281" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="9637:9681" ph="SELECT Email... persons" />
-                <marker date="1526312594727" expanded="true" signature="10524:10567" ph="SELECT FirmI... firms" />
-                <marker date="1526312594727" expanded="true" signature="11060:11174" ph="INSERT INTO persons... " />
-                <marker date="1526312594727" expanded="true" signature="12590:12632" ph="SELECT FirmI... persons" />
-                <marker date="1526312594727" expanded="true" signature="13183:13230" ph="INSERT INTO teams... " />
-                <marker date="1526312594727" expanded="true" signature="13491:13549" ph="SELECT TeamI... teams" />
-                <marker date="1526312594727" expanded="true" signature="14114:14190" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="14744:14782" ph="INSERT INTO firms... " />
-                <marker date="1526312594727" expanded="true" signature="15887:15929" ph="SELECT FirmI... persons" />
-                <marker date="1526312594727" expanded="true" signature="16536:16607" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="17671:17708" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="19011:19060" ph="SELECT Perso... persons" />
-                <marker date="1526312594727" expanded="true" signature="19672:19722" ph="SELECT Cycli... persons" />
-                <marker date="1526312594727" expanded="true" signature="20375:20477" ph="SELECT FirmN... firms" />
-                <marker date="1526312594727" expanded="true" signature="21288:21330" ph="SELECT TeamI... persons" />
-                <marker date="1526312594727" expanded="true" signature="21673:21805" ph="SELECT teams... teams" />
-                <marker date="1526312594727" expanded="true" signature="22508:22552" ph="SELECT Passw... persons" />
-                <marker date="1526312594727" expanded="true" signature="23190:23257" ph="SELECT * FRO... teams" />
-                <marker date="1526312594727" expanded="true" signature="23995:24101" ph="SELECT perso... persons" />
-                <marker date="1526312594727" expanded="true" signature="24924:24943" ph="SELECT * FRO... firms" />
-                <marker date="1526312594727" expanded="true" signature="25497:25600" ph="SELECT teams... teams" />
-                <marker date="1526312594727" expanded="true" signature="26166:26274" ph="SELECT perso... persons" />
-                <marker date="1526312594727" expanded="true" signature="27232:27397" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="28655:28701" ph="UPDATE teams... " />
-                <marker date="1526312594727" expanded="true" signature="29319:29367" ph="UPDATE firms... " />
-                <marker date="1526312594727" expanded="true" signature="30301:30349" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="31028:31123" ph="SELECT * fro... firms" />
-                <marker date="1526312594727" expanded="true" signature="32095:32182" ph="SELECT * FRO... teams" />
-                <marker date="1526312594727" expanded="true" signature="33121:33164" ph="SELECT FirmI... firms" />
-                <marker date="1526312594727" expanded="true" signature="33948:34002" ph="SELECT * FRO... persons" />
-                <marker date="1526312594727" expanded="true" signature="35125:35183" ph="SELECT TeamI... teams" />
-                <marker date="1526312594727" expanded="true" signature="35984:36020" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="36207:36241" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="36426:36460" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="37086:37135" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="37317:37351" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="37981:38016" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="38708:38762" ph="SELECT Perso... persons" />
-                <marker date="1526312594727" expanded="true" signature="39031:39088" ph="SELECT Email... persons" />
-                <marker date="1526312594727" expanded="true" signature="39409:39457" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="39667:39728" ph="UPDATE perso... " />
-                <marker date="1526312594727" expanded="true" signature="39967:40001" ph="DELETE FROM " />
-                <marker date="1526312594727" expanded="true" signature="40609:40658" ph="UPDATE perso... " />
+                <marker date="1526548939040" expanded="true" signature="364:371" ph="{}" />
+                <marker date="1526548939040" expanded="false" signature="395:406" ph=" { " />
+                <marker date="1526548939040" expanded="false" signature="416:422" ph=" }" />
+                <marker date="1526548939040" expanded="false" signature="453:464" ph=" { " />
+                <marker date="1526548939040" expanded="false" signature="477:483" ph=" }" />
+                <marker date="1526548939040" expanded="false" signature="516:527" ph=" { " />
+                <marker date="1526548939040" expanded="false" signature="543:549" ph=" }" />
+                <marker date="1526548939040" expanded="false" signature="597:608" ph=" { " />
+                <marker date="1526548939040" expanded="false" signature="628:634" ph=" }" />
+                <marker date="1526548939040" expanded="false" signature="676:687" ph=" { " />
+                <marker date="1526548939040" expanded="false" signature="700:706" ph=" }" />
+                <marker date="1526548939040" expanded="false" signature="752:763" ph=" { " />
               </folding>
             </state>
           </provider>
@@ -390,14 +441,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
               <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
@@ -437,6 +492,40 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="guest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="guest" type="462c0819:PsiDirectoryNode" />
+              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="participant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -460,12 +549,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DTO" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ViCykler2" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyApplication" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,8 +616,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -605,6 +708,652 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
@@ -1377,7 +2126,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329371000" />
+    <option name="totallyTimeSpent" value="334309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1389,33 +2138,35 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15049614" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34791666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42291668" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14791666" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28645834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28541225" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14947917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24200661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09791667" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1446,7 +2197,6 @@
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15325248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
     </layout>
@@ -1542,6 +2292,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,8 +2397,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/ui/admin/widgets/ChangeFirmView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="440">
+          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1725,7 +2479,7 @@
         <state relative-caret-position="40">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1740,17 +2494,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Participant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <marker date="1526548939043" expanded="false" signature="609:620" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="651:657" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="703:714" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="739:745" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="784:795" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="816:822" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="855:866" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="882:888" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="916:927" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="941:947" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="982:993" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1011:1017" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="1067:1078" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1107:1113" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="1146:1157" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1173:1179" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="1225:1236" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1261:1267" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="1295:1306" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1320:1326" ph=" }" />
+            <marker date="1526548939043" expanded="false" signature="1365:1376" ph=" { " />
+            <marker date="1526548939043" expanded="false" signature="1397:1403" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <marker date="1526548939046" expanded="false" signature="338:349" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="361:367" ph=" }" />
+            <marker date="1526548939046" expanded="false" signature="397:408" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="421:427" ph=" }" />
+            <marker date="1526548939046" expanded="false" signature="460:471" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="487:493" ph=" }" />
+            <marker date="1526548939046" expanded="false" signature="552:563" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="580:586" ph=" }" />
+            <marker date="1526548939046" expanded="false" signature="626:637" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="656:662" ph=" }" />
+            <marker date="1526548939046" expanded="false" signature="708:719" ph=" { " />
+            <marker date="1526548939046" expanded="false" signature="744:750" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1767,7 +2557,7 @@
         <state relative-caret-position="-153">
           <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="method#onClick#0;class#AdminClickHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeParticipantClickHandler#0;class#AdminController#0" expanded="false" />
@@ -1780,11 +2570,11 @@
             <element signature="class#ChangeParticipantDelegateHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#ChangeTeamDelegateHandler#0;class#AdminController#0" expanded="false" />
             <element signature="class#SearchParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="e#19871#19872#0" expanded="true" />
-            <element signature="e#19921#19922#0" expanded="true" />
+            <element signature="e#19871#19872#0" expanded="false" />
+            <element signature="e#19921#19922#0" expanded="false" />
             <element signature="class#CreateParticipantsChangeHandler#0;class#AdminController#0" expanded="false" />
-            <element signature="e#20329#20330#0" expanded="true" />
-            <element signature="e#20390#20391#0" expanded="true" />
+            <element signature="e#20329#20330#0" expanded="false" />
+            <element signature="e#20390#20391#0" expanded="false" />
             <element signature="method#refreshTeamsWhenCreatingParticipant#0;class#AdminController#0" expanded="false" />
             <element signature="method#createParticipantsTable#0;class#AdminController#0" expanded="false" />
             <element signature="method#createTeamsTable#0;class#AdminController#0" expanded="false" />
@@ -1832,13 +2622,13 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="80.5" y="690.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="81.0" y="690.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
+            <Category>Inner Classes</Category>
             <Category>Constructors</Category>
             <Category>Methods</Category>
-            <Category>Inner Classes</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -1860,14 +2650,14 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="150.5" y="255.0" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="255.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Constructors</Category>
             <Category>Fields</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
             <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -1901,34 +2691,30 @@
           <folding>
             <element signature="class#GuestClickHandlers#0;class#GuestController#0" expanded="false" />
             <element signature="class#LoginClickHandler#0;class#GuestController#0" expanded="false" />
-            <element signature="e#3289#3290#0" expanded="true" />
-            <element signature="e#3356#3357#0" expanded="true" />
+            <element signature="e#3289#3290#0" expanded="false" />
+            <element signature="e#3356#3357#0" expanded="false" />
             <element signature="class#CreateParticipantClickHandler#0;class#GuestController#0" expanded="false" />
-            <element signature="e#6285#6286#0" expanded="true" />
-            <element signature="e#6372#6373#0" expanded="true" />
+            <element signature="e#6285#6286#0" expanded="false" />
+            <element signature="e#6372#6373#0" expanded="false" />
             <element signature="method#createSignUp#0;class#GuestController#0" expanded="false" />
             <element signature="method#createStatistic#0;class#GuestController#0" expanded="false" />
-            <marker date="1526297861819" expanded="true" signature="10485:14485" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/appcontroller/ParticipantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="1083" column="0" lean-forward="true" selection-start-line="1083" selection-start-column="0" selection-end-line="1083" selection-end-column="0" />
+        <state relative-caret-position="8460">
+          <caret line="1006" column="0" lean-forward="false" selection-start-line="1006" selection-start-column="0" selection-end-line="1006" selection-end-column="0" />
           <folding>
-            <element signature="method#findCurrentTeam#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ParticipantClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#CreateTeamClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#MyTeamDelegateHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#MyTeamTeamCaptainClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#SearchTeamChangeHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToFirmSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToTeamSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="class#ReturnToParticipantSearchClickHandler#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#createMyProfile#0;class#ParticipantController#0" expanded="false" />
-            <element signature="method#createMyTeam#0;class#ParticipantController#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <marker date="1526548938994" expanded="true" signature="45927:48486" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:48512" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:48536" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:48554" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:48570" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:48580" ph="{...}" />
+            <marker date="1526548938994" expanded="true" signature="45927:50494" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1938,7 +2724,7 @@
         <state relative-caret-position="-140">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1947,14 +2733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="46" column="67" lean-forward="false" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1969,17 +2747,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Admin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="100">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1526548939035" expanded="false" signature="175:185" ph=" { " />
+            <marker date="1526548939035" expanded="false" signature="193:199" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shared/DTO/Firm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="120">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <marker date="1526548939040" expanded="true" signature="364:371" ph="{}" />
+            <marker date="1526548939040" expanded="false" signature="395:406" ph=" { " />
+            <marker date="1526548939040" expanded="false" signature="416:422" ph=" }" />
+            <marker date="1526548939040" expanded="false" signature="453:464" ph=" { " />
+            <marker date="1526548939040" expanded="false" signature="477:483" ph=" }" />
+            <marker date="1526548939040" expanded="false" signature="516:527" ph=" { " />
+            <marker date="1526548939040" expanded="false" signature="543:549" ph=" }" />
+            <marker date="1526548939040" expanded="false" signature="597:608" ph=" { " />
+            <marker date="1526548939040" expanded="false" signature="628:634" ph=" }" />
+            <marker date="1526548939040" expanded="false" signature="676:687" ph=" { " />
+            <marker date="1526548939040" expanded="false" signature="700:706" ph=" }" />
+            <marker date="1526548939040" expanded="false" signature="752:763" ph=" { " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1993,60 +2787,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ApplicationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="1000" column="5" lean-forward="true" selection-start-line="1000" selection-start-column="5" selection-end-line="1000" selection-end-column="5" />
+        <state relative-caret-position="500">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ApplicationServiceImpl#0;class#ApplicationServiceImpl#0" expanded="false" />
-            <marker date="1526312594727" expanded="true" signature="1512:1572" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="3343:3381" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="4729:4750" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="5710:5753" ph="SELECT FirmN... firms" />
-            <marker date="1526312594727" expanded="true" signature="6313:6356" ph="SELECT TeamN... teams" />
-            <marker date="1526312594727" expanded="true" signature="7243:7281" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="9637:9681" ph="SELECT Email... persons" />
-            <marker date="1526312594727" expanded="true" signature="10524:10567" ph="SELECT FirmI... firms" />
-            <marker date="1526312594727" expanded="true" signature="11060:11174" ph="INSERT INTO persons... " />
-            <marker date="1526312594727" expanded="true" signature="12590:12632" ph="SELECT FirmI... persons" />
-            <marker date="1526312594727" expanded="true" signature="13183:13230" ph="INSERT INTO teams... " />
-            <marker date="1526312594727" expanded="true" signature="13491:13549" ph="SELECT TeamI... teams" />
-            <marker date="1526312594727" expanded="true" signature="14114:14190" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="14744:14782" ph="INSERT INTO firms... " />
-            <marker date="1526312594727" expanded="true" signature="15887:15929" ph="SELECT FirmI... persons" />
-            <marker date="1526312594727" expanded="true" signature="16536:16607" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="17671:17708" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="19011:19060" ph="SELECT Perso... persons" />
-            <marker date="1526312594727" expanded="true" signature="19672:19722" ph="SELECT Cycli... persons" />
-            <marker date="1526312594727" expanded="true" signature="20375:20477" ph="SELECT FirmN... firms" />
-            <marker date="1526312594727" expanded="true" signature="21288:21330" ph="SELECT TeamI... persons" />
-            <marker date="1526312594727" expanded="true" signature="21673:21805" ph="SELECT teams... teams" />
-            <marker date="1526312594727" expanded="true" signature="22508:22552" ph="SELECT Passw... persons" />
-            <marker date="1526312594727" expanded="true" signature="23190:23257" ph="SELECT * FRO... teams" />
-            <marker date="1526312594727" expanded="true" signature="23995:24101" ph="SELECT perso... persons" />
-            <marker date="1526312594727" expanded="true" signature="24924:24943" ph="SELECT * FRO... firms" />
-            <marker date="1526312594727" expanded="true" signature="25497:25600" ph="SELECT teams... teams" />
-            <marker date="1526312594727" expanded="true" signature="26166:26274" ph="SELECT perso... persons" />
-            <marker date="1526312594727" expanded="true" signature="27232:27397" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="28655:28701" ph="UPDATE teams... " />
-            <marker date="1526312594727" expanded="true" signature="29319:29367" ph="UPDATE firms... " />
-            <marker date="1526312594727" expanded="true" signature="30301:30349" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="31028:31123" ph="SELECT * fro... firms" />
-            <marker date="1526312594727" expanded="true" signature="32095:32182" ph="SELECT * FRO... teams" />
-            <marker date="1526312594727" expanded="true" signature="33121:33164" ph="SELECT FirmI... firms" />
-            <marker date="1526312594727" expanded="true" signature="33948:34002" ph="SELECT * FRO... persons" />
-            <marker date="1526312594727" expanded="true" signature="35125:35183" ph="SELECT TeamI... teams" />
-            <marker date="1526312594727" expanded="true" signature="35984:36020" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="36207:36241" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="36426:36460" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="37086:37135" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="37317:37351" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="37981:38016" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="38708:38762" ph="SELECT Perso... persons" />
-            <marker date="1526312594727" expanded="true" signature="39031:39088" ph="SELECT Email... persons" />
-            <marker date="1526312594727" expanded="true" signature="39409:39457" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="39667:39728" ph="UPDATE perso... " />
-            <marker date="1526312594727" expanded="true" signature="39967:40001" ph="DELETE FROM " />
-            <marker date="1526312594727" expanded="true" signature="40609:40658" ph="UPDATE perso... " />
+            <element signature="method#changePersonType#0;class#ApplicationServiceImpl#0" expanded="false" />
+            <marker date="1526549400451" expanded="true" signature="1513:1573" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="3344:3382" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="4730:4751" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="5711:5754" ph="SELECT FirmN... firms" />
+            <marker date="1526549400451" expanded="true" signature="6314:6357" ph="SELECT TeamN... teams" />
+            <marker date="1526549400451" expanded="true" signature="7244:7282" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="9638:9682" ph="SELECT Email... persons" />
+            <marker date="1526549400451" expanded="true" signature="10525:10568" ph="SELECT FirmI... firms" />
+            <marker date="1526549400451" expanded="true" signature="11061:11175" ph="INSERT INTO persons... " />
+            <marker date="1526549400451" expanded="true" signature="12591:12633" ph="SELECT FirmI... persons" />
+            <marker date="1526549400451" expanded="true" signature="13184:13231" ph="INSERT INTO teams... " />
+            <marker date="1526549400451" expanded="true" signature="13492:13550" ph="SELECT TeamI... teams" />
+            <marker date="1526549400451" expanded="true" signature="14115:14191" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="14745:14783" ph="INSERT INTO firms... " />
+            <marker date="1526549400451" expanded="true" signature="15888:15930" ph="SELECT FirmI... persons" />
+            <marker date="1526549400451" expanded="true" signature="16537:16608" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="17672:17709" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="19012:19061" ph="SELECT Perso... persons" />
+            <marker date="1526549400451" expanded="true" signature="19673:19723" ph="SELECT Cycli... persons" />
+            <marker date="1526549400451" expanded="true" signature="20376:20478" ph="SELECT FirmN... firms" />
+            <marker date="1526549400451" expanded="true" signature="21289:21331" ph="SELECT TeamI... persons" />
+            <marker date="1526549400451" expanded="true" signature="21674:21806" ph="SELECT teams... teams" />
+            <marker date="1526549400451" expanded="true" signature="22509:22553" ph="SELECT Passw... persons" />
+            <marker date="1526549400451" expanded="true" signature="23191:23258" ph="SELECT * FRO... teams" />
+            <marker date="1526549400451" expanded="true" signature="23996:24102" ph="SELECT perso... persons" />
+            <marker date="1526549400451" expanded="true" signature="24925:24944" ph="SELECT * FRO... firms" />
+            <marker date="1526549400451" expanded="true" signature="25498:25601" ph="SELECT teams... teams" />
+            <marker date="1526549400451" expanded="true" signature="26167:26275" ph="SELECT perso... persons" />
+            <marker date="1526549400451" expanded="true" signature="27233:27398" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="28656:28702" ph="UPDATE teams... " />
+            <marker date="1526549400451" expanded="true" signature="29320:29368" ph="UPDATE firms... " />
+            <marker date="1526549400451" expanded="true" signature="30302:30350" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="31029:31124" ph="SELECT * fro... firms" />
+            <marker date="1526549400451" expanded="true" signature="32096:32183" ph="SELECT * FRO... teams" />
+            <marker date="1526549400451" expanded="true" signature="33122:33165" ph="SELECT FirmI... firms" />
+            <marker date="1526549400451" expanded="true" signature="33949:34003" ph="SELECT * FRO... persons" />
+            <marker date="1526549400451" expanded="true" signature="35126:35184" ph="SELECT TeamI... teams" />
+            <marker date="1526549400451" expanded="true" signature="35985:36021" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="36208:36242" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="36427:36461" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="37087:37136" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="37318:37352" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="37982:38017" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="38709:38763" ph="SELECT Perso... persons" />
+            <marker date="1526549400451" expanded="true" signature="39032:39089" ph="SELECT Email... persons" />
+            <marker date="1526549400451" expanded="true" signature="39410:39458" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="39668:39729" ph="UPDATE perso... " />
+            <marker date="1526549400451" expanded="true" signature="39968:40002" ph="DELETE FROM " />
+            <marker date="1526549400451" expanded="true" signature="40610:40659" ph="UPDATE perso... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/ui/Content.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2070,7 +2874,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web (ViCykler)|Web</last-edited>
+          <last-edited>GWT (ViCykler)|GWT</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
